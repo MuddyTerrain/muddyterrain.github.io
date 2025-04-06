@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 gemspec
 
-gem 'sass-embedded', '1.63.4'
+gem "json", "~> 2.6.3"

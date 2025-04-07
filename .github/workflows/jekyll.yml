@@ -30,9 +30,11 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-22.04
+    outputs:
+      page_url: ${{ steps.pages.outputs.base_path }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
@@ -50,6 +52,9 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: ./_site
 
   # Deployment job
   deploy:
@@ -61,4 +66,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3

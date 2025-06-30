@@ -1,6 +1,13 @@
 <footer class="footer">
   {% for item in site.data.settings.social %}
-    <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
+    {% assign is_brand = false %}
+    {% if item.icon == 'x-twitter' or item.icon == 'linkedin' or item.icon == 'github' or item.icon == 'instagram' %}
+      {% assign is_brand = true %}
+    {% endif %}
+
+    <a href="{{ item.link }}" class="menu-link" target="_blank">
+      <i class="{% if is_brand %}fa-brands{% else %}fa-solid{% endif %} fa-{{ item.icon }}" aria-hidden="true"></i>
+    </a>
   {% endfor %}
   <div class="footer-description"><a href="{{ site.github.url }}/">{{ site.title }} | {{ site.description }} </a></div>
 </footer>

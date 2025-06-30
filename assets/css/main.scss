@@ -119,3 +119,26 @@ $rss-color: #ff6600;
   margin-top: 8px;     /* Space above the caption */
   margin-bottom: 25px; /* <<<< NEW: Adds space below the caption */
 }
+
+/* --- NEW: Styles for Modern Header Anchor Links --- */
+h2, h3, h4 {
+  position: relative;
+  scroll-margin-top: 80px; /* Optional: Prevents header from being hidden under a sticky nav bar when jumping to an anchor */
+}
+
+.header-link-icon {
+  position: absolute;
+  left: -1.5em; /* Position to the left of the header */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+h2:hover .header-link-icon,
+h3:hover .header-link-icon,
+h4:hover .header-link-icon {
+  opacity: 1; /* Show on hover */
+  transform: translateY(-50%) scale(1.1); /* Slight zoom effect on hover */
+}

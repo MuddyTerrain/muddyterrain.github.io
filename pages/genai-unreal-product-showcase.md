@@ -13,9 +13,14 @@ permalink: /genai-unreal
 
 <p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest O3 and O4 mini, Anthrophic's Claude Sonnet/Opus 4, Google's Gemini 2.5 flash/pro, XAI's Grok 2 and 3, Deepseek's R1 and so on. </p>
 
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
+</div>
+
 <div class="button-row">
   <a href="https://www.fab.com/listings/e3fab980-1374-4ec4-be40-d8931a821766" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary">Product Documentation</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Product Documentation</a>
 </div>
 
 <h2>Key Features:</h2>
@@ -105,9 +110,12 @@ permalink: /genai-unreal
     </li>
 </ul>
 
+<div class="button-row">
+  <a href="https://www.fab.com/listings/e3fab980-1374-4ec4-be40-d8931a821766" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary">Product Documentation</a>
+</div>
+
 <h2>Use Cases:</h2>
-
-
 
 <ul>
     <li><strong>Truly Dynamic NPCs:</strong> Create characters whose dialogue is generated in real-time based on player actions and world events.</li>
@@ -139,6 +147,11 @@ permalink: /genai-unreal
     <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a></li>
 </ul>
+
+<div class="button-row">
+  <a href="https://www.fab.com/listings/e3fab980-1374-4ec4-be40-d8931a821766" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary">Product Documentation</a>
+</div>
 
 </body>
 </html>

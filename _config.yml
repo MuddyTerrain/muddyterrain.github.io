@@ -1,18 +1,28 @@
+# In _config.yml
+
 # Site Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title
+
+# Kramdown settings for Github-Flavored Markdown and Rouge syntax highlighting
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+  auto_ids: true
 
 # jekyll-paginate configuration
-paginate:            5
+paginate: 5
 
-# Build settings
-markdown:            kramdown
-highlighter:         rouge
-permalink:           /:title
-plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+# Plugins
+plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "Muddy Terrain Games"
-description:	       "High fidelity worlds."
-author:              ""
+title: "Muddy Terrain Games"
+description: "High fidelity worlds."
+author: ""
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

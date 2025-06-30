@@ -27,3 +27,95 @@ $codepen-color: black;
 $rss-color: #ff6600;
 
 @import "-sections-dir";
+
+/* Custom Wide Layout */
+.wide-content {
+  display: block;
+  max-width: 80%; /* You can change this value. 1200px is also a good option. */
+  margin: 0 auto;   /* This centers the content */
+  padding: 2px 15px; /* Adds some spacing */
+}
+
+/* --- Mobile Styles --- */
+/* For screens smaller than your phone-width variable (480px) */
+@media (max-width: #{$phone-width}) {
+  .wide-content {
+    max-width: 100%;
+    padding: 10px 5px; /* Extremely negligible padding for mobile */
+  }
+}
+
+/* New class to force an element to span the full width */
+.full-bleed {
+  width: 100%;
+  max-width: 900px; /* Adjust this value to your liking */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+/* --- CTA Button Styles --- */
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important; /* Ensures no underline */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Primary "Buy" Button - Highlighted */
+.cta-button.primary {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.cta-button.primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Secondary "Docs" Button - White */
+.cta-button.secondary {
+  background-color: #ffffff; /* White background */
+  color: #212529;             /* Dark text color */
+  border-color: #ced4da;      /* Light grey border */
+}
+
+.cta-button.secondary:hover {
+  background-color: #f8f9fa; /* Slightly off-white on hover */
+  border-color: #adb5bd;      /* Darker border on hover */
+  transform: translateY(-2px);
+}
+
+/* Wrapper for images that need specific sizing */
+.image-wrapper {
+  max-width: 78%; /* Set your desired width here */
+  margin: 0 auto;   /* This will center the image */
+}
+
+/* Styling for image captions */
+.image-caption {
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;    /* Soft grey for the text */
+  margin-top: 8px;     /* Space above the caption */
+  margin-bottom: 25px; /* <<<< NEW: Adds space below the caption */
+}

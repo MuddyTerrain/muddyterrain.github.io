@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact
+title: 
 permalink: /contact
 ---
 
@@ -16,7 +16,6 @@ permalink: /contact
   <strong>Email:</strong> <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a>
 </p>
 
-<br>
 
 <h3>Business & Custom Development</h3>
 <p>For business inquiries, partnership opportunities, or to request custom development services for projects like the GenAI Plugin, please contact us at the email below.</p>

@@ -1,7 +1,20 @@
 <article>
   <a href="{{ site.github.url }}{{ post.url }}">
-    <div class="featured-post" {% if post.image %}style="background-image:url({{ site.github.url }}/assets/img/{{ post.image }})"{% endif %}>
-      <h2><span>{{ post.title }}</span></h2>
-    </div>
+    {% if post.image %}
+      {% comment %} --- Check if the image path is a full URL --- {% endcomment %}
+      {% if post.image contains "http" %}
+        {% assign image_url = post.image %}
+      {% else %}
+        {% assign image_url = site.github.url | append: "/assets/img/" | append: post.image %}
+      {% endif %}
+      <div class="featured-post" style="background-image:url({{ image_url }})">
+        <h2><span>{{ post.title }}</span></h2>
+      </div>
+    {% else %}
+      {% comment %} --- Fallback if no image is provided --- {% endcomment %}
+      <div class="featured-post">
+        <h2><span>{{ post.title }}</span></h2>
+      </div>
+    {% endif %}
   </a>
 </article>

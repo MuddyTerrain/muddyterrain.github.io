@@ -9,11 +9,50 @@ permalink: /genai-unreal-documentation
 <h1>Documentation: GenAI for Unreal</h1>
 <p>Welcome to the complete guide for the GenAI for Unreal plugin. This document provides all the necessary information to integrate, use, and master the plugin in your Unreal Engine projects.</p>
 
+<hr style="margin: 30px 0;">
 
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#1-quick-start-your-first-ai-chat-in-5-minutes">1. Quick Start: Your First AI Chat in 5 Minutes</a></li>
+<li><a href="#2-initial-project-setup">2. Initial Project Setup</a></li>
+<li><a href="#3-getting-api-keys">3. Getting API Keys</a></li>
+<li><a href="#4-authentication-security">4. Authentication & Security</a></li>
+<li><a href="#5-core-concepts">5. Core Concepts</a></li>
+<li><a href="#6-usage-guides-examples">6. Usage Guides & Examples</a></li>
+<li><a href="#7-structured-output">7. Structured Output</a></li>
+<li><a href="#8-how-to-run-tests">8. How to Run Tests</a></li>
+<li><a href="#9-quick-links-api-reference">9. Quick Links & API Reference</a></li>
+</ul>
 
 <hr style="margin: 30px 0;">
 
-<h2>1. Initial Project Setup</h2>
+<h2>1. Quick Start: Your First AI Chat in 5 Minutes</h2>
+<p>Follow these minimal steps to get a basic chat completion working instantly.</p>
+<ol>
+<li><strong>Install Plugin:</strong> Add "GenAI for Unreal" from the Fab.com marketplace and enable it in <code>Edit > Plugins</code>.</li>
+<li><strong>Add API Key:</strong> Go to <code>Project Settings > Plugins > GenAI Plugin</code> and enter your OpenAI API key.</li>
+<li><strong>Create Blueprint:</strong> Make a new Actor Blueprint. In the Event Graph, add the following nodes:</li>
+<div> <figure>
+<img class="full-bleed"  src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751480831/1e64d118-033f-40cf-957f-e15d8ae5a290.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
+<figcaption class="image-caption">
+A simple setup to test chat completion.
+</figcaption>
+</figure>
+</div>
+<li><strong>Node Setup:</strong>
+<ul>
+<li>Connect <code>Event Begin Play</code> to a <code>Request OpenAI Chat Completion</code> node.</li>
+<li>For the <code>Settings</code> pin, add a <code>Make Gen AI Chat Settings</code> node.</li>
+<li>In the <code>Messages</code> array, add a <code>Make Gen Chat Message</code> with the role <code>user</code> and content "Tell me a joke."</li>
+<li>Drag off the <code>OnComplete</code> event and add a <code>Print String</code> node, connecting the <code>Response</code> output to the string input.</li>
+</ul>
+</li>
+<li><strong>Press Play:</strong> You will see an AI-generated joke printed to the screen.</li>
+</ol>
+
+<hr style="margin: 30px 0;">
+
+<h2>2. Initial Project Setup</h2>
 <p>Follow these steps to get the plugin running in your project.</p>
 <h4>Adding the Plugin</h4>
 <ol>
@@ -51,7 +90,7 @@ public class YourProject : ModuleRules
 
 <hr style="margin: 30px 0;">
 
-<h2>2. Getting API Keys</h2>
+<h2>3. Getting API Keys</h2>
 <p>To use this plugin, you need an API key from at least one of the following services. An API key is a unique code that authenticates your requests with the AI provider's servers. You will be billed by the respective provider based on your usage.</p>
 <ul>
     <li><strong>OpenAI (for GPT models, DALL-E, Whisper, TTS):</strong>
@@ -82,7 +121,7 @@ public class YourProject : ModuleRules
 
 <hr style="margin: 30px 0;">
 
-<h2>3. Authentication & Security</h2>
+<h2>4. Authentication & Security</h2>
 
 <h3>Setting API Keys:</h3>
 <p>Never hard-code API keys. The plugin provides a secure, centralized settings panel.</p>
@@ -132,7 +171,7 @@ public class YourProject : ModuleRules
 
 <hr style="margin: 30px 0;">
 
-<h2>4. Core Concepts</h2>
+<h2>5. Core Concepts</h2>
 
 <h3>Asynchronous by Design</h3>
 <p>All API calls in this plugin are <strong>asynchronous</strong> (non-blocking). This is essential to prevent your game from freezing while waiting for a response from the AI server. The workflow is always:</p>
@@ -161,9 +200,23 @@ void AMyActor::SendCustomModelRequest()
     // ... complete the rest of the request
 }</code></pre>
 
+<h3> Additional Points to Note</h3>
+<ol>
+    <li><strong>HTTP Timeouts:</strong> Complex reasoning models (like DeepSeek Reasoner) can take longer to generate a response. If you experience frequent timeout errors, consider increasing the default HTTP timeout in your project's DefaultEngine.ini file:
+    <pre><code>    [/Script/Engine.NetworkSettings]
+    NetConnectionTimeout=180.0 
+    [HTTP]
+    HttpConnectionTimeout=180.0 
+    HttpReceiveTimeout=180.0  </code></pre></li>
+    <li><strong>Audio Formats (TTS):</strong> The Text-to-Speech feature currently outputs audio in the PCM format. The plugin includes Blueprint utilities to convert this raw data into a playable USoundWave asset at runtime.</li>
+    <li><strong>API Key Security:</strong> The <code>secureconfig.bin</code> file is encrypted and non-portable by design. Do not attempt to copy it between projects or machines. Always add API keys through the Project Settings panel. Never commit this file to source control.</li>
+    <li><strong>Platform Compatibility:</strong> The plugin uses standard engine modules (HTTP, Json) for maximum cross-platform compatibility. However, always test features on your specific target hardware, especially file-system-dependent operations like loading images for vision requests.</li>
+    <li><strong>Plugin Dependencies:</strong> This plugin relies only on core Unreal Engine modules. It does not introduce any external third-party libraries, ensuring a clean and stable integration.</li>
+</ol>
+
 <hr style="margin: 30px 0;">
 
-<h2>5. Usage Guides & Examples</h2>
+<h2>6. Usage Guides & Examples</h2>
 
 <h3>Finding the Example Assets</h3>
 <ul>
@@ -194,48 +247,107 @@ void AMyActor::SendCustomModelRequest()
 
 
 ```cpp
+#include "Data/OpenAI/GenOAIChatStructs.h"
 #include "Models/OpenAI/GenOAIChat.h"
-#include "Data/GenAIMessageStructs.h"
 
-// In your actor's header (.h)
-private:
-    void OnOpenAIChatResponse(const FString& Response, const FString& ErrorMessage, bool bSuccess);
-
-// In your actor's source file (.cpp)
-void AMyActor::MakeChatRequest()
+void ATOpenAIChatExample::TestTextChat()
 {
-    // 1. Configure the request
-    FGenOAIChatSettings ChatSettings;
-    ChatSettings.Model = EOpenAIChatModel::GPT_4o_mini;
-    ChatSettings.MaxTokens = 1024;
-    ChatSettings.Messages.Add(FGenChatMessage("user", "Tell me a story about a brave Unreal developer."));
+	UE_LOG(LogGenAI, Log, TEXT("--- Testing OpenAI Text-Only Chat ---"));
+	
+	FGenOAIChatSettings ChatSettings;
+	ChatSettings.Model = EOpenAIChatModel::GPT_4_1_nano; // Use the latest text model
+	ChatSettings.Messages.Add(FGenChatMessage(TEXT("user"), TEXT("What is the distance between Earth and the Moon in kilometers?")));
+	ChatSettings.MaxTokens = 100;
 
-    // 2. Create the delegate to handle the response
-    FOnChatCompletionResponse OnCompleteDelegate;
-    OnCompleteDelegate.BindUObject(this, &AMyActor::OnOpenAIChatResponse);
-
-    // 3. Send the request
-    UGenOAIChat::SendChatRequest(ChatSettings, OnCompleteDelegate);
+	UGenOAIChat::SendChatRequest(
+	   ChatSettings,
+	   FOnChatCompletionResponse::CreateLambda(
+		  [this](const FString& Response, const FString& ErrorMessage, bool bSuccess)
+		  {
+			 if (!UTHelper::IsContextStillValid(this)) return;
+			 
+			 if (bSuccess)
+			 {
+				 UE_LOG(LogGenAI, Log, TEXT("OpenAI Text Chat Response: %s"), *Response);
+			 }
+			 else
+			 {
+				 UE_LOG(LogGenAI, Error, TEXT("OpenAI Text Chat Error: %s"), *ErrorMessage);
+			 }
+		  })
+	);
 }
 
-// 4. Implement the callback function
-void AMyActor::OnOpenAIChatResponse(const FString& Response, const FString& ErrorMessage, bool bSuccess)
-{
-    if (bSuccess)
-    {
-        UE_LOG(LogTemp, Log, TEXT("AI Response: %s"), *Response);
-        // Do something with the response string...
-    }
-    else
-    {
-        UE_LOG(LogTemp, Error, TEXT("AI Error: %s"), *ErrorMessage);
-    }
-}
 ```
 
 <hr style="margin: 30px 0;">
 
-<h2>5. How to Run Tests</h2>
+<h2>7. Structured Output</h2>
+Structured Outputs is a feature that ensures the model will always generate responses that adhere to your supplied JSON Schema, so you don't need to worry about the model omitting a required key, or hallucinating an invalid enum value.
+
+Some benefits of Structured Outputs include:
+<ul>
+    <li>Reliable type-safety: No need to validate or retry incorrectly formatted responses</li>
+    <li>Explicit refusals: Safety-based model refusals are now programmatically detectable</li>
+    <li>Simpler prompting: No need for strongly worded prompts to achieve consistent formatting</li>
+</ul>
+
+<p> Schema JSON example</p>
+<pre><code>{
+"type": "object",
+"properties": {
+    "count": {
+        "type": "integer",
+        "description": "The total number of users."
+    },
+    "users": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string", "description": "The user's name." },
+                "heading_to": { "type": "string", "description": "The user's destination." }
+            },
+            "required": ["name", "role", "age", "heading_to"]
+        }
+    }
+},
+"required": ["count", "users"]
+}</code></pre>
+
+<p>Using structured output in the C++:</p>
+
+```cpp
+FString MySchemaJson = R"(<insert your schema JSON here>)";
+
+UGenAISchemaService::RequestStructuredOutput(
+    TEXT("Generate a list of users and their details"),
+    MySchemaJson,
+    [](const FString& Response, const FString& Error, bool Success) {
+       if (Success)
+       {
+           UE_LOG(LogTemp, Log, TEXT("Structured Output: %s"), *Response);
+       }
+       else
+       {
+           UE_LOG(LogTemp, Error, TEXT("Error: %s"), *Error);
+       }
+    }
+);
+```
+
+<p>In Blueprints:</p>
+<div>
+    <figure> 
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751482808/6e114b72-0424-4725-8491-31e816ba81e4.webp" alt="Blueprint Structured Output Example" style="width: 100%;">
+        <figcaption class="image-caption">Blueprint Structured Output Example</figcaption>
+    </figure>
+</div>
+
+
+<hr style="margin: 30px 0;">
+
+<h2>8. How to Run Tests</h2>
 <p>The plugin includes a suite of automation tests to verify that all API integrations are working correctly. To run them:</p>
 <ol>
     <li>Ensure you have set valid API keys in the plugin settings for the providers you wish to test.</li>
@@ -248,7 +360,7 @@ void AMyActor::OnOpenAIChatResponse(const FString& Response, const FString& Erro
 
 <hr style="margin: 30px 0;">
 
-<h2>6. Quick Links & API Reference</h2>
+<h2>9. Quick Links & API Reference</h2>
 <ul>
     <li><a href="https://platform.openai.com/docs/api-reference" target="_blank" rel="noopener noreferrer">OpenAI API Documentation</a></li>
     <li><a href="https://docs.anthropic.com/en/docs/models" target="_blank" rel="noopener noreferrer">Anthropic API Documentation</a></li>

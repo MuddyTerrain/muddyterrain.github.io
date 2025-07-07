@@ -29,8 +29,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Key Features:</h2>
 <ul>
     <li>
-        <p><strong>Structured JSON Output:</strong> ❤️‍🔥<br>
-        Reliably get complex JSON responses from any supported model. For example, generating JSON for 100 AI-generated NPCs, each with their own unique stories, race, gender, and name.</p>
+        <p><strong>Real-time Text Streaming:</strong> ⚡️<br>
+        Bring your characters to life with dynamic, real-time responses. Our streaming support delivers text in chunks as it's generated, perfect for creating live-narrated dialogue, responsive AI companions, and interactive storytelling without the wait.</p>
     </li>
     <li>
         <p><strong>Advanced Chat Completions:</strong> 🤖<br>
@@ -43,6 +43,10 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li>
         <p><strong>Multi-Modal Vision/Text Input:</strong> 📸<br>
         Allow models to "see" your game. Provide screenshots or other images as direct input along with text, perfect for creating AI-powered spectator commentary, dynamic player guides, or environment-aware NPC interactions.</p>
+    </li>
+    <li>
+        <p><strong>Structured JSON Output:</strong> ❤️‍🔥<br>
+        Reliably get complex JSON responses from any supported model. For example, generating JSON for 100 AI-generated NPCs, each with their own unique stories, race, gender, and name.</p>
     </li>
     <li>
         <p><strong>High-Quality Image Generation:</strong> 🖼️<br>
@@ -82,33 +86,53 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <ul>
     <li><strong>OpenAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>gpt-4.1</code>, <code>o4-mini</code>, <code>o3</code>, <code>o3-pro</code>, <code>o3-mini</code>, <code>o1</code>, <code>o1-pro</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
+            <li><strong>Chat:</strong> <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>o4-mini</code>, <code>o3</code>, <code>o3-pro</code>, <code>o3-mini</code>, <code>o1</code>, <code>o1-pro</code>.</li>
             <li><strong>Image Generation:</strong> <code>gpt-image-1</code>, <code>dall-e-3</code>, <code>dall-e-2</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gpt-4o-mini-tts</code>, <code>tts-1</code>, <code>tts-1-hd</code>.</li>
             <li><strong>Audio Transcription:</strong> <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>whisper-1</code>.</li>
-            <li><strong>Structured Output (JSON Mode)</strong></li>
+            <li><strong>Structured Output (JSON Mode)</strong>  ✔</li>
+            <li><strong>Text Streaming</strong>   ✔</li>
+            <li><strong>Multimodal Chat</strong>   ✔</li>
         </ul>
     </li>
     <li><strong>Anthropic:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>claude-opus-4-20250514</code>, <code>claude-sonnet-4-20250514</code>, <code>claude-3-7-sonnet-20250219</code>, <code>claude-3-5-sonnet-20241022</code>, <code>claude-3-5-haiku-20241022</code>.</li>
+            <li><strong>Chat:</strong> <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>.</li>
         </ul>
     </li>
     <li><strong>XAI:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
             <li><strong>Reasoning Models:</strong> <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
+            <li><strong>Text Streaming</strong>  ✔</li>
         </ul>
     </li>
     <li><strong>Google Gemini:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Text Streaming</strong>  ✔</li>
         </ul>
     </li>
     <li><strong>DeepSeek:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>deepseek-chat</code>.</li>
             <li><strong>Reasoning:</strong> <code>deepseek-reasoner</code>.</li>
+            <li><strong>Text Streaming</strong>  ✔</li>
+        </ul>
+    </li>
+</ul>
+<p>Supported Formats</p>
+<ul>
+    <li><strong>Audio:</strong>
+        <ul>
+            <li><strong>Input:</strong> <code>mp3</code>, <code>wav</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpga</code>, <code>m4a</code>, <code>webm</code>.</li>
+            <li><strong>Output:</strong> <code>pcm</code>.</li>
+        </ul>
+    </li>
+    <li><strong>Voice:</strong>
+        <ul>
+            <li><strong>OpenAI:</strong> <code>alloy</code>, <code>echo</code>, <code>fable</code>, <code>onyx</code>, <code>nova</code>, <code>shimmer</code>.</li>
         </ul>
     </li>
 </ul>

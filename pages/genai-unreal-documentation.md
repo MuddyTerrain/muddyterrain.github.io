@@ -13,71 +13,71 @@ permalink: /genai-unreal-documentation
 
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#1-quick-start-your-first-ai-chat-in-5-minutes">1. Quick Start: Your First AI Chat in 5 Minutes</a></li>
-<li><a href="#2-initial-project-setup">2. Initial Project Setup</a>
-    <ul>
-        <li><a href="#adding-the-plugin">Adding the Plugin</a></li>
-        <li><a href="#c-project-configuration-optional">C++ Project Configuration (Optional)</a></li>
-    </ul>
-</li>
-<li><a href="#3-getting-api-keys">3. Getting API Keys</a></li>
-<li><a href="#4-authentication-security">4. Authentication & Security</a>
-    <ul>
-        <li><a href="#setting-api-keys">Setting API Keys</a></li>
-        <li><a href="#using-a-proxy-server-optional-for-production">Using a Proxy Server (Optional, For Production)</a>
-            <ul>
-                <li><a href="#why-use-a-proxy">Why use a proxy?</a></li>
-                <li><a href="#retargetting-the-plugin-to-proxy">Retargetting the plugin to proxy</a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
-<li><a href="#5-core-concepts">5. Core Concepts</a>
-    <ul>
-        <li><a href="#asynchronous-by-design">Asynchronous by Design</a></li>
-        <li><a href="#lifetime-management-for-asynchronous-operations">Lifetime Management for Asynchronous Operations</a>
-            <ul>
-                <li><a href="#blueprint-solution-automatic-safety">Blueprint Solution: Automatic Safety</a></li>
-                <li><a href="#c-solution-developer-managed">C++ Solution: Developer-Managed</a></li>
-            </ul>
-        </li>
-        <li><a href="#using-custom-models-not-in-enums">Using Custom Models (Not in Enums)</a>
-            <ul>
-                <li><a href="#blueprint-example">Blueprint Example</a></li>
-                <li><a href="#c-example">C++ Example</a></li>
-            </ul>
-        </li>
-        <li><a href="#additional-points-to-note">Additional Points to Note</a></li>
-    </ul>
-</li>
-<li><a href="#6-usage-guides-examples">7. Usage Guides & Examples</a>
-    <ul>
-        <li><a href="#finding-the-example-assets">Finding the Example Assets</a></li>
-        <li><a href="#blueprint-usage-walkthrough">Blueprint Usage Walkthrough</a></li>
-        <li><a href="#c-usage-walkthrough-openai-chat">C++ Usage Walkthrough (OpenAI Chat)</a></li>
-    </ul>
-</li>
-<li><a href="#7-building-long-conversations-chat-context">6. Building Long Conversations & Chat Context</a>
-    <ul>
-        <li><a href="#how-conversation-context-works">How Conversation Context Works</a></li>
-        <li><a href="#conversation-structure-example">Conversation Structure Example</a></li>
-        <li><a href="#blueprint-implementation">Blueprint Implementation</a></li>
-        <li><a href="#c-implementation">C++ Implementation</a></li>
-        <li><a href="#advanced-context-management">Advanced Context Management</a></li>
-        <li><a href="#best-practices-for-conversation-context">Best Practices for Conversation Context</a></li>
-    </ul>
-</li>
-<li><a href="#8-streaming">8. Streaming</a>
-    <ul>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#blueprint-implementation">Blueprint Implementation</a></li>
-        <li><a href="#c-implementation">C++ Implementation</a></li>
-        <li><a href="#best-practices">Best Practices</a></li>
-    </ul>
-</li>
-<li><a href="#9-structured-output">9. Structured Output</a></li>
-<li><a href="#10-how-to-run-tests">10. How to Run Tests</a></li>
-<li><a href="#11-quick-links-api-reference">11. Quick Links & API Reference</a></li>
+    <li><a href="#1-quick-start-your-first-ai-chat-in-5-minutes">1. Quick Start: Your First AI Chat in 5 Minutes</a></li>
+    <li><a href="#2-initial-project-setup">2. Initial Project Setup</a>
+        <ul>
+            <li><a href="#adding-the-plugin">Adding the Plugin</a></li>
+            <li><a href="#c-project-configuration-optional">C++ Project Configuration (Optional)</a></li>
+        </ul>
+    </li>
+    <li><a href="#3-getting-api-keys">3. Getting API Keys</a></li>
+    <li><a href="#4-authentication-security">4. Authentication & Security</a>
+        <ul>
+            <li><a href="#setting-api-keys">Setting API Keys</a></li>
+            <li><a href="#using-a-proxy-server-optional-for-production">Using a Proxy Server (Optional, For Production)</a>
+                <ul>
+                    <li><a href="#why-use-a-proxy">Why use a proxy?</a></li>
+                    <li><a href="#retargetting-the-plugin-to-proxy">Retargetting the plugin to proxy</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#5-core-concepts">5. Core Concepts</a>
+        <ul>
+            <li><a href="#asynchronous-by-design">Asynchronous by Design</a></li>
+            <li><a href="#lifetime-management-for-asynchronous-operations">Lifetime Management for Asynchronous Operations</a>
+                <ul>
+                    <li><a href="#blueprint-solution-automatic-safety">Blueprint Solution: Automatic Safety</a></li>
+                    <li><a href="#c-solution-developer-managed">C++ Solution: Developer-Managed</a></li>
+                </ul>
+            </li>
+            <li><a href="#using-custom-models-not-in-enums">Using Custom Models (Not in Enums)</a>
+                <ul>
+                    <li><a href="#blueprint-example">Blueprint Example</a></li>
+                    <li><a href="#c-example">C++ Example</a></li>
+                </ul>
+            </li>
+            <li><a href="#additional-points-to-note">Additional Points to Note</a></li>
+        </ul>
+    </li>
+    <li><a href="#6-usage-guides-examples">7. Usage Guides & Examples</a>
+        <ul>
+            <li><a href="#finding-the-example-assets">Finding the Example Assets</a></li>
+            <li><a href="#blueprint-usage-walkthrough">Blueprint Usage Walkthrough</a></li>
+            <li><a href="#c-usage-walkthrough-openai-chat">C++ Usage Walkthrough (OpenAI Chat)</a></li>
+        </ul>
+    </li>
+    <li><a href="#7-building-long-conversations-chat-context">6. Building Long Conversations & Chat Context</a>
+        <ul>
+            <li><a href="#how-conversation-context-works">How Conversation Context Works</a></li>
+            <li><a href="#conversation-structure-example">Conversation Structure Example</a></li>
+            <li><a href="#blueprint-implementation">Blueprint Implementation</a></li>
+            <li><a href="#c-implementation">C++ Implementation</a></li>
+            <li><a href="#advanced-context-management">Advanced Context Management</a></li>
+            <li><a href="#best-practices-for-conversation-context">Best Practices for Conversation Context</a></li>
+        </ul>
+    </li>
+    <li><a href="#8-streaming">8. Streaming</a>
+        <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#blueprint-implementation">Blueprint Implementation</a></li>
+            <li><a href="#c-implementation">C++ Implementation</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+        </ul>
+    </li>
+    <li><a href="#9-structured-output">9. Structured Output</a></li>
+    <li><a href="#10-how-to-run-tests">10. How to Run Tests</a></li>
+    <li><a href="#11-quick-links-api-reference">11. Quick Links & API Reference</a></li>
 </ul>
 
 <hr style="margin: 30px 0;">
@@ -85,25 +85,27 @@ permalink: /genai-unreal-documentation
 <h2>1. Quick Start: Your First AI Chat in 5 Minutes</h2>
 <p>Follow these minimal steps to get a basic chat completion working instantly.</p>
 <ol>
-<li><strong>Install Plugin:</strong> Add "GenAI for Unreal" from the Fab.com marketplace and enable it in <code>Edit > Plugins</code>.</li>
-<li><strong>Add API Key:</strong> Go to <code>Project Settings > Plugins > GenAI Plugin</code> and enter your OpenAI API key.</li>
-<li><strong>Create Blueprint:</strong> Make a new Actor Blueprint. In the Event Graph, add the following nodes:</li>
-<div> <figure>
-<img class="full-bleed"  src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751480831/1e64d118-033f-40cf-957f-e15d8ae5a290.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
-<figcaption class="image-caption">
-A simple setup to test chat completion.
-</figcaption>
-</figure>
-</div>
-<li><strong>Node Setup:</strong>
-<ul>
-<li>Connect <code>Event Begin Play</code> to a <code>Request OpenAI Chat Completion</code> node.</li>
-<li>For the <code>Settings</code> pin, add a <code>Make Gen AI Chat Settings</code> node.</li>
-<li>In the <code>Messages</code> array, add a <code>Make Gen Chat Message</code> with the role <code>user</code> and content "Tell me a joke."</li>
-<li>Drag off the <code>OnComplete</code> event and add a <code>Print String</code> node, connecting the <code>Response</code> output to the string input.</li>
-</ul>
-</li>
-<li><strong>Press Play:</strong> You will see an AI-generated joke printed to the screen.</li>
+    <li><strong>Install Plugin:</strong> Add "GenAI for Unreal" from the Fab.com marketplace and enable it in <code>Edit > Plugins</code>.</li>
+    <li><strong>Add API Key:</strong> Go to <code>Project Settings > Plugins > GenAI Plugin</code> and enter your OpenAI API key.</li>
+    <li><strong>Create Blueprint:</strong> Make a new Actor Blueprint. In the Event Graph, add the following nodes:
+        <div> 
+            <figure>
+                <img class="full-bleed"  src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751480831/1e64d118-033f-40cf-957f-e15d8ae5a290.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
+                <figcaption class="image-caption">
+                A simple setup to test chat completion.
+                </figcaption>
+            </figure>
+        </div>
+    </li>
+    <li><strong>Node Setup:</strong>
+        <ul>
+            <li>Connect <code>Event Begin Play</code> to a <code>Request OpenAI Chat Completion</code> node.</li>
+            <li>For the <code>Settings</code> pin, add a <code>Make Gen AI Chat Settings</code> node.</li>
+            <li>In the <code>Messages</code> array, add a <code>Make Gen Chat Message</code> with the role <code>user</code> and content "Tell me a joke."</li>
+            <li>Drag off the <code>OnComplete</code> event and add a <code>Print String</code> node, connecting the <code>Response</code> output to the string input.</li>
+        </ul>
+    </li>
+    <li><strong>Press Play:</strong> You will see an AI-generated joke printed to the screen.</li>
 </ol>
 
 <hr style="margin: 30px 0;">
@@ -142,7 +144,6 @@ public class YourProject : ModuleRules
     }
 }
 ```
-
 
 <hr style="margin: 30px 0;">
 
@@ -184,15 +185,16 @@ public class YourProject : ModuleRules
 
 <ol>
     <li>In the Unreal Editor, navigate to <strong>Edit &gt; Project Settings</strong>.</li>
-    <li>Scroll down to the <strong>Plugins</strong> section on the left and click on <strong>GenAI Plugin</strong>.</li>
-    <div class="image-wrapper">
-        <figure>
-            <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751294875/d6a467e8-b94a-498b-b062-432eaef4e81b.webp" alt="Settings panel for API keys" style="width: 100%;">
-            <figcaption class="image-caption">
-            Settings panel for API keys
-            </figcaption>
-        </figure>
-    </div>
+    <li>Scroll down to the <strong>Plugins</strong> section on the left and click on <strong>GenAI Plugin</strong>.
+        <div class="image-wrapper">
+            <figure>
+                <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751294875/d6a467e8-b94a-498b-b062-432eaef4e81b.webp" alt="Settings panel for API keys" style="width: 100%;">
+                <figcaption class="image-caption">
+                Settings panel for API keys
+                </figcaption>
+            </figure>
+        </div>
+    </li>
     <li>Enter your API keys from each provider (OpenAI, Anthropic, etc.) into the corresponding fields.</li>
     <li>These keys are automatically saved to an encrypted binary file at <code>YourProject/Saved/Config/GenAI/secureconfig.bin</code>.</li>
     <li>This file must not be committed to source control. Generally "Saved" folder is already part of <code>.gitignore</code>, if it is not add the following line to it to prevent leaking your keys:
@@ -211,15 +213,16 @@ public class YourProject : ModuleRules
 
 <p>Once your own backend server is running:</p>
 <ol>
-    <li>Go to the <strong>GenAI Plugin</strong> settings in the Unreal Editor.</li>
-    <div class="image-wrapper">
-    <figure>
-        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751295938/73bfcb9b-809c-4bbb-9ba5-9c0e4c937e76.webp" alt="Settings panel for API keys" style="width: 100%;">
-        <figcaption class="image-caption">
-        Retargetting the API requests to proxy server
-        </figcaption>
-    </figure>
-    </div>
+    <li>Go to the <strong>GenAI Plugin</strong> settings in the Unreal Editor.
+        <div class="image-wrapper">
+            <figure>
+                <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751295938/73bfcb9b-809c-4bbb-9ba5-9c0e4c937e76.webp" alt="Settings panel for API keys" style="width: 100%;">
+                <figcaption class="image-caption">
+                Retargetting the API requests to proxy server
+                </figcaption>
+            </figure>
+        </div>
+    </li>
     <li>Under the <strong>API Endpoint Management</strong> section for each provider, check the "Override" box.</li>
     <li>Enter the URL of your proxy endpoint. For example, for OpenAI, you might enter <code>https://api.yourgame.com/openai</code>.</li>
 </ol>
@@ -247,7 +250,16 @@ public class YourProject : ModuleRules
 <p>Blueprint nodes are built on <code>UCancellableAsyncAction</code> and handle lifetime automatically using <code>TWeakObjectPtr</code>. The nodes check if the calling object is still valid before executing callbacks, preventing crashes. Key features:</p>
 <ul>
     <li><strong>Automatic Cleanup:</strong> When objects are destroyed, weak pointers become invalid and callbacks are safely skipped.</li>
-    <li><strong>Explicit Cancellation:</strong> Use the Cancel node to terminate requests early and clean up resources.</li>
+    <li><strong>Explicit Cancellation:</strong> Use the Cancel node to terminate requests early and clean up resources.
+        <div class="image-wrapper-half">
+            <figure>
+                <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751930469/7ba052f5-e44d-402a-b113-0fc1d07cce09.webp" alt="Settings panel for API keys" style="width: 100%;">
+                <figcaption class="image-caption">
+                Blueprint nodes automatically handle lifetime safety
+                </figcaption>
+            </figure>
+        </div> 
+    </li>
     <li><strong>No Extra Work Required:</strong> Blueprint developers can trust the async nodes to handle all safety automatically.</li>
 </ul>
 
@@ -300,28 +312,42 @@ void AMyActor::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 <h5>Blueprint Example:</h5>
 <p>In the "Make Gen OpenAI Chat Settings" node, simply type the new model's name (e.g., "gpt-5-exclusive-preview") into the <code>Model (String)</code> input field. This will be used instead of the enum dropdown.</p>
-
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751930092/9f333958-9150-4d63-ad82-2e24443ca5c9.webp" alt="Settings panel for API keys" style="width: 100%;">
+        <figcaption class="image-caption">
+        Using a custom model in Blueprint
+        </figcaption>
+    </figure>
+</div> 
 <h5>C++ Example:</h5>
 <pre><code>#include "Models/OpenAI/GenOAIChat.h"
 
 void AMyActor::SendCustomModelRequest()
 {
-    FGenOAIChatSettings ChatSettings;
-    ChatSettings.Model = EOpenAIChatModel::Custom; 
-    ChatSettings.CustomModelName = TEXT("gpt-5-exclusive-preview"); 
-    
+FGenOAIChatSettings ChatSettings;
+ChatSettings.Model = EOpenAIChatModel::Custom;
+ChatSettings.CustomModelName = TEXT("gpt-5-exclusive-preview");
+
     // ... complete the rest of the request
+
 }</code></pre>
 
 <h3> Additional Points to Note</h3>
 <ol>
-    <li><strong>HTTP Timeouts:</strong> Complex reasoning models (like DeepSeek Reasoner) can take longer to generate a response. If you experience frequent timeout errors, consider increasing the default HTTP timeout in your project's DefaultEngine.ini file:
+    <li><strong>HTTP Timeouts:</strong> When streaming is not used, complex reasoning models (like DeepSeek Reasoner) can take longer to generate a response. If you experience frequent timeout errors, consider increasing the default HTTP timeout in your project's DefaultEngine.ini file:
     <pre><code>    [/Script/Engine.NetworkSettings]
     NetConnectionTimeout=180.0 
     [HTTP]
     HttpConnectionTimeout=180.0 
     HttpReceiveTimeout=180.0  </code></pre></li>
-    <li><strong>Audio Formats (TTS):</strong> The Text-to-Speech feature currently outputs audio in the PCM format. The plugin includes Blueprint utilities to convert this raw data into a playable USoundWave asset at runtime.</li>
+    <li><strong>Audio Formats (TTS):</strong> The Text-to-Speech feature currently outputs audio in the PCM format. The plugin includes Blueprint utilities to convert this raw data into a playable USoundWave asset at runtime.
+        <div class="image-wrapper-small" style="max-width: 35%;">
+            <figure>
+                <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751930771/6a1a4394-efe4-4490-bd00-ff917c35c4b0.webp" alt="Blueprint Example" style="width: 100%;">
+            </figure>
+        </div>
+    </li>
     <li><strong>API Key Security:</strong> The <code>secureconfig.bin</code> file is encrypted and non-portable by design. Do not attempt to copy it between projects or machines. Always add API keys through the Project Settings panel. Never commit this file to source control.</li>
     <li><strong>Platform Compatibility:</strong> The plugin uses standard engine modules (HTTP, Json) for maximum cross-platform compatibility. However, always test features on your specific target hardware, especially file-system-dependent operations like loading images for vision requests.</li>
     <li><strong>Plugin Dependencies:</strong> This plugin relies only on core Unreal Engine modules. It does not introduce any external third-party libraries, ensuring a clean and stable integration.</li>
@@ -333,14 +359,14 @@ void AMyActor::SendCustomModelRequest()
 
 <h3>Finding the Example Assets</h3>
 <ul>
-    <li><strong>Blueprint Examples:</strong> Example blueprints can be found inside the plugin's content folder at <code>Engine/Plugins/GenAIForUnrealContent/ExampleBlueprints/</code>.</li>
-
-<div class="image-wrapper" style="max-width: 80%;">
-    <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751299058/d2243d10-ecd0-401c-93c8-524916a096aa.webp" alt="Blueprint Example" style="width: 100%;">
-    <figcaption class="image-caption">Blueprint Examples</figcaption>
-    </figure>
-</div>
+    <li><strong>Blueprint Examples:</strong> Example blueprints can be found either inside the plugin's content folder at <code>Engine/Plugins/GenAIForUnrealContent/ExampleBlueprints/</code>, or by downloading the example project <a href="https://drive.google.com/file/d/1m58UpTRafxiEc836-tG1-GsYZ8NIuoYH/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>
+        <div class="image-wrapper" style="max-width: 80%;">
+            <figure>
+            <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751299058/d2243d10-ecd0-401c-93c8-524916a096aa.webp" alt="Blueprint Example" style="width: 100%;">
+            <figcaption class="image-caption">Blueprint Examples</figcaption>
+            </figure>
+        </div>
+    </li>
     <li><strong>C++ Examples:</strong> The plugin has a seperate module for C++ examples called <code>GenAIExamples</code>.</li>
 </ul>
 
@@ -357,7 +383,6 @@ void AMyActor::SendCustomModelRequest()
 
 <h3>C++ Usage Walkthrough (OpenAI Chat)</h3>
 <p>The C++ workflow mirrors the Blueprint logic, using settings structs and response delegates.</p>
-
 
 ```cpp
 #include "Data/OpenAI/GenOAIChatStructs.h"
@@ -416,27 +441,7 @@ void ATOpenAIChatExample::TestTextChat()
 Turn 2: [System], [User], [Assistant], [User] → AI responds → [System], [User], [Assistant], [User], [Assistant]
 Turn 3: [System], [User], [Assistant], [User], [Assistant], [User] → AI responds → ...and so on</code></pre>
 
-<h3>Blueprint Implementation</h3>
-<p>In Blueprints, maintain an array of <code>GenChatMessage</code> structures and add to it after each exchange:</p>
-
-<div class="image-wrapper">
-    <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751484200/conversation-context-blueprint.webp" alt="Blueprint conversation context example" style="width: 100%;">
-        <figcaption class="image-caption">
-        Building conversation context in Blueprints
-        </figcaption>
-    </figure>
-</div>
-
-<ol>
-    <li><strong>Initialize Context:</strong> Create an array variable to store your conversation messages</li>
-    <li><strong>Add System Message:</strong> Start with a system message that defines the AI's behavior</li>
-    <li><strong>Add User Messages:</strong> Append each user input to the array</li>
-    <li><strong>Send Full Context:</strong> Pass the entire array to the chat completion node</li>
-    <li><strong>Store AI Response:</strong> Add the AI's response back to the array for future turns</li>
-</ol>
-
-<h3>C++ Implementation</h3>
+<h3>C++ Implementation Example</h3>
 <p>Here's how to implement conversation context in C++, similar to the pattern shown in your example:</p>
 
 ```cpp
@@ -587,52 +592,16 @@ CustomMessage.Content = Response;
 <p>The plugin provides dedicated classes for handling streaming from different AI providers, such as <code>UGenOAIChatStream</code>, <code>UGenDSeekChatStream</code>, and <code>UGenXAIChatStream</code>. These classes manage the HTTP connection and parse the incoming SSE events, broadcasting them through delegates that your application can subscribe to.</p>
 
 <h3>Blueprint Implementation</h3>
-<p>In Blueprints, you can use the dedicated "Request...Stream" nodes for each provider. For example, <code>Request OpenAI Chat Stream</code> initiates a streaming request and provides an <code>OnEvent</code> delegate that fires for each received chunk.</p>
-
-<div class="image-wrapper">
+<p>In Blueprints, you can use the dedicated "Request...Stream" nodes for each provider. For example, <code>Request OpenAI Chat Stream</code> initiates a streaming request and provides an <code>OnEvent</code> delegate that fires for each received chunk.
+Here's an example of how to handle streaming events for OpenAI in Blueprints:</p>
+<div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751484500/streaming-blueprint-example.webp" alt="Blueprint streaming example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751931357/39887254-a015-456b-a566-d964e2560f4b.webp" alt="Blueprint streaming example" style="width: 100%;">
         <figcaption class="image-caption">
         Blueprint streaming implementation example
         </figcaption>
     </figure>
 </div>
-
-<p>Here's an example of how to handle streaming events for OpenAI in Blueprints:</p>
-
-```cpp
-// Within your Actor's Event Graph
-
-// Start the streaming request
-UGenOAIChatStream::RequestOpenAIChatStream(this, ChatSettings);
-
-// Bind to the OnEvent delegate to process incoming chunks
-void AMyActor::OnStreamingChatEvent(const FGenOpenAIStreamEvent& StreamEvent)
-{
-    if (StreamEvent.bSuccess)
-    {
-        switch (StreamEvent.EventType)
-        {
-            case EOpenAIStreamEventType::ResponseOutputTextDelta:
-                // Append the incoming text chunk to your UI or dialogue system
-                FString NewText = StreamEvent.DeltaContent;
-                // Example: Update a Text Render component in real-time
-                MyTextRenderComponent->AppendText(NewText);
-                break;
-
-            case EOpenAIStreamEventType::ResponseCompleted:
-                // The stream has successfully finished
-                UE_LOG(LogGenAI, Log, TEXT("Stream completed. Full message: %s"), *StreamEvent.DeltaContent);
-                break;
-
-            case EOpenAIStreamEventType::Error:
-                // An error occurred during the stream
-                UE_LOG(LogGenAI, Error, TEXT("Streaming Error: %s"), *StreamEvent.ErrorMessage);
-                break;
-        }
-    }
-}
-```
 
 <h3>C++ Implementation</h3>
 <p>The C++ implementation offers more fine-grained control and follows a similar pattern. You use the static <code>SendStreamChatRequest</code> function from the relevant stream class and provide a callback delegate to handle the events.</p>
@@ -690,9 +659,15 @@ void AMyActor::OnStreamingChatEvent(const FGenOpenAIStreamEvent& StreamEvent)
 <hr style="margin: 30px 0;">
 
 <h2>9. Structured Output</h2>
-Structured Outputs is a feature that ensures the model will always generate responses that adhere to your supplied JSON Schema, so you don't need to worry about the model omitting a required key, or hallucinating an invalid enum value.
+<p>Structured Outputs is a feature that ensures the model will always generate responses that adhere to your supplied JSON Schema, so you don't need to worry about the model omitting a required key, or hallucinating an invalid enum value.</p>
 
-Some benefits of Structured Outputs include:
+<div class="image-wrapper">
+    <figure> 
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751932093/22c1fdf7-72b8-4727-930e-b52e9434c94f.webp" alt="Blueprint Structured Output Example" style="width: 100%;">
+        <figcaption class="image-caption">Example of JSON response from ChatGPT API for NPCs</figcaption>
+    </figure>
+</div>
+<p>Some benefits of Structured Outputs include:</p>
 <ul>
     <li>Reliable type-safety: No need to validate or retry incorrectly formatted responses</li>
     <li>Explicit refusals: Safety-based model refusals are now programmatically detectable</li>
@@ -751,11 +726,19 @@ UGenAISchemaService::RequestStructuredOutput(
     </figure>
 </div>
 
-
 <hr style="margin: 30px 0;">
 
 <h2>10. How to Run Tests</h2>
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Running this test will incur costs, as it makes API requests to all available model combinations across different organisations.</p>
+</div>
 <p>The plugin includes a suite of automation tests to verify that all API integrations are working correctly. To run them:</p>
+<div class="image-wrapper">
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/v1751931514/Screenshot_2025-07-07_004608_f3kiy7.webp" alt="Blueprint Structured Output Example" style="width: 100%;">
+    </figure>
+</div>
 <ol>
     <li>Ensure you have set valid API keys in the plugin settings for the providers you wish to test.</li>
     <li>In the Unreal Editor, go to <strong>Window &gt; Session Frontend</strong>.</li>

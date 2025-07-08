@@ -109,7 +109,17 @@ $rss-color: #ff6600;
 .image-wrapper {
   max-width: 78%; /* Set your desired width here */
   margin: 0 auto;   /* This will center the image */
-}
+} 
+
+.image-wrapper-half {
+  max-width: 49%; /* Set your desired width here */
+  margin: 0 auto;   /* This will center the image */
+} 
+
+.image-wrapper-small {
+  max-width: 25%; /* Set your desired width here */
+  margin: 0 auto;   /* This will center the image */
+} 
 
 /* Styling for image captions */
 .image-caption {

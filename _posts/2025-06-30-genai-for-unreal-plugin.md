@@ -22,8 +22,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </div>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
 </div>
 
 <h2>Key Features:</h2>
@@ -138,8 +138,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
 </div>
 
 <h2>Use Cases:</h2>
@@ -176,8 +176,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
 </div>
 
 </body>

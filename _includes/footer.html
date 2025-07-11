@@ -11,3 +11,37 @@
   {% endfor %}
   <div class="footer-description"><a href="{{ site.github.url }}/">{{ site.title }} | {{ site.description }} </a></div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const trackableLinks = document.querySelectorAll('.track-click');
+
+  trackableLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Stop the link from navigating instantly
+      e.preventDefault();
+
+      const url = this.href;
+      const target = this.target;
+      const eventName = this.getAttribute('data-event-name');
+
+      // Send the event to Google Analytics
+      if (eventName) {
+        gtag('event', 'navigation_click', {
+          'link_text': eventName,
+          'link_url': url
+        });
+      }
+
+      // Navigate after a short delay to allow the event to be sent
+      setTimeout(function() {
+        if (target === '_blank') {
+          window.open(url, '_blank');
+        } else {
+          window.location.href = url;
+        }
+      }, 150);
+    });
+  });
+});
+</script>

@@ -14,7 +14,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp" alt="GenAI for Unreal Plugin Banner">
 
-<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest O3 and O4 mini, Anthrophic's Claude Sonnet/Opus 4, Google's Gemini 2.5 flash/pro, XAI's Grok 2 and 3, Deepseek's R1 and so on. </p>
+<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest O3 and O4 mini, Anthrophic's Claude Sonnet/Opus 4, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
+
+<p>Now with <strong>Grok 4</strong>!! 🎉</p>
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
@@ -22,8 +24,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </div>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="View on Fab.com" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="Product Documentation">Product Documentation</a>
 </div>
 
 <h2>Key Features:</h2>
@@ -99,13 +101,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Anthropic:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>.</li>
+            <li><strong>Multimodal Chat</strong>   ✔</li>
         </ul>
     </li>
     <li><strong>XAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
-            <li><strong>Reasoning Models:</strong> <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
+            <li><strong>Chat:</strong> <code>grok-4</code>, <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>grok-4</code>, <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
+            <li><strong>Multimodal Chat</strong>   ✔</li>
         </ul>
     </li>
     <li><strong>Google Gemini:</strong>
@@ -138,8 +142,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="View on Fab.com" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="Product Documentation">Product Documentation</a>
 </div>
 
 <h2>Use Cases:</h2>
@@ -176,8 +180,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'cta_click', { 'button_text': 'View on Fab.com' });">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary" onclick="gtag('event', 'cta_click', { 'button_text': 'Product Documentation' });">Product Documentation</a>
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="View on Fab.com" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="Product Documentation">Product Documentation</a>
 </div>
 
 </body>

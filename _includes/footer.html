@@ -25,22 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
       const target = this.target;
       const eventName = this.getAttribute('data-event-name');
 
-      // Send the event to Google Analytics
-      if (eventName) {
-        gtag('event', 'navigation_click', {
-          'link_text': eventName,
-          'link_url': url
-        });
-      }
-
-      // Navigate after a short delay to allow the event to be sent
-      setTimeout(function() {
+      // Function to handle navigation
+      const navigate = function() {
         if (target === '_blank') {
           window.open(url, '_blank');
         } else {
           window.location.href = url;
         }
-      }, 150);
+      };
+
+      // Send the event to Google Analytics
+      if (eventName) {
+        gtag('event', 'navigation_click', {
+          'link_text': eventName,
+          'link_url': url,
+          'event_callback': navigate // <-- THIS IS THE FIX
+        });
+      } else {
+        // If there's no event to track, just navigate immediately
+        navigate();
+      }
     });
   });
 });

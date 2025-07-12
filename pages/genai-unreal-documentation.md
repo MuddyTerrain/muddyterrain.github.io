@@ -3,6 +3,8 @@ layout: wide
 title: GenAI for Unreal - Full Documentation
 category: documentation
 permalink: /genai-unreal-documentation
+sitemap: true
+description: "Comprehensive documentation for the GenAI for Unreal plugin. Learn how to install, configure, and use the plugin to create AI-powered games and applications."
 ---
 
 

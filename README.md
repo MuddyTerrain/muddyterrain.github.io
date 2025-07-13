@@ -16,9 +16,9 @@ We track user clicks on specific links and buttons to understand engagement. Thi
 
 To track any `<a>` tag, add the following three attributes to it:
 
-1.  `class="... track-click"`: This class tells the script to watch this element. You can add it alongside other classes.
+1.  `class="... track-click"`: This class tells the script to watch this element. It can be used alongside other classes.
 2.  `data-event-name="..."`: This is the unique name for the click event.
-3.  `data-event-location="..."`: (Optional) Describes where on the page the link is (e.g., `header`, `footer`, `body_cta`).
+3.  `data-event-location="..."`: (Optional) Describes where the link is on the page (e.g., `header`, `footer`, `body_cta`).
 
 **Example:**
 ```html
@@ -29,9 +29,13 @@ To track any `<a>` tag, add the following three attributes to it:
 
 All `data-event-name` values must follow a consistent naming convention to keep reports clean. The preferred format is `object_action_context` in lowercase with underscores.
 
-**Good:** `btn_clk_view_products`, `link_clk_documentation`
+**Correct:**  
+- `btn_clk_view_products`  
+- `link_clk_documentation`
 
-**Bad:** `View Products`, `productButtonClick`
+**Incorrect:**  
+- `View Products`  
+- `productButtonClick`
 
 ### How It Works in GA4
 

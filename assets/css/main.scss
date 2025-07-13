@@ -28,6 +28,16 @@ $rss-color: #ff6600;
 
 @import "-sections-dir";
 
+/* --- Global Responsive Rules --- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+pre, code {
+  overflow-x: auto; /* Allow code blocks to scroll horizontally */
+}
+
 /* Custom Wide Layout */
 .wide-content {
   display: block;
@@ -151,4 +161,182 @@ h3:hover .header-link-icon,
 h4:hover .header-link-icon {
   opacity: 1; /* Show on hover */
   transform: translateY(-50%) scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* --- Documentation Page Layout --- */
+.documentation-container {
+  display: flex;
+  flex-direction: row; /* Default for larger screens */
+  margin: 20px auto;
+  max-width: 1200px; /* Constrain the max width */
+  padding: 0 15px;
+}
+
+.documentation-sidebar {
+  width: 260px; /* A bit more space for navigation items */
+  flex-shrink: 0;
+  padding-right: 25px;
+  border-right: 1px solid #eee;
+}
+
+.documentation-sidebar h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 0;
+}
+
+.documentation-sidebar h3 a {
+  color: inherit; /* Inherit color from h3 */
+  text-decoration: none; /* Remove underline */
+  border-bottom: none; /* Ensure no border from global styles */
+}
+
+.documentation-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.documentation-sidebar ul li a {
+  display: block;
+  padding: 5px 10px; /* Reduced padding */
+  color: #333;
+  text-decoration: none;
+  border-bottom: none;
+  border-radius: 4px;
+  margin-bottom: 2px; /* Reduced margin */
+  font-size: 0.9em; /* Smaller font for nav links */
+}
+
+.documentation-sidebar ul li a:hover {
+  background-color: #f5f5f5; /* A more subtle hover effect */
+  color: $brand-color;
+}
+
+.documentation-sidebar ul li a.active {
+  font-weight: bold;
+  color: $brand-color; /* Use brand color for active link */
+  background-color: transparent; /* No background color */
+}
+
+.documentation-main {
+  flex-grow: 1;
+  padding-left: 30px;
+  min-width: 0; /* Prevents flexbox overflow issues */
+  font-size: 0.9em; /* Reduce body font size */
+}
+
+.documentation-main h1 {
+  margin-top: 0; /* Align title with sidebar */
+  padding-top: 5px; /* Add a little space */
+  font-size: 1.5em; /* Reduced from default h1 */
+}
+
+.documentation-main h2 {
+  font-size: 1.2em; /* Reduced from default h2 */
+}
+
+.documentation-main h3 {
+  font-size: 1.1em; /* Reduced from default h3 */
+}
+
+.documentation-main h4 {
+  font-size: 1em; /* Standard size */
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumb-nav {
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.breadcrumb-nav ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.breadcrumb-nav .breadcrumb-item {
+  display: inline;
+}
+
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  padding: 0 5px; /* Reduced spacing */
+  color: #6c757d;
+}
+
+.breadcrumb-nav a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Next/Prev Navigation --- */
+.doc-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.doc-pagination a {
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #007bff;
+  transition: background-color 0.2s ease;
+}
+
+.doc-pagination a:hover {
+  background-color: #f5f5f5;
+}
+
+/* --- Mobile Nav Toggle --- */
+.toc-toggle {
+  display: none; /* Hidden by default on desktop */
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toc-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- Responsive styles for mobile --- */
+@media (max-width: 768px) {
+  .documentation-container {
+    flex-direction: column;
+  }
+
+  .documentation-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .toc-toggle {
+    display: block; /* Show on mobile */
+  }
+
+  .documentation-main {
+    padding-left: 0;
+  }
 }

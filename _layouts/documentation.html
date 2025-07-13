@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{% assign path_parts = page.path | split: '/' %}
+{% assign doc_set_name = path_parts[1] %}
+{% assign doc_set = site.docs | where_exp: "doc", "doc.path contains doc_set_name" | sort: "nav_order" %}
+
+<div class="documentation-container">
+  <!-- Sidebar Navigation -->
+  <nav class="documentation-sidebar">
+    <ul class="doc-nav-list">
+      {% for doc in doc_set %}
+        {% if doc.nav_order %}
+          <li>
+            <a href="{{ doc.url | relative_url }}"
+               class="track-click{% if page.url == doc.url %} active{% endif %}"
+               data-event-name="btn_clk_nav_{{ doc.title | downcase | replace: ' ', '_' }}"
+               data-event-location="sidebar">
+             {{ doc.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="documentation-main">
+    <article>
+      <header>
+        <h1>{{ page.title }}</h1>
+      </header>
+      {{ content }}
+    </article>
+    
+    <!-- Previous/Next Navigation -->
+    {% for doc in doc_set %}
+      {% if doc.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+
+    <nav class="doc-pagination">
+      {% if prev_index >= 0 %}
+        {% assign prev_doc = doc_set[prev_index] %}
+        <a href="{{ prev_doc.url | relative_url }}" class="prev-doc">← {{ prev_doc.title }}</a>
+      {% else %}
+        <span></span> <!-- Empty span to maintain layout -->
+      {% endif %}
+      
+      {% if next_index < doc_set.size %}
+        {% assign next_doc = doc_set[next_index] %}
+        <a href="{{ next_doc.url | relative_url }}" class="next-doc">{{ next_doc.title }} →</a>
+      {% endif %}
+    </nav>
+  </main>
+</div>

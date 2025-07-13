@@ -29,7 +29,7 @@ description: "Comprehensive documentation for the GenAI for Unreal plugin. Learn
             <li><a href="#using-a-proxy-server-optional-for-production">Using a Proxy Server (Optional, For Production)</a>
                 <ul>
                     <li><a href="#why-use-a-proxy">Why use a proxy?</a></li>
-                    <li><a href="#retargetting-the-plugin-to-proxy">Retargetting the plugin to proxy</a></li>
+                    <li><a href="#retargetting-the-plugin-to-proxy">Retargeting the plugin to proxy</a></li>
                 </ul>
             </li>
         </ul>
@@ -114,7 +114,7 @@ description: "Comprehensive documentation for the GenAI for Unreal plugin. Learn
 
 <hr style="margin: 30px 0;">
 
-<h2>1. Quick Start: Your First AI Chat in 5 Minutes</h2>
+<h2>1. Quick Start: Your First AI Cha	t in 5 Minutes</h2>
 <p>Follow these minimal steps to get a basic chat completion working instantly.</p>
 <ol>
     <li><strong>Install Plugin:</strong> Add "GenAI for Unreal" from the Fab.com marketplace and enable it in <code>Edit > Plugins</code>.</li>
@@ -124,7 +124,7 @@ description: "Comprehensive documentation for the GenAI for Unreal plugin. Learn
             <figure>
                 <img class="full-bleed"  src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751480831/1e64d118-033f-40cf-957f-e15d8ae5a290.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
                 <figcaption class="image-caption">
-                A simple setup to test chat completion.
+                A simple setup for testing chat completion.
                 </figcaption>
             </figure>
         </div>
@@ -185,7 +185,7 @@ public class YourProject : ModuleRules
     <li><strong>OpenAI (for GPT models, DALL-E, Whisper, TTS):</strong>
         <ol>
             <li>Go to the <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer">OpenAI Platform</a> and create an account.</li>
-            <li>Navigate to the "API Keys" section in your user dashboard.</li>
+            <li>Navigate to the <strong>API Keys</strong> section in your user dashboard.</li>
             <li>Create a new secret key and copy it immediately. For security, OpenAI will not show you the key again.</li>
             <li>You may also need to set up a payment method to access certain models.</li>
         </ol>
@@ -193,7 +193,7 @@ public class YourProject : ModuleRules
     <li><strong>Anthropic (for Claude models):</strong>
         <ol>
             <li>Visit the <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic Console</a> and sign up.</li>
-            <li>Go to "Account Settings" and find the "API Keys" section.</li>
+            <li>Go to <strong>Account Settings</strong> and find the <strong>API Keys</strong> section.</li>
             <li>Generate and copy your new API key.</li>
         </ol>
     </li>
@@ -229,16 +229,16 @@ public class YourProject : ModuleRules
     </li>
     <li>Enter your API keys from each provider (OpenAI, Anthropic, etc.) into the corresponding fields.</li>
     <li>These keys are automatically saved to an encrypted binary file at <code>YourProject/Saved/Config/GenAI/secureconfig.bin</code>.</li>
-    <li>This file must not be committed to source control. Generally "Saved" folder is already part of <code>.gitignore</code>, if it is not add the following line to it to prevent leaking your keys:
+    <li>This file must not be committed to source control. Generally, the "Saved" folder is already part of <code>.gitignore</code>. If it's not add the following line to prevent leaking your keys:
         <pre><code>/Saved/Config/GenAI/secureconfig.bin</code></pre>
     </li>
 </ol>
 <h3 id="using-a-proxy-server-optional-for-production">Using a Proxy Server (Optional, For Production):</h3>
 <h5 id="why-use-a-proxy">Why use a proxy?</h5>
 <ul>
-    <li>Security: Your API keys never leave your server. The client application makes requests to your server, and your server securely attaches the API key before forwarding the request to the AI provider.</li>
-    <li>Centralized Control: Manage keys, monitor usage, and control access for all users from a single backend.</li>
-    <li>Custom Logic: Add logging, caching, or pre/post-processing logic on your server before returning data to the game client.</li>
+    <li><strong>Security:</strong> Your API keys never leave your server. The client application makes requests to your server, and your server securely attaches the API key before forwarding the request to the AI provider.</li>
+    <li><strong>Centralized Control:</strong> Manage keys, monitor usage, and control access for all users from a single backend.</li>
+    <li><strong>Custom Logic:</strong> Add logging, caching, or pre/post-processing logic on your server before returning data to the game client.</li>
 </ul>
 
 <h5 id="retargetting-the-plugin-to-proxy">Retargetting the plugin to proxy:</h5>

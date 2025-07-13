@@ -1,19 +1,19 @@
 <header class="site-header">
   <h3 class="site-title">
-    <a href="{{ site.github.url }}/" class="track-click" data-event-type="header_link_click" data-event-name="Site Title">{{ site.title }}</a>
+    <a href="{{ site.github.url }}/" class="track-click" data-event-name="btn_clk_site_title" data-event-location="header">{{ site.title }}</a>
   </h3>
   <nav class="menu-list">
     {% for item in site.data.settings.menu %}
       {% if item.url contains "://" %}
-        <a href="{{ item.url }}" class="menu-link track-click" data-event-type="header_menu_click" data-event-name="{{ item.name }}" target="_blank">{{ item.name }}</a>
+        <a href="{{ item.url }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.name | downcase | replace: ' ', '_' }}" data-event-location="header" target="_blank">{{ item.name }}</a>
       {% else %}
-        <a href="{{ site.github.url }}/{{ item.url }}" class="menu-link track-click" data-event-type="header_menu_click" data-event-name="{{ item.name }}">{{ item.name }}</a>
+        <a href="{{ site.github.url }}/{{ item.url }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.name | downcase | replace: ' ', '_' }}" data-event-location="header">{{ item.name }}</a>
       {% endif %}
     {% endfor %}
 
     {% for item in site.data.settings.social %}
       {% if item.icon == 'x-twitter' or item.icon == 'linkedin' %}
-        <a href="{{ item.link }}" class="menu-link track-click" data-event-type="header_social_click" data-event-name="{{ item.icon }}" target="_blank">
+        <a href="{{ item.link }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.icon | remove: 'x-' }}" data-event-location="header" target="_blank">
           <i class="fa-brands fa-{{ item.icon }}" aria-hidden="true"></i>
         </a>
       {% endif %}
@@ -25,15 +25,15 @@
     <div class="dropdown-content">
       {% for item in site.data.settings.menu %}
         {% if item.url contains "://" %}
-          <a href="{{ item.url }}" class="menu-link track-click" data-event-type="header_menu_click" data-event-name="{{ item.name }}" target="_blank">{{ item.name }}</a>
+          <a href="{{ item.url }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.name | downcase | replace: ' ', '_' }}" data-event-location="header" target="_blank">{{ item.name }}</a>
         {% else %}
-          <a href="{{ site.github.url }}/{{ item.url }}" class="menu-link track-click" data-event-type="header_menu_click" data-event-name="{{ item.name }}">{{ item.name }}</a>
+          <a href="{{ site.github.url }}/{{ item.url }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.name | downcase | replace: ' ', '_' }}" data-event-location="header">{{ item.name }}</a>
         {% endif %}
       {% endfor %}
       
       {% for item in site.data.settings.social %}
         {% if item.icon == 'x-twitter' or item.icon == 'linkedin' %}
-          <a href="{{ item.link }}" class="menu-link track-click" data-event-type="header_social_click" data-event-name="{{ item.icon }}" target="_blank">
+          <a href="{{ item.link }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.icon | remove: 'x-' }}" data-event-location="header" target="_blank">
             <i class="fa-brands fa-{{ item.icon }}" aria-hidden="true"></i>
           </a>
         {% endif %}

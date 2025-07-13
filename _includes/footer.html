@@ -5,11 +5,13 @@
       {% assign is_brand = true %}
     {% endif %}
 
-    <a href="{{ item.link }}" class="menu-link" target="_blank">
+    <a href="{{ item.link }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.icon | remove: 'x-' | remove: '-square' }}" data-event-location="footer" target="_blank">
       <i class="{% if is_brand %}fa-brands{% else %}fa-solid{% endif %} fa-{{ item.icon }}" aria-hidden="true"></i>
     </a>
   {% endfor %}
-  <div class="footer-description"><a href="{{ site.github.url }}/">{{ site.title }} | {{ site.description }} </a></div>
+  <div class="footer-description">
+      <a href="{{ site.github.url }}/" class="track-click" data-event-name="btn_clk_site_title" data-event-location="footer">{{ site.title }} | {{ site.description }} </a>
+  </div>
 </footer>
 
 <script>
@@ -18,31 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   trackableLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      // Stop the link from navigating instantly
       e.preventDefault();
 
       const url = this.href;
       const target = this.target;
       const eventName = this.getAttribute('data-event-name');
+      const eventLocation = this.getAttribute('data-event-location') || 'not-set'; // Get location, with a fallback
 
-      // Function to handle navigation
       const navigate = function() {
-        if (target === '_blank') {
-          window.open(url, '_blank');
-        } else {
-          window.location.href = url;
-        }
+        if (target === '_blank') { window.open(url, '_blank'); } 
+        else { window.location.href = url; }
       };
 
-      // Send the event to Google Analytics
       if (eventName) {
         gtag('event', 'navigation_click', {
           'link_text': eventName,
+          'link_location': eventLocation, // <-- SEND THE NEW PARAMETER
           'link_url': url,
-          'event_callback': navigate // <-- THIS IS THE FIX
+          'event_callback': navigate
         });
       } else {
-        // If there's no event to track, just navigate immediately
         navigate();
       }
     });

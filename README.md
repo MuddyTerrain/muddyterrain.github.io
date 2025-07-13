@@ -93,3 +93,23 @@ https://muddyterrain.com/t/genai-fab?utm_source=youtube&utm_medium=social&utm_ca
 ```
 
 You can view the results of these campaigns in your Reports > Acquisition > Traffic acquisition report in Google Analytics. No further configuration is needed.
+
+### Disabling Analytics in Local Development
+
+To prevent test data from polluting production analytics, the tracking scripts are configured to run only when the site is built in a production environment (e.g., when deployed by GitHub Pages).
+
+This is achieved by wrapping all analytics-related code in a conditional Liquid tag:
+
+```liquid
+{% if jekyll.environment == "production" %}
+  ... your analytics script here ...
+{% endif %}
+```
+
+This logic has been applied to:
+
+- `_includes/google-analytics.html`: The main GA4 configuration script.
+- `_includes/footer.html`: The custom `navigation_click` event tracking script.
+- `_layouts/redirect.html`: The `outbound_click` event tracking script for redirects.
+
+No action is required by the developer. This behavior is automatic. Local development runs in the `development` environment by default, disabling all tracking.

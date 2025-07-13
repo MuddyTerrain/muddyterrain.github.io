@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redirecting...</title>
+<meta name="robots" content="noindex">
+
+<meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
+
+{% include google-analytics.html %}
+
+{% if jekyll.environment == "production" %}
+<script>
+  // Fire the tracking event.
+  gtag('event', 'outbound_click', {
+    'link_text': "{{ page.title }}",
+    'link_url': "{{ page.redirect_to }}"
+  });
+</script>
+{% endif %}
+
+</head>
+<body style="display: none;">
+  <p>
+    Redirecting to <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a>...
+  </p>
+</body>
+</html>

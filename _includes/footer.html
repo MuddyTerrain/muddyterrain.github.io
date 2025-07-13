@@ -14,6 +14,7 @@
   </div>
 </footer>
 
+{% if jekyll.environment == "production" %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const trackableLinks = document.querySelectorAll('.track-click');
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const url = this.href;
       const target = this.target;
       const eventName = this.getAttribute('data-event-name');
-      const eventLocation = this.getAttribute('data-event-location') || 'not-set'; // Get location, with a fallback
+      const eventLocation = this.getAttribute('data-event-location') || 'not-set';
 
       const navigate = function() {
         if (target === '_blank') { window.open(url, '_blank'); } 
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (eventName) {
         gtag('event', 'navigation_click', {
           'link_text': eventName,
-          'link_location': eventLocation, // <-- SEND THE NEW PARAMETER
+          'link_location': eventLocation,
           'link_url': url,
           'event_callback': navigate
         });
@@ -46,3 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+{% endif %}

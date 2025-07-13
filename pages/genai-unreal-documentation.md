@@ -227,7 +227,7 @@ public class YourProject : ModuleRules
             </figure>
         </div>
     </li>
-    <li>Enter your API keys from each provider (OpenAI, Anthropic, etc.) into the corresponding fields.</li>
+    <li>Enter your <strong>API keys</strong> from each provider (<strong>OpenAI</strong>, <strong>Anthropic</strong>, etc.) into the corresponding fields.</li>
     <li>These keys are automatically saved to an encrypted binary file at <code>YourProject/Saved/Config/GenAI/secureconfig.bin</code>.</li>
     <li>This file must not be committed to source control. Generally, the "Saved" folder is already part of <code>.gitignore</code>. If it's not add the following line to prevent leaking your keys:
         <pre><code>/Saved/Config/GenAI/secureconfig.bin</code></pre>

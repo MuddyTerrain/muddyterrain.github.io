@@ -11,8 +11,10 @@
       {% endif %}
     {% endfor %}
 
-    {% for item in site.data.settings.social %}
-      {% if item.icon == 'x-twitter' or item.icon == 'linkedin' %}
+    {% assign icons_order = "linkedin,x-twitter,discord" | split: "," %}
+    {% for icon in icons_order %}
+      {% assign item = site.data.settings.social | where: "icon", icon | first %}
+      {% if item %}
         <a href="{{ item.link }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.icon | remove: 'x-' }}" data-event-location="header" target="_blank">
           <i class="fa-brands fa-{{ item.icon }}" aria-hidden="true"></i>
         </a>
@@ -30,9 +32,11 @@
           <a href="{{ site.github.url }}/{{ item.url }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.name | downcase | replace: ' ', '_' }}" data-event-location="header">{{ item.name }}</a>
         {% endif %}
       {% endfor %}
-      
-      {% for item in site.data.settings.social %}
-        {% if item.icon == 'x-twitter' or item.icon == 'linkedin' %}
+
+      {% assign icons_order = "linkedin,x-twitter,discord" | split: "," %}
+      {% for icon in icons_order %}
+        {% assign item = site.data.settings.social | where: "icon", icon | first %}
+        {% if item %}
           <a href="{{ item.link }}" class="menu-link track-click" data-event-name="btn_clk_{{ item.icon | remove: 'x-' }}" data-event-location="header" target="_blank">
             <i class="fa-brands fa-{{ item.icon }}" aria-hidden="true"></i>
           </a>

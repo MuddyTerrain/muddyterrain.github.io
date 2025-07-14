@@ -16,7 +16,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest O3 and O4 mini, Anthrophic's Claude Sonnet/Opus 4, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
 
-<p>Now with <strong>Grok 4</strong>!! 🎉</p>
+<p>Now with <strong>Grok 4</strong> & OpenAI <strong>Realtime API</strong>!! 🎉</p>
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
@@ -96,6 +96,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Structured Output (JSON Mode)</strong>  ✔</li>
             <li><strong>Text Streaming</strong>   ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
+            <li><strong>Realtime API:</strong> <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
         </ul>
     </li>
     <li><strong>Anthropic:</strong>
@@ -115,7 +116,11 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Google Gemini:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Audio TTS:</strong> <code>gemini-2.5-flash-preview-tts</code>, <code>gemini-2.5-pro-preview-tts</code>.</li>
+            <li><strong>Audio Transcription:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
+            <li><strong>Image Generation:</strong> <code>gemini-2.0-flash-preview-image-generation</code>, <code>imagen-3.0-generate-preview-06-06</code>, <code>imagen-4.0-generate-preview-06-06</code>.</li> <span style="color: #888888;">(Note: Gemini image generation is currently not available in the UK and EU regions.)</span>
         </ul>
     </li>
     <li><strong>DeepSeek:</strong>
@@ -137,6 +142,12 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Voice:</strong>
         <ul>
             <li><strong>OpenAI:</strong> <code>alloy</code>, <code>echo</code>, <code>fable</code>, <code>onyx</code>, <code>nova</code>, <code>shimmer</code>.</li>
+            <li><strong>Google:</strong> <code>Zephyr</code>, <code>Puck</code>, <code>Charon</code>, <code>Kore</code>, <code>Fenrir</code>, <code>Leda</code>, <code>Orus</code>, <code>Aoede</code>, <code>Callirrhoe</code>, <code>Autonoe</code>, <code>Enceladus</code>, <code>Iapetus</code>, <code>Umbriel</code>, <code>Algieba</code>, <code>Despina</code>, <code>Erinome</code>, <code>Algenib</code>, <code>Rasalgethi</code>, <code>Laomedeia</code>, <code>Achernar</code>, <code>Alnilam</code>, <code>Schedar</code>, <code>Gacrux</code>, <code>Pulcherrima</code>, <code>Achird</code>, <code>Zubenelgenubi</code>, <code>Vindemiatrix</code>, <code>Sadachbia</code>, <code>Sadaltager</code>, <code>Sulafat</code>.</li>
+        </ul>
+    </li>
+    <li><strong>Languages:</strong>
+        <ul>
+            <li><strong>Google TTS:</strong> <code>Arabic</code>, <code>German</code>, <code>English</code>, <code>Spanish</code>, <code>French</code>, <code>Hindi</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Korean</code>, <code>Portuguese</code>, <code>Russian</code>, <code>Dutch</code>, <code>Polish</code>, <code>Thai</code>, <code>Turkish</code>, <code>Vietnamese</code>, <code>Romanian</code>, <code>Ukrainian</code>, <code>Bengali</code>, <code>English</code>, <code>Marathi</code>, <code>Tamil</code>, <code>Telugu</code>.</li>
         </ul>
     </li>
 </ul>
@@ -172,10 +183,11 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Built by Developers, for Developers:</strong> 💻 With years of professional game development experience, we guarantee a stable, well-documented, and performant implementation.</li>
     <li><strong>Dedicated Support:</strong> 📧 Email our support team for any questions or custom modification requests. We are happy to assist.</li>
 </ul>
-~~~~
+
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
+    <li><a href="[LINK_TO_DISCORD]">Discord Community</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a></li>
 </ul>
 

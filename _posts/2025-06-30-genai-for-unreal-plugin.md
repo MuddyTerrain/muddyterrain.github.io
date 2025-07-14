@@ -187,7 +187,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
-    <li><a href="[LINK_TO_DISCORD]">Discord Community</a></li>
+    <li><a href="/t/discord">Discord Community</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a></li>
 </ul>
 

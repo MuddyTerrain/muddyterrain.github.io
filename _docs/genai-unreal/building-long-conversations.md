@@ -5,109 +5,131 @@ permalink: /docs/genai-unreal/building-long-conversations/
 nav_order: 8
 ---
 
-## How Conversation Context Works
+Creating believable, stateful conversations is a cornerstone of compelling AI characters. This guide covers the principles and techniques for managing conversation history, ensuring your NPCs can remember past interactions and respond intelligently.
 
-AI models are stateless - they don't remember previous messages unless you explicitly provide them with the conversation history. To build meaningful conversations, you must maintain and send the entire conversation context with each request.
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1752498478/968eee3c-9dc3-46e8-8508-f1aebe4ce8cb.webp" alt="Conversation Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           
+        </figcaption>
+    </figure>
+</div>
 
-## Conversation Structure Example
+---
 
-A typical conversation structure includes:
-- System message (optional): Sets the AI's behavior and personality
-- User messages: What the human has said
-- Assistant messages: What the AI has responded
+## The Core Concept: Overcoming Statelessness
 
-```cpp
-TArray<FGenChatMessage> ConversationHistory;
+By default, large language models are **stateless**. This means they have no memory of previous interactions. Each API request is treated as an isolated event. To create the illusion of memory, you must manually send the entire conversation history with every new request.
 
-// System message (optional)
-ConversationHistory.Add(FGenChatMessage{
-    EGenChatRole::System, 
-    TEXT("You are a helpful NPC in a fantasy RPG game.")
-});
+The process looks like this:
 
-// First user message
-ConversationHistory.Add(FGenChatMessage{
-    EGenChatRole::User, 
-    TEXT("What quests do you have for me?")
-});
+1.  **Initial Prompt:** Start the conversation, usually with a hidden "system" message that defines the AI's personality and a "user" message from the player.
+2.  **Send & Receive:** Send this initial history to the API and get a response.
+3.  **Append History:** Add the AI's response (as an "assistant" message) to your history array.
+4.  **Repeat:** For the next turn, add the new user message to the history and send the *entire, updated array* back to the API.
 
-// AI's response (you add this after receiving it)
-ConversationHistory.Add(FGenChatMessage{
-    EGenChatRole::Assistant, 
-    TEXT("I have three quests available: rescue the princess, find the ancient artifact, or clear the goblin cave.")
-});
+This growing array of messages is called the **conversation context**.
 
-// Next user message
-ConversationHistory.Add(FGenChatMessage{
-    EGenChatRole::User, 
-    TEXT("Tell me more about the ancient artifact quest.")
-});
-```
+---
+
+## Blueprint Implementation
+
+In Blueprints, you manage the conversation context using an array of the `Gen Chat Message` struct.
+
+1.  **Create a History Variable:** In your Blueprint (e.g., an Actor or Actor Component), create a new variable. Set its type to `Gen Chat Message` and make it an **Array**. Let's name it `ConversationHistory`.
+
+2.  **Build and Send the Request:** When the player sends a message, you add it to the `ConversationHistory` array and then feed the entire array into the `Request Chat Completion` node.
+
+3.  **Update History with the Response:** On the `OnComplete` event, you take the response message, create a new `Gen Chat Message` with the `Assistant` role, and add it to your `ConversationHistory` array.
+
+---
 
 ## C++ Implementation
 
+The C++ implementation follows the same logic, managing a `TArray<FGenChatMessage>`.
+
 ```cpp
-class YOURGAME_API AConversationManager : public AActor
+// In your AConversationalNpc.h
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "Data/GenAIChatStructs.h" // Needed for FGenChatMessage
+#include "AConversationalNpc.generated.h"
+
+UCLASS()
+class YOURGAME_API AConversationalNpc : public AActor
 {
-private:
-    TArray<FGenChatMessage> ConversationHistory;
-    
+    GENERATED_BODY()
+
 public:
-    void StartConversation(const FString& SystemPrompt);
-    void SendUserMessage(const FString& UserMessage);
-    void OnAIResponse(const FString& Response, const FString& Error, bool bSuccess);
+    // Call this to start the conversation with a defining system prompt
+    UFUNCTION(BlueprintCallable)
+    void InitializeConversation(const FString& SystemPrompt);
+
+    // Call this when the player speaks to the NPC
+    UFUNCTION(BlueprintCallable)
+    void HandlePlayerMessage(const FString& PlayerInput);
+
+private:
+    // Stores the entire conversation history
+    TArray<FGenChatMessage> ConversationHistory;
+
+    void SendChatRequest();
+    void OnAIResponseReceived
+            (const FString& Response, const FString& Error, bool bSuccess);
 };
 
-void AConversationManager::SendUserMessage(const FString& UserMessage)
+// In your AConversationalNpc.cpp
+#include "Models/OpenAI/GenOAIChat.h" // Or the provider you are using
+
+void AConversationalNpc::InitializeConversation(const FString& SystemPrompt)
 {
-    // Add user message to history
-    ConversationHistory.Add(FGenChatMessage{EGenChatRole::User, UserMessage});
-    
-    // Send entire conversation history
+    ConversationHistory.Empty();
+    ConversationHistory.Add(FGenChatMessage{EGenChatRole::System, SystemPrompt});
+}
+
+void AConversationalNpc::HandlePlayerMessage(const FString& PlayerInput)
+{
+    // Add the player's message to our history
+    ConversationHistory.Add(FGenChatMessage{EGenChatRole::User, PlayerInput});
+    SendChatRequest();
+}
+
+void AConversationalNpc::SendChatRequest()
+{
     FGenOAIChatSettings ChatSettings;
-    ChatSettings.Model = EOpenAIChatModel::GPT_4o;
+    ChatSettings.Model = EOpenAIChatModel::GPT_4o; // Choose your model
     
-    TWeakObjectPtr<AConversationManager> WeakThis(this);
+    TWeakObjectPtr<AConversationalNpc> WeakThis(this);
     
+    // Send the entire conversation history with the request
     UGenOAIChat::SendChatRequest(ChatSettings, ConversationHistory,
-        FOnChatCompletionResponse::CreateLambda([WeakThis](const FString& Response, const FString& Error, bool bSuccess)
+        FOnChatCompletionResponse::CreateLambda(
+        [WeakThis](const FString& Response, const FString& Error, bool bSuccess)
         {
             if (!WeakThis.IsValid()) return;
-            WeakThis->OnAIResponse(Response, Error, bSuccess);
+            WeakThis->OnAIResponseReceived(Response, Error, bSuccess);
         })
     );
 }
 
-void AConversationManager::OnAIResponse(const FString& Response, const FString& Error, bool bSuccess)
+void AConversationalNpc::OnAIResponseReceived(
+    const FString& Response, const FString& Error, bool bSuccess)
 {
     if (bSuccess)
     {
-        // Add AI response to conversation history
+        // Add the AI's response to our history to maintain context for the next turn
         ConversationHistory.Add(FGenChatMessage{EGenChatRole::Assistant, Response});
         
-        // Display response to player
-        DisplayMessageToPlayer(Response);
+        // Now, display the message to the player, play audio, etc.
+        // ...
+    }
+    else
+    {
+        // Handle the error appropriately
+        UE_LOG(LogTemp, Error, TEXT("AI Chat Error: %s"), *Error);
     }
 }
 ```
-
-## Advanced Context Management
-
-### Context Length Management
-
-AI models have token limits. Long conversations may exceed these limits. Implement strategies like:
-- Summarizing old messages
-- Keeping only recent messages
-- Maintaining important context while trimming less relevant parts
-
-### Multi-Character Conversations
-
-For games with multiple NPCs, maintain separate conversation histories for each character to preserve their individual personalities and memory.
-
-## Best Practices for Conversation Context
-
-1. **Always include system messages** to maintain consistent AI behavior
-2. **Implement context trimming** for long conversations
-3. **Store conversation state** persistently if needed across game sessions
-4. **Use appropriate models** - longer context models for complex conversations
-5. **Monitor token usage** to manage API costs effectively

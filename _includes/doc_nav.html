@@ -1,0 +1,21 @@
+{% assign doc_set = include.set %}
+
+<nav class="doc-nav">
+  {% for doc in doc_set %}
+    {% if doc.url == page.url %}
+      {% assign current_index = forloop.index0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign next_index = current_index | plus: 1 %}
+
+      {% if current_index > 0 %}
+        {% assign prev_doc = doc_set[prev_index] %}
+        <a href="{{ prev_doc.url }}" class="prev-page track-click" data-event-name="btn_clk_prev_page_sidebar" data-event-location="sidebar">« {{ prev_doc.title }}</a>
+      {% endif %}
+
+      {% if next_index < doc_set.size %}
+        {% assign next_doc = doc_set[next_index] %}
+        <a href="{{ next_doc.url }}" class="next-page track-click" data-event-name="btn_clk_next_page_sidebar" data-event-location="sidebar">{{ next_doc.title }} »</a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>

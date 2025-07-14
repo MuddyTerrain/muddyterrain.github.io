@@ -1,0 +1,33 @@
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb">
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    {% assign crumb_limit = crumbs | size | minus: 1 %}
+    
+    <!-- Always start with Docs instead of Home -->
+    <li class="breadcrumb-item">
+      <a href="/docs/" class="track-click" data-event-name="btn_clk_breadcrumb_docs" data-event-location="breadcrumb">Docs</a>
+    </li>
+    
+    {% for crumb in crumbs offset: 1 limit: crumb_limit %}
+      {% unless crumb == 'docs' %}
+        {% if forloop.last %}
+          <li class="breadcrumb-item active" aria-current="page">
+            {% assign crumb_label = crumb == 'genai-unreal' ? 'GenAI for Unreal' : crumb | replace: '-', ' ' | capitalize %}
+            <span>{{ crumb_label }}</span>
+          </li>
+        {% else %}
+          <li class="breadcrumb-item">
+            {% assign crumb_url = '' %}
+            {% for build_crumb in crumbs offset: 1 limit: forloop.index %}
+              {% assign crumb_url = crumb_url | append: '/' | append: build_crumb %}
+            {% endfor %}
+            <a href="{{ crumb_url }}/" class="track-click" data-event-name="btn_clk_breadcrumb_{{ crumb | replace: '-', '_' | downcase }}" data-event-location="breadcrumb">
+              {% assign crumb_label = crumb == 'genai-unreal' ? 'GenAI for Unreal' : crumb | replace: '-', ' ' | capitalize %}
+              {{ crumb_label }}
+            </a>
+          </li>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  </ol>
+</nav>

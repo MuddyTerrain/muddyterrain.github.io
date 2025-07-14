@@ -18,15 +18,11 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <p>Now with <strong>Grok 4</strong>!! 🎉</p>
 
-<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
-  <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
-</div>
-
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
+  <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
+
 
 <h2>Key Features:</h2>
 <ul>
@@ -84,6 +80,10 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 
 <h2>Available Integrations & Models</h2>
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
+</div>
 <p>A clean, unified API for the best models available today.</p>
 <ul>
     <li><strong>OpenAI:</strong>
@@ -143,7 +143,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="mid_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="mid_cta">Product Documentation</a>
+  <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="mid_cta">Product Documentation</a>
 </div>
 
 <h2>Use Cases:</h2>
@@ -172,7 +172,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Built by Developers, for Developers:</strong> 💻 With years of professional game development experience, we guarantee a stable, well-documented, and performant implementation.</li>
     <li><strong>Dedicated Support:</strong> 📧 Email our support team for any questions or custom modification requests. We are happy to assist.</li>
 </ul>
-
+~~~~
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
@@ -181,7 +181,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
-  <a href="/genai-unreal-documentation" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="btm_cta">Product Documentation</a>
+  <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="btm_cta">Product Documentation</a>
 </div>
 
 </body>

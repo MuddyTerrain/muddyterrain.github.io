@@ -25,10 +25,13 @@ description: "High fidelity worlds."
 url: "https://muddyterrain.com"
 author: ""
 
-# New redirects collection
+# Collections with better permalink structure
 collections:
   redirects:
     output: true
+  docs:
+    output: true
+    permalink: /docs/:path/
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

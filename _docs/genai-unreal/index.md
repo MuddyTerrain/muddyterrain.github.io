@@ -7,16 +7,15 @@ nav_order: 1
 
 ![GenAI for Unreal Banner](https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp){: .full-bleed }
 
+
 **Welcome to the official documentation for GenAI for Unreal, the most comprehensive, up-to-date resource for integrating cutting-edge AI into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies the process of connecting your games to industry-leading AI models from providers like OpenAI, Anthropic, and Google.
 
 Whether you're building dynamic NPC dialogue, procedurally generated quests, or next-generation audio and visual features, this guide is designed to help you ship remarkable AI-driven experiences with confidence. We cover everything from a five-minute quick start for beginners to advanced topics like response streaming, structured data, and secure key management for enterprise-level projects.
 
-[//]: # (<div class="button-row">)
-
-[//]: # (  <a href="/docs/genai-unreal/quick-start/" class="cta-button secondary track-click" data-event-name="btn-clk-quick-start">Quick Start</a>)
-
-[//]: # (</div>)
-
+<div class="button-row">
+  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+</div>
 ---
 
 ## Getting Started

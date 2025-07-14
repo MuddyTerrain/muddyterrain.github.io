@@ -6,7 +6,12 @@ permalink: /contact
 
 <h2>Get in Touch</h2>
 
-<p>We'd love to hear from you. Whether you have a question about our products, a business proposal, or just want to say hello, please use the appropriate contact information below. We do our best to respond to all inquiries within 48 hours.</p>
+<p>We'd love to hear from you. Whether you have a question about our products, a business proposal, or just want to say hello, please use the appropriate contact information below. We do our best to respond to all inquiries within 6 to 24 hours.</p>
+
+
+<h3>Join our Discord Community</h3>
+<p>Our Discord server hosts dedicated forums for bug reports & issues, a separate feature request forum, and a general chat channel for quick responses. Drop your bugs, suggest features, or chat with our team!</p>
+<p><a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="contact_page" target="_blank" rel="noopener noreferrer">Join Discord</a></p>
 
 <hr style="margin: 30px 0;">
 
@@ -16,11 +21,12 @@ permalink: /contact
   <strong>Email:</strong> <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a>
 </p>
 
+<hr style="margin: 30px 0;">
 
 <h3>Business & Custom Development</h3>
 <p>For business inquiries, partnership opportunities, or to request custom development services for projects like the GenAI Plugin, please contact us at the email below.</p>
 <p>
-  <strong>Email:</strong> <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a>
+  <strong>Email:</strong> <a href="mailto:prajwal@muddyterrain.com">prajwal@muddyterrain.com</a>
 </p>
 
 <hr style="margin: 30px 0;">

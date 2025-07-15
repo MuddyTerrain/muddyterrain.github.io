@@ -147,7 +147,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li><strong>Languages:</strong>
         <ul>
-            <li><strong>Google TTS:</strong> <code>Arabic</code>, <code>German</code>, <code>English</code>, <code>Spanish</code>, <code>French</code>, <code>Hindi</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Korean</code>, <code>Portuguese</code>, <code>Russian</code>, <code>Dutch</code>, <code>Polish</code>, <code>Thai</code>, <code>Turkish</code>, <code>Vietnamese</code>, <code>Romanian</code>, <code>Ukrainian</code>, <code>Bengali</code>, <code>English</code>, <code>Marathi</code>, <code>Tamil</code>, <code>Telugu</code>.</li>
+            <li><strong>Google TTS:</strong> <code>Arabic</code>, <code>German</code>, <code>English</code>, <code>Spanish</code>, <code>French</code>, <code>Hindi</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Korean</code>, <code>Portuguese</code>, <code>Russian</code>, <code>Dutch</code>, <code>Polish</code>, <code>Thai</code>, <code>Turkish</code>, <code>Vietnamese</code>, <code>Romanian</code>, <code>Ukrainian</code>, <code>Bengali</code>, <code>Marathi</code>, <code>Tamil</code>, <code>Telugu</code>.</li>
         </ul>
     </li>
 </ul>
@@ -187,7 +187,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
-    <li><a href="[LINK_TO_DISCORD]">Discord Community</a></li>
+    <li><a href="/t/discord">Discord Community</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a></li>
 </ul>
 

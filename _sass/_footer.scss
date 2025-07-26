@@ -11,6 +11,11 @@
   padding: 0px 10px 0px;
   text-decoration: none;
 }
+
+.footer-description a {
+  padding: 0;
+}
+
 @media (max-width: $container-width) {
   .footer {
     background: white;
@@ -25,5 +30,5 @@
   display: block;
   margin-bottom: 1rem;
   color: #9a9a9a;
-  font-size:0.8rem;
+  font-size: 0.8rem;
 }

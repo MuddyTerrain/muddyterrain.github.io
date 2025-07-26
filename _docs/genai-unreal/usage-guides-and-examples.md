@@ -20,6 +20,12 @@ Directly within the plugin, you can find fundamental examples to get you started
 -   **Blueprint Content:** Basic example Blueprints are located in the plugin's content directory at `Engine/Plugins/GenAIForUnrealContent/ExampleBlueprints/`. You may need to enable "Show Plugin Content" in your Content Drawer's view options to see this folder.
 -   **C++ Module:** For C++ developers, the plugin includes a dedicated module named `GenAIExamples` containing clean, practical implementation samples for various features.
 
+<div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Important: Engine Version Compatibility</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">The current blueprint examples (both in-plugin examples and the standalone example project) are <strong>provided in Unreal Engine 5.6 format only</strong>. Since Unreal Engine cannot downgrade blueprint files to lower versions, these examples won't open in earlier engine versions. If you need example projects converted to other engine versions, please contact us via email and we'll respond within 6 to 24 hours with a converted version.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">We are actively working on resolving this version limitation and will soon provide both Blueprint and C++ example projects for multiple engine versions, featuring more detailed and comprehensive examples.</p>
+</div>
+
 <div class="image-wrapper" style="max-width: 80%;">
     <figure>
     <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751299058/d2243d10-ecd0-401c-93c8-524916a096aa.webp" alt="Blueprint Examples" style="width: 100%;">

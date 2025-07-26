@@ -38,6 +38,12 @@ First, you need to set up the service, create an audio component to play the AI'
 
 -   **Create Realtime Service:** This node creates the main service object. Promote the return value to a variable (e.g., `RealtimeService`) so you can access it later.
 -   **Add Audio Component:** This will be used to play the AI's voice. Promote it to a variable as well (e.g., `AI_AudioPlayer`).
+-   **Bind to Events:** After creating the Realtime Service, you must bind to its various events to handle responses and connection states:
+    -   **OnTextResponse:** Fires when the AI sends a text response
+    -   **OnAudioResponse:** Fires when audio data is received from the AI
+    -   **OnConnected:** Fires when the connection to the AI service is established
+    -   **OnConnectionError:** Fires when there's a connection issue or error
+    -   **OnConversationComplete:** Fires when a conversation turn is finished
 -   **Set System Instructions:** This is crucial. It's where you define the AI's personality, role, and any other context it needs.
 -   **Send Text To Server:** Use this node to kick off the conversation with a starting phrase, like "Greetings."
 

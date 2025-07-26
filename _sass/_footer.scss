@@ -6,13 +6,28 @@
   line-height: 45px;
   width: $container-width;
 }
+
 .footer a {
   color: $brand-color;
   padding: 0px 10px 0px;
   text-decoration: none;
 }
 
+.footer-description {
+  display: block;
+  margin-bottom: 1rem;
+  color: #666666;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
 .footer-description a {
+  padding: 0;
+  color: #666666;
+}
+
+.footer-description .separator {
+  color: #666666;
   padding: 0;
 }
 
@@ -30,29 +45,34 @@
     font-size: 0.7rem;
     line-height: 1.3;
     padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .footer-description a {
     display: inline;
-    padding: 0 2px;
+    padding: 0;
+  }
+  
+  .footer-description .separator {
+    padding: 0;
   }
 }
 
 @media (max-width: 480px) {
   .footer-description {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     line-height: 1.2;
     padding: 0 5px;
+    white-space: nowrap;
   }
   
   .footer-description a {
-    padding: 0 1px;
+    padding: 0;
   }
-}
-
-.footer-description {
-  display: block;
-  margin-bottom: 1rem;
-  color: #9a9a9a;
-  font-size: 0.8rem;
+  
+  .footer-description .separator {
+    padding: 0;
+  }
 }

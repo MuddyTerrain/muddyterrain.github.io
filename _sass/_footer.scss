@@ -25,7 +25,31 @@
     line-height: 45px;
     width: 95vw;
   }
+  
+  .footer-description {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+  
+  .footer-description a {
+    display: inline;
+    padding: 0 2px;
+  }
 }
+
+@media (max-width: 480px) {
+  .footer-description {
+    font-size: 0.65rem;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+  
+  .footer-description a {
+    padding: 0 1px;
+  }
+}
+
 .footer-description {
   display: block;
   margin-bottom: 1rem;

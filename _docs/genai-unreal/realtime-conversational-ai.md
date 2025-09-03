@@ -38,12 +38,20 @@ To simplify microphone input, the plugin now includes a dedicated Actor Componen
 
 First, set up the service, create an audio component to play the AI's voice, and give the AI its initial instructions.
 
-<div class="image-wrapper">
+<div>
     <figure>
-        <img src="[PLACEHOLDER: Image of the updated realtime setup blueprint]" alt="Realtime Setup Blueprint" style="width: 100%;">
-        <figcaption class="image-caption">Initial setup: creating the service, binding events, and setting the system prompt.</figcaption>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756929038/61a67468-d1c5-4202-a55b-c24defe1fdb9.webp" alt="Realtime Setup Blueprint" style="width: 100%;">
+        <figcaption class="image-caption">Initial setup: creating the service and binding events</figcaption>
     </figure>
 </div>
+
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756929095/a97ff3c0-5c2a-47d4-9f87-8207bb2f50c9.webp" alt="Realtime Setup Blueprint" style="width: 70%;">
+        <figcaption class="image-caption">Start Server With Config</figcaption>
+    </figure>
+</div>
+
 
 -   **Create Realtime Service:** Creates the main service object. Promote it to a variable.
 -   **Add Audio Component:** This will play the AI's voice. Promote it to a variable.
@@ -55,9 +63,9 @@ First, set up the service, create an audio component to play the AI's voice, and
 
 Using the new **Realtime Audio Recorder** component makes this process much simpler.
 
-<div class="image-wrapper">
+<div>
     <figure>
-        <img src="[PLACEHOLDER: Image of the new push-to-talk blueprint using the audio recorder component]" alt="User Interruption Blueprint with New Component" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/v1756929320/32d6687f-b2b9-4520-b91a-1fc490ffc28b.png" alt="User Interruption Blueprint with New Component" style="width: 100%;">
         <figcaption class="image-caption">The simplified logic for starting and stopping user audio capture.</figcaption>
     </figure>
 </div>
@@ -76,7 +84,7 @@ The `RealtimeService` provides events that fire when the AI responds. You'll use
 
 <div class="image-wrapper">
     <figure>
-        <img src="[PLACEHOLDER: Image of the AI audio response blueprint]" alt="AI Response Blueprint" style="width: 100%;">
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756929398/d02a879b-86da-4640-8e5e-741a264d82d7.webp" alt="AI Response Blueprint" style="width: 100%;">
         <figcaption class="image-caption">Handling the AI's audio response in Blueprints.</figcaption>
     </figure>
 </div>

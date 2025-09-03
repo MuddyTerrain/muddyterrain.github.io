@@ -60,18 +60,36 @@
         const eventLocation = this.getAttribute('data-event-location') || 'not-set';
 
         const navigate = function() {
-          if (target === '_blank') { window.open(url, '_blank'); } 
-          else { window.location.href = url; }
+          if (target === '_blank') {
+            window.open(url, '_blank');
+          } else {
+            window.location.href = url;
+          }
         };
 
-        if (eventName) {
+        if (eventName && typeof gtag === 'function') {
+          let callbackFired = false;
+          const timeoutNavigate = setTimeout(() => {
+            if (!callbackFired) {
+              callbackFired = true;
+              navigate();
+            }
+          }, 250); // Failsafe timeout
+
           gtag('event', 'navigation_click', {
             'link_text': eventName,
             'link_location': eventLocation,
             'link_url': url,
-            'event_callback': navigate
+            'event_callback': function() {
+              clearTimeout(timeoutNavigate);
+              if (!callbackFired) {
+                callbackFired = true;
+                navigate();
+              }
+            }
           });
         } else {
+          // If gtag is not available or there's no event name, navigate immediately
           navigate();
         }
       });

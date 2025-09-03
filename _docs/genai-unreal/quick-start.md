@@ -49,25 +49,33 @@ Now, let's create a simple Actor to send our first request.
 
 We will use the `Event BeginPlay` node to trigger our AI request as soon as the game starts. The core of this logic is the `Request OpenAI Chat Completion` node, which handles the entire web request asynchronously.
 
+
+<div class="image-wrapper">
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927359/4d3276e3-366c-473d-8f51-bbfbd82a638d.webp" alt="Quick Start Blueprint Example" style="width: 85%;">
+        <figcaption class="image-caption">
+        "Make..." node with the fire logo
+        </figcaption>
+    </figure>
+</div>
+
 Replicate the Blueprint graph shown in the image below. We recommend using the new **"Make..." node with the fire logo** as it provides a convenient dropdown to select your model.
 
 <div>
     <figure>
-        <img class="full-bleed" src="[PLACEHOLDER: Image of the quick start blueprint using the new fire-logo 'Make' node]" alt="Quick Start Blueprint Example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927016/495af904-bfdb-47fe-9292-c7b306628526.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
         <figcaption class="image-caption">
         A simple setup for testing chat completion.
         </figcaption>
     </figure>
 </div>
 
----
-
-### Step 4: Breaking Down the Nodes
+#### Breaking Down the Nodes:
 
 Here is a step-by-step breakdown of the node connections:
 
 -   **Trigger:** Connect the `Event BeginPlay` execution pin to the `Request OpenAI Chat Completion` node.
--   **Settings:** Use the `Make Gen OpenAI Chat Settings (Advanced)` node. The default model (`gpt-4o`) is fine for this test.
+-   **Settings:** Use the `Make Gen OpenAI Chat Settings` node (the one with the fire logo). The default model (`gpt-4o`) is fine for this test.
 -   **Message:** The `Messages` pin contains the actual prompt.
    -   Add a `Make Gen Chat Message` node.
    -   Set the **Role** to `user`.

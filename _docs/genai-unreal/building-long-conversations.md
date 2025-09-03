@@ -45,6 +45,16 @@ The `Gen Chat Message` struct also supports multimodal inputs. For providers lik
 
 ## Blueprint Implementation
 
+
+<div >
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928672/b7ea1f55-b9f3-4e3c-90b0-8367bcec72a0.webp" alt="Conversation Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           
+        </figcaption>
+    </figure>
+</div>
+
 In Blueprints, you manage the conversation context using an array of the `Gen Chat Message` struct.
 
 1.  **Create a History Variable:** In your Blueprint (e.g., an Actor or Actor Component), create a new variable. Set its type to `Gen Chat Message` and make it an **Array**. Let's name it `ConversationHistory`.

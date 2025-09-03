@@ -1,0 +1,2 @@
+" Without the plugin's source, the example project's C++ files (which demonstrate how to use your plugin) would have nothing to compile against. They
+  wouldn't know about the classes, functions, or types your plugin provides, and the build would fail instantly." 

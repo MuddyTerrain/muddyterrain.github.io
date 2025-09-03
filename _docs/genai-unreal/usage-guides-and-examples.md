@@ -14,11 +14,12 @@ This section provides access to our comprehensive example projects, which are th
 To provide the best learning experience, we have moved away from small, in-plugin examples to a complete, standalone suite of projects. Thanks to a new automated build system, we now provide dedicated example projects for each supported version of Unreal Engine.
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
-  <p style="margin: 0; font-weight: bold; color: #856404;">Plugin Version Requirement</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">Please note that these example projects require <strong>GenAI for Unreal plugin version 1.3 or higher</strong> to function correctly.</p>
+  <p style="margin: 0; font-weight: bold; color: #856404;">Important Requirements</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Please note that these example projects require <strong><a href="/t/genai-fab" target="_blank" rel="noopener noreferrer">GenAI for Unreal plugin</a> version 1.3 or higher</strong> to function correctly.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">The plugin must be installed to your engine from the Fab store before opening these projects. Without it, the Blueprint project will have errors, and the C++ project will fail to compile or open.</p>
 </div>
 
-### Download Example Projects
+## 📥 Download Example Projects
 <p>Projects are available for each supported Unreal Engine version. Please download the one that matches your engine. All links point to Google Drive.</p>
 
 <table class="download-table">
@@ -40,18 +41,6 @@ To provide the best learning experience, we have moved away from small, in-plugi
   </tbody>
 </table>
 
-### "Become Human" - Upcoming Optional Game Template (Paid)
-
-Coming soon to the Fab Marketplace is **"Become Human,"** a complete, game-ready template built with the GenAI for Unreal plugin.
-<div class="image-wrapper" style="max-width: 80%;">
-    <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_50/v1751282014/BeFunky-collage232_logwgw.webp" alt="Become Human Game Template" style="width: 100%;">
-    <figcaption class="image-caption">Become Human - A complete game template for GenAI for Unreal.</figcaption>
-    </figure>
-</div>
-
-This project will serve as the ultimate learning resource and a powerful starting point for your own AI-driven games. It will feature a fully implemented, conversational NPC in a small, interactive environment, showcasing advanced techniques for dialogue management, real-time streaming, and dynamic character interaction. Keep an eye on the marketplace for its release!
-
 ### What's Inside the Projects?
 
 The new example projects are packed with features and are designed to be a practical starting point for your own integrations.
@@ -66,10 +55,22 @@ The new example projects are packed with features and are designed to be a pract
 
 <div class="image-wrapper">
     <figure>
-    <img src="[PLACEHOLDER: Image of the new example project's main menu or chat widget]" alt="New Example Project UI" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928458/Screenshot_2025-09-02_103410_iesgph.webp" alt="New Example Project UI" style="width: 60%;">
     <figcaption class="image-caption">The new example projects feature interactive widgets to demonstrate core features.</figcaption>
     </figure>
 </div>
+
+### "Become Human" - Upcoming Optional Game Template (Paid)
+
+Coming soon to the Fab Marketplace is **"Become Human,"** a complete, game-ready template built with the GenAI for Unreal plugin.
+<div class="image-wrapper" style="max-width: 80%;">
+    <figure>
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_50/v1751282014/BeFunky-collage232_logwgw.webp" alt="Become Human Game Template" style="width: 100%;">
+    <figcaption class="image-caption">Become Human - A complete game template for GenAI for Unreal.</figcaption>
+    </figure>
+</div>
+
+This project will serve as the ultimate learning resource and a powerful starting point for your own AI-driven games. It will feature a fully implemented, conversational NPC in a small, interactive environment, showcasing advanced techniques for dialogue management, real-time streaming, and dynamic character interaction. Keep an eye on the marketplace for its release!
 
 ---
 
@@ -81,7 +82,14 @@ Here are some quick, copy-paste-ready examples to demonstrate the core API patte
 
 All asynchronous Blueprint nodes share a similar structure. Note the new **"Make..." node with the fire logo**, which allows you to select models from a convenient dropdown list.
 
-<img class="full-bleed" src="[PLACEHOLDER: Image of a Blueprint graph using the new fire-logo 'Make' node]" alt="Blueprint Node Example with Dropdown">
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927016/495af904-bfdb-47fe-9292-c7b306628526.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
+        <figcaption class="image-caption">
+        A simple setup for testing chat completion.
+        </figcaption>
+    </figure>
+</div>
 
 1.  **Request OpenAI Chat Completion:** The main latent node that initiates the API call.
 2.  **Settings:** Use the **`Make Gen OpenAI Chat Settings (Advanced)`** node (with the fire logo) to get a dropdown list of supported models. You can still use the standard `Make` node if you need to pass in a custom model name as a string.

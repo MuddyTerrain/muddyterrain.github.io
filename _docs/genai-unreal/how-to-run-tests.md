@@ -21,6 +21,21 @@ To help with troubleshooting, the plugin includes an **Extended Logging Mode**. 
 
 This is an invaluable tool for debugging issues with your API calls without needing external network monitoring tools.
 
+<div class="image-wrapper">
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928218/9c2f2140-79bd-438e-970c-486fee75c4e4.webp" alt="Automation Testing Window in Unreal Engine"  style="width: 70%;">
+        <figcaption class="image-caption">Option to enable debug mode in project settings</figcaption>
+    </figure>
+</div>
+
+
+<div class="image-wrapper">
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756929508/Screenshot_2025-08-31_221134_peowxx.webp" alt="Automation Testing Window in Unreal Engine" style="width: 70%;">
+        <figcaption class="image-caption">All the API requests and responses done by the plugin, can be seen in output log</figcaption>
+    </figure>
+</div>
+
 ---
 
 ## 2. Running Automation Tests
@@ -45,6 +60,7 @@ The GenAI for Unreal plugin comes with a comprehensive suite of automation tests
         <figcaption class="image-caption">The Automation tab in the Session Frontend, showing the GenAI tests.</figcaption>
     </figure>
 </div>
+
 
 ### Running Tests from the Command Line
 

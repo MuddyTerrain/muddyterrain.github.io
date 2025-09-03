@@ -23,6 +23,16 @@ Image generation allows you to create entirely new images from a text prompt.
 
 Image Editing is a powerful new feature that allows you to modify an existing image using an AI model. Instead of creating from scratch, you provide a source image and a text prompt describing the desired change.
 
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928896/b03fb6ad-2afb-4683-bb67-12fe9db23bd4.webp" alt="Conversation Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           Image Editing Blueprint Example
+        </figcaption>
+    </figure>
+</div>
+
 ### How It Works
 
 The process typically involves providing the source image data along with a prompt. The AI then intelligently alters the image to match the prompt. This is perfect for iterative design and dynamic, in-game visual effects.
@@ -33,7 +43,7 @@ The process typically involves providing the source image data along with a prom
 -   **Player Customization:** Allow players to upload a portrait and have it stylized to fit the game's art direction, or let them add custom decals to their vehicles.
 
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
-  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Implementation Details Coming Soon</p>
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">C++ Examples Coming Soon</p>
   <p style="margin: 5px 0 0 0; color: #1f6a9c;">The Blueprint nodes and C++ functions for Image Editing are available in the latest plugin version. This section will be updated shortly with detailed code samples and a walkthrough from the example project.</p>
 </div>
 

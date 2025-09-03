@@ -23,15 +23,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
 
-<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+<div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
   <h2 style="margin-top: 0;">What's New in the Latest Update!</h2>
-  <p>We've just released a massive update packed with new features, models, and improvements:</p>
+  <p>This release is packed with major new features, models, and improvements:</p>
   <ul>
-    <li><strong>Brand New Example Project:</strong> Explore a completely revamped example project, now with dedicated C++ and Blueprint versions, featuring chat widgets and more!</li>
-    <li><strong>Image Editing is Here:</strong> Unleash your creativity with newly added support for image editing.</li>
-    <li><strong>Frontier Model Support:</strong> Now includes support for <strong>OpenAI's GPT-5</strong>, <strong>Google's Nano Banana</strong>, <strong>Anthropic's Claude 4.1</strong>, and <strong>DeepSeek-V3.1</strong>.</li>
-    <li><strong>Enhanced Multimodal:</strong> Google Gemini now fully supports multimodal chat.</li>
-    <li><strong>Expanded Tooling:</strong> Added support for "ReasoningEffort" and "Verbosity" for GPT-5, plus an extended logging mode for easier debugging.</li>
+    <li>📁 <strong>Brand New Example Project:</strong> Explore a completely revamped example project, now with dedicated C++ and Blueprint versions, featuring chat widgets and more!</li>
+    <li>🎨 <strong>Image Editing is Here:</strong> Unleash your creativity with newly added support for image editing.</li>
+    <li>🧠 <strong>Frontier Model Support:</strong> Now includes support for <strong>OpenAI's GPT-5</strong>, <strong>Google's Nano Banana</strong>, <strong>Anthropic's Claude 4.1</strong>, and <strong>DeepSeek-V3.1</strong>.</li>
+    <li>🖼️ <strong>Enhanced Multimodal:</strong> Google Gemini now fully supports multimodal chat.</li>
+    <li>🛠️ <strong>Expanded Tooling:</strong> Added support for "ReasoningEffort" and "Verbosity" for GPT-5, plus an extended logging mode for easier debugging.</li>
   </ul>
 </div>
 
@@ -91,7 +91,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
 </ul>
 
-<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751279954/Tests_o3ukby.webp" alt="GenAI for Unreal Plugin Tests">
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756926286/Tests_4_rgysms.webp" alt="GenAI for Unreal Plugin Tests">
 
 
 <h2>Available Integrations & Models</h2>

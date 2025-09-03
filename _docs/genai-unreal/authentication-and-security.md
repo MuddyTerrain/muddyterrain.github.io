@@ -71,7 +71,7 @@ All requests to that provider from the plugin will now be routed through your cu
 
 ## 3. General Security Best Practices
 
--   **Understand Local Encryption:** The `secureconfig.bin` file is encrypted using a key derived from the local machine's hardware identifiers. This is effective at preventing accidental key exposure (e.g., in screenshots, screen shares) and stops the file from being used on another computer. However, a determined attacker with access to the game's files on a user's machine could potentially reverse-engineer the decryption process. **Never rely on this method for shipping a commercial product.**
+-   **Understand Local Encryption:** The `secureconfig.bin` file is encrypted using a key. This is effective at preventing accidental key exposure (e.g., in screenshots, screen shares). However, a determined attacker with access to the game's files could potentially reverse-engineer the decryption process. **Never rely on this method for shipping a commercial product.**
 -   **Key Rotation:** Regularly rotate API keys and immediately revoke any unused keys in your AI provider's dashboard.
 -   **Environment-Specific Keys:** Use different keys for development, staging, and production environments to limit the impact of a potential compromise.
 -   **Scoped Permissions:** When supported by the provider, create keys with the minimum required permissions (e.g., read-only, specific model access).

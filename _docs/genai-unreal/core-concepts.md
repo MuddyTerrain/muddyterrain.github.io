@@ -50,9 +50,9 @@ For convenience and to prevent typos, the plugin now includes advanced **"Make..
 
 <div class="image-wrapper">
     <figure>
-        <img src="[PLACEHOLDER: Image of the new fire-logo 'Make' node showing the model dropdown]" alt="Advanced Make Node with Dropdown" style="width: 100%;">
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927931/7c77e180-079b-41b6-a42d-d05fa70769ee.webp" alt="Advanced Make Node with Dropdown" style="width: 100%;">
         <figcaption class="image-caption">
-            The advanced "Make..." node provides a convenient dropdown for model selection.
+            Comparing "drop down" model picker and "string" model picker nodes. 
         </figcaption>
     </figure>
 </div>

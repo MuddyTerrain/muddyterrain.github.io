@@ -1,58 +1,75 @@
 ---
 layout: documentation
-title: Usage Guides and Examples
+title: Example Projects and Guides
 permalink: /docs/genai-unreal/usage-guides-and-examples/
 nav_order: 7
 ---
 
-This section provides practical examples and resources to help you get started with the GenAI for Unreal plugin. Whether you prefer dissecting pre-built examples or following step-by-step guides, you'll find what you need here.
+This section provides access to our comprehensive example projects, which are the best resources for learning how to use the GenAI for Unreal plugin effectively.
 
 ---
 
-## Learning Resources
+## The New Example Projects
 
-We offer several resources to help you learn and master the plugin, catering to different needs and skill levels.
+To provide the best learning experience, we have moved away from small, in-plugin examples to a complete, standalone suite of projects. Thanks to a new automated build system, we now provide dedicated example projects for each supported version of Unreal Engine.
 
-### 1. Examples Included with the Plugin
-
-Directly within the plugin, you can find fundamental examples to get you started:
-
--   **Blueprint Content:** Basic example Blueprints are located in the plugin's content directory at `Engine/Plugins/GenAIForUnrealContent/ExampleBlueprints/`. You may need to enable "Show Plugin Content" in your Content Drawer's view options to see this folder.
--   **C++ Module:** For C++ developers, the plugin includes a dedicated module named `GenAIExamples` containing clean, practical implementation samples for various features.
-
-<div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
-  <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Important: Engine Version Compatibility</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">The current blueprint examples (both in-plugin examples and the standalone example project) are <strong>provided in Unreal Engine 5.6 format only</strong>. Since Unreal Engine cannot downgrade blueprint files to lower versions, these examples won't open in earlier engine versions. If you need example projects converted to other engine versions, please contact us via email and we'll respond within 6 to 24 hours with a converted version.</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">We are actively working on resolving this version limitation and will soon provide both Blueprint and C++ example projects for multiple engine versions, featuring more detailed and comprehensive examples.</p>
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Plugin Version Requirement</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Please note that these example projects require <strong>GenAI for Unreal plugin version 1.3 or higher</strong> to function correctly.</p>
 </div>
 
-<div class="image-wrapper" style="max-width: 80%;">
-    <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751299058/d2243d10-ecd0-401c-93c8-524916a096aa.webp" alt="Blueprint Examples" style="width: 100%;">
-    <figcaption class="image-caption">Blueprint examples can be found in the plugin content.</figcaption>
-    </figure>
-</div>
+### Download Example Projects
+<p>Projects are available for each supported Unreal Engine version. Please download the one that matches your engine. All links point to Google Drive.</p>
 
-### 2. Blueprint-Only Example Project
+<table class="download-table">
+  <thead>
+    <tr>
+      <th>Engine Version</th>
+      <th>C++ Project</th>
+      <th>Blueprint-Only Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in site.data.settings.example_projects %}
+    <tr>
+      <td>Unreal Engine {{ project.version }}</td>
+      <td><a href="{{ project.cpp_link }}" target="_blank" rel="noopener noreferrer">GenAIExample_UE{{ project.version }}_CPP.zip</a></td>
+      <td><a href="{{ project.bp_link }}" target="_blank" rel="noopener noreferrer">GenAIExample_UE{{ project.version }}_BP.zip</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
-For a more comprehensive set of examples, we provide a standalone Blueprint project. This project demonstrates more complex use cases and is the best place to see the plugin in action.
-
--   **Download Link:** [**GenAI for Unreal - Example Project**](https://muddyterrain.com/t/genai-example)
--   **Future Updates:** This project will be regularly updated with more advanced implementations, including examples with UMG, runtime audio recording, and more.
-
-For detailed explanations of each feature, you can always refer to this **[full documentation](/docs/genai-unreal/)**.
-
-### 3. "Become Human" - Upcoming Optional Game Template (Paid)
+### "Become Human" - Upcoming Optional Game Template (Paid)
 
 Coming soon to the Fab Marketplace is **"Become Human,"** a complete, game-ready template built with the GenAI for Unreal plugin.
 <div class="image-wrapper" style="max-width: 80%;">
     <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_70/v1751282014/BeFunky-collage232_logwgw.webp" alt="Become Human Game Template" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_50/v1751282014/BeFunky-collage232_logwgw.webp" alt="Become Human Game Template" style="width: 100%;">
     <figcaption class="image-caption">Become Human - A complete game template for GenAI for Unreal.</figcaption>
     </figure>
 </div>
 
 This project will serve as the ultimate learning resource and a powerful starting point for your own AI-driven games. It will feature a fully implemented, conversational NPC in a small, interactive environment, showcasing advanced techniques for dialogue management, real-time streaming, and dynamic character interaction. Keep an eye on the marketplace for its release!
+
+### What's Inside the Projects?
+
+The new example projects are packed with features and are designed to be a practical starting point for your own integrations.
+
+-   **Interactive UMG Widgets:** Explore pre-built UI for:
+    -   **Chat:** A complete chat interface demonstrating standard, streaming, and multimodal requests.
+    -   **Image Generation:** A simple UI to write a prompt and generate an image.
+    -   **TTS & Transcription:** A panel to test text-to-speech and audio transcription.
+    -   **Model Listing:** A demonstration of the new "Get All Models" feature to dynamically populate a dropdown of available models.
+-   **Simple Actor Examples:** For quick, non-UI testing, the Blueprint project also includes simple actors you can drag into your level. These actors execute a single function on `BeginPlay` and print the results to the log and the screen.
+-   **Best Practices:** The C++ project demonstrates essential patterns for safety and efficiency, such as using weak pointers in asynchronous callbacks.
+
+<div class="image-wrapper">
+    <figure>
+    <img src="[PLACEHOLDER: Image of the new example project's main menu or chat widget]" alt="New Example Project UI" style="width: 100%;">
+    <figcaption class="image-caption">The new example projects feature interactive widgets to demonstrate core features.</figcaption>
+    </figure>
+</div>
 
 ---
 
@@ -62,29 +79,28 @@ Here are some quick, copy-paste-ready examples to demonstrate the core API patte
 
 ### Blueprint Usage Walkthrough
 
-All asynchronous Blueprint nodes share a similar structure. Here is a walkthrough for a multimodal (text and image) chat request with OpenAI.
+All asynchronous Blueprint nodes share a similar structure. Note the new **"Make..." node with the fire logo**, which allows you to select models from a convenient dropdown list.
 
-<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751299301/86187345-e044-4862-9acd-0c078ade41ab.webp" alt="Blueprint Node Example">
+<img class="full-bleed" src="[PLACEHOLDER: Image of a Blueprint graph using the new fire-logo 'Make' node]" alt="Blueprint Node Example with Dropdown">
 
-1.  **Request OpenAI Chat Completion:** This is the main latent node that initiates the API call.
-2.  **Settings:** Use a **"Make..."** node (e.g., `Make Gen OpenAI Chat Settings`) to configure the request. This is where you set the model, temperature, max tokens, and the user messages.
-3.  **OnComplete (Event):** This event pin fires as soon as a response is received from the server. It provides the final `Response` string, an `Error Message` if something went wrong, and a `Success` boolean for easy branching.
+1.  **Request OpenAI Chat Completion:** The main latent node that initiates the API call.
+2.  **Settings:** Use the **`Make Gen OpenAI Chat Settings (Advanced)`** node (with the fire logo) to get a dropdown list of supported models. You can still use the standard `Make` node if you need to pass in a custom model name as a string.
+3.  **OnComplete (Event):** This event pin fires when a response is received. It provides the final `Response`, an `Error Message`, and a `Success` boolean.
 
 ### C++ Usage Walkthrough (OpenAI Chat)
 
-The C++ workflow mirrors the Blueprint logic, using a settings struct and a completion delegate.
+The C++ workflow is clean and powerful, using a settings struct and a completion delegate.
 
 ```cpp
 #include "Models/OpenAI/GenOAIChat.h"
-#include "Data/OpenAI/GenOAIChatStructs.h" // Required for FGenOAIChatSettings and FGenChatMessage
+#include "Data/OpenAI/GenOAIChatStructs.h" // Required for settings and message structs
 
 void AMyActor::SendSimpleChatRequest()
 {
     // 1. Configure the request settings
     FGenOAIChatSettings ChatSettings;
-    ChatSettings.Model = EOpenAIChatModel::GPT_4o;
+    ChatSettings.Model = EOpenAIChatModel::GPT_4o; // Select model from the enum
     ChatSettings.MaxTokens = 150;
-    ChatSettings.Temperature = 0.7f;
     
     // 2. Create the message payload
     TArray<FGenChatMessage> Messages;
@@ -100,16 +116,15 @@ void AMyActor::SendSimpleChatRequest()
             // Always check if the calling object is still valid
             if (!WeakThis.IsValid()) return;
             
-            AMyActor* StrongThis = WeakThis.Get();
             if (bSuccess)
             {
                 // Process the successful response
-                StrongThis->OnChatResponseReceived(Response);
+                WeakThis->OnChatResponseReceived(Response);
             }
             else
             {
                 // Handle the error
-                StrongThis->OnChatError(Error);
+                WeakThis->OnChatError(Error);
             }
         })
     );
@@ -119,11 +134,11 @@ void AMyActor::SendSimpleChatRequest()
 
 ## Find More Examples
 
-Ready to dive deeper? The guides below provide detailed walkthroughs and code examples for specific features.
+Ready to dive deeper? The guides below provide detailed walkthroughs for specific features, all of which are demonstrated in the new example projects.
 
-1.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝 — Learn how to manage chat history and context.
-2.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️ — Implement real-time, typewriter-style responses.
-3.  **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️ — Force AI responses into a reliable JSON format.
-4.  **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Bring your characters to life with voice.
-5.  **[Image Generation](/docs/genai-unreal/image-generation/)** 🎨 — Create dynamic images and textures from prompts.
-6.  **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Combine all features for advanced, interactive NPCs.
+1.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝
+2.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️
+3.  **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️
+4.  **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊
+5.  **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨
+6.  **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭

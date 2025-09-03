@@ -1,65 +1,47 @@
 ---
 layout: documentation
-title: Image Generation
+title: Image Generation & Editing
 permalink: /docs/genai-unreal/image-generation/
 nav_order: 12
 ---
 
-Integrate powerful AI image generation directly into your Unreal Engine projects. This feature allows you to create high-quality, unique visual assets from simple text prompts, opening up incredible possibilities for procedural content, rapid prototyping, and dynamic in-game experiences.
+Integrate powerful AI image generation and editing directly into your Unreal Engine projects. This feature allows you to create and modify high-quality visual assets from simple text prompts, opening up incredible possibilities for procedural content, rapid prototyping, and dynamic in-game experiences.
 
 ---
 
-## Supported Models and Providers
+## 1. Image Generation
 
-The plugin gives you access to state-of-the-art image generation models from multiple providers.
+Image generation allows you to create entirely new images from a text prompt.
 
-### OpenAI
-
--   ✨ **GPT-4o (`gpt-image-1`):** The latest and most advanced model, responsible for the viral "Ghibli trend." It excels at creating artistic, coherent, and high-fidelity images with remarkable prompt adherence.
--   🎨 **DALL-E 3:** A powerful and reliable model offering excellent image quality and detail. A great all-rounder for a variety of styles.
--   ⚙️ **DALL-E 2:** A legacy model that is more cost-effective and supports generating multiple images in a single request, making it suitable for bulk generation or rapid iteration where speed is a priority.
-
-### Google
-
--   **Gemini:** Provides powerful image generation capabilities.
--   **Imagen:** Known for its high-quality outputs, especially in artistic styles.
-
-> **Note on Google Gemini:** The integration for Google's image generation models is included but has not been fully tested, as the service is currently unavailable for use in the UK and Europe. Functionality may vary.
+-   **Supported Providers:** OpenAI (`DALL-E 2`, `DALL-E 3`, `gpt-image-1`), Google (`Gemini`, `Imagen`).
+-   **Use Cases:** Generating concept art, dynamic in-game textures, player avatars, or placeholder assets.
+-   **Find it in the Example Project:** The new example project features a full UMG widget to test image generation.
 
 ---
 
-## Common Use Cases
+## 2. Image Editing (New!)
 
--   **Rapid Concept Art:** Instantly generate visual concepts for characters, environments, weapons, and props without leaving the editor.
--   **Dynamic In-Game Content:** Create unique paintings for a gallery, wanted posters with generated faces, or emblems for player guilds based on their names.
--   **Placeholder Assets:** Quickly generate temporary textures, icons, and sprites to keep development moving while waiting for final art assets.
--   **Player Customization:** Allow players to generate custom tattoos, clothing patterns, or avatar portraits from text descriptions.
+Image Editing is a powerful new feature that allows you to modify an existing image using an AI model. Instead of creating from scratch, you provide a source image and a text prompt describing the desired change.
 
----
+### How It Works
 
-## Blueprint Implementation
+The process typically involves providing the source image data along with a prompt. The AI then intelligently alters the image to match the prompt. This is perfect for iterative design and dynamic, in-game visual effects.
 
-The Blueprint workflow makes image generation incredibly accessible. You can easily configure a prompt, select a model, and save the resulting image to disk or convert it into a texture.
+### Common Use Cases for Image Editing
+-   **Iterative Design:** Take a generated concept art image and refine it with prompts like "make the armor silver," "change the art style to anime," or "add a forest in the background."
+-   **Dynamic Environments:** Change the appearance of in-game objects, such as making a statue look weathered over time or adding player-generated graffiti to a wall.
+-   **Player Customization:** Allow players to upload a portrait and have it stylized to fit the game's art direction, or let them add custom decals to their vehicles.
 
-<div>
-    <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1752499085/c338bba2-f214-4089-8131-b4609129d7ed.webp" alt="Blueprint Image Generation Example" style="width: 100%;">
-        <figcaption class="image-caption">
-        A simple Blueprint graph for generating an image and saving it as a file.
-        </figcaption>
-    </figure>
+<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Implementation Details Coming Soon</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">The Blueprint nodes and C++ functions for Image Editing are available in the latest plugin version. This section will be updated shortly with detailed code samples and a walkthrough from the example project.</p>
 </div>
 
-The key nodes in this process are:
-1.  **Request OpenAI Image Generation:** The main latent node that sends your request. Use the `Make Gen OpenAI Image Generation Settings` node to configure the prompt, model, resolution, and quality.
-2.  **Save Array to File:** A utility node to save the raw image data (which is returned as a byte array) to a `.png` file in a directory of your choice.
-3.  **Load Texture 2D from File:** (Optional) After saving, you can immediately load the image back into the engine as a `UTexture2D` asset, ready to be used in a material or displayed in UMG.
-
 ---
 
-## C++ Implementation
+## C++ Implementation (Image Generation)
 
-For more control, you can call the image generation functions directly from your C++ code.
+You can call the image generation functions directly from C++ for more control.
 
 ```cpp
 #include "Models/OpenAI/GenOAIImageGeneration.h"
@@ -69,15 +51,11 @@ For more control, you can call the image generation functions directly from your
 
 void AMyImageGenerator::GenerateImageFromPrompt(const FString& PromptText)
 {
-    UE_LOG(LogTemp, Log, TEXT("Requesting image for prompt: '%s'"), *PromptText);
-
     // 1. Configure the image generation settings
     FGenOAIImageSettings ImageSettings;
     ImageSettings.Prompt = PromptText;
-    ImageSettings.Model = EGenOAIImageModel::GPT_Image_1; // Use the latest model
+    ImageSettings.Model = EGenOAIImageModel::GPT_Image_1;
     ImageSettings.Size = EGenAIImageSize::Size1024x1024;
-    ImageSettings.Quality = EGenAIImageQuality::HD; // Request HD quality
-    ImageSettings.NumImages = 1;
 
     // 2. Send the request and handle the response in a Lambda
     UGenOAIImageGeneration::SendImageGenerationRequest(ImageSettings,
@@ -85,26 +63,10 @@ void AMyImageGenerator::GenerateImageFromPrompt(const FString& PromptText)
         {
             if (bSuccess && ImageBytes.Num() > 0)
             {
-                UE_LOG(LogTemp, Log, TEXT("Image generated! Saving to disk..."));
-
-                // 3. Define a file path and save the image data
                 const FString FilePath = FPaths::ProjectSavedDir() / TEXT("AI") / FString::Printf(TEXT("GeneratedImage_%s.png"), *FDateTime::Now().ToString());
-                if (FFileHelper::SaveArrayToFile(ImageBytes, *FilePath))
-                {
-                    UE_LOG(LogTemp, Log, TEXT("Image saved to: %s"), *FilePath);
-                    // You can now load this file as a texture if needed
-                }
-                else
-                {
-                    UE_LOG(LogTemp, Error, TEXT("Failed to save image to disk."));
-                }
-            }
-            else
-            {
-                UE_LOG(LogTemp, Error, TEXT("Image generation failed: %s"), *ErrorMessage);
+                FFileHelper::SaveArrayToFile(ImageBytes, *FilePath);
             }
         })
     );
 }
-
 ```

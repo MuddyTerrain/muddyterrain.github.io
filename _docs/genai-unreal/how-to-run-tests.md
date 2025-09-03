@@ -1,9 +1,29 @@
 ---
 layout: documentation
-title: How to Run Tests
-permalink: /docs/genai-unreal/how-to-run-tests/
+title: Debugging and Running Tests
+permalink: /docs/genai-unreal/debugging-and-running-tests/
 nav_order: 14
 ---
+
+This section covers tools and procedures for debugging your AI integrations and verifying the plugin's functionality through its built-in automation tests.
+
+---
+
+## 1. Debugging with Extended Logging Mode
+
+To help with troubleshooting, the plugin includes an **Extended Logging Mode**. When enabled, every API request and response will be printed to the Unreal output log, providing a clear, real-time view of the data being sent to and received from the AI provider.
+
+- **What it Logs:** The full request body (including headers and parameters) and the full response from the server.
+- **Security:** To prevent log spam and protect data, any `base64` encoded strings (typically used for images) will be truncated in the log output.
+- **How to Enable:**
+    1. Go to **Project Settings > Plugins > GenAI Plugin**.
+    2. Find the **"Enable Extended Logging Mode"** checkbox and enable it.
+
+This is an invaluable tool for debugging issues with your API calls without needing external network monitoring tools.
+
+---
+
+## 2. Running Automation Tests
 
 The GenAI for Unreal plugin comes with a comprehensive suite of automation tests that verify the functionality of all major API integrations. Running these tests is the best way to confirm that your setup is correct and that the plugin can successfully communicate with the AI service providers.
 
@@ -12,17 +32,12 @@ The GenAI for Unreal plugin comes with a comprehensive suite of automation tests
   <p style="margin: 5px 0 0 0; color: #856404;">Running these tests will make <strong>real API calls</strong> to the various AI services, which will incur costs on your account based on your provider's pricing. Ensure you have valid API keys and a payment method set up before proceeding.</p>
 </div>
 
----
-
-## Running Tests in the Editor
-
-The easiest way to run the tests is through Unreal Engine's built-in Automation Testing window.
+### Running Tests in the Editor
 
 1.  In the Unreal Editor, navigate to **Window > Test Automation**.
 2.  In the **Session Frontend** window that appears, click on the **Automation** tab.
 3.  In the test hierarchy on the left, find the tests located under the `GenAI` group.
-4.  Check the boxes for the tests you wish to run (e.g., `GenAI.OpenAI.Chat`, `GenAI.OpenAI.ImageGeneration`, etc.).
-5.  Click the **"Start Tests"** button in the top right.
+4.  Check the boxes for the tests you wish to run and click the **"Start Tests"** button.
 
 <div class="image-wrapper">
     <figure>
@@ -31,32 +46,15 @@ The easiest way to run the tests is through Unreal Engine's built-in Automation 
     </figure>
 </div>
 
-The tests will execute, and the results will be displayed in the window.
--   <span style="color: green;">**Green:**</span> The test passed successfully.
--   <span style="color: red;">**Red:**</span> The test failed. Check the logs for specific error messages.
-
----
-## Running Tests from the Command Line
+### Running Tests from the Command Line
 
 For automated workflows or CI/CD pipelines, you can execute the tests from the command line.
 
 ```bash
 # Windows example for running all tests in the GenAI group
 UE5Editor.exe "C:\Path\To\Your\Project\YourProject.uproject" -ExecCmds="Automation RunTests GenAI" -unattended -nopause -testexit="Automation Test Queue Empty" -log
-
-# Windows example for running a single, specific test
-UE5Editor.exe "C:\Path\To\Your\Project\YourProject.uproject" -ExecCmds="Automation RunTests GenAI.OpenAI.Chat" -unattended -nopause -testexit="Automation Test Queue Empty" -log
 ```
-This will launch the editor, run the specified tests, and then exit, making it ideal for automated verification.
 
----
+### Troubleshooting Test Failures
 
-## Troubleshooting Test Failures
-
-If tests are failing, here are the most common causes:
-
-1.  **Invalid API Key:** This is the most frequent issue. Double-check that your API keys are correctly pasted into the **Project Settings > Plugins > GenAI** panel and that the associated account is active and has a valid payment method.
-2.  **Network Connectivity:** Ensure the editor has a stable internet connection and is not being blocked by a firewall.
-3.  **API Rate Limits:** If you run many tests in a short period, you might exceed the rate limits imposed by the AI provider. Wait a few minutes and try running the tests again.
-4.  **Service Outages:** Check the official status page for the AI provider (e.g., OpenAI, Google) to see if they are experiencing any downtime.
-5.  **Incorrect Project Setup:** Ensure you have correctly followed the steps in the **[Initial Project Setup](/docs/genai-unreal/initial-project-setup/)** guide.
+If tests are failing, common causes include an invalid API key, network connectivity issues, or API rate limits. The **Extended Logging Mode** described above is the best tool for diagnosing these failures.

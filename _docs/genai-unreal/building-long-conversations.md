@@ -31,6 +31,16 @@ The process looks like this:
 
 This growing array of messages is called the **conversation context**.
 
+The new example projects include a complete, interactive chat widget that demonstrates how to manage conversation history effectively. We highly recommend using it as a reference.
+
+---
+
+This growing array of messages is called the **conversation context**.
+
+### Multimodal Conversations
+
+The `Gen Chat Message` struct also supports multimodal inputs. For providers like Google Gemini and OpenAI, you can include image data directly in a message alongside text. This allows you to create AI that can "see" and comment on in-game screenshots or other visual information. This is demonstrated in the new example project's chat widget.
+
 ---
 
 ## Blueprint Implementation

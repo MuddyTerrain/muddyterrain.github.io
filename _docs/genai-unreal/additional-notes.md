@@ -54,13 +54,26 @@ Following these guidelines will help you build a more robust, secure, and mainta
 
 ---
 
+## Advanced Feature Notes
+
+-   **GPT-5 Parameters:** When using OpenAI's GPT-5 models, you can access two special parameters in the `FGenOAIChatSettings` struct:
+    -   `ReasoningEffort`: A value from 0.0 to 1.0 that can influence the model's computational budget for complex reasoning.
+    -   `Verbosity`: An integer that can be used to request more or less detailed responses.
+-   **HTTP Timeouts:** For complex reasoning models that may take longer, consider increasing timeout values in `Config/DefaultEngine.ini`.
+```ini
+[HTTP]
+HttpConnectionTimeout=180
+HttpReceiveTimeout=180
+```
+
+---
+
 ## The Future of the Plugin
 
 The GenAI for Unreal plugin is under active development. We are committed to providing regular updates to support:
 
--   New and emerging AI models as they are released.
--   Additional AI service providers.
--   Performance optimizations and stability improvements.
--   New features and enhanced Blueprint/C++ functionality based on community feedback.
+-   New features like Image Editing and enhanced multimodal support.
+-   UI examples for realtime and structured output features.
+-   Official support for ElevenLabs TTS.
 
 Thank you for choosing GenAI for Unreal. We can't wait to see the incredible experiences you build!

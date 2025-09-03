@@ -18,7 +18,7 @@ Streaming is a powerful feature that allows you to receive AI responses in real-
 
 Without streaming, you send a request and wait for the entire response to be generated before it's sent back. This can lead to noticeable delays, especially for longer responses.
 
-With streaming, the connection to the AI provider remains open. The server sends back small chunks of data (called "deltas") as soon as they are generated. The plugin receives these chunks and fires an event for each one, allowing you to append the text to your UI in real-time.
+With streaming, the connection to the AI provider remains open. The server sends back small chunks of data (called "deltas") as soon as they are generated. The new example projects include a chat widget that fully demonstrates a real-world implementation of streaming.
 
 ---
 

@@ -63,15 +63,15 @@ GenAI for Unreal is more than just a tool—it's a complete solution designed to
 2.  **[Initial Project Setup](/docs/genai-unreal/initial-project-setup/)** ⚙️ — Installation & C++ Configuration
 3.  **[Getting API Keys](/docs/genai-unreal/getting-api-keys/)** 🔑 — Obtain Keys from OpenAI, Anthropic, & More
 4.  **[Authentication & Security](/docs/genai-unreal/authentication-and-security/)** 🔒 — Secure Key Storage & Proxying
-5.  **[Core Concepts](/docs/genai-unreal/core-concepts/)** 💡 — Async Design, Lifetime Safety, Custom Models
-6.  **[Usage Guides & Examples](/docs/genai-unreal/usage-guides-and-examples/)** 📘 — Blueprint & C++ Walkthroughs
+5.  **[Core Concepts](/docs/genai-unreal/core-concepts/)** 💡 — Async Design, Debug Mode, Custom Models
+6.  **[Example Projects & Guides](/docs/genai-unreal/usage-guides-and-examples/)** 📘 — Downloadable Projects & Walkthroughs
 7.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝 — Chat Context Strategies
 8.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️ — Real-Time Response Chunks
 9.  **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️ — JSON Schema Enforcement
 10. **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Audio I/O
-11. **[Image Generation](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
+11. **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
 12. **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Advanced Interactions
-13. **[How to Run Tests](/docs/genai-unreal/how-to-run-tests/)** 🧪 — Verify Integration
+13. **[Debugging and Running Tests](/docs/genai-unreal/debugging-and-running-tests/)** 🧪 — Verify Integration
 14. **[Quick Links & API Reference](/docs/genai-unreal/quick-links-and-api-reference/)** 🌐 — External Docs
 15. **[Additional Notes](/docs/genai-unreal/additional-notes/)** 📋 — Tips & Gotchas
 

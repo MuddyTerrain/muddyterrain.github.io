@@ -14,15 +14,26 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp" alt="GenAI for Unreal Plugin Banner">
 
-<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest O3 and O4 mini, Anthrophic's Claude Sonnet/Opus 4, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
+<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest GPT-5, O4 mini, Anthrophic's Claude Sonnet/Opus 4.1, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
 
-<p>Now with <strong>Grok 4</strong> & OpenAI <strong>Realtime API</strong>!! 🎉</p>
+<p>Now with <strong>GPT-5</strong>, <strong>Grok 4</strong>, Google's <strong>Nano Banana</strong> & OpenAI <strong>Realtime API</strong>!! 🎉</p>
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
 
+<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+  <h2 style="margin-top: 0;">What's New in the Latest Update!</h2>
+  <p>We've just released a massive update packed with new features, models, and improvements:</p>
+  <ul>
+    <li><strong>Brand New Example Project:</strong> Explore a completely revamped example project, now with dedicated C++ and Blueprint versions, featuring chat widgets and more!</li>
+    <li><strong>Image Editing is Here:</strong> Unleash your creativity with newly added support for image editing.</li>
+    <li><strong>Frontier Model Support:</strong> Now includes support for <strong>OpenAI's GPT-5</strong>, <strong>Google's Nano Banana</strong>, <strong>Anthropic's Claude 4.1</strong>, and <strong>DeepSeek-V3.1</strong>.</li>
+    <li><strong>Enhanced Multimodal:</strong> Google Gemini now fully supports multimodal chat.</li>
+    <li><strong>Expanded Tooling:</strong> Added support for "ReasoningEffort" and "Verbosity" for GPT-5, plus an extended logging mode for easier debugging.</li>
+  </ul>
+</div>
 
 <h2>Key Features:</h2>
 <ul>
@@ -40,7 +51,11 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li>
         <p><strong>Multi-Modal Vision/Text Input:</strong> 📸<br>
-        Allow models to "see" your game. Provide screenshots or other images as direct input along with text, perfect for creating AI-powered spectator commentary, dynamic player guides, or environment-aware NPC interactions.</p>
+        Allow models to "see" your game. Provide screenshots or other images as direct input along with text—now with support for Google Gemini! Perfect for creating AI-powered spectator commentary, dynamic player guides, or environment-aware NPC interactions.</p>
+    </li>
+    <li>
+        <p><strong>Image Editing:</strong> 🎨<br>
+        Go beyond generation. Edit existing images with powerful AI-driven tools to iterate on your visual concepts directly within the engine.</p>
     </li>
     <li>
         <p><strong>Structured JSON Output:</strong> ❤️‍🔥<br>
@@ -88,7 +103,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <ul>
     <li><strong>OpenAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
+            <li><strong>Chat:</strong> <code>gpt-5</code>, <code>gpt-5-mini</code>, <code>gpt-5-nano</code>, <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
             <li><strong>Reasoning Models:</strong> <code>o4-mini</code>, <code>o3</code>, <code>o3-pro</code>, <code>o3-mini</code>, <code>o1</code>, <code>o1-pro</code>.</li>
             <li><strong>Image Generation:</strong> <code>gpt-image-1</code>, <code>dall-e-3</code>, <code>dall-e-2</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gpt-4o-mini-tts</code>, <code>tts-1</code>, <code>tts-1-hd</code>.</li>
@@ -96,18 +111,18 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Structured Output (JSON Mode)</strong>  ✔</li>
             <li><strong>Text Streaming</strong>   ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
-            <li><strong>Realtime API:</strong> <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
+            <li><strong>Realtime API:</strong> <code>gpt-realtime</code>, <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
         </ul>
     </li>
     <li><strong>Anthropic:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>.</li>
+            <li><strong>Chat:</strong> <code>claude-opus-4.1</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>, <code>claude-3-haiku</code>, <code>claude-3-opus</code>.</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
         </ul>
     </li>
     <li><strong>XAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>grok-4</code>, <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
+            <li><strong>Chat:</strong> <code>grok-4</code>, <code>grok-4-eu</code>, <code>grok-code-fast-1</code>, <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
             <li><strong>Reasoning Models:</strong> <code>grok-4</code>, <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
@@ -120,12 +135,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Audio TTS:</strong> <code>gemini-2.5-flash-preview-tts</code>, <code>gemini-2.5-pro-preview-tts</code>.</li>
             <li><strong>Audio Transcription:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
-            <li><strong>Image Generation:</strong> <code>gemini-2.0-flash-preview-image-generation</code>, <code>imagen-3.0-generate-preview-06-06</code>, <code>imagen-4.0-generate-preview-06-06</code>.</li> <span style="color: #888888;">(Note: Gemini image generation is currently not available in the UK and EU regions.)</span>
+            <li><strong>Multimodal Chat</strong>   ✔</li>
+            <li><strong>Image Generation:</strong> <code>gemini-2.5-flash-image-preview (Nano Banana)</code>, <code>imagen-4.0-ultra-generate-001</code>, <code>imagen-4.0-generate-001</code>, <code>imagen-4.0-fast-generate-001</code>, <code>imagen-3.0-generate-002</code>, <code>gemini-2.0-flash-preview-image-generation</code>.</li>
         </ul>
     </li>
     <li><strong>DeepSeek:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>deepseek-chat</code>.</li>
+            <li><strong>Chat:</strong> <code>DeepSeek-V3.1</code>, <code>deepseek-chat</code>.</li>
             <li><strong>Reasoning:</strong> <code>deepseek-reasoner</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
         </ul>
@@ -163,7 +179,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>Truly Dynamic NPCs:</strong> Create characters whose dialogue is generated in real-time based on player actions and world events.</li>
     <div class="image-wrapper">
     <figure>
-        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_70/v1751282014/BeFunky-collage232_logwgw.webp" alt="Use cases example" style="width: 100%;">
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_50/v1751282014/BeFunky-collage232_logwgw.webp" alt="Use cases example" style="width: 100%;">
         <figcaption class="image-caption">
         A third-party project built using this plugin called 'Become Human'
         </figcaption>

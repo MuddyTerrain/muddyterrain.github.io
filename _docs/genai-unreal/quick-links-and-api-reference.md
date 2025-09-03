@@ -33,9 +33,13 @@ This is a high-level look at the key C++ classes you will interact with. For det
 -   `FGenChatMessage`
     -   *Purpose:* The fundamental struct representing a single message in a conversation, containing a `Role` and `Content`.
 
-#### **Image Generation**
+#### **Model Discovery**
+-   `UGenOAIModels`, `UGenGoogleModels`, etc.
+    -   *Purpose:* Static libraries for fetching a list of all available models from a provider.
+
+#### **Image Generation & Editing**
 -   `UGenOAIImageGeneration`
-    -   *Purpose:* Static library for sending image generation requests to DALL-E.
+    -   *Purpose:* Static library for sending image generation and editing requests.
 -   `FGenOAIImageSettings`
     -   *Purpose:* Struct for configuring image prompts, resolution, quality, etc.
 

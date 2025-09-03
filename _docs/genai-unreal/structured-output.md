@@ -7,7 +7,7 @@ nav_order: 10
 
 Structured Output is a critical feature for game development that forces the AI to respond in a strict, predictable JSON format. This eliminates the need to parse unreliable free-form text and allows you to directly integrate AI-generated data into your game systems.
 #### Currently Supported Providers
-- OpenAI
+- **UI Not Yet Included:** The current example projects do not yet have a dedicated UI widget for structured output, but the underlying functionality is fully supported.
 
 ---
 

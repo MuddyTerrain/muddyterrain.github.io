@@ -49,11 +49,11 @@ Now, let's create a simple Actor to send our first request.
 
 We will use the `Event BeginPlay` node to trigger our AI request as soon as the game starts. The core of this logic is the `Request OpenAI Chat Completion` node, which handles the entire web request asynchronously.
 
-Replicate the Blueprint graph shown in the image below. (You can click the image to view it in full size.)
+Replicate the Blueprint graph shown in the image below. We recommend using the new **"Make..." node with the fire logo** as it provides a convenient dropdown to select your model.
 
 <div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751480831/1e64d118-033f-40cf-957f-e15d8ae5a290.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
+        <img class="full-bleed" src="[PLACEHOLDER: Image of the quick start blueprint using the new fire-logo 'Make' node]" alt="Quick Start Blueprint Example" style="width: 100%;">
         <figcaption class="image-caption">
         A simple setup for testing chat completion.
         </figcaption>
@@ -67,7 +67,7 @@ Replicate the Blueprint graph shown in the image below. (You can click the image
 Here is a step-by-step breakdown of the node connections:
 
 -   **Trigger:** Connect the `Event BeginPlay` execution pin to the `Request OpenAI Chat Completion` node.
--   **Settings:** The `Settings` pin configures the request. For now, leave this with its default values by adding a `Make Gen AI Chat Settings` node.
+-   **Settings:** Use the `Make Gen OpenAI Chat Settings (Advanced)` node. The default model (`gpt-4o`) is fine for this test.
 -   **Message:** The `Messages` pin contains the actual prompt.
    -   Add a `Make Gen Chat Message` node.
    -   Set the **Role** to `user`.

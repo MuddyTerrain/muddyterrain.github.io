@@ -32,3 +32,24 @@ social:
 # related_posts: 'You may also enjoy...'
 
 # post_date_prefix: 'Written on'
+
+# Example Project Downloads
+example_projects:
+  - version: "5.6"
+    cpp_link: "https://drive.google.com/file/d/1ouLmlJAtIlcEA2xJiilAD8XB271pqf2r/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/1aE1-y7n_0QOo6EPS5njyMyxyg32RgIFn/view?usp=sharing"
+  - version: "5.5"
+    cpp_link: "https://drive.google.com/file/d/1AlfVDezacSbdHTlG3GSdlYVr-puRjgor/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/1x5CqvWp3R17EdcoWixmtd2zo1cqtzhdv/view?usp=sharing"
+  - version: "5.4"
+    cpp_link: "https://drive.google.com/file/d/1s083tbx8AEDqhe706yh-nGSyt1Odu9ge/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/1NsCI5SWdfTUNUxtz-XTNzEssBz5e2kTO/view?usp=sharing"
+  - version: "5.3"
+    cpp_link: "https://drive.google.com/file/d/1u2zq6pTZ-qgPjfjB0VS1rDUZEhU6R2tw/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/14YqNmcwUyRK6NBYpLNdIicjVZQ71UNm5/view?usp=sharing"
+  - version: "5.2"
+    cpp_link: "https://drive.google.com/file/d/1LwPCap6HEctLEvvVFBDyIsJgG3y40zbQ/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/1IPB_FvE4qg3WXguwdxhBVSQ33wR7mqlI/view?usp=sharing"
+  - version: "5.1"
+    cpp_link: "https://drive.google.com/file/d/1F2gzMeL9vkQfTtuBx_vjlZRioO8kVhXk/view?usp=sharing"
+    bp_link: "https://drive.google.com/file/d/133ick9l4iC-bWdy0v477khcjiCeBq-m9/view?usp=sharing"

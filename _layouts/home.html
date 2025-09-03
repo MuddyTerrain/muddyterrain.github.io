@@ -3,20 +3,104 @@ layout: default
 title: Home
 ---
 
-{% for post in paginator.posts %}
-  {% include featured-post.html %}
-{% endfor %}
+<div class="home">
 
-<!-- Pagination links -->
-<!-- <div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
-</div> -->
+  <div class="hero">
+    <h1 class="hero-title">Building games of the future</h1>
+    <p class="hero-subtitle">World Models, Generative AI, Dynamic Narration</p>
+  </div>
+
+  <div class="join-us-section">
+    <div class="button-container">
+      <a href="https://www.linkedin.com/company/muddy-terrain-games/jobs/" class="modern-button careers" target="_blank">
+        Careers <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+      <a href="{{ '/t/discord' | relative_url }}" class="modern-button discord" target="_blank">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-section-header">
+<!--      <h2>Forging New Realities</h2>-->
+      <p>We build immersive worlds and the technology that powers them. From generative AI tools to standalone game titles, our work is focused on the future of interactive entertainment.</p>
+    </div>
+  
+    <div class="product-card">
+      <div class="product-image">
+        <a href="{{ '/genai-unreal/' | relative_url }}">
+          <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp" alt="GenAI for Unreal Plugin">
+        </a>
+      </div>
+      <div class="product-caption">
+        <h3><a href="{{ '/genai-unreal/' | relative_url }}">GenAI for Unreal Plugin</a></h3>
+        <p>A comprehensive suite of tools to integrate cutting-edge generative AI into your Unreal Engine projects, from dynamic narration to real-time conversations.</p>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <div class="product-image">
+         <a href="{{ '/local-ci-cd-for-unreal/' | relative_url }}">
+          <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce772-033b-4e99-970a-8362b32ef3cb.webp" alt="CI/CD for Unreal">
+        </a>
+      </div>
+      <div class="product-caption">
+        <h3><a href="{{ '/local-ci-cd-for-unreal/' | relative_url }}">CI/CD for Unreal</a></h3>
+        <p>Streamline your development pipeline with our CI/CD solution for Unreal Engine, enabling faster builds, automated testing, and seamless deployment.</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <a href="#">
+          <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_50/v1751282014/BeFunky-collage232_logwgw.webp" alt="Become Human Game Template">
+        </a>
+      </div>
+      <div class="product-caption">
+        <h3><a href="#">Become Human</a></h3>
+        <p>A complete, game-ready template built with our GenAI plugin, serving as the ultimate learning resource and starting point for your own AI-driven games. (Coming Soon to Fab Marketplace)</p>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <div class="product-image">
+        <a href="{{ '/traffic-tales/' | relative_url }}">
+          <img src="{{ '/assets/img/TrafficTales.png' | relative_url }}" alt="Traffic Tales">
+        </a>
+      </div>
+      <div class="product-caption">
+        <h3><a href="{{ '/traffic-tales/' | relative_url }}">Traffic Tales</a></h3>
+        <p>An interactive narrative game where your choices shape the story. Navigate complex traffic scenarios and uncover a branching storyline. (Coming Soon)</p>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <div class="product-image">
+        <a href="{{ '/starship-simulator/' | relative_url }}">
+          <img src="{{ '/assets/img/StarshipSim.png' | relative_url }}" alt="Starship Simulator">
+        </a>
+      </div>
+      <div class="product-caption">
+        <h3><a href="{{ '/starship-simulator/' | relative_url }}">Starship Simulator</a></h3>
+        <p>Take command of your own starship in this immersive simulation. Explore vast galaxies, manage your crew, and engage in epic space battles. (Coming Soon)</p>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Pagination links -->
+  <!-- <div class="pagination">
+    {% if paginator.next_page %}
+      <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
+    {% else %}
+      <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
+    {% endif %}
+    {% if paginator.previous_page %}
+      <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
+    {% else %}
+      <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
+    {% endif %}
+  </div> -->
+
+</div>

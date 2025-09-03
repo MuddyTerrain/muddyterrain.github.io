@@ -27,14 +27,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
 <p style="margin: 0; font-weight: bold; color: #155724;">Get running in three simple steps.</p>
 </div>
 <ol>
-    <li><strong>Download the Tool:</strong> <a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab" target="_blank" rel="noopener noreferrer">Clone or download the repository</a> from GitHub to a folder on your machine.</li>
-    <li><strong>Create your <code>config.json</code>:</strong> Duplicate the <code>config.example.json</code> file and rename the copy to <code>config.json</code>. Edit the file to point to your project and Unreal Engine installations.</li>
-    <li><strong>Run the Script:</strong> Open a PowerShell window in the tool's directory and run <code>./package_fast.ps1</code>. The tool will handle the rest.</li>
+    <li><strong>Download the Tool:</strong> <a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab" target="_blank" rel="noopener noreferrer">Clone or download the repository</a> from GitHub.</li>
+    <li><strong>Create your <code>config.json</code>:</strong> Duplicate <code>config.example.json</code>, rename it to <code>config.json</code>, and edit it to point to your project and engine installations.</li>
+    <li><strong>Run the Pipeline:</strong> Open a PowerShell window and run <code>./run_pipeline.ps1</code>. The tool will validate your setup and handle the rest.</li>
 </ol>
 
 <h2>Configuration</h2>
 <p>All settings are managed in the <code>config.json</code> file. This allows you to define everything from your project path to the specific engine versions you want to build for.</p>
-<img class="full-bleed" src="{{ site.baseurl }}/assets/img/ci-cd/engine-versions.png" alt="CI/CD Tool Engine Version Configuration">
+<img class="full-bleed" src="https://raw.githubusercontent.com/muddyterrain/unreal-ci-cd-for-fab/main/Docs/EngineVersions.png" alt="CI/CD Tool Engine Version Configuration">
 <p>For a full breakdown of all settings, please see the <a href="/docs/ci-cd-unreal/configuration/">detailed configuration guide</a>.</p>
 
 <div class="button-row">
@@ -45,28 +45,28 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
 <h2>Key Features</h2>
 <ul>
     <li>
-        <p><strong>Fully Automated Packaging:</strong> 📦<br>
-        Run one simple script to package your plugin or project across multiple specified Unreal Engine versions. No more manual UAT commands for each version.</p>
+        <p><strong>Automated Example Project Generation:</strong> 📦<br>
+        Automatically generates clean, version-specific C++ and Blueprint-only example projects for each engine version from a single master project.</p>
     </li>
     <li>
-        <p><strong>Simple JSON Configuration:</strong> ⚙️<br>
-        Set up all your project paths, engine locations, and output directories in a single, easy-to-read `config.json` file. Get set up in minutes.</p>
+        <p><strong>Multi-Version Plugin Packaging:</strong> ⚙️<br>
+        Run one script to package your plugin for all specified Unreal Engine versions. No more manual UAT commands.</p>
     </li>
     <li>
-        <p><strong>Lightweight & Dependency-Free:</strong> ⚡️<br>
-        Built entirely with PowerShell, this tool runs on any modern Windows machine without requiring any external software or dependencies. Just clone and run.</p>
+        <p><strong>Optional Cloud Uploads:</strong> ☁️<br>
+        Automatically upload all your packaged builds to Google Drive, Dropbox, or any other cloud provider using the powerful <code>rclone</code> tool.</p>
     </li>
     <li>
-        <p><strong>Smart Archiving:</strong> 🗄️<br>
-        The tool automatically creates a clean, organized folder structure for your packaged builds, sorted by engine version, ready for you to zip and upload to Fab.</p>
+        <p><strong>Time-Saving Cache:</strong> ⚡️<br>
+        Use the <code>-UseCache</code> flag to skip any builds that already exist in your output folder. Perfect for iterating on a single engine version without rebuilding everything.</p>
     </li>
      <li>
         <p><strong>MIT Licensed & Open Source:</strong> ❤️‍🔥<br>
         Completely free to use, modify, and distribute. We believe in empowering the community with powerful, accessible tools.</p>
     </li>
     <li>
-        <p><strong>Plugin-Aware Logic:</strong> 🔗<br>
-        Specifically designed for plugin developers, the tool can isolate the packaged plugin from the host project's build output, giving you a clean distributable.</p>
+        <p><strong>Simple JSON Configuration:</strong> 🔗<br>
+        Set up all your project paths, engine locations, and output directories in a single, easy-to-read <code>config.json</code> file. Get set up in minutes.</p>
     </li>
 </ul>
 

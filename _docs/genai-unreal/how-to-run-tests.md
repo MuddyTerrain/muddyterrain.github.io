@@ -74,3 +74,16 @@ UE5Editor.exe "C:\Path\To\Your\Project\YourProject.uproject" -ExecCmds="Automati
 ### Troubleshooting Test Failures
 
 If tests are failing, common causes include an invalid API key, network connectivity issues, or API rate limits. The **Extended Logging Mode** described above is the best tool for diagnosing these failures.
+
+---
+
+## 3. Contributing to the Example Project
+
+The **GenAI for Unreal Example Project** is open source and we welcome contributions from the community! Whether you're fixing a bug, adding a new example, or improving the UI, we encourage you to get involved.
+
+-   **GitHub Repository:** [**github.com/MuddyTerrain/gen-ai-for-unreal-example**](https://github.com/MuddyTerrain/gen-ai-for-unreal-example)
+
+<div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Important Note for C++ Contributors</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">While the example project itself is open source, the core <strong>GenAI for Unreal plugin</strong> is included as a private Git submodule. To compile the C++ project and contribute to the code, you must first purchase and install the plugin from the <a href="/t/genai-fab" target="_blank" rel="noopener noreferrer">Fab marketplace</a>. This will give you the necessary source code to compile against.</p>
+</div>

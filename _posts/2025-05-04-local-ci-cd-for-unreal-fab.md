@@ -27,7 +27,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
 <p style="margin: 0; font-weight: bold; color: #155724;">Get running in three simple steps.</p>
 </div>
 <ol>
-    <li><strong>Download the Tool:</strong> <a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab" target="_blank" rel="noopener noreferrer">Clone or download the repository</a> from GitHub.</li>
+    <li><strong>Download the Tool:</strong> <a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab" class="track-click" data-event-name="lnk_clk_cicd_github_repo" data-event-location="post_cicd" target="_blank" rel="noopener noreferrer">Clone or download the repository</a> from GitHub.</li>
     <li><strong>Create your <code>config.json</code>:</strong> Duplicate <code>config.example.json</code>, rename it to <code>config.json</code>, and edit it to point to your project and engine installations.</li>
     <li><strong>Run the Pipeline:</strong> Open a PowerShell window and run <code>./run_pipeline.ps1</code>. The tool will validate your setup and handle the rest.</li>
 </ol>
@@ -35,7 +35,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
 <h2>Configuration</h2>
 <p>All settings are managed in the <code>config.json</code> file. This allows you to define everything from your project path to the specific engine versions you want to build for.</p>
 <img class="full-bleed" src="https://raw.githubusercontent.com/muddyterrain/unreal-ci-cd-for-fab/main/Docs/EngineVersions.png" alt="CI/CD Tool Engine Version Configuration">
-<p>For a full breakdown of all settings, please see the <a href="/docs/ci-cd-unreal/configuration/">detailed configuration guide</a>.</p>
+<p>For a full breakdown of all settings, please see the <a href="/docs/ci-cd-unreal/configuration/" class="track-click" data-event-name="lnk_clk_cicd_config_guide" data-event-location="post_cicd">detailed configuration guide</a>.</p>
 
 <div class="button-row">
   <a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab" class="cta-button primary track-click" data-event-name="btn_clk_cicd_github" data-event-location="mid_cta" target="_blank" rel="noopener noreferrer">Download on GitHub</a>
@@ -80,9 +80,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
 
 <h2>Resources & Support</h2>
 <ul>
-    <li><a href="/docs/ci-cd-unreal/">Full Documentation</a></li>
-    <li><a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab/issues" target="_blank" rel="noopener noreferrer">Report an Issue on GitHub</a></li>
-    <li><a href="/t/discord">Join the Discord Community</a></li>
+    <li><a href="/docs/ci-cd-unreal/" class="track-click" data-event-name="lnk_clk_cicd_docs" data-event-location="post_cicd">Full Documentation</a></li>
+    <li><a href="https://github.com/muddyterrain/unreal-ci-cd-for-fab/issues" class="track-click" data-event-name="lnk_clk_cicd_github_issues" data-event-location="post_cicd" target="_blank" rel="noopener noreferrer">Report an Issue on GitHub</a></li>
+    <li><a href="/t/discord" class="track-click" data-event-name="lnk_clk_discord" data-event-location="post_cicd">Join the Discord Community</a></li>
     <li><strong>Contributions Welcome:</strong> Have an idea to make the tool better? Fork the repo and submit a pull request!</li>
 </ul>
 

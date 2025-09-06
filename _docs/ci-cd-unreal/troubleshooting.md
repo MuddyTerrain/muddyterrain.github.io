@@ -30,7 +30,7 @@ This page covers common problems and known issues you may encounter while using 
 ### Zipping Fails with "Stream was too long":
 
 -   **Cause**: PowerShell's built-in `Compress-Archive` command cannot handle files larger than 4GB.
--   **Solution**: We recommend installing [7-Zip](https://www.7-zip.org/). You can then modify the `Compress-Archive` commands in the scripts to use the `7z.exe` command-line tool, which has no file size limits.
+-   **Solution**: We recommend installing <a href="https://www.7-zip.org/" class="track-click" data-event-name="lnk_clk_7zip" data-event-location="docs_troubleshooting" target="_blank" rel="noopener noreferrer">7-Zip</a>. You can then modify the `Compress-Archive` commands in the scripts to use the `7z.exe` command-line tool, which has no file size limits.
 
 ### Configuration Validation Fails:
 

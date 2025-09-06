@@ -81,7 +81,7 @@ If tests are failing, common causes include an invalid API key, network connecti
 
 The **GenAI for Unreal Example Project** is open source and we welcome contributions from the community! Whether you're fixing a bug, adding a new example, or improving the UI, we encourage you to get involved.
 
--   **GitHub Repository:** [**github.com/MuddyTerrain/gen-ai-for-unreal-example**](https://github.com/MuddyTerrain/gen-ai-for-unreal-example)
+-   **GitHub Repository:** <a href="https://github.com/MuddyTerrain/gen-ai-for-unreal-example" class="track-click" data-event-name="lnk_clk_genai_example_github" data-event-location="docs_how_to_run_tests" target="_blank" rel="noopener noreferrer"><strong>github.com/MuddyTerrain/gen-ai-for-unreal-example</strong></a>
 
 <div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Important Note for C++ Contributors</p>

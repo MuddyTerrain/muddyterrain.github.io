@@ -17,7 +17,7 @@ This tool automates the tedious process of multi-version support, ensuring your 
 ---
 
 ## Problem Statement
-As per the [Fab.com submission guidelines](https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS?language=en_US), code plugins are distributed with binaries built by Epic’s own toolchain. This means developers must upload their plugin as source files and ensure it compiles correctly against every supported engine version.
+As per the <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS?language=en_US" class="track-click" data-event-name="lnk_clk_fab_guidelines" data-event-location="docs_cicd_index" target="_blank" rel="noopener noreferrer">Fab.com submission guidelines</a>, code plugins are distributed with binaries built by Epic’s own toolchain. This means developers must upload their plugin as source files and ensure it compiles correctly against every supported engine version.
 
 Manually packaging a plugin and its example project for multiple engine versions is tedious, time-consuming, and error-prone. This tool was built to solve that problem.
 

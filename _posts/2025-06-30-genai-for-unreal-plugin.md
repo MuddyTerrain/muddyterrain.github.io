@@ -97,7 +97,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Available Integrations & Models</h2>
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" class="track-click" data-event-name="lnk_clk_genai_api_keys_docs" data-event-location="post_genai" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
 </div>
 <p>A clean, unified API for the best models available today.</p>
 <ul>
@@ -202,9 +202,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <h2>Resources & Support</h2>
 <ul>
-    <li><a href="[LINK_TO_DOCUMENTATION]">Documentation</a></li>
+    <li><a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_genai">Documentation</a></li>
     <li><a href="/t/discord">Discord Community</a></li>
-    <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com">mail@muddyterrain.com</a></li>
+    <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com" class="track-click" data-event-name="lnk_clk_support_email" data-event-location="post_genai">mail@muddyterrain.com</a></li>
 </ul>
 
 <div class="button-row">

@@ -25,7 +25,7 @@ OpenAI provides access to industry-leading models for text generation, image cre
    </figure>
 </div>
 
-1.  Navigate to the [OpenAI Platform](https://platform.openai.com/signup) and create an account or log in.
+1.  Navigate to the <a href="https://platform.openai.com/signup" class="track-click" data-event-name="lnk_clk_openai_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">OpenAI Platform</a> and create an account or log in.
 2.  From the dashboard menu, select **API Keys**.
 3.  Click **"Create new secret key,"** give it a descriptive name (e.g., `MyUnrealProject_Dev`), and copy the key immediately. **For security, OpenAI will not show you the key again.**
 4.  *(Recommended)* Visit the **Billing** section to set usage limits and prevent unexpected costs.
@@ -34,7 +34,7 @@ OpenAI provides access to industry-leading models for text generation, image cre
 
 Anthropic offers the Claude family of models, known for their large context windows and strong performance in complex reasoning.
 
-1.  Go to the [Anthropic Console](https://console.anthropic.com/) and sign in.
+1.  Go to the <a href="https://console.anthropic.com/" class="track-click" data-event-name="lnk_clk_anthropic_console" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">Anthropic Console</a> and sign in.
 2.  In your **Account Settings**, find the **API Keys** section.
 3.  Generate a new key, name it according to its use (e.g., `Development`), and copy it.
 
@@ -42,7 +42,7 @@ Anthropic offers the Claude family of models, known for their large context wind
 
 Google's Gemini models offer powerful multimodal capabilities and a generous free tier for developers.
 
-1.  Visit the [Google AI Studio](https://ai.google.dev/) to get started.
+1.  Visit the <a href="https://ai.google.dev/" class="track-click" data-event-name="lnk_clk_google_ai_studio" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">Google AI Studio</a> to get started.
 2.  Follow the on-screen instructions to create or select a project and generate your API key.
 
 ✨ **Developer Offer: Free Tier for Gemini**
@@ -50,8 +50,8 @@ Google provides a **free tier** for the Gemini API, designed for development and
 
 ### Other Providers
 
--   **DeepSeek:** [platform.deepseek.com](https://platform.deepseek.com/)
--   **XAI (Grok):** [x.ai](https://x.ai/)
+-   **DeepSeek:** <a href="https://platform.deepseek.com/" class="track-click" data-event-name="lnk_clk_deepseek_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">platform.deepseek.com</a>
+-   **XAI (Grok):** <a href="https://x.ai/" class="track-click" data-event-name="lnk_clk_xai" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">x.ai</a>
 
 Follow the instructions on each provider's platform to generate and manage your keys.
 

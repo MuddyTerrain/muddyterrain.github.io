@@ -27,7 +27,7 @@ Before using the pipeline, you must ensure your system is correctly configured w
         - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.36-17.6)` - **Required for UE 5.3**
         - `MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)` or newer - **Required for UE 5.4+**
         - `Windows 11 SDK` or `Windows 10 SDK`
-4.  **(Optional) rclone**: For the cloud upload feature, you will need to download [rclone](https://rclone.org/).
+4.  **(Optional) rclone**: For the cloud upload feature, you will need to download <a href="https://rclone.org/" class="track-click" data-event-name="lnk_clk_rclone_org" data-event-location="docs_prerequisites" target="_blank" rel="noopener noreferrer">rclone</a>.
 
 <div class="image-wrapper">
     <figure>

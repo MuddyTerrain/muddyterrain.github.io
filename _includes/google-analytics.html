@@ -5,6 +5,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '{{ site.data.settings.google-ID }}');
+  const internalUser = getCookie('internal_user');
+  if (internalUser) {
+    gtag('config', '{{ site.data.settings.google-ID }}', {
+      'traffic_type': 'internal'
+    });
+  } else {
+    gtag('config', '{{ site.data.settings.google-ID }}');
+  }
 </script>
 {% endif %}

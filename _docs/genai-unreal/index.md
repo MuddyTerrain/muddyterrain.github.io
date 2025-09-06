@@ -79,7 +79,7 @@ GenAI for Unreal is more than just a tool—it's a complete solution designed to
 
 ## Official Links
 
-* **[Product Page](https://muddyterrain.com/genai-unreal)**: Detailed features, pricing, and purchase options.
-* **[Fab.com Listing](https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e)**: Download the plugin from the Fab.com marketplace.
+* **<a href="https://muddyterrain.com/genai-unreal" class="track-click" data-event-name="lnk_clk_genai_product_page" data-event-location="docs_genai_index" target="_blank" rel="noopener noreferrer">Product Page</a>**: Detailed features, pricing, and purchase options.
+* **<a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="track-click" data-event-name="lnk_clk_genai_fab_listing" data-event-location="docs_genai_index" target="_blank" rel="noopener noreferrer">Fab.com Listing</a>**: Download the plugin from the Fab.com marketplace.
 
 ---

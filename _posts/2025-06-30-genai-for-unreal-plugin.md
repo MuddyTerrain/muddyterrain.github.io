@@ -67,11 +67,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li>
         <p><strong>Text To Speech (TTS):</strong> 🔊<br>
-        Generate dynamic, high-quality voice lines for in-game dialogue, narration, or live conversations with AI characters using OpenAI's TTS models.</p>
+        Generate dynamic, high-quality voice lines for in-game dialogue, narration, or live conversations with AI characters using OpenAI's and ElevenLabs' TTS models.</p>
+    </li>
+    <li>
+        <p><strong>Sound Effect Generation:</strong> 🎶<br>
+        Generate custom sound effects from text prompts using ElevenLabs' state-of-the-art audio models.</p>
     </li>
     <li>
         <p><strong>Audio Transcriptions:</strong> 📝<br>
-        Power in-game voice commands or create interactive conversations by converting player speech to text with OpenAI's Whisper and GPT-4o transcription models.</p>
+        Power in-game voice commands or create interactive conversations by converting player speech to text with OpenAI's Whisper, GPT-4o, and ElevenLabs' transcription models.</p>
     </li>
     <li>
         <p><strong>Effortless Server Proxying:</strong> ☁️<br>
@@ -97,7 +101,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Available Integrations & Models</h2>
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/genai-unreal-documentation#2-getting-api-keys" class="track-click" data-event-name="lnk_clk_genai_api_keys_docs" data-event-location="post_genai" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/docs/genai-unreal/getting-api-keys/" class="track-click" data-event-name="lnk_clk_genai_api_keys_docs" data-event-location="post_genai" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
 </div>
 <p>A clean, unified API for the best models available today.</p>
 <ul>
@@ -144,6 +148,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Chat:</strong> <code>DeepSeek-V3.1</code>, <code>deepseek-chat</code>.</li>
             <li><strong>Reasoning:</strong> <code>deepseek-reasoner</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
+        </ul>
+    </li>
+    <li><strong>ElevenLabs:</strong>
+        <ul>
+            <li><strong>Text-to-Speech:</strong> <code>eleven_multilingual_v2</code>.</li>
+            <li><strong>Transcription:</strong> <code>scribe_v1</code>.</li>
+            <li><strong>Sound Effects:</strong> <code>eleven_text_to_sound_v2</code>.</li>
         </ul>
     </li>
 </ul>

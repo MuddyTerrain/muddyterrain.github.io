@@ -16,6 +16,7 @@ Refer to the official documentation for each provider for detailed information o
 <a href="https://platform.openai.com/docs" class="track-click" data-event-name="lnk_clk_openai_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">platform.openai.com/docs</a>
 -   **Anthropic API Docs:** <a href="https://docs.anthropic.com/" class="track-click" data-event-name="lnk_clk_anthropic_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">docs.anthropic.com</a>
 -   **Google Gemini API Docs:** <a href="https://ai.google.dev/docs" class="track-click" data-event-name="lnk_clk_google_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">ai.google.dev/docs</a>
+-   **ElevenLabs API Docs:** <a href="https://elevenlabs.io/docs/api-reference" class="track-click" data-event-name="lnk_clk_elevenlabs_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">elevenlabs.io/docs/api-reference</a>
 -   **DeepSeek API Docs:** <a href="https://platform.deepseek.com/api-docs" class="track-click" data-event-name="lnk_clk_deepseek_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">platform.deepseek.com/api-docs</a>
 -   **XAI (Grok) API Docs:** <a href="https://x.ai/api" class="track-click" data-event-name="lnk_clk_xai_api_docs" data-event-location="docs_quick_links" target="_blank" rel="noopener noreferrer">x.ai/api</a>
 

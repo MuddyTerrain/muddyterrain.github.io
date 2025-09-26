@@ -11,7 +11,7 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 
 -   **OpenAI:** Offers a range of high-quality, natural-sounding voices.
 -   **Google Text-to-Speech:** Provides a wide variety of voices and language options.
--   **ElevenLabs:** Support for ElevenLabs' industry-leading, emotionally expressive voices is currently in development and will be available in a future update.
+-   **ElevenLabs:** Offers industry-leading, emotionally expressive voices for TTS and transcription. The plugin also supports their new sound effect generation feature (see the [Sound Effects](/docs/genai-unreal/sound-effects/) page for more).
 
 ---
 

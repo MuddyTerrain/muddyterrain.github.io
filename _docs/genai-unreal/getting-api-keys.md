@@ -48,6 +48,14 @@ Google's Gemini models offer powerful multimodal capabilities and a generous fre
 ✨ **Developer Offer: Free Tier for Gemini**
 Google provides a **free tier** for the Gemini API, designed for development and testing. This is an excellent way to experiment with the model's capabilities without initial costs. The free tier has certain rate limits, but usage within Google AI Studio itself is completely free in supported regions.
 
+### ElevenLabs (High-Quality TTS & Sound Effects)
+
+ElevenLabs is a leader in realistic, expressive text-to-speech and generative audio.
+
+1.  Go to the <a href="https://elevenlabs.io/" class="track-click" data-event-name="lnk_clk_elevenlabs_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">ElevenLabs website</a> and sign up or log in.
+2.  Click on your profile icon in the top-right corner and select **"Profile + API Key"**.
+3.  You can find and copy your API key from this page.
+
 ### Other Providers
 
 -   **DeepSeek:** <a href="https://platform.deepseek.com/" class="track-click" data-event-name="lnk_clk_deepseek_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">platform.deepseek.com</a>

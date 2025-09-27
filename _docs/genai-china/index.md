@@ -21,22 +21,36 @@ Whether you're building dynamic NPC dialogue, procedurally generated content, or
 </div>
 ---
 
-## Getting Started
+## Why Gen AI China?
 
-New to Gen AI China? Here’s a recommended path to get you up and running:
+- **Unified and Simplified API**
 
-1.  **[Initial Project Setup](/docs/genai-china/initial-project-setup/)** ⚙️
-    * Follow our step-by-step guide to install the plugin and configure your C++ and Blueprint projects.
-2.  **[Getting API Keys](/docs/genai-china/getting-api-keys/)** 🔑
-    * Learn how to obtain the necessary API keys from Alibaba Cloud, Moonshot AI, and Bytedance.
-3.  **[Authentication & Security](/docs/genai-china/authentication-and-security/)** 🔒
-    * Understand how to securely store your API keys using the plugin's encrypted storage system.
-4.  **[Usage Guides & Examples](/docs/genai-china/usage-guides-and-examples/)** 📘
-    * Explore practical examples and walkthroughs for core features.
+  Access a diverse range of powerful models from Alibaba, Bytedance, and Moonshot AI through a single, intuitive API. Switch between providers with minimal code changes, allowing you to choose the best model for the job without vendor lock-in.
 
-## Core Features
+- **Full Blueprint & C++ Support**
 
--   **[Building Long Conversations](/docs/genai-china/building-long-conversations/)** 📝 — Maintain conversational context.
--   **[Streaming](/docs/genai-china/streaming/)** ⚡️ — Receive real-time, word-by-word responses.
--   **[Image Generation](/docs/genai-china/image-generation/)** 🎨 — Create images from text prompts.
--   **[Text-to-Speech](/docs/genai-china/text-to-speech/)** 🔊 — Generate high-quality voice lines.
+  The plugin offers feature parity between Blueprints and C++, with self-managing asynchronous nodes that handle complex operations like network requests and response handling. This ensures that both engineers and designers can build and iterate on AI features with ease.
+
+- **Built for Real-time Experiences**
+
+  Create truly interactive and immersive worlds with features like real-time text streaming for dynamic dialogue and multimodal vision support for analyzing in-game scenes.
+
+- **Secure Key Storing**
+
+  Security is a top priority. GenAI China includes a robust system for secure API key management that avoids storing sensitive information in plain text.
+
+---
+
+## Quick Navigation
+
+1.  **[Initial Project Setup](/docs/genai-china/initial-project-setup/)** ⚙️ — Installation & C++ Configuration
+2.  **[Getting API Keys](/docs/genai-china/getting-api-keys/)** 🔑 — Obtain Keys from Alibaba, Bytedance, & Moonshot
+3.  **[Authentication & Security](/docs/genai-china/authentication-and-security/)** 🔒 — Secure Key Storage
+4.  **[Usage Guides & Examples](/docs/genai-china/usage-guides-and-examples/)** 📘 — Practical Walkthroughs
+5.  **[Core Concepts](/docs/genai-china/core-concepts/)** 💡 — Async Design, Debug Mode, Custom Models
+6.  **[Building Long Conversations](/docs/genai-china/building-long-conversations/)** 📝 — Chat Context Strategies
+7.  **[Streaming](/docs/genai-china/streaming/)** ⚡️ — Real-Time Response Chunks
+8.  **[Image Generation](/docs/genai-china/image-generation/)** 🎨 — AI-Powered Art
+9.  **[Text-to-Speech](/docs/genai-china/text-to-speech/)** 🔊 — Audio Generation
+10. **[API Reference & Models](/docs/genai-china/api-reference/)** 🌐 — Full Model List
+11. **[Additional Notes](/docs/genai-china/additional-notes/)** 📋 — Compatibility & Best Practices

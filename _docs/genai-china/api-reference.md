@@ -2,18 +2,74 @@
 layout: documentation
 title: API Reference & Models
 permalink: /docs/genai-china/api-reference/
-nav_order: 6
+nav_order: 12
 ---
 
-This page serves as a reference for the supported providers and models in the Gen AI China plugin.
+This page serves as a central hub for essential links, provider documentation, and a high-level overview of the core C++ classes and enums used in the Gen AI China plugin.
 
 ---
 
 ## AI Provider Documentation
 
+Refer to the official documentation for each provider for detailed information on their models, API parameters, and pricing.
+
 - **Alibaba Qwen:** [https://help.aliyun.com/document_detail/2712573.html](https://help.aliyun.com/document_detail/2712573.html)
 - **Moonshot AI (Kimi):** [https://platform.moonshot.cn/docs](https://platform.moonshot.cn/docs)
 - **Bytedance:** [https://www.volcengine.com/docs/82379](https://www.volcengine.com/docs/82379)
+
+---
+
+## Core C++ Classes Reference
+
+This is a high-level look at the key C++ classes you will interact with. For detailed function signatures, please refer to the header files within the plugin's source code.
+
+#### **Chat Completion**
+-   `UGenZhAlibabaChat`, `UGenZhBytedanceChat`, `UGenZhMoonshotAIChat`
+    -   *Purpose:* Static libraries for sending chat requests to a specific provider.
+-   `FGenZhAlibabaChatSettings`, `FGenZhBytedanceChatSettings`, etc.
+    -   *Purpose:* Structs used to configure all parameters for a chat request.
+-   `FGenZhChatMessage` & `FGenZhMessageContent`
+    -   *Purpose:* The fundamental structs representing a single message and its content (which can be text or image).
+
+#### **Streaming Chat**
+-   `UGenZhAlibabaChatStream`, `UGenZhBytedanceChatStream`, etc.
+    -   *Purpose:* Static libraries for sending streaming chat requests.
+
+#### **Image Generation**
+-   `UGenZhAlibabaImageGeneration`, `UGenZhBytedanceImageGeneration`
+    -   *Purpose:* Static libraries for sending image generation requests.
+-   `FGenZhAlibabaImageSettings`, `FGenZhBytedanceImageSettings`
+    -   *Purpose:* Structs for configuring image prompts, resolution, etc.
+
+#### **Audio Processing**
+-   `UGenZhAlibabaTextToSpeech`
+    -   *Purpose:* Static library for handling TTS requests.
+-   `UGenZhAudioUtils`
+    -   *Purpose:* A critical helper library with static functions for converting audio formats (e.g., raw PCM data to playable `USoundWave` assets).
+
+#### **Blueprint Async Actions**
+-   `URequestAlibabaChat`, `URequestBytedanceImage`, etc.
+    -   *Purpose:* The underlying C++ classes for all the asynchronous Blueprint nodes. They are built on `UCancellableAsyncAction` for automatic lifetime management.
+
+---
+
+## Common Enums
+
+This is a selection of the most frequently used enums for configuring requests.
+
+-   **`EGenZhContentType`**
+    -   *Values:* `Text`, `Image`
+    -   *Use:* Defines the type of content within a chat message.
+-   **`EGenZhOrgs`**
+    -   *Values:* `Alibaba`, `Alibaba_Singapore`, `MoonshotAI`, `Bytedance`
+    -   *Use:* Specifies the AI provider for API key retrieval and other internal logic.
+-   **`EAlibabaApiRegion`**
+    -   *Values:* `MainlandChina`, `SingaporeWorldwide`
+    -   *Use:* Selects the correct API endpoint and key for Alibaba services.
+-   **`EAlibabaAIVoice`**
+    -   *Values:* A selection of voices for Alibaba's Text-to-Speech service (e.g., `Cherry`, `Serena`).
+-   **`EGenZhAlibabaStreamEventType`**, **`EGenZhBytedanceStreamEventType`**, etc.
+    -   *Values:* Defines the event type within a streaming response (e.g., `ResponseOutputTextDelta`, `ResponseCompleted`, `Error`).
 
 ---
 
@@ -37,7 +93,6 @@ Below is a complete list of all models supported by the plugin, organized by pro
 
 **Image Generation:**
 - qwen-image
-- qwen-image-edit
 - wan2.2-t2i-plus
 
 **Text-to-Speech (TTS):**

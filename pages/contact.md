@@ -40,3 +40,10 @@ permalink: /contact
   <a href="https://www.linkedin.com/company/muddyterrain" class="cta-button secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   <a href="https://www.instagram.com/muddyterrain" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Instagram</a>
 </div>
+
+<hr style="margin: 30px 0;">
+
+<h3>Subscribe for Updates</h3>
+<p>Be the first to know about our latest products, updates, and exclusive offers. Sign up below to get notifications delivered right to your inbox.</p>
+
+{% include follow-gumroad.html %}

@@ -3,6 +3,7 @@ layout: documentation
 title: Gen AI China - Home
 permalink: /docs/genai-china/
 nav_order: 1
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp
 ---
 
 <div class="image-wrapper">

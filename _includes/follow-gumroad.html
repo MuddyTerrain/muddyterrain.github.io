@@ -1,0 +1,59 @@
+
+<style>
+    #gumroad-follow-form-embed { 
+      margin: 0px; padding: 0px; box-sizing: border-box; min-width: 0px; max-width: 100%; vertical-align: bottom; 
+      background-origin: padding-box; border-style: solid; border-width: 0px; display: grid; grid-auto-flow: column; 
+      gap: 0.75rem; grid-template-columns: 1fr; grid-auto-columns: max-content; align-items: center;
+    }
+    #gumroad-follow-form-embed:root {
+      color-scheme: light dark; 
+    }
+    #gumroad-follow-form-embed-button {
+      margin: 0px;
+      padding: 0.75rem 1rem;
+      box-sizing: border-box;
+      border-style: solid;
+      border-width: 0px;
+      font-size: 1rem;
+      line-height: 1.4;
+      border: solid .0625rem rgb(221 221 221/0.35);
+      color: rgb(0 0 0);
+      border-radius: 0.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.14s ease-out, box-shadow 0.14s ease-out, background-color 0.14s ease-out;
+      background-color: rgb(221, 221, 221);
+    }
+    #gumroad-follow-form-embed-button:root { 
+      color-scheme: light dark; 
+    } 
+    #gumroad-follow-form-embed-button:hover { 
+      transform: translate(-0.25rem, -0.25rem); box-shadow: .25rem .25rem 0rem rgb(0 0 0);background-color: rgb(255 144 232); color: rgb(0 0 0); 
+    } 
+    #gumroad-follow-form-embed-input {
+      margin: 0px; padding: 0px; box-sizing: border-box; min-width: 0px; max-width: 100%; vertical-align: bottom; background-origin: padding-box; border-style: solid; border-width: 0px; "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif; padding: 0.75rem 1rem; font-size: 1rem; line-height: 1.4; border: solid .0625rem rgb(221 221 221/0.35); border-radius: 0.25rem; display: block; width: 100%; background-color: #2a2a2a; color: rgb(221 221 221);
+    }
+    #gumroad-follow-form-embed-input:root {
+      color-scheme: light dark; 
+    }
+    #gumroad-follow-form-embed-input:disabled {
+      cursor: not-allowed; opacity: 0.3;
+    }
+    #gumroad-follow-form-embed-input::placeholder {
+      color: rgb(221 221 221/0.9);
+    }
+    #gumroad-follow-form-embed-input:focus-within { 
+      outline: .125rem solid rgb(255 144 232);
+    }
+    #gumroad-follow-form-embed-input:read-only {
+      background-color: #242423;
+    }
+</style>
+<form class="input-with-buttona" action="https://gumroad.com/follow_from_embed_form" method="post" id="gumroad-follow-form-embed" target="_blank">
+    <input type="hidden" name="seller_id" value="494738818033" /><input id="gumroad-follow-form-embed-input" type="email" placeholder="Your email address" name="email" value="" />
+    <button class="button primary" type="submit" id="gumroad-follow-form-embed-button" style="padding: 0.8rem 1rem;">Subscribe</button>
+</form>

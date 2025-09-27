@@ -3,6 +3,7 @@ layout: documentation
 title: GenAI for Unreal - Home
 permalink: /docs/genai-unreal/
 nav_order: 1
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp
 ---
 
 ![GenAI for Unreal Banner](https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp){: .full-bleed }

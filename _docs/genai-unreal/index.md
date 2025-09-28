@@ -6,7 +6,8 @@ nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp
 ---
 
-![GenAI for Unreal Banner](https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp){: .full-bleed }
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_440,w_1000/v1759078985/GenAIBanner_wkfyba.webp" alt="GenAI for Unreal Plugin Banner">
+
 
 
 **Welcome to the official documentation for GenAI for Unreal, the most comprehensive, up-to-date resource for integrating cutting-edge AI into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies the process of connecting your games to industry-leading AI models from providers like OpenAI, Anthropic, and Google.

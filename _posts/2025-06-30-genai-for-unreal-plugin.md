@@ -12,7 +12,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <body>
 
-<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp" alt="GenAI for Unreal Plugin Banner">
+<div class="image-wrapper">
+<figure>
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759078985/GenAIBanner_wkfyba.webp" alt="Use cases example" style="width: 100%;">
+</figure>
+</div>
+
+
 
 <p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest GPT-5, O4 mini, Anthrophic's Claude Sonnet/Opus 4.1, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
 

@@ -23,7 +23,7 @@ The Blueprint workflow is designed to be simple: request the speech, convert the
 
 <div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1752095699/Screenshot_2025-07-07_140458_pvujqs.webp" alt="Blueprint TTS Example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_70/v1759018044/2be63be4-a29f-466c-b7cd-00858ab06ab6.webp" alt="Blueprint TTS Example" style="width: 100%;">
         <figcaption class="image-caption">
         A simple Blueprint graph showing how to convert text to a playable sound using Alibaba TTS.
         </figcaption>

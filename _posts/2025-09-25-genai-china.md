@@ -23,7 +23,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 <p><strong>Unleash the power of China's leading AI models in your Unreal Engine projects.</strong> Gen AI China is the definitive, production-ready plugin that provides a stable, unified, and powerful interface to the most advanced generative AI from providers like Alibaba, Bytedance, and Moonshot AI. Focus on your gameplay, while we handle the integration layer for you.</p>
 
 <div class="button-row">
-  <a href="#" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com (Coming Soon)</a>
+  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-china" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_china_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
 
@@ -72,6 +72,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
         The plugin exclusively uses standard, high-level Unreal Engine modules for networking and file management, ensuring it works on all platforms supported by the engine.</p>
     </li>
 </ul>
+
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759018391/1_zwlfua.webp" alt="GenAI for Unreal Plugin Tests">
+
 
 <h2>Available Integrations & Models</h2>
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
@@ -129,7 +132,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 </ul>
 
 <div class="button-row">
-  <a href="#" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com (Coming Soon)</a>
+  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-china" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_china_documentation"  data-event-location="btm_cta">Product Documentation</a>
 </div>
 

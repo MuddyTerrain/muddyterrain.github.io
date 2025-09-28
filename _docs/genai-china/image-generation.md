@@ -18,9 +18,9 @@ The Blueprint workflow is straightforward: specify a text prompt and other setti
 
 <div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928896/b03fb6ad-2afb-4683-bb67-12fe9db23bd4.webp" alt="Image Generation Blueprint Example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759017952/1d6261ab-c9ea-4806-bda8-a48fc76328f4.webp" alt="Image Generation Blueprint Example" style="width: 100%;">
         <figcaption class="image-caption">
-           An example of generating an image from a text prompt using an Alibaba model.
+           An example of generating an image from a text prompt using an Bytedance Seedream model.
         </figcaption>
     </figure>
 </div>

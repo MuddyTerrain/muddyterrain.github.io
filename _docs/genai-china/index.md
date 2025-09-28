@@ -17,7 +17,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-
 Whether you're building dynamic NPC dialogue, procedurally generated content, or next-generation audio and visual features, this guide is designed to help you ship remarkable AI-driven experiences with confidence.
 
 <div class="button-row">
-  <a href="#" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com (Coming Soon)</a>
+  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </div>
 ---

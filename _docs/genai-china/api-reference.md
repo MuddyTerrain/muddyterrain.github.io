@@ -13,9 +13,9 @@ This page serves as a central hub for essential links, provider documentation, a
 
 Refer to the official documentation for each provider for detailed information on their models, API parameters, and pricing.
 
-- **Alibaba Qwen:** [https://help.aliyun.com/document_detail/2712573.html](https://help.aliyun.com/document_detail/2712573.html)
-- **Moonshot AI (Kimi):** [https://platform.moonshot.cn/docs](https://platform.moonshot.cn/docs)
-- **Bytedance:** [https://www.volcengine.com/docs/82379](https://www.volcengine.com/docs/82379)
+- **Alibaba Qwen:** [https://www.alibabacloud.com/help/en/model-studio/](https://www.alibabacloud.com/help/en/model-studio/)
+- **Moonshot AI (Kimi):** [https://platform.moonshot.ai/docs/api/chat](https://platform.moonshot.ai/docs/api/chat)
+- **Bytedance:** [https://docs.byteplus.com/en/docs/ModelArk/Chat](https://docs.byteplus.com/en/docs/ModelArk/Chat)
 
 ---
 

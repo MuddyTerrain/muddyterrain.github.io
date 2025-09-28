@@ -56,4 +56,5 @@ public class YourProject : ModuleRules
         });
     }
 }
+```
 After editing, right-click your .uproject file and select "Generate Visual Studio project files" to update your solution.

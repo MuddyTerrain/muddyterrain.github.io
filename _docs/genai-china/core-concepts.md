@@ -41,12 +41,13 @@ The **"Make..."** nodes for settings feature a dropdown menu that is dynamically
 
 <div class="image-wrapper">
     <figure>
-        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927016/495af904-bfdb-47fe-9292-c7b306628526.webp" alt="Advanced Make Node with Dropdown" style="width: 100%;">
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927931/7c77e180-079b-41b6-a42d-d05fa70769ee.webp" alt="Advanced Make Node with Dropdown" style="width: 100%;">
         <figcaption class="image-caption">
-            The "Make..." node for settings provides a convenient dropdown for model selection.
+            Comparing "drop down" model picker and "string" model picker nodes. 
         </figcaption>
     </figure>
 </div>
+
 
 ### Custom Model String
 

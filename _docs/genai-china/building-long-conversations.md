@@ -13,6 +13,15 @@ Creating believable, stateful conversations is a cornerstone of compelling AI ch
 
 By default, large language models are **stateless**. This means they have no memory of previous interactions. Each API request is treated as an isolated event. To create the illusion of memory, you must manually send the entire conversation history with every new request.
 
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1752498478/968eee3c-9dc3-46e8-8508-f1aebe4ce8cb.webp" alt="Conversation Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           
+        </figcaption>
+    </figure>
+</div>
+
 The process looks like this:
 
 1.  **Initial Prompt:** Start the conversation, usually with a hidden "system" message that defines the AI's personality and a "user" message from the player.
@@ -31,6 +40,15 @@ The `GenZh Chat Message` struct also supports multimodal inputs. For providers l
 ## Blueprint Implementation
 
 In Blueprints, you manage the conversation context using an array of the `GenZh Chat Message` struct.
+
+<div >
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928672/b7ea1f55-b9f3-4e3c-90b0-8367bcec72a0.webp" alt="Conversation Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           
+        </figcaption>
+    </figure>
+</div>
 
 1.  **Create a History Variable:** In your Blueprint (e.g., an Actor or Actor Component), create a new variable. Set its type to `GenZh Chat Message` and make it an **Array**. Let's name it `ConversationHistory`.
 

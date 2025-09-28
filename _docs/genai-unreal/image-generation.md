@@ -2,7 +2,7 @@
 layout: documentation
 title: Image Generation & Editing
 permalink: /docs/genai-unreal/image-generation/
-nav_order: 12
+nav_order: 13
 ---
 
 Integrate powerful AI image generation and editing directly into your Unreal Engine projects. This feature allows you to create and modify high-quality visual assets from simple text prompts, opening up incredible possibilities for procedural content, rapid prototyping, and dynamic in-game experiences.

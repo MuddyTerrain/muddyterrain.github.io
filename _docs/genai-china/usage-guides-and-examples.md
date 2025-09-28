@@ -40,7 +40,7 @@ All asynchronous Blueprint nodes share a similar structure. Use the **"Make..." 
 
 <div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927016/495af9t4hyy/image/upload/q_60/v1756927016/495af904-bfdb-47fe-9292-c7b306628526.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_75/v1759017464/24748776-09eb-45f5-91f6-0dfd54f2476e.webp" alt="Quick Start Blueprint Example" style="width: 100%;">
         <figcaption class="image-caption">
         A simple setup for testing chat completion with an Alibaba model.
         </figcaption>

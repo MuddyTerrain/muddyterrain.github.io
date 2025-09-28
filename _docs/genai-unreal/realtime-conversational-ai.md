@@ -2,7 +2,7 @@
 layout: documentation
 title: Realtime Conversational AI
 permalink: /docs/genai-unreal/realtime-conversational-ai/
-nav_order: 13
+nav_order: 14
 ---
 
 The Realtime Conversational AI system is the plugin's most advanced feature, enabling natural, fluid, and fully interruptible ("barge-in") conversations with an AI. This system is designed to replicate the natural turn-taking of human conversation, creating deeply immersive and believable character interactions.

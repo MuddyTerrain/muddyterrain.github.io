@@ -25,6 +25,14 @@ With streaming, the connection to the AI provider remains open. The server sends
 ## Blueprint Implementation
 
 The Blueprint implementation is handled by dedicated latent nodes that manage the streaming connection for you.
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_75/v1759017831/9b3e028a-6e05-4fb3-80ee-685dcf7cfcec.webp" alt="Blueprint streaming example" style="width: 100%;">
+        <figcaption class="image-caption">
+        A typical Blueprint setup for handling a streaming chat response.
+        </figcaption>
+    </figure>
+</div>
 
 1.  Find the **"Request... Stream"** node for your chosen provider (e.g., `Request Alibaba Chat Stream`).
 2.  Provide the necessary `Settings` and `Messages`, just like a standard request.
@@ -32,16 +40,6 @@ The Blueprint implementation is handled by dedicated latent nodes that manage th
     * **On Stream Update:** The `ResponseOutputTextDelta` event fires for every chunk of text received. Use this to append the `Delta` content to your UI.
     * **On Complete:** The `ResponseCompleted` event fires once the stream has successfully finished.
     * **On Error:** The `Error` event fires if a network or API error occurs.
-
-<div>
-    <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1751931357/39887254-a015-456b-a566-d964e2560f4b.webp" alt="Blueprint streaming example" style="width: 100%;">
-        <figcaption class="image-caption">
-        A typical Blueprint setup for handling a streaming chat response.
-        </figcaption>
-    </figure>
-</div>
-
 ---
 
 ## C++ Implementation

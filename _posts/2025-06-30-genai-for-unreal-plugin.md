@@ -119,9 +119,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Audio TTS:</strong> <code>gpt-4o-mini-tts</code>, <code>tts-1</code>, <code>tts-1-hd</code>.</li>
             <li><strong>Audio Transcription:</strong> <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>whisper-1</code>.</li>
             <li><strong>Structured Output (JSON Mode)</strong>  ✔</li>
-            <li><strong>Text Streaming</strong>   ✔</li>
+            <li><strong>Text and Audio Streaming</strong>   ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
-            <li><strong>Realtime API:</strong> <code>gpt-realtime</code>, <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
+            <li><strong>Realtime API:</strong> <code>gpt-realtime</code>, <code>gpt-realtime-mini</code>, <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
         </ul>
     </li>
     <li><strong>Anthropic:</strong>
@@ -161,6 +161,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
             <li><strong>Text-to-Speech:</strong> <code>eleven_multilingual_v2</code>.</li>
             <li><strong>Transcription:</strong> <code>scribe_v1</code>.</li>
             <li><strong>Sound Effects:</strong> <code>eleven_text_to_sound_v2</code>.</li>
+            <li><strong>Audio Streaming</strong>  ✔</li>
         </ul>
     </li>
 </ul>
@@ -176,11 +177,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
         <ul>
             <li><strong>OpenAI:</strong> <code>alloy</code>, <code>echo</code>, <code>fable</code>, <code>onyx</code>, <code>nova</code>, <code>shimmer</code>.</li>
             <li><strong>Google:</strong> <code>Zephyr</code>, <code>Puck</code>, <code>Charon</code>, <code>Kore</code>, <code>Fenrir</code>, <code>Leda</code>, <code>Orus</code>, <code>Aoede</code>, <code>Callirrhoe</code>, <code>Autonoe</code>, <code>Enceladus</code>, <code>Iapetus</code>, <code>Umbriel</code>, <code>Algieba</code>, <code>Despina</code>, <code>Erinome</code>, <code>Algenib</code>, <code>Rasalgethi</code>, <code>Laomedeia</code>, <code>Achernar</code>, <code>Alnilam</code>, <code>Schedar</code>, <code>Gacrux</code>, <code>Pulcherrima</code>, <code>Achird</code>, <code>Zubenelgenubi</code>, <code>Vindemiatrix</code>, <code>Sadachbia</code>, <code>Sadaltager</code>, <code>Sulafat</code>.</li>
+            <li><strong>ElevenLabs:</strong> 50+ Voices.</li>
         </ul>
     </li>
     <li><strong>Languages:</strong>
         <ul>
-            <li><strong>Google TTS:</strong> <code>Arabic</code>, <code>German</code>, <code>English</code>, <code>Spanish</code>, <code>French</code>, <code>Hindi</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Korean</code>, <code>Portuguese</code>, <code>Russian</code>, <code>Dutch</code>, <code>Polish</code>, <code>Thai</code>, <code>Turkish</code>, <code>Vietnamese</code>, <code>Romanian</code>, <code>Ukrainian</code>, <code>Bengali</code>, <code>Marathi</code>, <code>Tamil</code>, <code>Telugu</code>.</li>
+            <li><strong>Google:</strong> <code>Arabic</code>, <code>German</code>, <code>English</code>, <code>Spanish</code>, <code>French</code>, <code>Hindi</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Korean</code>, <code>Portuguese</code>, <code>Russian</code>, <code>Dutch</code>, <code>Polish</code>, <code>Thai</code>, <code>Turkish</code>, <code>Vietnamese</code>, <code>Romanian</code>, <code>Ukrainian</code>, <code>Bengali</code>, <code>Marathi</code>, <code>Tamil</code>, <code>Telugu</code>.</li>
+            <li><strong>OpenAI:</strong> <code>Afrikaans</code>, <code>Arabic</code>, <code>Armenian</code>, <code>Azerbaijani</code>, <code>Belarusian</code>, <code>Bosnian</code>, <code>Bulgarian</code>, <code>Catalan</code>, <code>Chinese</code>, <code>Croatian</code>, <code>Czech</code>, <code>Danish</code>, <code>Dutch</code>, <code>English</code>, <code>Estonian</code>, <code>Finnish</code>, <code>French</code>, <code>Galician</code>, <code>German</code>, <code>Greek</code>, <code>Hebrew</code>, <code>Hindi</code>, <code>Hungarian</code>, <code>Icelandic</code>, <code>Indonesian</code>, <code>Italian</code>, <code>Japanese</code>, <code>Kannada</code>, <code>Kazakh</code>, <code>Korean</code>, <code>Latvian</code>, <code>Lithuanian</code>, <code>Macedonian</code>, <code>Malay</code>, <code>Marathi</code>, <code>Maori</code>, <code>Nepali</code>, <code>Norwegian</code>, <code>Persian</code>, <code>Polish</code>, <code>Portuguese</code>, <code>Romanian</code>, <code>Russian</code>, <code>Serbian</code>, <code>Slovak</code>, <code>Slovenian</code>, <code>Spanish</code>, <code>Swahili</code>, <code>Swedish</code>, <code>Tagalog</code>, <code>Tamil</code>, <code>Thai</code>, <code>Turkish</code>, <code>Ukrainian</code>, <code>Urdu</code>, <code>Vietnamese</code>, and <code>Welsh</code>.</li>
+            <li><strong>ElevenLabs:</strong> <code>Afrikaans</code>, <code>Arabic</code>, <code>Armenian</code>, <code>Assamese</code>, <code>Azerbaijani</code>, <code>Belarusian</code>, <code>Bengali</code>, <code>Bosnian</code>, <code>Bulgarian</code>, <code>Catalan</code>, <code>Cebuano</code>, <code>Chichewa</code>, <code>Croatian</code>, <code>Czech</code>, <code>Danish</code>, <code>Dutch</code>, <code>English</code>, <code>Estonian</code>, <code>Filipino</code>, <code>Finnish</code>, <code>French</code>, <code>Galician</code>, <code>Georgian</code>, <code>German</code>, <code>Greek</code>, <code>Gujarati</code>, <code>Hausa</code>, <code>Hebrew</code>, <code>Hindi</code>, <code>Hungarian</code>, <code>Icelandic</code>, <code>Indonesian</code>, <code>Irish</code>, <code>Italian</code>, <code>Japanese</code>, <code>Javanese</code>, <code>Kannada</code>, <code>Kazakh</code>, <code>Kirghiz</code>, <code>Korean</code>, <code>Latvian</code>, <code>Lingala</code>, <code>Lithuanian</code>, <code>Luxembourgish</code>, <code>Macedonian</code>, <code>Malay</code>, <code>Malayalam</code>, <code>Mandarin Chinese</code>, <code>Marathi</code>, <code>Nepali</code>, <code>Norwegian</code>, <code>Pashto</code>, <code>Persian</code>, <code>Polish</code>, <code>Portuguese</code>, <code>Punjabi</code>, <code>Romanian</code>, <code>Russian</code>, <code>Serbian</code>, <code>Sindhi</code>, <code>Slovak</code>, <code>Slovenian</code>, <code>Somali</code>, <code>Spanish</code>, <code>Swahili</code>, <code>Swedish</code>, <code>Tamil</code>, <code>Telugu</code>, <code>Thai</code>, <code>Turkish</code>, <code>Ukrainian</code>, <code>Urdu</code>, <code>Vietnamese</code>, <code>Welsh</code>.</li>
         </ul>
     </li>
 </ul>

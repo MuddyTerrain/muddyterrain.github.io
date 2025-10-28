@@ -1,16 +1,22 @@
 ---
 layout: documentation
-title: Streaming
+title: Streaming (Text and Audio)
 permalink: /docs/genai-unreal/streaming/
 nav_order: 9
 ---
 
 Streaming is a powerful feature that allows you to receive AI responses in real-time, word-by-word, as they are generated. This creates a much more interactive and engaging user experience, similar to the typewriter effect seen in ChatGPT.
 #### Currently Supported Providers
+**Text Streaming:**
 - OpenAI
 - Google
 - XAI
 - DeepSeek
+  
+**Audio Streaming:**
+- OpenAI
+- ElevenLabs
+
 
 ---
 
@@ -24,12 +30,12 @@ With streaming, the connection to the AI provider remains open. The server sends
 
 ## Blueprint Implementation
 
-The Blueprint implementation is handled by dedicated latent nodes that manage the streaming connection for you.
+The Blueprint implementation is handled by dedicated latent nodes that manage the streaming connection for you. Following is a text streaming implmentation, for audio streaming examples please refer to the example project. 
 
 1.  Find the **"Request... Stream"** node for your chosen provider (e.g., `Request OpenAI Chat Stream`).
 2.  Provide the necessary `Settings` and `Messages`, just like a standard request.
 3.  The node exposes several event pins to handle the streaming lifecycle:
-    * **On Stream Update:** This event fires for every chunk of text received from the server. Use this to append the `Delta` content to your UI.
+    * **On Stream Update OR On Audio Delat/Chunk:** This event fires for every chunk of text/audio received from the server. Use this to append the `Delta` content to your UI.
     * **On Complete:** This fires once the stream has successfully finished. The `Full Response` pin provides the entire concatenated message.
     * **On Error:** This fires if a network error or API error occurs during the stream.
 

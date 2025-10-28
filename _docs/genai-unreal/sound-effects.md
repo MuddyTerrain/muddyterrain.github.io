@@ -7,6 +7,9 @@ nav_order: 12
 
 Leverage the power of generative AI to create custom sound effects on the fly using text prompts. This feature, powered by ElevenLabs, allows for rapid prototyping and the creation of dynamic audio environments without needing a pre-existing sound library.
 
+#### Currently Supported Providers:
+- ElevenLabs
+
 ---
 
 ## 1. Sound Effect Generation

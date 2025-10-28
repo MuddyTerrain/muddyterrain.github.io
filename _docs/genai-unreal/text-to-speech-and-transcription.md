@@ -9,9 +9,9 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 
 #### Currently Supported Providers
 
--   **OpenAI:** Offers a range of high-quality, natural-sounding voices.
+-   **OpenAI:** Offers a range of high-quality, natural-sounding voices. (Supports Streaming)
 -   **Google Text-to-Speech:** Provides a wide variety of voices and language options.
--   **ElevenLabs:** Offers industry-leading, emotionally expressive voices for TTS and transcription. The plugin also supports their new sound effect generation feature (see the [Sound Effects](/docs/genai-unreal/sound-effects/) page for more).
+-   **ElevenLabs:** Offers industry-leading, emotionally expressive voices for TTS and transcription. The plugin also supports their new sound effect generation feature (see the [Sound Effects](/docs/genai-unreal/sound-effects/) page for more). (Supports Streaming)
   
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Available ElevenLabs Voices</p>
@@ -24,7 +24,7 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 Text-to-Speech allows you to dynamically generate voice lines from any string, perfect for creating expressive NPC dialogue, narration, or accessibility features without needing to pre-record audio files.
 
 
-### Blueprint Implementation (TTS)
+### Blueprint Implementation (Non Streaming TTS)
 
 The Blueprint workflow is designed to be simple: request the speech, convert the returned data, and play it as a sound.
 
@@ -42,7 +42,7 @@ The key nodes are:
 2.  **Convert PCM Audio To Sound Wave:** A crucial helper node that takes the raw PCM audio data from the API and correctly formats it into a playable `USoundWave` asset.
 3.  **Create Sound 2D:** A standard Unreal node to play the generated sound. It's good practice to set this to "Auto Destroy" to clean up the sound component after it finishes playing.
 
-### C++ Implementation (TTS)
+### C++ Implementation (Non Streaming TTS)
 
 ```cpp
 #include "Models/OpenAI/GenOAITextToSpeech.h"
@@ -75,6 +75,9 @@ void AMyActor::SpeakText(const FString& TextToSpeak)
     );
 }
 ```
+
+### Blueprint and C++ Streaming TTS Implementaion:
+Please refer to the example project for now, the documentation will be updated here soon. 
 ---
 
 ## 2. Speech-to-Text (Transcription)

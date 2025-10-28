@@ -9,7 +9,9 @@ The Realtime Conversational AI system is the plugin's most advanced feature, ena
 
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Provider Support</p>
-  <p style="margin: 5px 0 0 0; color: #1f6a9c;">This feature is currently only available for <strong>OpenAI</strong> and is designed to work with their latest realtime models.</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">This feature is currently only available for <strong>OpenAI</strong> and is designed to work with their latest realtime models. 
+
+  The plugin FULLY supports the OpenAI realtime API's <strong>Server-side VAD (Voice activity detection) and Semantic VAD</strong> features, the examples can be found in the <code>QuickExamples</code> Directory of the example project.</p>
 </div>
 
 ---
@@ -19,7 +21,8 @@ The Realtime Conversational AI system is the plugin's most advanced feature, ena
 Unlike simple request-response chats, a real-time conversation requires careful management of who is speaking, when they can be interrupted, and how to handle multimodal data for both the player and the AI. This entire process is managed by an internal state machine within the plugin.
 
 -   **Barge-In Support:** Users can interrupt the AI at any time by simply starting to speak.
--   **Server-Side VAD:** Voice Activity Detection is handled on the server, meaning the AI can intelligently detect the end of a user's speech without requiring a "stop" command.
+-   **Server-Side & Semantic VAD:** Voice Activity Detection is handled on the server, meaning when enabled, the AI can intelligently detect the end of a user's speech without requiring a "stop" command.
+-   **Push to talk Support:** The traditional push to talk way of conversation is also supported. 
 -   **Multimodal Support:** Send both audio and images in the same conversation, allowing the AI to see and react to the game world in real-time.
 -   **State Management:** The plugin automatically handles the conversation state, including whose turn it is to speak.
 -   **Phantom Audio Prevention:** Intelligently discards outdated audio from the AI if it gets interrupted, preventing the user from hearing fragments of a cut-off sentence.

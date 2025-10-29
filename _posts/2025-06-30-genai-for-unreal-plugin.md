@@ -36,7 +36,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li>📁 <strong>Brand New Example Project:</strong> Explore a completely revamped example project, now with dedicated C++ and Blueprint versions, featuring chat widgets and more!</li>
     <li>🎨 <strong>Image Editing is Here:</strong> Unleash your creativity with newly added support for image editing.</li>
     <li>🧠 <strong>Frontier Model Support:</strong> Now includes support for <strong>OpenAI's GPT-5</strong>, <strong>Google's Nano Banana</strong>, <strong>Anthropic's Claude 4.1</strong>, and <strong>DeepSeek-V3.1</strong>.</li>
-    <li>🖼️ <strong>Enhanced Multimodal:</strong> Google Gemini now fully supports multimodal chat.</li>
+    <li>🖼️ <strong>Audio Streaming:</strong> Better realtime with VAD and Audio TTS streaming for ElevenLabs and OpenAI.</li>
     <li>🛠️ <strong>Expanded Tooling:</strong> Added support for "ReasoningEffort" and "Verbosity" for GPT-5, plus an extended logging mode for easier debugging.</li>
   </ul>
 </div>

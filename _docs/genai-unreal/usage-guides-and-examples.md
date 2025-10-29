@@ -21,7 +21,7 @@ To provide the best learning experience, we have moved away from small, in-plugi
 
 ## 📥 Download Example Projects
 <p>Projects are available for each supported Unreal Engine version. Please download the one that matches your engine. All links point to Google Drive.</p>
-
+ 
 <table class="download-table">
   <thead>
     <tr>
@@ -45,13 +45,21 @@ To provide the best learning experience, we have moved away from small, in-plugi
 
 The new example projects are packed with features and are designed to be a practical starting point for your own integrations.
 
--   **Interactive UMG Widgets:** Explore pre-built UI for:
-    -   **Chat:** A complete chat interface demonstrating standard, streaming, and multimodal requests.
-    -   **Image Generation:** A simple UI to write a prompt and generate an image.
-    -   **TTS & Transcription:** A panel to test text-to-speech and audio transcription.
-    -   **Model Listing:** A demonstration of the new "Get All Models" feature to dynamically populate a dropdown of available models.
--   **Simple Actor Examples:** For quick, non-UI testing, the Blueprint project also includes simple actors you can drag into your level. These actors execute a single function on `BeginPlay` and print the results to the log and the screen.
--   **Best Practices:** The C++ project demonstrates essential patterns for safety and efficiency, such as using weak pointers in asynchronous callbacks.
+
+#### 1. Simple Actor Examples: For quick, non-UI testing
+ The Blueprint project also includes simple actors you can drag into your level. These actors execute a single function on `BeginPlay` and print the results to the log and the screen. You can easily switch between providers by editing the blueprint node connections of BeginPlay.
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1761702073/bd987ad8-6e77-4d8c-b26e-b1a5051fdbed.webp" alt="Image Generation Blueprint Example" style="width: 100%;">
+        <figcaption class="image-caption">
+           An example of generating an image from a text prompt using an Bytedance Seedream model.
+        </figcaption>
+    </figure>
+</div>
+
+
+#### 2. Interactive UMG Widgets: 
 
 <div class="image-wrapper">
     <figure>
@@ -59,6 +67,24 @@ The new example projects are packed with features and are designed to be a pract
     <figcaption class="image-caption">The new example projects feature interactive widgets to demonstrate core features.</figcaption>
     </figure>
 </div>
+
+Explore pre-built UI for:
+
+  -   **Chat:** A complete chat interface demonstrating standard, streaming, and multimodal requests.
+  -   **Image Generation:** A simple UI to write a prompt and generate an image.
+  -   **TTS & Transcription:** A panel to test text-to-speech and audio transcription.
+  -   **Model Listing:** A demonstration of the new "Get All Models" feature to dynamically populate a dropdown of available models.
+
+
+#### 3. C++ Best Practices:** 
+The C++ project demonstrates essential patterns for safety and efficiency, such as using weak pointers in asynchronous callbacks.
+<div class="image-wrapper">
+    <figure>
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1761702420/88fd5ae1-d9bc-4ca4-8a47-db611c3e4cd3.webp" alt="New Example Project UI" style="width: 60%;">
+    <figcaption class="image-caption">C++ Example Classes</figcaption>
+    </figure>
+</div>
+
 
 ### "Become Human" - Upcoming Optional Game Template (Paid)
 

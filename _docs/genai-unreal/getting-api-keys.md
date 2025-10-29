@@ -45,8 +45,10 @@ Google's Gemini models offer powerful multimodal capabilities and a generous fre
 1.  Visit the <a href="https://ai.google.dev/" class="track-click" data-event-name="lnk_clk_google_ai_studio" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">Google AI Studio</a> to get started.
 2.  Follow the on-screen instructions to create or select a project and generate your API key.
 
-✨ **Developer Offer: Free Tier for Gemini**
-Google provides a **free tier** for the Gemini API, designed for development and testing. This is an excellent way to experiment with the model's capabilities without initial costs. The free tier has certain rate limits, but usage within Google AI Studio itself is completely free in supported regions.
+<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">✨ Developer Offer: Free Tier for Gemini</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">Google provides a <strong>free tier</strong> for the Gemini API, designed for development and testing. This is an excellent way to experiment with the model's capabilities without initial costs. The free tier has certain rate limits, but usage within Google AI Studio itself is completely free in supported regions.</p>
+</div>
 
 ### ElevenLabs (High-Quality TTS & Sound Effects)
 
@@ -55,6 +57,11 @@ ElevenLabs is a leader in realistic, expressive text-to-speech and generative au
 1.  Go to the <a href="https://elevenlabs.io/" class="track-click" data-event-name="lnk_clk_elevenlabs_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">ElevenLabs website</a> and sign up or log in.
 2.  Click on your profile icon in the top-right corner and select **"Profile + API Key"**.
 3.  You can find and copy your API key from this page.
+
+<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">✨ Developer Offer: Free Tier for ElevenLabs</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">ElevenLabs provides a <strong>free tier</strong> for its API, designed for development and testing. This is an excellent way to experiment with the model's capabilities without initial costs. The free tier has certain rate limits.</p>
+</div>
 
 ### Other Providers
 

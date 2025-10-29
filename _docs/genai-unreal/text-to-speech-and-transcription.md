@@ -17,6 +17,11 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Available ElevenLabs Voices</p>
   <p style="margin: 5px 0 0 0; color: #1f6a9c;">To get a list of all available voices and their corresponding IDs from ElevenLabs, use the <code>Get Voices</code> node. For instructions, please refer to the documentation: <a href="/docs/genai-unreal/models-and-voices/#2-dynamically-fetching-all-eleven-labs-voices">Dynamically Fetching All ElevenLabs Voices</a>.</p>
 </div>
+
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Version support:</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Please note Audio Streaming only works on plugin versions above <strong>v1.5.1</strong>.</p>
+</div>
 ---
 
 ## 1. Text-to-Speech (TTS)
@@ -77,7 +82,30 @@ void AMyActor::SpeakText(const FString& TextToSpeak)
 ```
 
 ### Blueprint and C++ Streaming TTS Implementaion:
-Please refer to the example project for now, the documentation will be updated here soon. 
+
+Blueprint Node Setup Example:
+
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1761702912/48163f2a-c9ee-4195-8009-4bdaf7bcd312.webp" alt="Blueprint TTS Example" style="width: 100%;">
+        <figcaption class="image-caption">
+        ElevenLabs Streaming Example
+        </figcaption>
+    </figure>
+</div>
+
+The collapsed graph above that says `Setup Procedural Sound Wave` looks something like this:
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1761703070/7e4562a1-f17f-418e-b30d-02ee1f8ef038.webp" alt="Blueprint TTS Example" style="width: 100%;">
+    </figure>
+</div>
+
+
+Please refer to the example project for more details, the documentation will be updated here soon. 
+
 ---
 
 ## 2. Speech-to-Text (Transcription)

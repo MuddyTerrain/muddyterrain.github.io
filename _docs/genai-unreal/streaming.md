@@ -17,6 +17,11 @@ Streaming is a powerful feature that allows you to receive AI responses in real-
 - OpenAI
 - ElevenLabs
 
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Version support:</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Please note Audio Streaming only works on plugin versions above <strong>v1.5.1</strong>.</p>
+</div>
+
 
 ---
 

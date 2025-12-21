@@ -15,7 +15,7 @@ To provide the best learning experience, we have moved away from small, in-plugi
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Important Requirements</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">Please note that these example projects require <strong><a href="/t/genai-fab" target="_blank" rel="noopener noreferrer">GenAI for Unreal plugin</a> version 1.5.0 or higher</strong> to function correctly.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Please note that these example projects require <strong><a href="/t/genai-fab" target="_blank" rel="noopener noreferrer">GenAI for Unreal plugin</a> version 1.6.0 or higher</strong> to function correctly.</p>
   <p style="margin: 5px 0 0 0; color: #856404;">The plugin must be installed to your engine from the Fab store before opening these projects. Without it, the Blueprint project will have errors, and the C++ project will fail to compile or open.</p>
 </div>
 

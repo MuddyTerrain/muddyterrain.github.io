@@ -35,24 +35,27 @@ social:
 
 # Example Project Downloads
 example_projects:
+  - version: "5.7"
+    cpp_link: "https://drive.google.com/file/d/1FDWB9ObRwXesCg0SuxJntfuHr-8dHh3X/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1Mkdcozvy5LhU17MwGSOzF1bl_n-C78xc/view?usp=drive_link"
   - version: "5.6"
-    cpp_link: "https://drive.google.com/file/d/1UJogx79EnU1AnOUUzfVVsrTEeEKendfj/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/10ZGj3hhE2nU0OQUOIKac0pGNbLZE0HeW/view?usp=drive_link"
+    cpp_link: "https://drive.google.com/file/d/1mveVquBOamcD5wkdLVhDJVt4DeJZyjxv/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1J4TkhAhVv8F-_-8oW6cqcstCLjPT4n-p/view?usp=drive_link"
   - version: "5.5"
-    cpp_link: "https://drive.google.com/file/d/18Zzrmx3nzaQ8549QEMCz2HY1Atm_z8sa/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/1wZRG4_E9d1-jNSV8Ar9n2oAu3NUKlHr4/view?usp=drive_link"
+    cpp_link: "https://drive.google.com/file/d/1Hw_0jNy-rxVcqx5aOr5bS2LHEJEfR6g1/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/10YCanG-NZ7RjOSQoBkqC4dV7XwiUueSz/view?usp=drive_link"
   - version: "5.4"
     cpp_link: "https://drive.google.com/file/d/10d8FFm57Wf9MoupWBlsn8IjEflZc0lYp/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/1H4Y0Ot-AE-QQWMxrHavfGn0f9zXFrw-b/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1la0p0VkTOxKr2EDZ9eWMv0ebdsA-9mzM/view?usp=drive_link"
   - version: "5.3"
-    cpp_link: "https://drive.google.com/file/d/1AwCR1FAxMke9ns9BYGVXSMPADui8_IKz/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/1b_SSq93SYsalWZFCnarfvOY401_BRtFZ/view?usp=drive_link"
+    cpp_link: "https://drive.google.com/file/d/1uhZsQVuyCWbesb7nRAaric6cqRaty0uu/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1APchMgg_gQgxXG7d4LxFsRyQh1c9NEXN/view?usp=drive_link"
   - version: "5.2"
-    cpp_link: "https://drive.google.com/file/d/12Dv5EpJq4_OXnneb9l-AQ9VmlZCvSHS0/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/1ZY6o7COF3stbjkzq0-ByJrNNngO2v6k4/view?usp=drive_link"
+    cpp_link: "https://drive.google.com/file/d/1eeRoPkFRApd5erFXvnXjij3u0CetyYKt/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1OgcAAk9EkAIduJKeH1GXzEc_cEy_HT9l/view?usp=drive_link"
   - version: "5.1"
-    cpp_link: "https://drive.google.com/file/d/1zYDn24wiIRzTI_lScSplHbSykyZWf2Pd/view?usp=drive_link"
-    bp_link: "https://drive.google.com/file/d/1Bn3dZ9Z3-89L-IgwTXKhI6yImX07tKC6/view?usp=drive_link"
+    cpp_link: "https://drive.google.com/file/d/1esBHcaDkM6IHWt8wOA2ib_WK0HBpJgja/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1bN3eHRb9fA2cgcVTSuvF4nBj8WLcleAE/view?usp=drive_link"
 
 # Gen AI China Example Project Downloads
 example_projects_china:

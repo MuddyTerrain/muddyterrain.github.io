@@ -20,9 +20,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 
 
-<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like the OpenAI's ChatGPT inlcuding the latest GPT-5, O4 mini, Anthrophic's Claude Sonnet/Opus 4.1, Google's Gemini 2.5 flash/pro, XAI's Grok 4, 3 and 2, Deepseek's R1 and so on. </p>
+<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like OpenAI's ChatGPT including the latest GPT-5.1, Anthropic's Claude Sonnet/Opus 4.5, Google's Gemini 3.0 / Nano Banana Pro, XAI's Grok 4.1/4/3, DeepSeek's R1, and more.</p>
 
-<p>Now with <strong>GPT-5</strong>, <strong>Grok 4</strong>, Google's <strong>Nano Banana</strong> & OpenAI <strong>Realtime API</strong>!! 🎉</p>
+<p>Now with <strong>GPT-5.1</strong>, <strong>Grok 4.1</strong>, Google's <strong>Gemini 3.0</strong> and <strong>Nano Banana Pro</strong>, plus OpenAI <strong>Realtime API</strong>!! 🎉</p>
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
@@ -33,11 +33,12 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
   <h2 style="margin-top: 0;">What's New in the Latest Update!</h2>
   <p>This release is packed with major new features, models, and improvements:</p>
   <ul>
-    <li>📁 <strong>Brand New Example Project:</strong> Explore a completely revamped example project, now with dedicated C++ and Blueprint versions, featuring chat widgets and more!</li>
-    <li>🎨 <strong>Image Editing is Here:</strong> Unleash your creativity with newly added support for image editing.</li>
-    <li>🧠 <strong>Frontier Model Support:</strong> Now includes support for <strong>OpenAI's GPT-5</strong>, <strong>Google's Nano Banana</strong>, <strong>Anthropic's Claude 4.1</strong>, and <strong>DeepSeek-V3.1</strong>.</li>
-    <li>🖼️ <strong>Audio Streaming:</strong> Better realtime with VAD and Audio TTS streaming for ElevenLabs and OpenAI.</li>
-    <li>🛠️ <strong>Expanded Tooling:</strong> Added support for "ReasoningEffort" and "Verbosity" for GPT-5, plus an extended logging mode for easier debugging.</li>
+        <li>🧭 <strong>OpenAI-Compatible Mode:</strong> Now supports any OpenAI-compatible models worldwide (e.g., Alibaba Qwen).</li>
+        <li>🧠 <strong>New Models:</strong> OpenAI <strong>GPT-5.1</strong> (Nov 12, 2025), XAI <strong>Grok 4.1</strong> (Nov 17, 2025), <strong>Claude Opus 4.5</strong> (Nov 24, 2025) with Extended Thinking, <strong>ElevenLabs v3 (Alpha)</strong> (Aug 2025), and Google's <strong>Gemini 3.0</strong> plus <strong>Nano Banana Pro</strong> (Nov 20, 2025).</li>
+        <li>🛠️ <strong>Realtime & Voice Fixes:</strong> Standalone build realtime startup fixed; Realtime API voices now work with <code>alloy</code>, <code>ash</code>, <code>ballad</code>, <code>coral</code>, <code>echo</code>, <code>sage</code>, <code>shimmer</code>, <code>verse</code>, <code>marin</code>, and <code>cedar</code>.</li>
+        <li>🐛 <strong>API Compatibility Fixes:</strong> OpenAI endpoints now handle versioned URLs correctly.</li>
+        <li>✅ <strong>Automation Coverage:</strong> Broader tests across all supported providers.</li>
+        <li>🕹️ <strong>Engine Support:</strong> Verified with Unreal Engine 5.7.</li>
   </ul>
 </div>
 
@@ -113,7 +114,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <ul>
     <li><strong>OpenAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>gpt-5</code>, <code>gpt-5-mini</code>, <code>gpt-5-nano</code>, <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
+            <li><strong>Chat:</strong> <code>gpt-5.1</code>, <code>gpt-5</code>, <code>gpt-5-mini</code>, <code>gpt-5-nano</code>, <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
             <li><strong>Reasoning Models:</strong> <code>o4-mini</code>, <code>o3</code>, <code>o3-pro</code>, <code>o3-mini</code>, <code>o1</code>, <code>o1-pro</code>.</li>
             <li><strong>Image Generation:</strong> <code>gpt-image-1</code>, <code>dall-e-3</code>, <code>dall-e-2</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gpt-4o-mini-tts</code>, <code>tts-1</code>, <code>tts-1-hd</code>.</li>
@@ -126,24 +127,25 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li><strong>Anthropic:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>claude-opus-4.1</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>, <code>claude-3-haiku</code>, <code>claude-3-opus</code>.</li>
+            <li><strong>Chat:</strong> <code>claude-opus-4.5</code>, <code>claude-opus-4.1</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>, <code>claude-3-haiku</code>, <code>claude-3-opus</code>.</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
+            <li><strong>Extended Thinking</strong>   ✔ (Claude 4.5)</li>
         </ul>
     </li>
     <li><strong>XAI:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>grok-4</code>, <code>grok-4-eu</code>, <code>grok-code-fast-1</code>, <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
-            <li><strong>Reasoning Models:</strong> <code>grok-4</code>, <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
+            <li><strong>Chat:</strong> <code>grok-4.1</code>, <code>grok-4</code>, <code>grok-4-eu</code>, <code>grok-code-fast-1</code>, <code>grok-3</code>, <code>grok-3-mini</code>, <code>grok-3-fast</code>, <code>grok-3-mini-fast</code>, <code>grok-2-vision-1212</code>, <code>grok-2-1212</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>grok-4.1</code>, <code>grok-4</code>, <code>grok-3-mini</code>, <code>grok-3-mini-fast</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
         </ul>
     </li>
     <li><strong>Google Gemini:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
-            <li><strong>Reasoning Models:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Chat:</strong> <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>, <code>Nano Banana Pro</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gemini-2.5-flash-preview-tts</code>, <code>gemini-2.5-pro-preview-tts</code>.</li>
-            <li><strong>Audio Transcription:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Audio Transcription:</strong> <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
             <li><strong>Image Generation:</strong> <code>gemini-2.5-flash-image-preview (Nano Banana)</code>, <code>imagen-4.0-ultra-generate-001</code>, <code>imagen-4.0-generate-001</code>, <code>imagen-4.0-fast-generate-001</code>, <code>imagen-3.0-generate-002</code>, <code>gemini-2.0-flash-preview-image-generation</code>.</li>
@@ -158,7 +160,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li><strong>ElevenLabs:</strong>
         <ul>
-            <li><strong>Text-to-Speech:</strong> <code>eleven_multilingual_v2</code>.</li>
+            <li><strong>Text-to-Speech:</strong> <code>eleven_multilingual_v3 (Alpha)</code>, <code>eleven_multilingual_v2</code>.</li>
             <li><strong>Transcription:</strong> <code>scribe_v1</code>.</li>
             <li><strong>Sound Effects:</strong> <code>eleven_text_to_sound_v2</code>.</li>
             <li><strong>Audio Streaming</strong>  ✔</li>
@@ -175,7 +177,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li><strong>Voice:</strong>
         <ul>
-            <li><strong>OpenAI:</strong> <code>alloy</code>, <code>echo</code>, <code>fable</code>, <code>onyx</code>, <code>nova</code>, <code>shimmer</code>.</li>
+            <li><strong>OpenAI:</strong> <code>alloy</code>, <code>ash</code>, <code>ballad</code>, <code>coral</code>, <code>echo</code>, <code>sage</code>, <code>shimmer</code>, <code>verse</code>, <code>marin</code>, <code>cedar</code>.</li>
             <li><strong>Google:</strong> <code>Zephyr</code>, <code>Puck</code>, <code>Charon</code>, <code>Kore</code>, <code>Fenrir</code>, <code>Leda</code>, <code>Orus</code>, <code>Aoede</code>, <code>Callirrhoe</code>, <code>Autonoe</code>, <code>Enceladus</code>, <code>Iapetus</code>, <code>Umbriel</code>, <code>Algieba</code>, <code>Despina</code>, <code>Erinome</code>, <code>Algenib</code>, <code>Rasalgethi</code>, <code>Laomedeia</code>, <code>Achernar</code>, <code>Alnilam</code>, <code>Schedar</code>, <code>Gacrux</code>, <code>Pulcherrima</code>, <code>Achird</code>, <code>Zubenelgenubi</code>, <code>Vindemiatrix</code>, <code>Sadachbia</code>, <code>Sadaltager</code>, <code>Sulafat</code>.</li>
             <li><strong>ElevenLabs:</strong> 50+ Voices.</li>
         </ul>

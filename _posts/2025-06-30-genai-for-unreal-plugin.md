@@ -29,13 +29,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
 
-<div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
-  <h2 style="margin-top: 0;">What's New in the Latest Update!</h2>
-  <p>This release is packed with major new features, models, and improvements:</p>
-  <ul>
+<div style="padding: 15px 20px; background-color: #f0f8ff; border-left: 4px solid #007acc; margin: 25px 0; border-radius: 6px;">
+  <h2 style="margin-top: 0; font-size: 1.4em;">What's New in the Latest Update!</h2>
+  <p style="margin-bottom: 15px; font-size: 1em;">This release is packed with major new features, models, and improvements:</p>
+  <ul style="margin: 0; padding-left: 20px;">
         <li>🧭 <strong>OpenAI-Compatible Mode:</strong> Now supports any OpenAI-compatible models worldwide, including Alibaba Qwen, Mistral AI, Groq, OpenRouter, Meta Llama, BigModel GLM-4, and local models via Ollama for ultimate flexibility.</li>
-        <li>🧠 <strong>New Models:</strong> OpenAI <strong>GPT-5.2</strong> (Jan 3, 2026), <strong>GPT-5.1</strong> (Nov 12, 2025), XAI <strong>Grok 4.1</strong> (Nov 17, 2025), Anthropic <strong>Claude Opus 4.5</strong>, <strong>Claude Sonnet 4.5</strong>, <strong>Claude Haiku 4.5</strong> (Nov 24, 2025) with Extended Thinking, <strong>ElevenLabs v3 (Alpha)</strong> (Aug 2025), and Google's <strong>Gemini 3.0</strong> plus <strong>Nano Banana Pro</strong> (Nov 20, 2025).</li>
-        <li>🛠️ <strong>Realtime & Voice Fixes:</strong> Standalone build realtime startup fixed; Realtime API voices now work with <code>alloy</code>, <code>ash</code>, <code>ballad</code>, <code>coral</code>, <code>echo</code>, <code>sage</code>, <code>shimmer</code>, <code>verse</code>, <code>marin</code>, and <code>cedar</code>.</li>
+        <li>🧠 <strong>New Models:</strong> OpenAI GPT-5.2 (Jan 3, 2026), GPT-5.1 (Nov 12, 2025), XAI Grok 4.1 (Nov 17, 2025), Anthropic Claude Opus/Sonnet/Haiku 4.5 (Nov 24, 2025) with Extended Thinking, ElevenLabs v3 (Alpha) (Aug 2025), and Google's Gemini 3.0 plus Nano Banana Pro (Nov 20, 2025).</li>
+        <li>🛠️ <strong>Realtime & Voice Fixes:</strong> Standalone build realtime startup fixed; Realtime API voices now work with alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, and cedar.</li>
         <li>🐛 <strong>API Compatibility Fixes:</strong> OpenAI endpoints now handle versioned URLs correctly.</li>
         <li>✅ <strong>Automation Coverage:</strong> Broader tests across all supported providers.</li>
         <li>🕹️ <strong>Engine Support:</strong> Verified with Unreal Engine 5.7.</li>

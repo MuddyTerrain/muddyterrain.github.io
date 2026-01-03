@@ -67,16 +67,18 @@ GenAI for Unreal is more than just a tool—it's a complete solution designed to
 4.  **[Authentication & Security](/docs/genai-unreal/authentication-and-security/)** 🔒 — Secure Key Storage & Proxying
 5.  **[Core Concepts](/docs/genai-unreal/core-concepts/)** 💡 — Async Design, Debug Mode, Custom Models
 6.  **[Example Projects & Guides](/docs/genai-unreal/usage-guides-and-examples/)** 📘 — Downloadable Projects & Walkthroughs
-7.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝 — Chat Context Strategies
-8.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️ — Real-Time Response Chunks
-9.  **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️ — JSON Schema Enforcement
-10. **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Audio I/O
-11. **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
-12. **[Sound Effect Generation](/docs/genai-unreal/sound-effects/)** 🎶 — AI-Powered Audio
-13. **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Advanced Interactions
-14. **[Debugging and Running Tests](/docs/genai-unreal/debugging-and-running-tests/)** 🧪 — Verify Integration
-15. **[Quick Links & API Reference](/docs/genai-unreal/quick-links-and-api-reference/)** 🌐 — External Docs
-16. **[Additional Notes](/docs/genai-unreal/additional-notes/)** 📋 — Tips & Gotchas
+7.  **[Chat Completions](/docs/genai-unreal/chat-completions/)** 💬 — Text & Multimodal Conversations
+8.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝 — Chat Context Strategies
+9.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️ — Real-Time Response Chunks
+10. **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️ — JSON Schema Enforcement
+11. **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Audio I/O
+12. **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
+13. **[Sound Effect Generation](/docs/genai-unreal/sound-effects/)** 🎶 — AI-Powered Audio
+14. **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Advanced Interactions
+15. **[OpenAI Compatible Mode](/docs/genai-unreal/openai-compatible-mode/)** 🔄 — Route OpenAI Calls to Compatible Providers
+16. **[Debugging and Running Tests](/docs/genai-unreal/debugging-and-running-tests/)** 🧪 — Verify Integration
+17. **[Quick Links & API Reference](/docs/genai-unreal/quick-links-and-api-reference/)** 🌐 — External Docs
+18. **[Additional Notes](/docs/genai-unreal/additional-notes/)** 📋 — Tips & Gotchas
 
 ---
 

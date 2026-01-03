@@ -2,7 +2,7 @@
 layout: documentation
 title: Sound Effect Generation
 permalink: /docs/genai-unreal/sound-effects/
-nav_order: 12
+nav_order: 14
 ---
 
 Leverage the power of generative AI to create custom sound effects on the fly using text prompts. This feature, powered by ElevenLabs, allows for rapid prototyping and the creation of dynamic audio environments without needing a pre-existing sound library.

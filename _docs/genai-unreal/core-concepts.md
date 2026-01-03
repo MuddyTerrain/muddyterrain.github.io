@@ -130,3 +130,15 @@ The plugin now provides a function to fetch a list of all available models direc
 - **C++ Function:** `UGenOAIModels::SendListModelsRequest(...)`.
 
 This feature is demonstrated in the new example projects to populate the model selection dropdowns in the UMG widgets.
+
+---
+
+## 7. OpenAI Compatible Mode
+
+For advanced users who want to route all OpenAI API calls to compatible providers (such as local LLMs or other OpenAI-compatible services), the plugin includes a global compatibility mode. When enabled, all requests that would normally target OpenAI will instead use the 'OpenAI Compatible' API key and endpoint configured in the settings panel.
+
+This mode is controlled via Blueprint nodes:
+- `Set OpenAI Compatible Mode` to enable/disable the routing.
+- `Is OpenAI Compatible Mode Enabled` to check the current state.
+
+See the **[OpenAI Compatible Mode](/docs/genai-unreal/openai-compatible-mode/)** page for detailed setup and usage instructions.

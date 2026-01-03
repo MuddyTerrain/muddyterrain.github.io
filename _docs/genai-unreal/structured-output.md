@@ -2,7 +2,7 @@
 layout: documentation
 title: Structured Output
 permalink: /docs/genai-unreal/structured-output/
-nav_order: 10
+nav_order: 11
 ---
 
 Structured Output is a critical feature for game development that forces the AI to respond in a strict, predictable JSON format. This eliminates the need to parse unreliable free-form text and allows you to directly integrate AI-generated data into your game systems.

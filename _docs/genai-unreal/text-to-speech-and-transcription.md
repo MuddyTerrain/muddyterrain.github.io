@@ -2,7 +2,7 @@
 layout: documentation
 title: Text-to-Speech and Transcription
 permalink: /docs/genai-unreal/text-to-speech-and-transcription/
-nav_order: 11
+nav_order: 12
 ---
 
 Bring your characters and worlds to life with voice. The plugin provides a seamless two-way audio pipeline, allowing you to convert text into natural-sounding speech (TTS) and transcribe spoken audio back into text (STT) using powerful AI models.

@@ -2,7 +2,7 @@
 layout: documentation
 title: Streaming (Text and Audio)
 permalink: /docs/genai-unreal/streaming/
-nav_order: 9
+nav_order: 10
 ---
 
 Streaming is a powerful feature that allows you to receive AI responses in real-time, word-by-word, as they are generated. This creates a much more interactive and engaging user experience, similar to the typewriter effect seen in ChatGPT.

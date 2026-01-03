@@ -2,7 +2,7 @@
 layout: documentation
 title: Debugging and Running Tests
 permalink: /docs/genai-unreal/debugging-and-running-tests/
-nav_order: 16
+nav_order: 18
 ---
 
 This section covers tools and procedures for debugging your AI integrations and verifying the plugin's functionality through its built-in automation tests.

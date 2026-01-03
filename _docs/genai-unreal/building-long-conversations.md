@@ -2,7 +2,7 @@
 layout: documentation
 title: Building Long Conversations
 permalink: /docs/genai-unreal/building-long-conversations/
-nav_order: 8
+nav_order: 9
 ---
 
 Creating believable, stateful conversations is a cornerstone of compelling AI characters. This guide covers the principles and techniques for managing conversation history, ensuring your NPCs can remember past interactions and respond intelligently.

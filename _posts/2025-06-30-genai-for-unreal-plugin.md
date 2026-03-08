@@ -25,7 +25,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <p>Now with <strong>GPT-5.4</strong>, <strong>Claude 4.6</strong>, <strong>Gemini 3.1</strong>, <strong>Inworld AI TTS</strong>, <strong>Function Calling</strong>, and OpenAI <strong>Responses API</strong>!! 🎉</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="top_cta">Product Documentation</a>
 </div>
 
@@ -258,7 +258,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="mid_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="mid_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="mid_cta">Product Documentation</a>
 </div>
 
@@ -297,7 +297,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </ul>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="btm_cta">Product Documentation</a>
 </div>
 

@@ -15,7 +15,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_3
 Whether you're building dynamic NPC dialogue, procedurally generated quests, or next-generation audio and visual features, this guide is designed to help you ship remarkable AI-driven experiences with confidence. We cover everything from a five-minute quick start for beginners to advanced topics like response streaming, structured data, and secure key management for enterprise-level projects.
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </div>
 ---
@@ -86,6 +86,6 @@ GenAI for Unreal is more than just a tool—it's a complete solution designed to
 ## Official Links
 
 * **<a href="https://muddyterrain.com/genai-unreal" class="track-click" data-event-name="lnk_clk_genai_product_page" data-event-location="docs_genai_index" target="_blank" rel="noopener noreferrer">Product Page</a>**: Detailed features, pricing, and purchase options.
-* **<a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="track-click" data-event-name="lnk_clk_genai_fab_listing" data-event-location="docs_genai_index" target="_blank" rel="noopener noreferrer">Fab.com Listing</a>**: Download the plugin from the Fab.com marketplace.
+* **<a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab_listing" data-event-location="docs_genai_index" target="_blank" rel="noopener noreferrer">Fab.com Listing</a>**: Download the plugin from the Fab.com marketplace.
 
 ---

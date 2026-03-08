@@ -46,13 +46,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <p>You could build each layer from scratch — HTTP requests, JSON handling, async threading, audio playback. Many studios do, and spend weeks on plumbing before writing a single line of gameplay code.</p>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_npc_dialogue" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> gives you the complete integration layer. Chat completions, streaming, TTS, conversation history management, and structured output — all accessible through Blueprint nodes or C++. You pick the AI provider (OpenAI, Claude, Gemini, DeepSeek, Grok) and focus entirely on your game's design.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_npc_dialogue" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> gives you the complete integration layer. Chat completions, streaming, TTS, conversation history management, and structured output — all accessible through Blueprint nodes or C++. You pick the AI provider (OpenAI, Claude, Gemini, DeepSeek, Grok) and focus entirely on your game's design.</p>
 
 <h2>Games Already Doing This</h2>
 
 <p>Our "Become Human" template (coming soon to Fab) demonstrates a fully working AI NPC conversation system built on this plugin — a practical starting point you can extend for your own projects.</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_npc_dialogue_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_npc_dialogue_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_npc_dialogue_cta">Product Documentation</a>
 </div>

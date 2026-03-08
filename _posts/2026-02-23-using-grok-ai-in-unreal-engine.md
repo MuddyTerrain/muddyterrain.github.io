@@ -37,15 +37,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>Getting Started</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_grok" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports the full Grok model lineup. Same API pattern as OpenAI, Claude, and Gemini — if you've used one, you can switch to Grok in seconds.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_grok" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports the full Grok model lineup. Same API pattern as OpenAI, Claude, and Gemini — if you've used one, you can switch to Grok in seconds.</p>
 
 <ol>
     <li>Get an API key from <a href="https://console.x.ai/" target="_blank" rel="noopener noreferrer">XAI's console</a></li>
-    <li>Install from <a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_grok" target="_blank" rel="noopener noreferrer">Fab</a> and add your key in Project Settings</li>
+    <li>Install from <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_grok" target="_blank" rel="noopener noreferrer">Fab</a> and add your key in Project Settings</li>
     <li>Browse the <a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_guide_grok">documentation</a></li>
 </ol>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_grok_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_grok_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_grok_cta">Product Documentation</a>
 </div>

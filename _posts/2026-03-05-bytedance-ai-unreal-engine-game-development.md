@@ -36,15 +36,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_3
 
 <h2>How to Integrate</h2>
 
-<p><a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_bytedance" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> for Unreal Engine supports Bytedance's full API — chat completion, streaming, and image generation. Same clean Blueprint and C++ API as our other integrations.</p>
+<p><a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_bytedance" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> for Unreal Engine supports Bytedance's full API — chat completion, streaming, and image generation. Same clean Blueprint and C++ API as our other integrations.</p>
 
 <ol>
     <li>Set up your account on the <a href="https://console.byteplus.com/ark/region:ark+ap-southeast-1/apiKey?apikey=%7B%7D" class="track-click" data-event-name="lnk_clk_byteplus_console" data-event-location="post_guide_bytedance" target="_blank" rel="noopener noreferrer">Byteplus Console</a></li>
-    <li>Install from <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_bytedance" target="_blank" rel="noopener noreferrer">Fab</a></li>
+    <li>Install from <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_bytedance" target="_blank" rel="noopener noreferrer">Fab</a></li>
     <li>Follow the <a href="/docs/genai-china/" class="track-click" data-event-name="lnk_clk_genai_china_docs" data-event-location="post_guide_bytedance">documentation</a></li>
 </ol>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button primary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_bytedance_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_bytedance_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-china" class="cta-button secondary track-click" data-event-name="btn_clk_genai_china_docs" data-event-location="post_guide_bytedance_cta">Product Documentation</a>
 </div>

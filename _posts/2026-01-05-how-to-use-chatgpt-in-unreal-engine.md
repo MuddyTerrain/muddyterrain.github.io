@@ -37,14 +37,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>The Shortcut</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_chatgpt" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> handles all of this out of the box. It supports the full range of OpenAI models — GPT-4o, GPT-5, the reasoning models like o3 and o4-mini, plus DALL-E and TTS — with both Blueprint and C++ APIs. Streaming, structured JSON output, function calling, and multimodal input (text + images) all work without writing networking code.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_chatgpt" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> handles all of this out of the box. It supports the full range of OpenAI models — GPT-4o, GPT-5, the reasoning models like o3 and o4-mini, plus DALL-E and TTS — with both Blueprint and C++ APIs. Streaming, structured JSON output, function calling, and multimodal input (text + images) all work without writing networking code.</p>
 
 <p>It also supports Anthropic Claude, Google Gemini, DeepSeek, XAI Grok, and ElevenLabs, so you're not locked into one provider.</p>
 
 <h2>Getting Started</h2>
 
 <ol>
-    <li>Install the plugin from <a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_chatgpt" target="_blank" rel="noopener noreferrer">Fab marketplace</a></li>
+    <li>Install the plugin from <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_chatgpt" target="_blank" rel="noopener noreferrer">Fab marketplace</a></li>
     <li>Add your OpenAI API key in Project Settings</li>
     <li>Drop an async Blueprint node into your graph and you're making your first request in minutes</li>
 </ol>
@@ -52,6 +52,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 <p>Check out the <a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_guide_chatgpt">full documentation</a> for walkthroughs, example projects, and best practices.</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_chatgpt_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_chatgpt_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_chatgpt_cta">Product Documentation</a>
 </div>

@@ -32,7 +32,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>GenAI for Unreal</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_best_plugins" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> is our flagship plugin covering the major western AI providers:</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_best_plugins" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> is our flagship plugin covering the major western AI providers:</p>
 
 <ul>
     <li><strong>Chat:</strong> OpenAI (GPT-5.4, GPT-4o), Anthropic (Claude Opus/Sonnet 4.6), Google (Gemini 3.1), XAI (Grok 4.1), DeepSeek (V3.1, R1)</li>
@@ -47,7 +47,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>GenAI Chinese Models</h2>
 
-<p>For developers targeting Chinese-speaking markets, <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_best_plugins" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> is a companion plugin covering:</p>
+<p>For developers targeting Chinese-speaking markets, <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_best_plugins" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> is a companion plugin covering:</p>
 
 <ul>
     <li><strong>Alibaba Qwen:</strong> Chat, streaming, TTS, and image generation</li>
@@ -66,6 +66,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 <p>The best plugin depends on your needs. If you want maximum provider flexibility with production-grade reliability, GenAI for Unreal covers the most ground. If you need Chinese market AI, the Chinese Models plugin fills that gap. And if you want local-first AI with zero cost, start with Unreal Ollama.</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_best_plugins_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
-  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button secondary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_best_plugins_cta" target="_blank" rel="noopener noreferrer">Chinese Models on Fab</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_best_plugins_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
+  <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_best_plugins_cta" target="_blank" rel="noopener noreferrer">Chinese Models on Fab</a>
 </div>

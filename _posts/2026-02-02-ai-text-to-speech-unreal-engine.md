@@ -45,11 +45,11 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>How to Add TTS to Your Game</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_tts" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports all four TTS providers above, with both standard and streaming modes. The plugin handles audio format conversion, playback, and the async pipeline so you can focus on how your characters sound, not how the bytes get there.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_tts" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports all four TTS providers above, with both standard and streaming modes. The plugin handles audio format conversion, playback, and the async pipeline so you can focus on how your characters sound, not how the bytes get there.</p>
 
 <p>Pair it with the chat completion system and you have AI characters that think <em>and</em> speak — end to end.</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_tts_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_tts_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_tts_cta">Product Documentation</a>
 </div>

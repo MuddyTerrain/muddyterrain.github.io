@@ -41,15 +41,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>Getting Started</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_deepseek" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports both DeepSeek-V3.1 and DeepSeek R1 (reasoning), with text streaming for real-time responses. Same clean API as every other provider — switch between DeepSeek and OpenAI/Claude/Gemini with a single setting change.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_deepseek" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports both DeepSeek-V3.1 and DeepSeek R1 (reasoning), with text streaming for real-time responses. Same clean API as every other provider — switch between DeepSeek and OpenAI/Claude/Gemini with a single setting change.</p>
 
 <ol>
     <li>Get your API key from <a href="https://platform.deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek's platform</a></li>
-    <li>Install from <a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_deepseek" target="_blank" rel="noopener noreferrer">Fab</a></li>
+    <li>Install from <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_deepseek" target="_blank" rel="noopener noreferrer">Fab</a></li>
     <li>Check the <a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_guide_deepseek">documentation</a> for setup details</li>
 </ol>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_deepseek_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_deepseek_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_deepseek_cta">Product Documentation</a>
 </div>

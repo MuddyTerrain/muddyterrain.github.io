@@ -38,7 +38,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li><strong>Gemini Nano Banana</strong> — Image generation built into the Gemini chat model itself — ask for an image mid-conversation and it generates one.</li>
 </ul>
 
-<p>For Chinese AI providers, Alibaba and Bytedance offer their own image generation models through our <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_image_gen" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> plugin.</p>
+<p>For Chinese AI providers, Alibaba and Bytedance offer their own image generation models through our <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_image_gen" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> plugin.</p>
 
 <h2>Practical Considerations</h2>
 
@@ -50,9 +50,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>How to Integrate</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_image_gen" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> handles image generation from OpenAI and Google, returning raw image data you can display as textures in-engine. The async pipeline means generation happens in the background without blocking your game.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_image_gen" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> handles image generation from OpenAI and Google, returning raw image data you can display as textures in-engine. The async pipeline means generation happens in the background without blocking your game.</p>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_image_gen_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_image_gen_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_image_gen_cta">Product Documentation</a>
 </div>

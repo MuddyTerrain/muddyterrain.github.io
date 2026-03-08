@@ -41,15 +41,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <h2>How to Get Started</h2>
 
-<p><a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_gemini" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports the complete Gemini ecosystem. Chat, streaming, vision, image generation, TTS, transcription, and realtime audio — all through the same consistent Blueprint and C++ API used for every other provider.</p>
+<p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_gemini" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports the complete Gemini ecosystem. Chat, streaming, vision, image generation, TTS, transcription, and realtime audio — all through the same consistent Blueprint and C++ API used for every other provider.</p>
 
 <ol>
     <li>Get your API key from <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a></li>
-    <li>Install the plugin from <a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_gemini" target="_blank" rel="noopener noreferrer">Fab</a></li>
+    <li>Install the plugin from <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_gemini" target="_blank" rel="noopener noreferrer">Fab</a></li>
     <li>Start building — the <a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_guide_gemini">docs</a> cover everything</li>
 </ol>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_gemini_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_gemini_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_genai_docs" data-event-location="post_guide_gemini_cta">Product Documentation</a>
 </div>

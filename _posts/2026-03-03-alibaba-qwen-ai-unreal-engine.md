@@ -42,19 +42,19 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_3
 
 <h2>How to Integrate</h2>
 
-<p><a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> is our dedicated Unreal Engine plugin for Chinese AI providers. It supports Alibaba Qwen (chat, images, TTS), Bytedance (chat, images), and Moonshot Kimi (chat) — all with Blueprint and C++ APIs.</p>
+<p><a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">GenAI Chinese Models</a> is our dedicated Unreal Engine plugin for Chinese AI providers. It supports Alibaba Qwen (chat, images, TTS), Bytedance (chat, images), and Moonshot Kimi (chat) — all with Blueprint and C++ APIs.</p>
 
-<p>For developers who also use western providers, our main <a href="/t/genai-fab" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> plugin supports Qwen through OpenAI Compatible Mode as well.</p>
+<p>For developers who also use western providers, our main <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> plugin supports Qwen through OpenAI Compatible Mode as well.</p>
 
 <h2>Getting Started</h2>
 
 <ol>
     <li>Create an account on <a href="https://modelstudio.console.alibabacloud.com/" class="track-click" data-event-name="lnk_clk_alibaba_modelstudio" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">Alibaba Model Studio</a> (international) or <a href="https://bailian.console.alibabacloud.com/" class="track-click" data-event-name="lnk_clk_alibaba_bailian" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">Bailian Console</a> (Mainland China)</li>
-    <li>Install from <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">Fab</a></li>
+    <li>Install from <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="track-click" data-event-name="lnk_clk_genai_china_fab" data-event-location="post_guide_qwen" target="_blank" rel="noopener noreferrer">Fab</a></li>
     <li>Follow the <a href="/docs/genai-china/" class="track-click" data-event-name="lnk_clk_genai_china_docs" data-event-location="post_guide_qwen">documentation</a></li>
 </ol>
 
 <div class="button-row">
-  <a href="https://www.fab.com/listings/73b2e976-db06-46a5-a144-defecdc3004a" class="cta-button primary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_qwen_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_china_fab" data-event-location="post_guide_qwen_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
   <a href="/docs/genai-china" class="cta-button secondary track-click" data-event-name="btn_clk_genai_china_docs" data-event-location="post_guide_qwen_cta">Product Documentation</a>
 </div>

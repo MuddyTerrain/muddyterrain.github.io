@@ -22,18 +22,18 @@ To connect your Unreal project to Chinese AI models, you need to obtain API keys
     </figure>
 </div>
 
-1. If you are from **Mainland China** Navigate to the <a href="https://bailian.console.alibabacloud.com/" target="_blank" rel="noopener noreferrer">Alibaba Cloud Bailian Console</a>. For **Worldwide (Singapore)** access, use the <a href="https://modelstudio.console.alibabacloud.com/" target="_blank" rel="noopener noreferrer">Model Studio Console</a> instead.
+1. If you are from **Mainland China** Navigate to the <a href="https://bailian.console.alibabacloud.com/" class="track-click" data-event-name="lnk_clk_alibaba_bailian" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Alibaba Cloud Bailian Console</a>. For **Worldwide (Singapore)** access, use the <a href="https://modelstudio.console.alibabacloud.com/" class="track-click" data-event-name="lnk_clk_alibaba_modelstudio" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Model Studio Console</a> instead.
 2.  Create an account or log in.
 3.  Go to the **API Key Management** section to create and copy your key.
 
 ### Moonshot AI (Kimi Models)
 
-1.  Go to the <a href="https://platform.moonshot.ai/" target="_blank" rel="noopener noreferrer">Moonshot AI Platform</a> and sign in.
+1.  Go to the <a href="https://platform.moonshot.ai/" class="track-click" data-event-name="lnk_clk_moonshot_platform" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Moonshot AI Platform</a> and sign in.
 2.  Navigate to the **API Keys** section in your account settings to generate a new key.
 
 ### Bytedance (Skylark, Seedream, Deepseek Models)
 
-1.  Visit the <a href="https://console.byteplus.com/ark/region:ark+ap-southeast-1/apiKey?apikey=%7B%7D" target="_blank" rel="noopener noreferrer">Byteplus Console</a>.
+1.  Visit the <a href="https://console.byteplus.com/ark/region:ark+ap-southeast-1/apiKey?apikey=%7B%7D" class="track-click" data-event-name="lnk_clk_byteplus_console" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Byteplus Console</a>.
 2.  After signing up, find the **API Key Management** section in the console to create your key.
 
 ---

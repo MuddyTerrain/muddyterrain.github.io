@@ -127,7 +127,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="/docs/genai-china/" class="track-click" data-event-name="lnk_clk_genai_china_docs" data-event-location="post_genai_china">Documentation</a></li>
-    <li><a href="/t/discord">Discord Community</a></li>
+    <li><a href="/t/discord" class="track-click" data-event-name="lnk_clk_discord" data-event-location="post_genai_china">Discord Community</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com" class="track-click" data-event-name="lnk_clk_support_email" data-event-location="post_genai_china">mail@muddyterrain.com</a></li>
 </ul>
 

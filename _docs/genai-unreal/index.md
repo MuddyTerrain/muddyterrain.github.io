@@ -6,11 +6,11 @@ nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp
 ---
 
-<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_440,w_1000/v1759078985/GenAIBanner_wkfyba.webp" alt="GenAI for Unreal Plugin Banner">
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60,c_fill,g_south,h_440,w_1000/v1772931701/MainBanners_4_d9nmqo.webp" alt="GenAI for Unreal Plugin Banner">
 
 
 
-**Welcome to the official documentation for GenAI for Unreal, the most comprehensive, up-to-date resource for integrating cutting-edge AI into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies the process of connecting your games to industry-leading AI models from providers like OpenAI, Anthropic, and Google.
+**Welcome to the official documentation for GenAI for Unreal, the most comprehensive, up-to-date resource for integrating cutting-edge AI into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies the process of connecting your games to industry-leading AI models from providers like OpenAI, Anthropic, Google, and Inworld AI.
 
 Whether you're building dynamic NPC dialogue, procedurally generated quests, or next-generation audio and visual features, this guide is designed to help you ship remarkable AI-driven experiences with confidence. We cover everything from a five-minute quick start for beginners to advanced topics like response streaming, structured data, and secure key management for enterprise-level projects.
 
@@ -71,14 +71,15 @@ GenAI for Unreal is more than just a tool—it's a complete solution designed to
 8.  **[Building Long Conversations](/docs/genai-unreal/building-long-conversations/)** 📝 — Chat Context Strategies
 9.  **[Streaming](/docs/genai-unreal/streaming/)** ⚡️ — Real-Time Response Chunks
 10. **[Structured Output](/docs/genai-unreal/structured-output/)** 🗂️ — JSON Schema Enforcement
-11. **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Audio I/O
-12. **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
-13. **[Sound Effect Generation](/docs/genai-unreal/sound-effects/)** 🎶 — AI-Powered Audio
-14. **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Advanced Interactions
-15. **[OpenAI Compatible Mode](/docs/genai-unreal/openai-compatible-mode/)** 🔄 — Route OpenAI Calls to Compatible Providers
-16. **[Debugging and Running Tests](/docs/genai-unreal/debugging-and-running-tests/)** 🧪 — Verify Integration
-17. **[Quick Links & API Reference](/docs/genai-unreal/quick-links-and-api-reference/)** 🌐 — External Docs
-18. **[Additional Notes](/docs/genai-unreal/additional-notes/)** 📋 — Tips & Gotchas
+11. **[Function Calling (Tool Use)](/docs/genai-unreal/function-calling/)** 🔧 — AI-Driven Game Actions
+12. **[Text-to-Speech & Transcription](/docs/genai-unreal/text-to-speech-and-transcription/)** 🔊 — Audio I/O
+13. **[Image Generation & Editing](/docs/genai-unreal/image-generation/)** 🎨 — AI-Powered Art
+14. **[Sound Effect Generation](/docs/genai-unreal/sound-effects/)** 🎶 — AI-Powered Audio
+15. **[Realtime Conversational AI](/docs/genai-unreal/realtime-conversational-ai/)** 🎭 — Advanced Interactions
+16. **[OpenAI Compatible Mode](/docs/genai-unreal/openai-compatible-mode/)** 🔄 — Route OpenAI Calls to Compatible Providers
+17. **[Debugging and Running Tests](/docs/genai-unreal/debugging-and-running-tests/)** 🧪 — Verify Integration
+18. **[Quick Links & API Reference](/docs/genai-unreal/quick-links-and-api-reference/)** 🌐 — External Docs
+19. **[Additional Notes](/docs/genai-unreal/additional-notes/)** 📋 — Tips & Gotchas
 
 ---
 

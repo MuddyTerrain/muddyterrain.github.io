@@ -1,5 +1,5 @@
 <article>
-  <a href="{{ site.github.url }}{{ post.url }}">
+  <a href="{{ site.github.url }}{{ post.url }}" class="track-click" data-event-name="lnk_clk_featured_post" data-event-location="home_featured">
     {% if post.image %}
       {% comment %} --- Check if the image path is a full URL --- {% endcomment %}
       {% if post.image contains "http" %}

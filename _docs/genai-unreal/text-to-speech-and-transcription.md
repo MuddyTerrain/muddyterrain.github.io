@@ -12,6 +12,7 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 -   **OpenAI:** Offers a range of high-quality, natural-sounding voices. (Supports Streaming)
 -   **Google Text-to-Speech:** Provides a wide variety of voices and language options.
 -   **ElevenLabs:** Offers industry-leading, emotionally expressive voices for TTS and transcription. The plugin also supports their new sound effect generation feature (see the [Sound Effects](/docs/genai-unreal/sound-effects/) page for more). (Supports Streaming)
+-   **Inworld AI:** Purpose-built for game characters, Inworld provides high-quality TTS with both standard and real-time streaming endpoints. Models include `inworld-tts-1.5-max`, `inworld-tts-1.5-mini`, and `inworld-tts-1`. (Supports Streaming)
   
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Available ElevenLabs Voices</p>

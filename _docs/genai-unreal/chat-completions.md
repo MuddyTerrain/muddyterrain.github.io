@@ -115,7 +115,72 @@ Make OpenAI Message:
 
 ---
 
-## 3. Streaming Chat Responses
+## 3. OpenAI Responses API (Beta)
+
+The OpenAI Responses API is a newer API designed for models that are **Responses API-only**, such as `gpt-5.4`, `gpt-5.4-pro`, `gpt-5.2-pro`, `gpt-5.3-codex`, and other Codex models. These models do not support the standard Chat Completions endpoint and must use the Responses API instead.
+
+The plugin provides a dedicated class, `UGenOAIResponses`, that handles the Responses API with the same familiar async pattern.
+
+#### When to Use
+
+- Use **`UGenOAIChat`** (Chat Completions) for standard models like `gpt-5-mini`, `gpt-5.1`, `gpt-4o`, etc.
+- Use **`UGenOAIResponses`** (Responses API) for Pro and Codex models like `gpt-5.4-pro`, `gpt-5.3-codex`, `gpt-5.2-pro`, etc.
+
+#### Key Settings (`FGenOpenAIResponsesSettings`)
+
+| Property | Type | Description |
+|---|---|---|
+| `Model` | `FString` | The model to use (defaults to `gpt-5.4-pro`). |
+| `Messages` | `TArray<FGenChatMessage>` | Conversation history, same format as Chat Completions. |
+| `Instructions` | `FString` | System-level instructions (equivalent to a system message). |
+| `Temperature` | `float` | Controls randomness (0.0 to 2.0). |
+| `MaxOutputTokens` | `int32` | Maximum tokens to generate (default: 4096). |
+| `ReasoningEffort` | `EGenAIResponsesReasoningEffort` | Controls reasoning depth: `Low`, `Medium`, `High`, or `Default`. |
+| `Tools` | `TArray<FGenAIToolDefinition>` | Optional function/tool definitions the model can call. |
+| `AdditionalToolsJson` | `FString` | Raw JSON for built-in tools like `web_search` or `code_interpreter`. |
+
+#### C++ Example
+
+```cpp
+#include "Models/OpenAI/GenOAIResponses.h"
+#include "Data/OpenAI/GenOAIResponsesStructs.h"
+
+void AMyActor::RequestFromResponsesAPI()
+{
+    FGenOpenAIResponsesSettings Settings;
+    Settings.Model = TEXT("gpt-5.4-pro");
+    Settings.Instructions = TEXT("You are a helpful game design assistant.");
+    Settings.Temperature = 0.7f;
+    Settings.ReasoningEffort = EGenAIResponsesReasoningEffort::High;
+
+    FGenChatMessage UserMsg;
+    UserMsg.Role = TEXT("user");
+    UserMsg.TextContent = TEXT("Design a boss encounter for a dark fantasy RPG.");
+    Settings.Messages.Add(UserMsg);
+
+    UGenOAIResponses::SendResponsesRequest(Settings,
+        FOnResponsesCompletionResponse::CreateLambda([](const FString& Response, const FString& Error, bool bSuccess)
+        {
+            if (bSuccess)
+            {
+                UE_LOG(LogTemp, Log, TEXT("Responses API result: %s"), *Response);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Error, TEXT("Error: %s"), *Error);
+            }
+        })
+    );
+}
+```
+
+#### Blueprint Implementation
+
+Use the **"Request OpenAI Response (Pro/Codex)"** node. Configure it with the `Make Gen OpenAI Responses Settings` node, which provides the same familiar fields (model, messages, temperature) plus Responses API-specific options like `Instructions` and `Reasoning Effort`.
+
+---
+
+## 4. Streaming Chat Responses
 
 For real-time chat experiences, use the streaming versions of chat nodes. These provide incremental responses as they're generated, allowing for typewriter effects and interruptible conversations.
 
@@ -123,7 +188,7 @@ See the **[Streaming](/docs/genai-unreal/streaming/)** page for detailed informa
 
 ---
 
-## 4. Best Practices
+## 5. Best Practices
 
 - **Message History**: Maintain conversation context by including previous messages in the array
 - **System Prompts**: Use system messages to set the AI's behavior and role
@@ -133,7 +198,7 @@ See the **[Streaming](/docs/genai-unreal/streaming/)** page for detailed informa
 
 ---
 
-## 5. Example Use Cases
+## 6. Example Use Cases
 
 - **NPC Dialogue**: Generate dynamic responses based on player input
 - **Scene Analysis**: Describe or analyze in-game screenshots

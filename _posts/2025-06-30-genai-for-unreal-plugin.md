@@ -14,15 +14,15 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759078985/GenAIBanner_wkfyba.webp" alt="Use cases example" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBanners_4_d9nmqo.webp" alt="Use cases example" style="width: 100%;">
 </figure>
 </div>
 
 
 
-<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like OpenAI's ChatGPT including the latest GPT-5.2, GPT-5.1, Anthropic's Claude Sonnet/Opus 4.5, Google's Gemini 3.0 / Nano Banana Pro, XAI's Grok 4.1/4/3, DeepSeek's R1, and more. Plus, with OpenAI Compatible Mode, seamlessly switch to Alibaba Qwen, Mistral, Groq, OpenRouter, Meta Llama, BigModel GLM-4, or even run local models via Ollama for ultimate flexibility and cost-efficiency.</p>
+<p><strong>Tired of tracking a new AI model launch every day? Say no more.</strong> GenAI for Unreal is the definitive, production-ready plugin that handles the integration layer for you. Focus on your gameplay, while we provide a stable, unified, and powerful interface to the world's leading AI models. The plugin supports all current cutting edge LLM APIs like OpenAI's ChatGPT including the latest GPT-5.4, GPT-5.3 Codex, GPT-5.2, Anthropic's Claude Opus/Sonnet 4.6, Google's Gemini 3.1 / Nano Banana 2, XAI's Grok 4.1/4/3, DeepSeek's R1, Inworld AI TTS, and more. Plus, with OpenAI Compatible Mode, seamlessly switch to Alibaba Qwen, Mistral, Groq, OpenRouter, Meta Llama, BigModel GLM-4, or even run local models via Ollama for ultimate flexibility and cost-efficiency.</p>
 
-<p>Now with <strong>GPT-5.2</strong>, <strong>GPT-5.1</strong>, <strong>Grok 4.1</strong>, Google's <strong>Gemini 3.0</strong> and <strong>Nano Banana Pro</strong>, plus OpenAI <strong>Realtime API</strong>!! 🎉</p>
+<p>Now with <strong>GPT-5.4</strong>, <strong>Claude 4.6</strong>, <strong>Gemini 3.1</strong>, <strong>Inworld AI TTS</strong>, <strong>Function Calling</strong>, and OpenAI <strong>Responses API</strong>!! 🎉</p>
 
 <div class="button-row">
   <a href="https://www.fab.com/listings/68e7f092-1fea-4e6d-8d31-c6b96b06a02e" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
@@ -30,15 +30,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 </div>
 
 <div style="padding: 15px 20px; background-color: #f0f8ff; border-left: 4px solid #007acc; margin: 25px 0; border-radius: 6px;">
-  <h2 style="margin-top: 0; font-size: 1.4em;">What's New in the Latest Update!</h2>
-  <p style="margin-bottom: 15px; font-size: 1em;">This release is packed with major new features, models, and improvements:</p>
+  <h2 style="margin-top: 0; font-size: 1.2em;">What's New in v2.0.1!</h2>
+  <p style="margin-bottom: 15px; font-size: 1em;">This release is packed with major new features, integrations, and critical fixes:</p>
   <ul style="margin: 0; padding-left: 20px;">
-        <li>🧭 <strong>OpenAI-Compatible Mode:</strong> Now supports any OpenAI-compatible models worldwide, including Alibaba Qwen, Mistral AI, Groq, OpenRouter, Meta Llama, BigModel GLM-4, and local models via Ollama for ultimate flexibility.</li>
-        <li>🧠 <strong>New Models:</strong> OpenAI GPT-5.2 (Jan 3, 2026), GPT-5.1 (Nov 12, 2025), XAI Grok 4.1 (Nov 17, 2025), Anthropic Claude Opus/Sonnet/Haiku 4.5 (Nov 24, 2025) with Extended Thinking, ElevenLabs v3 (Alpha) (Aug 2025), and Google's Gemini 3.0 plus Nano Banana Pro (Nov 20, 2025).</li>
-        <li>🛠️ <strong>Realtime & Voice Fixes:</strong> Standalone build realtime startup fixed; Realtime API voices now work with alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, and cedar.</li>
-        <li>🐛 <strong>API Compatibility Fixes:</strong> OpenAI endpoints now handle versioned URLs correctly.</li>
-        <li>✅ <strong>Automation Coverage:</strong> Broader tests across all supported providers.</li>
-        <li>🕹️ <strong>Engine Support:</strong> Verified with Unreal Engine 5.7.</li>
+        <li>🌐 <strong>Inworld AI Integration:</strong> Full support for Inworld Text-to-Speech, including standard and real-time streaming endpoints.</li>
+        <li>🔗 <strong>OpenAI Responses API (Beta):</strong> Integrated the new GenOAIResponses class to support OpenAI's structured Responses API.</li>
+        <li>🛠️ <strong>Function Calling (Tool Use):</strong> Added tool/function calling support for Anthropic Claude and OpenAI Chat models.</li>
+        <li>🧠 <strong>New Models:</strong> Anthropic Claude 4.6 Opus & Sonnet, OpenAI GPT-5.4/5.3 Codex/Image-1.5, Google Gemini 3.1 Pro/Flash Lite/Flash Image Preview, ElevenLabs Scribe V2 & V2 Realtime, and Inworld TTS 1.5 Max/Mini/1.</li>
   </ul>
 </div>
 
@@ -75,6 +73,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li>
         <p><strong>Text To Speech (TTS):</strong> 🔊<br>
         Generate dynamic, high-quality voice lines for in-game dialogue, narration, or live conversations with AI characters using OpenAI's and ElevenLabs' TTS models.</p>
+    </li>
+    <li>
+        <p><strong>Function Calling (Tool Use):</strong> 🔧<br>
+        Enable AI models to call your game functions directly. Supported for Anthropic Claude and OpenAI Chat models, allowing AI-driven gameplay actions, data lookups, and dynamic world interactions.</p>
+    </li>
+    <li>
+        <p><strong>OpenAI Responses API:</strong> 📋<br>
+        Access OpenAI's new structured Responses API for more powerful and controlled model outputs, with full Blueprint and C++ support.</p>
     </li>
     <li>
         <p><strong>Sound Effect Generation:</strong> 🎶<br>
@@ -119,21 +125,24 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>OpenAI:</strong>
         <ul>
             <li><strong>Chat:</strong> <code>gpt-5.2</code>, <code>gpt-5.1</code>, <code>gpt-5</code>, <code>gpt-5-mini</code>, <code>gpt-5-nano</code>, <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>gpt-4.1-mini</code>, <code>gpt-4.1-nano</code>, <code>gpt-4o-mini</code>.</li>
+            <li><strong>Responses API:</strong> <code>gpt-5.4</code>, <code>gpt-5.4-pro</code>, <code>gpt-5.2</code>, <code>gpt-5.2-pro</code>, <code>gpt-5.3-codex</code>, <code>gpt-5.2-codex</code>, <code>gpt-5.1-codex-max</code>, <code>gpt-5-codex-mini</code>.</li>
             <li><strong>Reasoning Models:</strong> <code>o4-mini</code>, <code>o3</code>, <code>o3-pro</code>, <code>o3-mini</code>, <code>o1</code>, <code>o1-pro</code>.</li>
-            <li><strong>Image Generation:</strong> <code>gpt-image-1</code>, <code>dall-e-3</code>, <code>dall-e-2</code>.</li>
+            <li><strong>Image Generation:</strong> <code>gpt-image-1.5</code>, <code>gpt-image-1</code>, <code>gpt-image-1-mini</code>, <code>dall-e-3</code>, <code>dall-e-2</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gpt-4o-mini-tts</code>, <code>tts-1</code>, <code>tts-1-hd</code>.</li>
             <li><strong>Audio Transcription:</strong> <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>whisper-1</code>.</li>
             <li><strong>Structured Output (JSON Mode)</strong>  ✔</li>
+            <li><strong>Function Calling (Tool Use)</strong>   ✔</li>
             <li><strong>Text and Audio Streaming</strong>   ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
-            <li><strong>Realtime API:</strong> <code>gpt-realtime</code>, <code>gpt-realtime-mini</code>, <code>gpt-4o-realtime-preview-2025-06-03</code>.</li>
+            <li><strong>Realtime API:</strong> <code>gpt-realtime</code>, <code>gpt-realtime-mini</code>.</li>
         </ul>
     </li>
     <li><strong>Anthropic:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>claude-opus-4.5</code>, <code>claude-sonnet-4.5</code>, <code>claude-haiku-4.5</code>, <code>claude-opus-4.1</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>, <code>claude-3-haiku</code>, <code>claude-3-opus</code>.</li>
+            <li><strong>Chat:</strong> <code>claude-opus-4-6</code>, <code>claude-sonnet-4-6</code>, <code>claude-opus-4.5</code>, <code>claude-sonnet-4.5</code>, <code>claude-haiku-4.5</code>, <code>claude-opus-4.1</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, <code>claude-3-7-sonnet</code>, <code>claude-3-5-sonnet</code>, <code>claude-3-5-haiku</code>, <code>claude-3-haiku</code>, <code>claude-3-opus</code>.</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
-            <li><strong>Extended Thinking</strong>   ✔ (Claude 4.5)</li>
+            <li><strong>Function Calling (Tool Use)</strong>   ✔</li>
+            <li><strong>Extended Thinking</strong>   ✔ (Claude 4.5+)</li>
         </ul>
     </li>
     <li><strong>XAI:</strong>
@@ -146,14 +155,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     </li>
     <li><strong>Google Gemini:</strong>
         <ul>
-            <li><strong>Chat:</strong> <code>Gemini 3 Pro Preview</code>, <code>Gemini 3 Flash Preview</code>, <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>, <code>Nano Banana Pro</code>.</li>
-            <li><strong>Reasoning Models:</strong> <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Chat:</strong> <code>Gemini 3.1 Pro Preview</code>, <code>Gemini 3.1 Flash Lite Preview</code>, <code>Gemini 3 Pro Preview</code>, <code>Gemini 3 Flash Preview</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Flash Lite</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Reasoning Models:</strong> <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Audio TTS:</strong> <code>gemini-2.5-flash-preview-tts</code>, <code>gemini-2.5-pro-preview-tts</code>.</li>
-            <li><strong>Audio Transcription:</strong> <code>Gemini 3.0</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
+            <li><strong>Audio Transcription:</strong> <code>Gemini 3.1 Pro Preview</code>, <code>Gemini 3.1 Flash Lite Preview</code>, <code>Gemini 3 Pro Preview</code>, <code>Gemini 3 Flash Preview</code>, <code>Gemini 2.5 Flash</code>, <code>Gemini 2.5 Pro</code>.</li>
             <li><strong>Text Streaming</strong>  ✔</li>
             <li><strong>Multimodal Chat</strong>   ✔</li>
-            <li><strong>Realtime:</strong> <code>gemini-2.5-flash-native-audio-preview-09-2025</code>, <code>gemini-live-2.5-flash-preview</code>, <code>gemini-2.0-flash-live-001</code>.</li>
-            <li><strong>Image Generation:</strong> <code>gemini-3-pro-image-preview</code>, <code>imagen-4.0-generate-preview-06-06</code>, <code>imagen-4.0-generate-ultra-preview-06-06</code>, <code>imagen-4.0-generate-001</code>, <code>imagen-4.0-ultra-generate-001</code>, <code>imagen-4.0-fast-generate-001</code>, <code>imagen-3.0-generate-002</code>, <code>gemini-2.5-flash-image-preview (Nano Banana)</code>, <code>gemini-2.0-flash-preview-image-generation</code>.</li>
+            <li><strong>Realtime:</strong> <code>gemini-2.5-flash-native-audio-preview-09-2025</code>, <code>gemini-2.5-flash-native-audio-preview-12-2025</code>, <code>gemini-live-2.5-flash-preview</code>, <code>gemini-2.0-flash-live-001</code>.</li>
+            <li><strong>Image Generation:</strong> <code>gemini-3.1-flash-image-preview (Nano Banana 2)</code>, <code>gemini-3-pro-image-preview (Nano Banana Pro)</code>, <code>gemini-2.5-flash-image (Nano Banana)</code>, <code>imagen-4.0-generate-001</code>, <code>imagen-4.0-ultra-generate-001</code>, <code>imagen-4.0-fast-generate-001</code>.</li>
         </ul>
     </li>
     <li><strong>DeepSeek:</strong>
@@ -166,8 +175,14 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
     <li><strong>ElevenLabs:</strong>
         <ul>
             <li><strong>Text-to-Speech:</strong> <code>eleven_v3</code>, <code>eleven_turbo_v2_5</code>, <code>eleven_flash_v2_5</code>, <code>eleven_flash_v2</code>, <code>eleven_multilingual_v3 (Alpha)</code>, <code>eleven_multilingual_v2</code>.</li>
-            <li><strong>Transcription:</strong> <code>scribe_v1</code>.</li>
+            <li><strong>Transcription:</strong> <code>scribe_v2</code>, <code>scribe_v2_realtime</code>, <code>scribe_v1</code>.</li>
             <li><strong>Sound Effects:</strong> <code>eleven_text_to_sound_v2</code>.</li>
+            <li><strong>Audio Streaming</strong>  ✔</li>
+        </ul>
+    </li>
+    <li><strong>Inworld AI:</strong>
+        <ul>
+            <li><strong>Text-to-Speech:</strong> <code>inworld-tts-1.5-max</code>, <code>inworld-tts-1.5-mini</code>, <code>inworld-tts-1</code>.</li>
             <li><strong>Audio Streaming</strong>  ✔</li>
         </ul>
     </li>
@@ -277,7 +292,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
 <h2>Resources & Support</h2>
 <ul>
     <li><a href="/docs/genai-unreal/" class="track-click" data-event-name="lnk_clk_genai_docs" data-event-location="post_genai">Documentation</a></li>
-    <li><a href="/t/discord">Discord Community</a></li>
+    <li><a href="/t/discord" class="track-click" data-event-name="lnk_clk_discord" data-event-location="post_genai">Discord Community</a></li>
     <li><strong>Professional Support & Custom Development:</strong> For tailored solutions, feature requests, or enterprise support, contact our team directly at: <a href="mailto:mail@muddyterrain.com" class="track-click" data-event-name="lnk_clk_support_email" data-event-location="post_genai">mail@muddyterrain.com</a></li>
 </ul>
 

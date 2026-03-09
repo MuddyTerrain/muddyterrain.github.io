@@ -26,6 +26,19 @@
   <script src="{{ site.github.url }}/assets/js/internal-traffic.js"></script>
   <!-- Use Jekyll SEO plugin -->
   {% seo %}
+  <!-- Hreflang tags for multilingual SEO -->
+  {% if page.hreflang_group %}
+    {% for p in site.posts %}
+      {% if p.hreflang_group == page.hreflang_group %}
+        <link rel="alternate" hreflang="{{ p.lang }}" href="{{ p.url | absolute_url }}" />
+      {% endif %}
+    {% endfor %}
+    {% for p in site.posts %}
+      {% if p.hreflang_group == page.hreflang_group and p.lang == "en" %}
+        <link rel="alternate" hreflang="x-default" href="{{ p.url | absolute_url }}" />
+      {% endif %}
+    {% endfor %}
+  {% endif %}
   {% if page.layout == "documentation" %}
   <style>
     /* Image modal styling */

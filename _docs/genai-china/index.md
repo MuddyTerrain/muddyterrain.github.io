@@ -12,7 +12,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-
 </figure>
 </div>
 
-**Welcome to the official documentation for Gen AI China 🇨🇳 🔥, the most comprehensive resource for integrating leading Chinese AI models into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies connecting your games to industry-leading AI models from providers like Alibaba, Bytedance, and Moonshot AI.
+**Welcome to the official documentation for Gen AI China 🇨🇳 🔥, the most comprehensive resource for integrating leading Chinese AI models into your Unreal Engine projects.** This plugin provides a powerful, unified framework that simplifies connecting your games to industry-leading AI models from providers like Alibaba, Bytedance, Moonshot AI, Baidu, and ZhipuAI.
 
 Whether you're building dynamic NPC dialogue, procedurally generated content, or next-generation audio and visual features, this guide is designed to help you ship remarkable AI-driven experiences with confidence.
 
@@ -26,7 +26,7 @@ Whether you're building dynamic NPC dialogue, procedurally generated content, or
 
 - **Unified and Simplified API**
 
-  Access a diverse range of powerful models from Alibaba, Bytedance, and Moonshot AI through a single, intuitive API. Switch between providers with minimal code changes, allowing you to choose the best model for the job without vendor lock-in.
+  Access a diverse range of powerful models from Alibaba, Bytedance, Moonshot AI, Baidu, and ZhipuAI through a single, intuitive API. Switch between providers with minimal code changes, allowing you to choose the best model for the job without vendor lock-in.
 
 - **Full Blueprint & C++ Support**
 
@@ -45,7 +45,7 @@ Whether you're building dynamic NPC dialogue, procedurally generated content, or
 ## Quick Navigation
 
 1.  **[Initial Project Setup](/docs/genai-china/initial-project-setup/)** ⚙️ — Installation & C++ Configuration
-2.  **[Getting API Keys](/docs/genai-china/getting-api-keys/)** 🔑 — Obtain Keys from Alibaba, Bytedance, & Moonshot
+2.  **[Getting API Keys](/docs/genai-china/getting-api-keys/)** 🔑 — Obtain Keys from All Providers
 3.  **[Authentication & Security](/docs/genai-china/authentication-and-security/)** 🔒 — Secure Key Storage
 4.  **[Usage Guides & Examples](/docs/genai-china/usage-guides-and-examples/)** 📘 — Practical Walkthroughs
 5.  **[Core Concepts](/docs/genai-china/core-concepts/)** 💡 — Async Design, Debug Mode, Custom Models

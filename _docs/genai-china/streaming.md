@@ -11,6 +11,8 @@ Streaming is a powerful feature that allows you to receive AI responses in real-
 - Alibaba (Qwen)
 - Bytedance
 - Moonshot AI (Kimi)
+- ZhipuAI (GLM)
+- Baidu (ERNIE)
 
 ---
 

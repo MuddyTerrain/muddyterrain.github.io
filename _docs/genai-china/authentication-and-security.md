@@ -15,7 +15,7 @@ Never hard-code API keys or commit them to your repository. The plugin provides 
 
 1.  In the Unreal Editor, navigate to **Edit > Project Settings**.
 2.  Scroll down to the **Plugins** section on the left and click on **GenAI Chinese Models**.
-3.  Paste your **Alibaba**, **Moonshot AI**, and **Bytedance** keys into the corresponding fields.
+3.  Paste your **Alibaba**, **Moonshot AI**, **Bytedance**, **ZhipuAI**, and **Baidu** keys into the corresponding fields.
 4.  These keys are immediately encrypted and saved to a binary file. By default, this is `YourProject/Saved/Config/GenAIChineseModels/secureconfig.bin`.
 
     > **Important:** This file is non-portable and machine-specific. It cannot be decrypted outside of the project on the machine where it was created.

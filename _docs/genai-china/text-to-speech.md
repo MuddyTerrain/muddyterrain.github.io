@@ -84,6 +84,70 @@ Here’s a brief overview of the most important function for TTS:
     * **What it does:** This is the most essential function for TTS. It takes the raw PCM audio data returned by the AI provider and converts it into a standard, playable `USoundWave` asset.
     * **When to use it:** Always use this after a successful TTS request to make the audio playable in your game.
 
-## Audio Format Notes 
+## Streaming TTS (Real-time Audio)
+
+In addition to the standard TTS workflow above, the plugin now supports **Streaming TTS** for Alibaba models. Instead of waiting for the entire audio to generate, streaming TTS delivers audio in real-time chunks as it's generated — perfect for low-latency voice experiences.
+
+#### Supported Models
+- `qwen-tts`, `qwen3-tts-flash` (and their versioned variants)
+
+#### Supported Output Formats
+- **PCM** (raw audio data)
+- **WAV** (standard waveform audio)
+- **MP3** (compressed audio)
+
+#### How It Works
+
+Streaming TTS uses a persistent connection and fires events as audio chunks arrive:
+
+1.  **AudioChunk** — A new chunk of decoded audio bytes has arrived. Buffer or play it immediately.
+2.  **Completed** — The stream has finished. All audio has been delivered.
+3.  **Error** — An error occurred during streaming.
+
+#### Blueprint Implementation (Streaming TTS)
+
+Use the **"Request Alibaba Text To Speech Stream"** node. It exposes an **OnEvent** pin that fires for each audio chunk, similar to how streaming chat works. Configure it with the `Make GenAI Alibaba TTS Settings` node, specifying your desired voice, model, and input text.
+
+#### C++ Implementation (Streaming TTS)
+
+```cpp
+#include "Models/Alibaba/GenZhAlibabaTextToSpeechStream.h"
+#include "Data/Alibaba/GenZhAlibabaTextToSpeechStructs.h"
+
+void AMyActor::StreamTTS(const FString& TextToSpeak)
+{
+    FGenZhAlibabaTTSSettings TTSSettings;
+    TTSSettings.InputText = TextToSpeak;
+    TTSSettings.Model = TEXT("qwen3-tts-flash");
+    TTSSettings.Voice = EAlibabaAIVoice::Serena;
+
+    TWeakObjectPtr<AMyActor> WeakThis(this);
+    UGenZhAlibabaTextToSpeechStream::SendStreamTTSRequest(TTSSettings,
+        FOnAlibabaTTSStreamResponse::CreateLambda([WeakThis](const FGenZhAlibabaTTSStreamEvent& Event)
+        {
+            if (!WeakThis.IsValid()) return;
+
+            switch (Event.EventType)
+            {
+                case EGenZhAlibabaTTSStreamEventType::AudioChunk:
+                    // Buffer or play the audio chunk
+                    // Event.AudioDataChunk contains the decoded audio bytes
+                    break;
+                case EGenZhAlibabaTTSStreamEventType::Completed:
+                    UE_LOG(LogTemp, Log, TEXT("Streaming TTS Complete!"));
+                    break;
+                case EGenZhAlibabaTTSStreamEventType::Error:
+                    UE_LOG(LogTemp, Error, TEXT("TTS Error: %s"), *Event.ErrorMessage);
+                    break;
+            }
+        })
+    );
+}
+```
+
+---
+
+## Audio Format Notes
 
 -   **TTS Output:** The plugin receives audio from providers in raw **PCM format**. The `ConvertPCMAudioToSoundWave` utility is essential for making this data playable.
+-   **Streaming TTS Output:** Supports **PCM**, **WAV**, and **MP3** formats. The format can be configured in the TTS settings.

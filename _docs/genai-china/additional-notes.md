@@ -28,7 +28,7 @@ If you encounter problems, here are the most common areas to investigate:
 
 #### **Network & Connection Problems**
 -   **No Internet:** Verify that the editor has a stable internet connection.
--   **Firewall:** Ensure your firewall is not blocking the Unreal Editor from making outbound HTTPS requests to the provider endpoints (e.g., `aliyuncs.com`, `moonshot.cn`, `bytepluses.com`).
+-   **Firewall:** Ensure your firewall is not blocking the Unreal Editor from making outbound HTTPS requests to the provider endpoints (e.g., `aliyuncs.com`, `moonshot.cn`, `bytepluses.com`, `z.ai`, `bigmodel.cn`, `bce.baidu.com`).
 -   **Rate Limiting:** If you make many requests in a short time, the AI provider may temporarily block you. Wait a few minutes before trying again.
 
 ---

@@ -22,7 +22,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 </figure>
 </div>
 
-<p><strong>Unleash the power of China's leading AI models in your Unreal Engine projects.</strong> Gen AI China is the definitive, production-ready plugin that provides a stable, unified, and powerful interface to the most advanced generative AI from providers like Alibaba, Bytedance, and Moonshot AI. Focus on your gameplay, while we handle the integration layer for you.</p>
+<p><strong>Unleash the power of China's leading AI models in your Unreal Engine projects.</strong> Gen AI China is the definitive, production-ready plugin that provides a stable, unified, and powerful interface to the most advanced generative AI from providers like Alibaba, Bytedance, Moonshot AI, Baidu, and ZhipuAI. Focus on your gameplay, while we handle the integration layer for you.</p>
 
 <div class="button-row">
   <a href="/t/genai-china-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-china-plugin" class="cta-button primary track-click" data-event-name="btn_clk_gen_ai_china_fab"  data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
@@ -31,7 +31,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 
 <div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
   <h2 style="margin-top: 0;">Two Regions, One Plugin!</h2>
-  <p>We are proud to offer full support for Alibaba Cloud's dual API structure. Our plugin intelligently routes requests to the correct endpoints and uses the correct API keys for both <strong>Mainland China</strong> and the <strong>Singapore (Worldwide)</strong> regions, ensuring seamless integration no matter where your players are.</p>
+  <p>We are proud to offer full dual-region support across <strong>Alibaba</strong>, <strong>MoonshotAI</strong>, <strong>Bytedance</strong>, and <strong>ZhipuAI</strong>. Our plugin intelligently routes requests to the correct endpoints and uses the correct API keys for both <strong>Mainland China</strong> and <strong>International</strong> regions, ensuring seamless integration no matter where your players are.</p>
   <p>This plugin will receive <strong>free updates</strong> with new models and features as they become available. If you find it useful, please consider supporting us with a <strong>five-star rating on Fab!</strong></p>
 </div>
 
@@ -39,7 +39,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 <ul>
     <li>
         <p><strong>Access to Exclusive Models:</strong> 🚀<br>
-        Integrate powerful models from China's top AI providers, including Alibaba's Qwen series, Bytedance's Skylark & DeepSeek, and Moonshot AI's Kimi models, all through a single, unified API.</p>
+        Integrate powerful models from China's top AI providers, including Alibaba's Qwen series, Bytedance's Skylark & DeepSeek, Moonshot AI's Kimi, ZhipuAI's GLM, and Baidu's ERNIE models, all through a single, unified API.</p>
     </li>
     <li>
         <p><strong>Real-time Text Streaming:</strong> ⚡️<br>
@@ -58,8 +58,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
         Integrate state-of-the-art image generation directly into your workflow with support for models like Alibaba's Qwen-Image and Bytedance's Seedream.</p>
     </li>
     <li>
-        <p><strong>Text To Speech (TTS):</strong> 🔊<br>
-        Generate dynamic, high-quality voice lines for in-game dialogue and narration with models like Alibaba's Qwen-TTS.</p>
+        <p><strong>Text To Speech (TTS) & Streaming TTS:</strong> 🔊<br>
+        Generate dynamic, high-quality voice lines for in-game dialogue and narration with models like Alibaba's Qwen-TTS. Streaming TTS delivers audio in real-time chunks, supporting PCM, WAV, and MP3 output formats with multiple voice options.</p>
     </li>
     <li>
         <p><strong>Secure & Centralized Authentication:</strong> 🔐<br>
@@ -83,27 +83,38 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
   <p style="margin: 0; font-weight: bold; color: #856404;">Disclaimer</p>
   <p style="margin: 5px 0 0 0; color: #856404;">This plugin requires an active API key from at least one of the supported AI providers to function. Please see our documentation for more information on <a href="/docs/genai-china/getting-api-keys/" class="track-click" data-event-name="lnk_clk_genai_china_api_keys_docs" data-event-location="post_genai_china" target="_blank" rel="noopener noreferrer">how to obtain API keys</a>.</p>
 </div>
-<p>A clean, unified API for the best Chinese AI models available today.</p>
+<p>A clean, unified API for the best Chinese AI models available today — now with <strong>5 providers</strong> and <strong>90+ models</strong>.</p>
 <ul>
     <li><strong>Alibaba (Qwen):</strong>
         <ul>
-            <li><strong>Chat & Streaming:</strong> <code>qwen-max</code>, <code>qwen3-max</code>, <code>qwen3-max-2025-09-23</code>, <code>qwen-plus</code>, <code>qwen-flash</code>, <code>qwen-coder</code>, <code>qwen3-max-preview</code>, <code>qwen-plus-latest</code>, <code>qwen-plus-2025-09-11</code>, <code>qwen-plus-2025-07-28</code>, <code>qwen-plus-2025-07-14</code>, <code>qwen-plus-2025-04-28</code>, <code>qwen-plus-2025-01-25</code>, <code>qwen-flash-2025-07-28</code>, <code>qwen-turbo</code>, <code>qwen-turbo-latest</code>, <code>qwen-turbo-2025-04-28</code>, <code>qwen-turbo-2024-11-01</code>, <code>qwq-plus</code>, <code>qwen3-coder-plus</code>, <code>qwen3-coder-plus-2025-07-22</code>, <code>qwen3-coder-flash</code>, <code>qwen3-coder-flash-2025-07-28</code>, <code>qwen-mt-plus</code>, <code>qwen-mt-turbo</code>, <code>qwen3-coder-480b-a35b-instruct</code>, <code>qwen3-coder-30b-a3b-instruct</code>.</li>
-            <li><strong>Multimodal Chat:</strong> <code>qwen-omni-turbo</code>, <code>qwen-omni-turbo-latest</code>, <code>qwen-omni-turbo-2025-03-26</code>, <code>qwen-omni-turbo-realtime</code>, <code>qwen-omni-turbo-realtime-latest</code>, <code>qwen-omni-turbo-realtime-2025-05-08</code>, <code>qvq-max</code>, <code>qvq-max-latest</code>, <code>qvq-max-2025-03-25</code>, <code>qwen-vl-max</code>, <code>qwen-vl-max-latest</code>, <code>qwen-vl-max-2025-08-13</code>, <code>qwen-vl-max-2025-04-08</code>, <code>qwen-vl-ocr</code>, <code>qwen2.5-omni-7b</code>, <code>qwen2.5-vl-72b-instruct</code>, <code>qwen2.5-vl-32b-instruct</code>, <code>qwen2.5-vl-7b-instruct</code>, <code>qwen2.5-vl-3b-instruct</code>.</li>
+            <li><strong>Chat & Streaming:</strong> <code>qwen-max</code>, <code>qwen3-max</code>, <code>qwen3-max-2025-09-23</code>, <code>qwen-plus</code>, <code>qwen-flash</code>, <code>qwen-coder</code>, <code>qwen3-max-preview</code>, <code>qwen-plus-latest</code>, <code>qwen-plus-2025-12-01</code>, <code>qwen-plus-2025-09-11</code>, <code>qwen-plus-2025-07-28</code>, <code>qwen-plus-2025-07-14</code>, <code>qwen-plus-2025-04-28</code>, <code>qwen-plus-2025-01-25</code>, <code>qwen-flash-2025-07-28</code>, <code>qwen-turbo</code>, <code>qwen-turbo-latest</code>, <code>qwen-turbo-2025-04-28</code>, <code>qwen-turbo-2024-11-01</code>, <code>qwq-plus</code>, <code>qwen3-coder-plus</code>, <code>qwen3-coder-plus-2025-07-22</code>, <code>qwen3-coder-flash</code>, <code>qwen3-coder-flash-2025-07-28</code>, <code>qwen-mt-plus</code>, <code>qwen-mt-turbo</code>, <code>qwen3-coder-480b-a35b-instruct</code>, <code>qwen3-coder-30b-a3b-instruct</code>, <code>qwen3.5-plus</code>, <code>qwen3.5-plus-2026-02-15</code>, <code>qwen3.5-flash</code>, <code>qwen3.5-flash-2026-02-23</code>.</li>
+            <li><strong>Multimodal Chat:</strong> <code>qwen-omni-turbo</code>, <code>qwen-omni-turbo-latest</code>, <code>qwen-omni-turbo-2025-03-26</code>, <code>qwen-omni-turbo-realtime</code>, <code>qwen-omni-turbo-realtime-latest</code>, <code>qwen-omni-turbo-realtime-2025-05-08</code>, <code>qvq-max</code>, <code>qvq-max-latest</code>, <code>qvq-max-2025-03-25</code>, <code>qwen-vl-max</code>, <code>qwen-vl-max-latest</code>, <code>qwen-vl-max-2025-08-13</code>, <code>qwen-vl-max-2025-04-08</code>, <code>qwen-vl-ocr</code>, <code>qwen2.5-omni-7b</code>, <code>qwen2.5-vl-72b-instruct</code>, <code>qwen2.5-vl-32b-instruct</code>, <code>qwen2.5-vl-7b-instruct</code>, <code>qwen2.5-vl-3b-instruct</code>, <code>qwen3-vl-plus-2025-12-19</code>, <code>qwen3-vl-flash-2026-01-22</code>, <code>qwen3-omni-flash-realtime-2025-12-01</code>.</li>
             <li><strong>Image Generation:</strong> <code>qwen-image</code>, <code>qwen-image-edit</code>, <code>wan2.2-t2i-plus</code>.</li>
-            <li><strong>Text-to-Speech (TTS):</strong> <code>qwen3-tts-flash</code>, <code>qwen3-tts-flash-2025-09-18</code>, <code>qwen-tts</code>, <code>qwen-tts-latest</code>, <code>qwen-tts-2025-05-22</code>, <code>qwen-tts-2025-04-10</code>.</li>
+            <li><strong>Text-to-Speech (TTS & Streaming TTS):</strong> <code>qwen3-tts-flash</code>, <code>qwen3-tts-flash-2025-09-18</code>, <code>qwen-tts</code>, <code>qwen-tts-latest</code>, <code>qwen-tts-2025-05-22</code>, <code>qwen-tts-2025-04-10</code>.</li>
         </ul>
     </li>
     <li><strong>Moonshot AI (Kimi):</strong>
         <ul>
-            <li><strong>Chat & Streaming:</strong> <code>kimi-k2-0905-preview</code>, <code>kimi-k2-0711-preview</code>, <code>kimi-k2-turbo-preview</code>, <code>moonshot-v1-8k</code>, <code>moonshot-v1-32k</code>, <code>moonshot-v1-128k</code>.</li>
-            <li><strong>Multimodal Chat:</strong> <code>moonshot-v1-8k-vision-preview</code>, <code>moonshot-v1-32k-vision-preview</code>, <code>moonshot-v1-128k-vision-preview</code>, <code>kimi-latest</code>, <code>kimi-thinking-preview</code>.</li>
+            <li><strong>Chat & Streaming:</strong> <code>kimi-k2-0905-preview</code>, <code>kimi-k2-0711-preview</code>, <code>kimi-k2-turbo-preview</code>, <code>kimi-k2-thinking</code>, <code>kimi-k2-thinking-turbo</code>, <code>moonshot-v1-8k</code>, <code>moonshot-v1-32k</code>, <code>moonshot-v1-128k</code>.</li>
+            <li><strong>Multimodal Chat:</strong> <code>kimi-k2.5</code>, <code>moonshot-v1-8k-vision-preview</code>, <code>moonshot-v1-32k-vision-preview</code>, <code>moonshot-v1-128k-vision-preview</code>, <code>kimi-latest</code>, <code>kimi-thinking-preview</code>.</li>
         </ul>
     </li>
     <li><strong>Bytedance:</strong>
         <ul>
-            <li><strong>Chat & Streaming:</strong> <code>deepseek-v3-1-250821</code>, <code>deepseek-r1-250528</code>, <code>skylark-pro-250415</code>.</li>
-             <li><strong>Multimodal Chat:</strong> <code>seed-1-6-250615</code>, <code>seed-1-6-flash-250715</code>, <code>skylark-vision-250515</code>.</li>
+            <li><strong>Chat & Streaming:</strong> <code>deepseek-v3-2-251201</code>, <code>deepseek-v3-1-250821</code>, <code>deepseek-r1-250528</code>, <code>skylark-pro-250415</code>, <code>seed-2-0-lite-260228</code>.</li>
+            <li><strong>Multimodal Chat:</strong> <code>seed-2-0-mini-260215</code>, <code>seed-1-8-251228</code>, <code>seed-1-6-250915</code>, <code>seed-1-6-250615</code>, <code>seed-1-6-flash-250715</code>, <code>skylark-vision-250515</code>.</li>
             <li><strong>Image Generation:</strong> <code>seedream-4-0-250828</code>, <code>seedream-3-0-t2i-250415</code>, <code>seededit-3-0-i2i-250628</code>.</li>
+        </ul>
+    </li>
+    <li><strong>ZhipuAI (BigModel):</strong>
+        <ul>
+            <li><strong>Chat & Streaming:</strong> <code>glm-5</code>, <code>glm-4.7</code>, <code>glm-4.7-flash</code>, <code>glm-4.7-flashx</code>, <code>glm-4.6</code>, <code>glm-4.5</code>, <code>glm-4.5-flash</code>, <code>glm-4.5-air</code>, <code>glm-4.5-airx</code>.</li>
+            <li><strong>Multimodal Chat:</strong> <code>glm-4.6v</code>, <code>glm-4.6v-flash</code>, <code>glm-4.5v</code>.</li>
+        </ul>
+    </li>
+    <li><strong>Baidu (Qianfan):</strong>
+        <ul>
+            <li><strong>Chat & Streaming:</strong> <code>ernie-5.0-8k</code>, <code>ernie-4.5-8k</code>, <code>ernie-4.5-128k</code>, <code>ernie-4.5-turbo-128k</code>, <code>ernie-x1-32k</code>, <code>ernie-x1-turbo-32k</code>, <code>ernie-speed-128k</code>, <code>ernie-speed-8k</code>, <code>ernie-lite-128k</code>, <code>ernie-lite-8k</code>, <code>ernie-tiny-8k</code>.</li>
         </ul>
     </li>
 </ul>

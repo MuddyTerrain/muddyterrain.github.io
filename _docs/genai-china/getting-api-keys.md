@@ -33,8 +33,18 @@ To connect your Unreal project to Chinese AI models, you need to obtain API keys
 
 ### Bytedance (Skylark, Seedream, Deepseek Models)
 
-1.  Visit the <a href="https://console.byteplus.com/ark/region:ark+ap-southeast-1/apiKey?apikey=%7B%7D" class="track-click" data-event-name="lnk_clk_byteplus_console" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Byteplus Console</a>.
+1.  Visit the <a href="https://console.byteplus.com/ark/region:ark+ap-southeast-1/apiKey?apikey=%7B%7D" class="track-click" data-event-name="lnk_clk_byteplus_console" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Byteplus Console</a> for the International endpoint, or the Volcanic Engine console for Mainland China.
 2.  After signing up, find the **API Key Management** section in the console to create your key.
+
+### ZhipuAI (GLM Models)
+
+1.  For **International** access, go to <a href="https://z.ai/model-api" class="track-click" data-event-name="lnk_clk_zhipuai_intl" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">z.ai</a>. For **Mainland China**, use <a href="https://open.bigmodel.cn/" class="track-click" data-event-name="lnk_clk_zhipuai_china" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">open.bigmodel.cn</a>.
+2.  Create an account or log in and navigate to the **API Keys** section to generate a new key.
+
+### Baidu (ERNIE / Qianfan Models)
+
+1.  Visit the <a href="https://console.bce.baidu.com/qianfan/" class="track-click" data-event-name="lnk_clk_baidu_qianfan" data-event-location="docs_getting_api_keys_china" target="_blank" rel="noopener noreferrer">Baidu Qianfan Console</a>.
+2.  Create an account or log in and navigate to the **API Key Management** section to create your key.
 
 ---
 ## Storing Your API Keys Securely
@@ -52,6 +62,6 @@ Once you have your keys, you must add them to the plugin's settings panel.
 
 1.  In the Unreal Editor, navigate to **Edit > Project Settings**.
 2.  Scroll to the **Plugins** section and select **GenAI Chinese Models**.
-3.  Enter your API keys into the corresponding fields.
+3.  Enter your API keys into the corresponding fields for **Alibaba**, **Moonshot AI**, **Bytedance**, **ZhipuAI**, and **Baidu**.
 
 These keys are automatically saved to an encrypted binary file. For more details, see the **[Authentication & Security](/docs/genai-china/authentication-and-security/)** guide.

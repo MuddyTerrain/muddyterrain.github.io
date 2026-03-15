@@ -20,6 +20,8 @@ All asynchronous Blueprint nodes start with **"Request"** followed by the provid
 - `Request Alibaba Chat Completion`
 - `Request Bytedance Image Generation`
 - `Request MoonshotAI Chat Stream`
+- `Request ZhipuAI Chat Completion`
+- `Request Baidu Chat Completion`
 
 #### In C++
 
@@ -28,6 +30,8 @@ The static C++ functions follow a similar pattern, typically starting with **"Se
 - `UGenZhAlibabaChat::SendChatRequest(...)`
 - `UGenZhBytedanceImageGeneration::SendImageGenerationRequest(...)`
 - `UGenZhMoonshotAIChatStream::SendStreamChatRequest(...)`
+- `UGenZhZhipuAIChat::SendChatRequest(...)`
+- `UGenZhBaiduChat::SendChatRequest(...)`
 
 ---
 

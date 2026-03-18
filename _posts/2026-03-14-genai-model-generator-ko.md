@@ -7,7 +7,7 @@ author: "Muddy Terrain"
 tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin]
 lang: ko
 hreflang_group: genai-model-generator
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
 ---
 
 
@@ -18,7 +18,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp" alt="GenAI Model Generator - 언리얼 엔진에서 AI 3D 모델 생성" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp" alt="GenAI Model Generator - 언리얼 엔진에서 AI 3D 모델 생성" style="width: 100%;">
 </figure>
 </div>
 

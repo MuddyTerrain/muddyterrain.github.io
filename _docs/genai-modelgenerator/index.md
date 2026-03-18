@@ -3,7 +3,7 @@ layout: documentation
 title: GenAI Model Generator - Home
 permalink: /docs/genai-modelgenerator/
 nav_order: 1
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
 ---
 
 **Welcome to the official documentation for GenAI Model Generator, a powerful Unreal Engine plugin for AI-powered 3D model generation and PBR texture creation.** This plugin connects your projects to leading AI 3D generation services — Meshy, Hyper3D Rodin, Tripo AI, fal.ai, and Google — through a single, unified interface.

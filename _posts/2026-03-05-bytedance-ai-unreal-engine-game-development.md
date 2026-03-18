@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/bytedance-ai-unreal-engine
 author: "Muddy Terrain"
 tags: [unreal-engine, bytedance, skylark, seedream, chinese-ai, ai, game-development]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_380,w_939/v1758886941/GenAI_China_Banner_r6fcq4.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1758886941/GenAI_China_Banner_r6fcq4.webp" alt="GenAI Chinese Models - Bytedance AI Integration" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp" alt="GenAI Chinese Models - Bytedance AI Integration" style="width: 100%;">
 </figure>
 </div>
 

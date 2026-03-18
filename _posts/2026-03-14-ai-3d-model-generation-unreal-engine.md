@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/ai-3d-model-generation-unreal-engine
 author: "Muddy Terrain"
 tags: [unreal-engine, ai, 3d-models, textures, meshy, game-development, procedural-generation]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp" alt="AI 3D Model Generation in Unreal Engine" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp" alt="AI 3D Model Generation in Unreal Engine" style="width: 100%;">
 </figure>
 </div>
 

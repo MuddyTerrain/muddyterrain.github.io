@@ -18,7 +18,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1758886941/GenAI_China_Banner_r6fcq4.webp" alt="ユースケース例" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp" alt="ユースケース例" style="width: 100%;">
 </figure>
 </div>
 

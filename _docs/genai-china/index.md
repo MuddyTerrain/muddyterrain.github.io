@@ -3,12 +3,12 @@ layout: documentation
 title: Gen AI China - Home
 permalink: /docs/genai-china/
 nav_order: 1
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756686888/china-dragon.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_380,w_1000/v1758886941/GenAI_China_Banner_r6fcq4.webp" alt="Use cases example" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp" alt="Use cases example" style="width: 100%;">
 </figure>
 </div>
 

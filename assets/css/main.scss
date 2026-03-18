@@ -13,7 +13,7 @@ $phone-width: 480px;
 
 $header-thickness: 56px;
 
-$icon-transition-time: 1.0s;
+$icon-transition-time: 0.3s;
 $envelope-color: #f39c12;
 $twitter-color: #00aced;
 $instagram-color: #375989;
@@ -209,14 +209,16 @@ h4:hover .header-link-icon {
 }
 
 .documentation-sidebar ul li a:hover {
-  background-color: #f5f5f5; /* A more subtle hover effect */
-  color: $brand-color;
+  background-color: #f0f4ff;
+  color: #007bff;
 }
 
 .documentation-sidebar ul li a.active {
   font-weight: bold;
-  color: $brand-color; /* Use brand color for active link */
-  background-color: transparent; /* No background color */
+  color: #007bff;
+  background-color: #f0f4ff;
+  border-left: 3px solid #007bff;
+  padding-left: 7px;
 }
 
 .documentation-main {
@@ -367,4 +369,13 @@ h4:hover .header-link-icon {
 .text-thumbnail:hover {
   background-color: rgba(0,0,0,0.06);
   border-color: rgba(0,0,0,0.2);
+}
+
+/* --- Accessibility: Focus States --- */
+a:focus-visible,
+button:focus-visible,
+.cta-button:focus-visible,
+.modern-button:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }

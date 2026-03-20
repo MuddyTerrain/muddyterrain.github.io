@@ -2,7 +2,7 @@
 layout: documentation
 title: Streaming
 permalink: /docs/genai-china/streaming/
-nav_order: 8
+nav_order: 9
 ---
 
 Streaming is a powerful feature that allows you to receive AI responses in real-time, word-by-word, as they are generated. This creates a much more interactive and engaging user experience, similar to the typewriter effect seen in modern chat applications.

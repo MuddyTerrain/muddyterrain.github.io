@@ -2,7 +2,7 @@
 layout: documentation
 title: Image Generation
 permalink: /docs/genai-china/image-generation/
-nav_order: 9
+nav_order: 10
 ---
 
 Integrate powerful AI image generation directly into your Unreal Engine projects. This feature allows you to create high-quality visual assets from simple text prompts, opening up incredible possibilities for procedural content, rapid prototyping, and dynamic in-game experiences.

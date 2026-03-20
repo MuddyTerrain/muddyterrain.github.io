@@ -2,7 +2,7 @@
 layout: documentation
 title: Text-to-Speech
 permalink: /docs/genai-china/text-to-speech/
-nav_order: 10
+nav_order: 11
 ---
 
 Bring your characters and worlds to life with voice. The plugin provides a seamless pipeline to convert text into natural-sounding speech (TTS) using powerful AI models.

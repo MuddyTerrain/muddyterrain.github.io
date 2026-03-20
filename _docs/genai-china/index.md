@@ -49,9 +49,10 @@ Whether you're building dynamic NPC dialogue, procedurally generated content, or
 3.  **[Authentication & Security](/docs/genai-china/authentication-and-security/)** 🔒 — Secure Key Storage
 4.  **[Usage Guides & Examples](/docs/genai-china/usage-guides-and-examples/)** 📘 — Practical Walkthroughs
 5.  **[Core Concepts](/docs/genai-china/core-concepts/)** 💡 — Async Design, Debug Mode, Custom Models
-6.  **[Building Long Conversations](/docs/genai-china/building-long-conversations/)** 📝 — Chat Context Strategies
-7.  **[Streaming](/docs/genai-china/streaming/)** ⚡️ — Real-Time Response Chunks
-8.  **[Image Generation](/docs/genai-china/image-generation/)** 🎨 — AI-Powered Art
-9.  **[Text-to-Speech](/docs/genai-china/text-to-speech/)** 🔊 — Audio Generation
-10. **[API Reference & Models](/docs/genai-china/api-reference/)** 🌐 — Full Model List
-11. **[Additional Notes](/docs/genai-china/additional-notes/)** 📋 — Compatibility & Best Practices
+6.  **[Chat Completions](/docs/genai-china/chat-completions/)** 💬 — Text, Multimodal & Provider-Specific Notes
+7.  **[Building Long Conversations](/docs/genai-china/building-long-conversations/)** 📝 — Chat Context Strategies
+8.  **[Streaming](/docs/genai-china/streaming/)** ⚡️ — Real-Time Response Chunks
+9.  **[Image Generation](/docs/genai-china/image-generation/)** 🎨 — AI-Powered Art
+10. **[Text-to-Speech](/docs/genai-china/text-to-speech/)** 🔊 — Audio Generation
+11. **[API Reference & Models](/docs/genai-china/api-reference/)** 🌐 — Full Model List
+12. **[Additional Notes](/docs/genai-china/additional-notes/)** 📋 — Compatibility & Best Practices

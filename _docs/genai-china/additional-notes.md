@@ -2,7 +2,7 @@
 layout: documentation
 title: Additional Notes
 permalink: /docs/genai-china/additional-notes/
-nav_order: 11
+nav_order: 12
 ---
 
 This final section contains important supplementary information, including compatibility details, troubleshooting tips, and best practices to ensure a smooth and successful integration of the Gen AI China plugin.

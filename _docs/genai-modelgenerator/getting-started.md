@@ -31,47 +31,124 @@ PublicDependencyModuleNames.AddRange(new string[] { "GenAIModelGen" });
 1.  Go to **Project Settings > Plugins > GenAI Model Generator**.
 2.  Enter your API key(s) for the providers you want to use (see [Getting API Keys](/docs/genai-modelgenerator/getting-api-keys/)).
 3.  Optionally adjust the **Poll Interval** (default: 3 seconds) — this controls how frequently the plugin checks for generation task completion.
-4.  Enable **Extended Logging** if you want to see full request/response details in the output log.
+4.  Enable **Extended Logging** if you want to see full request/response JSON in the output log (large fields like base64 images are automatically truncated).
 
-> **Compatibility:** The plugin supports **Unreal Engine 5.1+** and works on Windows, macOS, and Linux.
+> **Compatibility:** Supports **Unreal Engine 5.1 through 5.7** on Windows, macOS, and Linux.
 
 ---
 
-## Your First Generation (Blueprint)
+## Editor Widget — Your Main Tool
 
-### Text-to-3D with Meshy
+The plugin includes a full Slate editor widget for generating models without writing code. Open it from the toolbar button or **Window > AI Model Generator**.
 
-1.  Create a new Blueprint Actor.
-2.  In the Event Graph, right-click and search for **"Request Text To 3D"**.
-3.  Select the Meshy version (e.g., `Request Meshy Text To 3D`).
-4.  Create a **"Make..."** node for the settings struct and fill in:
-    -   **Prompt:** A description of the model (e.g., "A medieval sword with ornate handle")
-    -   **Model Version:** Select from the dropdown (v4, v5, or v6)
-5.  Connect the **OnComplete** pin to handle the result. The `FGenModel3DResult` struct contains:
-    -   `ModelBytes` — Raw file data you can save or import
-    -   `ModelUrl` — Download URL for the generated model
-    -   `ThumbnailUrl` — Preview image URL
-    -   `Progress` — Generation progress (0-100)
-6.  Connect the **OnProgress** pin to update a loading bar or status text.
+### Widget Layout
 
-### Image-to-3D with Rodin
+1. **Provider & Mode** — Select your AI provider and generation mode. Modes update dynamically per provider (e.g., TripoSR only shows Image-to-3D, Meshy shows all four modes).
 
-1.  Search for **"Request Rodin Image To 3D"**.
-2.  Configure the settings with:
-    -   **Input Image** — A texture or Base64 string of the reference image
-    -   **Quality Tier** — Regular, Sketch, Detail, or Smooth
-    -   **Mesh Quality** — Controls polygon count (500 to 300K triangles)
-3.  The result follows the same `FGenModel3DResult` pattern.
+2. **Input** — Prompt text field and/or reference image picker. The hint text changes based on the selected mode.
 
-### PBR Texture Generation with Google
+3. **Contextual Help** — Below the inputs, shows the underlying AI model, approximate cost per generation, API key status, and workflow tips.
 
-1.  Search for **"Request Google Texture"**.
-2.  Configure:
-    -   **Prompt** — A description (e.g., "Weathered red brick wall")
-    -   **Texture Map Type** — BaseColor, Normal, Roughness, Metallic, or FullPBR
-    -   **bSeamless** — Enable for tileable textures
-    -   **Image Size** — Resolution (e.g., "1024")
-3.  The result provides the generated texture data.
+4. **Advanced Settings** — Provider-specific tuning (only shown for providers that support it):
+   - **Meshy AI:** Art style (realistic, cartoon, sculpture, pbr), target polycount (100–300K), enable PBR
+   - **Fal.ai - Hunyuan3D:** Inference steps (1–100), guidance scale (1–20), face count (40K–1.5M), geometry-only mode, enable PBR
+   - **Google Texture Gen:** Texture map type selector (base color, normal, roughness, metallic, full PBR)
+
+5. **Output** — Import destination path with browse button. Generated assets are imported directly as UAssets.
+
+6. **Generate / Cancel / Reset** — Generate button with live progress bar and elapsed timer. Cancel stops in-flight tasks. Reset clears all fields.
+
+7. **Result Preview** — Shows a thumbnail of the last generated result with an "Open in Editor" button.
+
+---
+
+## Generation Workflows
+
+### Text-to-3D
+
+Available with: **Meshy AI**, **Tripo AI**, **Fal.ai - Hunyuan3D**, **Fal.ai - Rodin**
+
+1. Select a provider that supports Text-to-3D.
+2. Type a prompt describing the object (e.g., "a medieval sword with ornate handle").
+3. Click **Generate**.
+4. The model is downloaded and imported into your Content Browser.
+
+**Meshy AI** uses a two-step process (handled automatically):
+- **Preview** (~20 credits) — generates the 3D mesh geometry
+- **Refine** (~10 credits) — applies textures and materials
+
+Progress is scaled: 0–50% = preview, 50–100% = refine. If **Enable PBR** is checked, the refine step also generates metallic, roughness, and normal maps.
+
+### Image-to-3D
+
+Available with: **All providers** (every 3D provider supports this mode)
+
+1. Select any 3D provider and **Image-to-3D** mode.
+2. Attach a reference image using the asset picker.
+3. Click **Generate**.
+
+Works best with clean, well-lit images of a single object on a plain background.
+
+### Reference Image + Image-to-3D (Recommended Pipeline)
+
+For the best results, generate a clean reference image first:
+
+1. Select **Google (Texture Gen)** > **Reference Image** mode.
+2. Describe the object you want (e.g., "a cartoon robot with big eyes").
+3. Generate — produces a clean concept image optimized for 3D generation.
+4. Switch to any 3D provider > **Image-to-3D** mode.
+5. Attach the generated reference image.
+6. Generate the 3D model.
+
+### Auto-Rigging (Meshy AI Only)
+
+Automatically rigs textured humanoid models with a skeleton and generates walking + running animations.
+
+**Seamless workflow (recommended):**
+1. Generate a humanoid model with **Meshy AI** > **Text-to-3D** or **Image-to-3D**.
+2. Switch to **Auto-Rig** mode — the plugin automatically uses the last generated Meshy task ID.
+3. Click **Generate** — the rigged model is downloaded and imported with skeleton.
+
+**Manual workflow:**
+1. Select **Meshy AI** > **Auto-Rig**.
+2. Attach a textured humanoid GLB model via the mesh picker.
+3. Click **Generate**.
+
+**Constraints:** Humanoid models only, must be textured, max 300K faces when using a Meshy task ID. Output includes rigged GLB/FBX with skeleton, plus walking and running animation URLs.
+
+### Retexture (Meshy AI Only)
+
+Apply new AI-generated textures to an existing 3D model:
+
+1. Select **Meshy AI** > **Retexture** mode.
+2. Attach an existing 3D model via the mesh picker.
+3. Describe the desired texture style in the prompt.
+4. Generate.
+
+### Texture Generation (Google Only)
+
+Generate seamless PBR texture maps:
+
+1. Select **Google (Texture Gen)** > **Texture Generation** mode.
+2. Describe the texture (e.g., "weathered stone wall with moss").
+3. In **Advanced Settings**, choose the map type: Base Color, Normal, Roughness, Metallic, or Full PBR Set.
+4. Optionally attach a reference image for style guidance.
+5. Generate — the texture is saved and imported as a UTexture2D.
+
+---
+
+## Provider Comparison — Which One Should I Use?
+
+| Goal | Recommended Provider | Why |
+|---|---|---|
+| **Best overall quality** | Meshy AI (Meshy-6) | Latest proprietary model, two-step refine process, best textures |
+| **Cheapest prototyping** | Fal.ai - TripoSR | $0.07/gen, fast (<1s), no subscription |
+| **Best free tier** | Tripo AI | 300 free credits/month (~24 generations) |
+| **Highest quality open-source** | Fal.ai - Hunyuan3D v3.1 Pro | Tencent's best text-to-3D, $0.48/gen |
+| **Best PBR materials** | Fal.ai - Trellis 2 | Microsoft model, full PBR set included |
+| **High quality, no subscription** | Fal.ai - Rodin Gen-2 | Hyper3D's Gen-2 model, PBR, $0.40/gen |
+| **Rigging & animation** | Meshy AI (Auto-Rig) | Only provider with auto-rigging |
+| **Texture maps** | Google (Texture Gen) | ~$0.04/image, all PBR map types |
 
 ---
 
@@ -87,96 +164,69 @@ void AMyActor::GenerateModel()
 {
     FGenMeshyTextTo3DSettings Settings;
     Settings.Prompt = TEXT("A medieval sword with ornate handle");
-    Settings.ModelVersion = EGenMeshyModelVersion::V6;
+    Settings.ArtStyle = TEXT("realistic");
+    Settings.TargetPolycount = 30000;
+    Settings.bAutoRefine = true;  // Auto-chains preview → refine
 
-    TWeakObjectPtr<AMyActor> WeakThis(this);
-
-    UGenMeshyTextTo3D::RequestTextTo3D(Settings,
-        FOnGenModel3DComplete::CreateLambda(
-            [WeakThis](const FGenModel3DResult& Result, const FString& Error, bool bSuccess)
-        {
-            if (!WeakThis.IsValid()) return;
-
-            if (bSuccess)
-            {
-                UE_LOG(LogTemp, Log, TEXT("Model generated! URL: %s"), *Result.ModelUrl);
-                // Result.ModelBytes contains the raw file data
-            }
-            else
-            {
-                UE_LOG(LogTemp, Error, TEXT("Generation failed: %s"), *Error);
-            }
-        }),
-        FOnGenModel3DProgress::CreateLambda(
-            [](int32 Progress)
-        {
-            UE_LOG(LogTemp, Log, TEXT("Progress: %d%%"), Progress);
-        })
-    );
+    UGenMeshyTextTo3D* Action = UGenMeshyTextTo3D::RequestTextTo3D(this, Settings);
+    Action->OnComplete.AddDynamic(this, &AMyActor::OnModelComplete);
+    Action->OnProgress.AddDynamic(this, &AMyActor::OnModelProgress);
+    Action->Activate();
 }
 ```
 
-### Image-to-3D with fal.ai
+### Image-to-3D with Fal.ai
 
 ```cpp
-#include "Models/Fal/GenFalHunyuanImageTo3D.h"
-#include "Data/Fal/GenFalStructs.h"
+#include "Models/FalAI/GenFalImageTo3D.h"
+#include "Data/FalAI/GenFalStructs.h"
 
-void AMyActor::GenerateFromImage(UTexture2D* ReferenceImage)
+void AMyActor::GenerateFromImage()
 {
-    FGenFalHunyuanImageTo3DSettings Settings;
-    Settings.InputImage = ReferenceImage;
-    Settings.InferenceSteps = 50;
-    Settings.GuidanceScale = 7.5f;
+    FGenFalImageTo3DSettings Settings;
+    Settings.FalModel = EGenFalModel::Hunyuan3D;  // or TripoSR, Rodin, Trellis2
+    Settings.ImageBytes = MyImageBytes;  // TArray<uint8> of PNG/JPG data
+    Settings.NumInferenceSteps = 30;     // Hunyuan3D only
+    Settings.GuidanceScale = 5.5f;       // Hunyuan3D only
 
-    TWeakObjectPtr<AMyActor> WeakThis(this);
-
-    UGenFalHunyuanImageTo3D::RequestImageTo3D(Settings,
-        FOnGenModel3DComplete::CreateLambda(
-            [WeakThis](const FGenModel3DResult& Result, const FString& Error, bool bSuccess)
-        {
-            if (!WeakThis.IsValid()) return;
-
-            if (bSuccess)
-            {
-                UE_LOG(LogTemp, Log, TEXT("3D model from image generated!"));
-            }
-        })
-    );
+    UGenFalImageTo3D* Action = UGenFalImageTo3D::RequestImageTo3D(this, Settings);
+    Action->OnComplete.AddDynamic(this, &AMyActor::OnModelComplete);
+    Action->Activate();
 }
 ```
 
----
+### PBR Texture Generation with Google
 
-## Editor Tool
+```cpp
+#include "Models/Google/GenGoogleTextureGeneration.h"
+#include "Data/Google/GenGoogleTextureStructs.h"
 
-The plugin includes a built-in editor widget for generating models without writing code:
+void AMyActor::GenerateTexture()
+{
+    FGenGoogleTextureSettings Settings;
+    Settings.Prompt = TEXT("Weathered red brick wall");
+    Settings.TextureMapType = EGenTextureMapType::FullPBR;
+    Settings.bSeamless = true;
+    Settings.ImageSize = TEXT("1K");
 
-1.  Open the tool from the editor menu or toolbar.
-2.  Select a provider and generation type (text-to-3D, image-to-3D, etc.).
-3.  Fill in the prompt or select a reference image.
-4.  Click **Generate** and watch the progress.
-5.  Once complete, import the generated asset directly into your Content Browser.
+    UGenGoogleTextureGeneration* Action = UGenGoogleTextureGeneration::RequestTexture(this, Settings);
+    Action->OnComplete.AddDynamic(this, &AMyActor::OnTextureComplete);
+    Action->Activate();
+}
+```
 
 ---
 
 ## Output Formats
 
-Generated models can be exported in the following formats:
+Generated 3D models can be imported in the following formats:
 
-| Format | Description |
-|--------|-------------|
-| GLB | Binary glTF — compact, widely supported |
-| FBX | Autodesk FBX — good for animation workflows |
-| OBJ | Wavefront OBJ — simple, universal |
-| USDZ | Universal Scene Description — Apple ecosystem |
-| STL | Stereolithography — 3D printing |
+| Format | Description | Best For |
+|--------|-------------|----------|
+| **GLB** | Binary glTF — compact, includes textures | Default for most providers |
+| **FBX** | Autodesk FBX — preserves materials and animations | Rigged models, animation workflows |
+| **OBJ** | Wavefront OBJ — simple, universal | Basic geometry |
+| **USDZ** | Universal Scene Description | Apple ecosystem, AR |
+| **STL** | Stereolithography — geometry only | 3D printing |
 
-## Mesh Control
-
-Depending on the provider, you can control:
-
--   **Topology:** Triangle or Quad meshes
--   **Polygon Count:** From 100 to 300,000 triangles
--   **Symmetry:** Auto, On, or Off (Meshy)
--   **Quality Tier:** Regular, Sketch, Detail, Smooth (Rodin)
+All 3D models are imported into the Content Browser as `UStaticMesh` assets via Unreal's Interchange system, and automatically opened in the static mesh editor for preview.

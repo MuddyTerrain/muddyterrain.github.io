@@ -5,66 +5,77 @@ permalink: /docs/genai-modelgenerator/getting-api-keys/
 nav_order: 2
 ---
 
-To generate 3D models and textures, you need an API key from at least one supported provider. Each provider has its own strengths — you can use one or all of them.
+To generate 3D models and textures, you need an API key from at least one supported provider. Each provider has its own strengths — you can use one or all of them. All keys are configured in **Project Settings > Plugins > GenAI Model Generator**.
 
 ---
 
 ## Meshy AI
 
-Meshy provides text-to-3D, image-to-3D, and retexturing capabilities.
+**What it powers:** Text-to-3D, Image-to-3D, Retexture, and Auto-Rigging using Meshy's proprietary Meshy-6 model.
+
+**Plan required:** Pro or higher ($20/mo) — API access is not available on the free plan.
 
 1.  Visit [https://meshy.ai](https://meshy.ai) and create an account.
-2.  Navigate to your dashboard and find the **API Keys** section.
-3.  Generate a new API key and copy it.
-4.  In Unreal, go to **Project Settings > Plugins > GenAI Model Generator** and paste it into the **Meshy API Key** field.
-
----
-
-## Hyper3D Rodin
-
-Rodin offers high-quality image-to-3D and text-to-3D with multiple quality tiers.
-
-1.  Visit [https://developer.hyper3d.ai](https://developer.hyper3d.ai) and register.
-2.  Access the developer portal and generate an API key.
-3.  Copy the key and paste it into the **Rodin API Key** field in Project Settings.
+2.  Subscribe to a **Pro** plan or higher.
+3.  Go to **Settings > API Keys** and generate a new key.
+4.  In Unreal, paste it into the **Meshy API Key** field in Project Settings.
 
 ---
 
 ## Tripo AI
 
-Tripo AI provides fast text-to-3D and image-to-3D generation.
+**What it powers:** Text-to-3D and Image-to-3D using Tripo's proprietary v2.5 model. This is a separate, newer model from the open-source TripoSR available on Fal.ai.
+
+**Free tier:** 300 credits/month (~24 generations). API credits are separate from web subscription credits.
 
 1.  Visit [https://platform.tripo3d.ai](https://platform.tripo3d.ai) and create an account.
 2.  Navigate to your API settings and generate a key.
-3.  Copy the key and paste it into the **Tripo AI API Key** field in Project Settings.
+3.  Paste it into the **Tripo AI API Key** field in Project Settings.
 
 ---
 
-## fal.ai
+## Fal.ai (Covers 4 Providers)
 
-fal.ai is an inference platform that provides access to multiple 3D generation models including Hunyuan3D, TripoSR, Rodin, and Trellis 2.
+**What it powers:** A single Fal.ai API key gives you access to four providers in the plugin:
+
+| Provider in Plugin | AI Model | Type |
+|---|---|---|
+| **Fal.ai - Hunyuan3D** | Tencent Hunyuan3D v3.1 Pro (Text-to-3D) and v2.1 (Image-to-3D) | Open-source |
+| **Fal.ai - TripoSR** | TripoSR (fast, basic quality, Image-to-3D only) | Open-source (MIT) |
+| **Fal.ai - Rodin** | Hyper3D Rodin Gen-2 (high quality, PBR materials) | Proprietary |
+| **Fal.ai - Trellis 2** | Microsoft Trellis 2 (Image-to-3D with PBR materials) | Open-source |
+
+**Free tier:** Small signup credit (typically $1–$10). No subscription needed — pure pay-per-use.
 
 1.  Visit [https://fal.ai](https://fal.ai) and sign up.
-2.  Go to your account settings and find the **API Keys** section.
-3.  Generate a new key and paste it into the **fal.ai API Key** field in Project Settings.
+2.  Go to **Dashboard > Keys** and generate a new API key.
+3.  Paste it into the **Fal.ai API Key** field in Project Settings.
+
+> **Note:** You do not need a separate Rodin API key. Rodin is accessed through Fal.ai's infrastructure, which is significantly cheaper than Rodin's direct Business plan ($120/mo).
 
 ---
 
 ## Google (Texture Generation)
 
-Google's AI powers PBR texture generation via NanoBanana 2 / Gemini.
+**What it powers:** PBR texture map generation (base color, normal, roughness, metallic, full PBR sets) and reference image generation using Google Gemini 3.1 Flash.
+
+**Free tier:** Rate-limited free access to text models, but image generation may require paid usage.
 
 1.  Visit [https://aistudio.google.com/](https://aistudio.google.com/) and sign in with your Google account.
-2.  Generate an API key from the AI Studio dashboard.
-3.  Copy the key and paste it into the **Google API Key** field in Project Settings.
+2.  Click **Get API Key** and generate one.
+3.  Paste it into the **Google API Key** field in Project Settings.
 
 ---
 
 ## Key Storage & Security
 
-All API keys are stored in a **non-portable, encrypted file** at:
+All API keys are stored in a **non-portable, encrypted binary file** at:
 ```
 YourProject/Saved/Config/GenAIModelGen/secureconfig_modelgen.bin
 ```
 
-This file is automatically excluded from source control and cannot be used on a different machine. Keys entered in the Project Settings panel are written to this encrypted file, not to any `.ini` or config file.
+- Keys are XOR-encrypted before being written to disk — they are never stored in plain text `.ini` or config files.
+- This file is automatically excluded from source control and cannot be used on a different machine.
+- Keys entered in the Project Settings panel are written to this encrypted file immediately on save.
+
+> **UNSAFE Build Option:** There is an option to include keys in packaged builds for private testing. This copies the encrypted key file into the build. **Do not enable this for any distributed build** — the encryption is obfuscation, not strong security.

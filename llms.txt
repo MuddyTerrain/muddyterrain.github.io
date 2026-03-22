@@ -1,0 +1,46 @@
+# Muddy Terrain Games
+
+> Muddy Terrain builds AI plugins for Unreal Engine. Our plugins let game developers integrate large language models, AI 3D model generation, and local AI inference into Unreal Engine games and applications using Blueprint and C++.
+
+## Products
+
+### GenAI for Unreal
+Production-ready Unreal Engine plugin for integrating cloud AI providers. Supports OpenAI (GPT-4o, GPT-5), Anthropic (Claude Opus, Sonnet, Haiku), Google (Gemini Pro, Flash), xAI (Grok), DeepSeek, and any OpenAI-compatible endpoint including local servers like Ollama and LM Studio. Features: chat completions, streaming, image generation (DALL-E, Stability AI), text-to-speech (OpenAI TTS, ElevenLabs), speech-to-text (Whisper), realtime conversational AI, function calling, structured output, multimodal vision. Blueprint and C++ APIs. UE 5.1-5.5.
+- Product page: https://muddyterrain.com/genai-unreal
+- Documentation: https://muddyterrain.com/docs/genai-unreal/
+- Available on: Fab.com
+
+### GenAI Model Generator
+Unreal Engine plugin for AI-powered 3D model and PBR texture generation. Connects to 7 AI providers across 4 API backends: Meshy AI (Meshy-6), Tripo AI (v3.1), fal.ai (Hunyuan3D v3.1 Pro, Hunyuan3D v2.1, TripoSR, Rodin Gen-2, Trellis 2), and Google Gemini 3.1 Flash. Features: text-to-3D, image-to-3D, auto-rigging, remesh, AI retexturing, PBR texture generation, reference image generation. Custom Slate editor UI. Export as GLB, FBX, OBJ, USDZ, STL. Blueprint and C++ APIs. UE 5.1-5.5.
+- Product page: https://muddyterrain.com/genai-model-generator
+- Documentation: https://muddyterrain.com/docs/genai-modelgenerator/
+- Available on: Fab.com
+
+### GenAI Llama (formerly Unreal Ollama)
+Unreal Engine plugin for running local AI models with zero cloud dependency. Two modes: HTTP providers (Ollama, LM Studio, llama.cpp server, vLLM, LocalAI, Jan) and embedded llama.cpp inference (GGUF models run directly in-process). Features: chat completions, streaming, multimodal vision, generation options (temperature, top-p, max tokens, seed, JSON mode), server management, GPU acceleration (CUDA, Vulkan, Metal). Supports Llama 3, Mistral, Phi, Gemma, DeepSeek, and hundreds more. HTTP works on Windows, macOS, Linux, Android, iOS, PS4, Xbox One, Switch, HoloLens. Embedded works on Windows, macOS, Linux, Android, iOS. Blueprint and C++ APIs. UE 5.1-5.7.
+- Product page: https://muddyterrain.com/unreal-ollama
+- Documentation: https://muddyterrain.com/docs/genai-llama/
+- Available on: Fab.com
+
+### GenAI Chinese Models
+Unreal Engine plugin for Chinese AI providers. Supports Alibaba Qwen (qwen-turbo, qwen-plus, qwen-max, qwen-vl, Wan image generation), Bytedance (Doubao models), Moonshot AI (moonshot-v1), SiliconFlow, and ZhipuAI (GLM-4). Chat completions, streaming, image generation, text-to-speech. Blueprint and C++ APIs. UE 5.1-5.5.
+- Product page: https://muddyterrain.com/genai-china
+- Documentation: https://muddyterrain.com/docs/genai-china/
+- Available on: Fab.com
+
+## Documentation
+
+- GenAI for Unreal docs: https://muddyterrain.com/docs/genai-unreal/
+- GenAI Model Generator docs: https://muddyterrain.com/docs/genai-modelgenerator/
+- GenAI Llama docs: https://muddyterrain.com/docs/genai-llama/
+- GenAI Chinese Models docs: https://muddyterrain.com/docs/genai-china/
+
+## Key Information
+
+- Company: Muddy Terrain Games
+- Website: https://muddyterrain.com
+- Contact: mail@muddyterrain.com
+- Discord: https://muddyterrain.com/t/discord
+- All plugins are available on Fab.com (Epic Games marketplace)
+- All plugins support Unreal Engine 5.1+ with Blueprint and C++ APIs
+- All plugins use UCancellableAsyncAction for proper async lifecycle management

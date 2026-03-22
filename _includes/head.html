@@ -28,6 +28,65 @@
   <script src="{{ site.github.url }}/assets/js/internal-traffic.js"></script>
   <!-- Use Jekyll SEO plugin -->
   {% seo %}
+  <!-- Organization structured data for AI/LLM discoverability -->
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Muddy Terrain Games",
+    "url": "https://muddyterrain.com",
+    "description": "{{ site.description | escape }}",
+    "email": "mail@muddyterrain.com",
+    "sameAs": [
+      "https://www.fab.com/sellers/Muddy-Terrain"
+    ]
+  }
+  </script>
+  {% endif %}
+  {% if page.category == "products" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{ page.title | escape }}",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "description": "{{ page.title | escape }} - Unreal Engine Plugin by Muddy Terrain Games",
+    "url": "{{ page.url | absolute_url }}",
+    "author": {
+      "@type": "Organization",
+      "name": "Muddy Terrain Games"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ page.url | absolute_url }}",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  {% endif %}
+  {% if page.category == "guides" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{ page.title | escape }}",
+    "author": {
+      "@type": "Organization",
+      "name": "Muddy Terrain Games"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Muddy Terrain Games",
+      "url": "https://muddyterrain.com"
+    },
+    "url": "{{ page.url | absolute_url }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ site.time | date_to_xmlschema }}"
+  }
+  </script>
+  {% endif %}
   <!-- Hreflang tags for multilingual SEO -->
   {% if page.hreflang_group %}
     {% for p in site.posts %}

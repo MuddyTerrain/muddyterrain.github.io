@@ -46,9 +46,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 <ul>
     <li><strong>Meshy AI</strong> — The most feature-complete. Supports text-to-3D, image-to-3D, and retexturing. Multiple model versions (v4-v6) let you trade quality for speed. Good for general-purpose asset generation.</li>
     <li><strong>Hyper3D Rodin</strong> — Excels at quality control. Four quality tiers (Regular, Sketch, Detail, Smooth) and mesh quality from 500 to 300K triangles. Strong for when you need precise polygon budget control.</li>
-    <li><strong>Tripo AI</strong> — Fast and clean. Model versions v2.0 and v2.5 produce models with good topology. Best for rapid iteration where speed matters more than maximum detail.</li>
-    <li><strong>fal.ai</strong> — An inference platform that aggregates multiple backends (Hunyuan3D, TripoSR, Rodin, Trellis 2). Good for comparing results across different underlying models.</li>
-    <li><strong>Google (Texture Generation)</strong> — PBR texture creation via NanoBanana 2 / Gemini. Generates individual maps or complete PBR sets with seamless/tileable support.</li>
+    <li><strong>Tripo AI</strong> — Fast and clean. Tripo v3.1 produces models with good topology. Best for rapid iteration where speed matters more than maximum detail.</li>
+    <li><strong>fal.ai</strong> — An inference platform that aggregates multiple backends (Hunyuan3D v3.1 Pro/v2.1, TripoSR, Rodin Gen-2, Trellis 2). Good for comparing results across different underlying models.</li>
+    <li><strong>Google (Texture Generation)</strong> — PBR texture creation via Gemini 3.1 Flash. Generates individual maps or complete PBR sets with seamless/tileable support. Also generates reference images for Image-to-3D.</li>
 </ul>
 
 <h2>Integration Approaches</h2>
@@ -65,7 +65,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 
 <h2>Getting Started</h2>
 
-<p><a href="/genai-model-generator" class="track-click" data-event-name="lnk_clk_modelgen" data-event-location="post_guide_3d_gen" target="_blank" rel="noopener noreferrer"><strong>GenAI Model Generator</strong></a> is our Unreal Engine plugin that integrates all five providers through a single API. Blueprint and C++ support, progress tracking, task cancellation, and encrypted key storage are all built in.</p>
+<p><a href="/genai-model-generator" class="track-click" data-event-name="lnk_clk_modelgen" data-event-location="post_guide_3d_gen" target="_blank" rel="noopener noreferrer"><strong>GenAI Model Generator</strong></a> is our Unreal Engine plugin that integrates 7 AI providers across 4 API backends through a single API. Blueprint and C++ support, progress tracking, task cancellation, and encrypted key storage are all built in.</p>
 
 <ol>
     <li>Install the plugin from Fab</li>
@@ -75,6 +75,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </ol>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="post_guide_3d_gen_cta">Documentation</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="post_guide_3d_gen_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="post_guide_3d_gen_cta" target="_blank" rel="noopener noreferrer">GenAI Model Generator on Fab</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="post_guide_3d_gen_cta">Documentation</a>
 </div>

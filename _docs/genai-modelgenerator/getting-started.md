@@ -30,7 +30,7 @@ PublicDependencyModuleNames.AddRange(new string[] { "GenAIModelGen" });
 
 1.  Go to **Project Settings > Plugins > GenAI Model Generator**.
 2.  Enter your API key(s) for the providers you want to use (see [Getting API Keys](/docs/genai-modelgenerator/getting-api-keys/)).
-3.  Optionally adjust the **Poll Interval** (default: 3 seconds) — this controls how frequently the plugin checks for generation task completion.
+3.  Optionally adjust the **Poll Interval** (default: 6 seconds) — this controls how frequently the plugin checks for generation task completion.
 4.  Enable **Extended Logging** if you want to see full request/response JSON in the output log (large fields like base64 images are automatically truncated).
 
 > **Compatibility:** Supports **Unreal Engine 5.1 through 5.7** on Windows, macOS, and Linux.
@@ -43,15 +43,19 @@ The plugin includes a full Slate editor widget for generating models without wri
 
 ### Widget Layout
 
-1. **Provider & Mode** — Select your AI provider and generation mode. Modes update dynamically per provider (e.g., TripoSR only shows Image-to-3D, Meshy shows all four modes).
+1. **Provider & Mode** — Select your AI provider and generation mode. Modes update dynamically per provider (e.g., TripoSR only shows Image-to-3D, Meshy shows all five modes including Auto-Rig and Remesh).
 
 2. **Input** — Prompt text field and/or reference image picker. The hint text changes based on the selected mode.
 
 3. **Contextual Help** — Below the inputs, shows the underlying AI model, approximate cost per generation, API key status, and workflow tips.
 
 4. **Advanced Settings** — Provider-specific tuning (only shown for providers that support it):
-   - **Meshy AI:** Art style (realistic, cartoon, sculpture, pbr), target polycount (100–300K), enable PBR
+   - **Meshy AI (3D Gen):** Art style (realistic, cartoon, sculpture, pbr), target polycount (100–300K), enable PBR
+   - **Meshy AI (Auto-Rig):** Height in meters (0.1–10.0m, default 1.7m) for correct skeleton scale
+   - **Meshy AI (Remesh):** Target polycount, topology (triangle/quad), auto-size toggle, resize height
    - **Fal.ai - Hunyuan3D:** Inference steps (1–100), guidance scale (1–20), face count (40K–1.5M), geometry-only mode, enable PBR
+   - **Fal.ai - Trellis 2:** Resolution (256–2048), texture size (512–4096), decimation target
+   - **Rodin:** Quality mesh option, material mode (PBR/Shaded)
    - **Google Texture Gen:** Texture map type selector (base color, normal, roughness, metallic, full PBR)
 
 5. **Output** — Import destination path with browse button. Generated assets are imported directly as UAssets.
@@ -115,6 +119,16 @@ Automatically rigs textured humanoid models with a skeleton and generates walkin
 3. Click **Generate**.
 
 **Constraints:** Humanoid models only, must be textured, max 300K faces when using a Meshy task ID. Output includes rigged GLB/FBX with skeleton, plus walking and running animation URLs.
+
+### Remesh (Meshy AI Only)
+
+Retopologize and optimize an existing mesh with control over target polycount and topology type.
+
+1. Generate a model with **Meshy AI** first, or attach an existing mesh.
+2. Switch to **Remesh** mode.
+3. In **Advanced Settings**, configure target polycount (default 30,000) and topology (Triangle or Quad).
+4. Optionally enable **Auto Size** to automatically scale the model, or set a manual **Resize Height**.
+5. Click **Generate** — outputs an optimized mesh.
 
 ### Retexture (Meshy AI Only)
 

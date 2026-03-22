@@ -48,7 +48,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 
 <h2>Two Ways to Integrate</h2>
 
-<p><a href="https://github.com/MuddyTerrain/unreal-ollama" class="track-click" data-event-name="lnk_clk_unreal_ollama" data-event-location="post_guide_ollama" target="_blank" rel="noopener noreferrer"><strong>Unreal Ollama</strong></a> — Our free, open-source plugin for direct Ollama integration. Chat completions and streaming, Blueprint and C++ support.</p>
+<p><a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="track-click" data-event-name="lnk_clk_genai_llama_fab" data-event-location="post_guide_ollama" target="_blank" rel="noopener noreferrer"><strong>GenAI Llama</strong></a> (formerly Unreal Ollama) — Our plugin for local AI with 7 HTTP providers (Ollama, LM Studio, llama.cpp server, vLLM, LocalAI, Jan) plus embedded llama.cpp inference for running GGUF models directly in your game process. Run Llama 3, Mistral, Phi, Gemma, DeepSeek, and hundreds more models locally. Chat completions, streaming, multimodal vision support, Blueprint and C++ APIs. Available on <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" target="_blank" rel="noopener noreferrer">Fab</a>.</p>
 
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_ollama" target="_blank" rel="noopener noreferrer"><strong>GenAI for Unreal</strong></a> — Our full plugin also supports Ollama through its OpenAI Compatible Mode. This means you can use Ollama alongside cloud providers and switch between them dynamically — local models for offline, cloud models when connected.</p>
 
@@ -61,6 +61,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 </ol>
 
 <div class="button-row">
-  <a href="https://github.com/MuddyTerrain/unreal-ollama" class="cta-button primary track-click" data-event-name="btn_clk_unreal_ollama" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">Unreal Ollama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal (Full Plugin)</a>
 </div>

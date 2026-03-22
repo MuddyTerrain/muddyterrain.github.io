@@ -4,7 +4,7 @@ title: "GenAI Model Generator"
 category: products
 permalink: /genai-model-generator
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin]
+tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
 lang: en
 hreflang_group: genai-model-generator
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
@@ -22,16 +22,16 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </figure>
 </div>
 
-<p><strong>Generate 3D models and PBR textures directly inside Unreal Engine using AI.</strong> GenAI Model Generator is a production-ready plugin that connects your Unreal projects to the most powerful AI 3D generation services — Meshy, Hyper3D Rodin, Tripo AI, fal.ai, and Google — through a single, unified interface. Text-to-3D, image-to-3D, retexturing, and AI texture generation, all from Blueprints or C++.</p>
+<p><strong>Generate 3D models and PBR textures directly inside Unreal Engine using AI.</strong> GenAI Model Generator is a production-ready plugin that connects your Unreal projects to 7 AI providers across 4 API backends — Meshy, Tripo AI, fal.ai (Hunyuan3D, TripoSR, Rodin Gen-2, Trellis 2), and Google — through a single, unified interface. Text-to-3D, image-to-3D, auto-rigging, remesh, retexturing, reference image generation, and AI texture generation, all from Blueprints or C++. Deep editor integration with a custom Slate UI for codeless generation.</p>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">Documentation</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">Documentation</a>
 </div>
 
 <div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
-  <h2 style="margin-top: 0;">5 Providers, One Plugin</h2>
-  <p>Access the best AI 3D generation services through a single API. Switch between Meshy, Hyper3D Rodin, Tripo AI, fal.ai, and Google without changing your workflow. Each provider brings unique strengths — use the best tool for each job.</p>
+  <h2 style="margin-top: 0;">7 Providers, One Plugin</h2>
+  <p>Access the best AI 3D generation services through a single API. Meshy AI (Meshy-6), Tripo AI (v3.1), fal.ai with Hunyuan3D (v3.1 Pro / v2.1), TripoSR, Rodin Gen-2, Trellis 2, and Google Gemini — all through one unified interface. Each provider brings unique strengths.</p>
   <p>This plugin will receive <strong>free updates</strong> with new providers and models as they become available. If you find it useful, please consider supporting us with a <strong>five-star rating on Fab!</strong></p>
 </div>
 
@@ -46,12 +46,28 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
         Convert a 2D image or concept art into a 3D model. Supported by all providers — Meshy, Hyper3D Rodin, Tripo AI, and fal.ai (with Hunyuan3D, TripoSR, Rodin, and Trellis 2 backends).</p>
     </li>
     <li>
+        <p><strong>Auto-Rigging (Experimental):</strong> 🦴<br>
+        Automatically rig humanoid models with a skeleton and walking/running animations via Meshy AI. Configurable height for correct skeleton proportions. Seamless workflow — generate a model, then immediately rig it.</p>
+    </li>
+    <li>
+        <p><strong>Remesh:</strong> 🔧<br>
+        Retopologize and optimize mesh polycount with triangle or quad topology via Meshy AI. Control target polycount, auto-size, and resize height.</p>
+    </li>
+    <li>
         <p><strong>AI Retexturing:</strong> 🖌️<br>
         Apply AI-generated textures to existing 3D models based on a text description. Transform placeholder assets into production-ready art with a single prompt via Meshy.</p>
     </li>
     <li>
         <p><strong>PBR Texture Generation:</strong> 🧱<br>
         Generate individual or complete PBR texture sets — base color, normal, roughness, and metallic maps — using Google's AI. Supports seamless/tileable textures and reference image style transfer.</p>
+    </li>
+    <li>
+        <p><strong>Reference Image Generation:</strong> 🎨<br>
+        Generate clean concept art from text prompts via Google Gemini, optimized for feeding into Image-to-3D. The recommended pipeline for best results.</p>
+    </li>
+    <li>
+        <p><strong>Deep Editor Integration:</strong> 🛠️<br>
+        Custom Slate UI tab with provider selection, mode picker, image preview, prompt input, progress tracking, result preview, and direct Content Browser import. Contextual help text with pricing, API key status, and workflow tips for each provider.</p>
     </li>
     <li>
         <p><strong>Multiple Output Formats:</strong> 📦<br>
@@ -63,7 +79,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
     </li>
     <li>
         <p><strong>Secure Key Management:</strong> 🔐<br>
-        All API keys are stored in a non-portable, encrypted file separate from your source control. Manage keys for all five providers from a single settings panel.</p>
+        All API keys are stored in a non-portable, encrypted file separate from your source control. Manage keys for all providers from a single settings panel.</p>
     </li>
     <li>
         <p><strong>Blueprint & C++ Ready:</strong> 🔗<br>
@@ -84,37 +100,50 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 <ul>
     <li><strong>Meshy AI:</strong>
         <ul>
-            <li><strong>Text-to-3D:</strong> Models v4, v5, v6 with customizable art styles</li>
+            <li><strong>Text-to-3D:</strong> Meshy-6 with customizable art styles (realistic, cartoon, sculpture, pbr)</li>
             <li><strong>Image-to-3D:</strong> Convert reference images to 3D models</li>
             <li><strong>Retexturing:</strong> Apply AI textures to existing meshes</li>
             <li>Symmetry modes (Auto/On/Off), configurable topology</li>
+            <li><strong>Auto-Rigging:</strong> Skeleton + walking/running animations for humanoid models</li>
+            <li><strong>Remesh:</strong> Retopologize with target polycount and triangle/quad topology</li>
         </ul>
     </li>
-    <li><strong>Hyper3D Rodin:</strong>
+    <li><strong>fal.ai - Rodin:</strong>
         <ul>
-            <li><strong>Image-to-3D & Text-to-3D:</strong> 4 quality tiers (Regular, Sketch, Detail, Smooth)</li>
-            <li>4 mesh quality levels (500 to 300K triangles)</li>
-            <li>PBR and Shaded material options</li>
+            <li><strong>Text-to-3D & Image-to-3D:</strong> Hyper3D Rodin Gen-2 (proprietary)</li>
+            <li>High quality PBR output, $0.40/gen — no $120/mo subscription needed</li>
         </ul>
     </li>
     <li><strong>Tripo AI:</strong>
         <ul>
-            <li><strong>Text-to-3D & Image-to-3D:</strong> Model versions v2.0 and v2.5</li>
+            <li><strong>Text-to-3D & Image-to-3D:</strong> Tripo v3.1 (proprietary)</li>
             <li>Fast generation with clean topology</li>
         </ul>
     </li>
-    <li><strong>fal.ai:</strong>
+    <li><strong>fal.ai - Hunyuan3D:</strong>
         <ul>
-            <li><strong>Image-to-3D:</strong> Via multiple inference backends</li>
-            <li>Hunyuan3D v2.1, TripoSR, Rodin, Trellis 2</li>
-            <li>Configurable inference steps and guidance scale</li>
+            <li><strong>Text-to-3D:</strong> Tencent Hunyuan3D v3.1 Pro (best open-source text-to-3D)</li>
+            <li><strong>Image-to-3D:</strong> Tencent Hunyuan3D v2.1</li>
+            <li>Configurable inference steps, guidance scale, face count (40K-1.5M)</li>
         </ul>
     </li>
-    <li><strong>Google:</strong>
+    <li><strong>fal.ai - TripoSR:</strong>
         <ul>
-            <li><strong>Texture Generation:</strong> NanoBanana 2 / Gemini-powered PBR texture creation</li>
+            <li><strong>Image-to-3D:</strong> MIT open-source, ultra-fast (<1 second), $0.07/gen</li>
+        </ul>
+    </li>
+    <li><strong>fal.ai - Trellis 2:</strong>
+        <ul>
+            <li><strong>Image-to-3D:</strong> Microsoft Trellis 2 with full PBR materials</li>
+            <li>Configurable resolution, texture size, and decimation target</li>
+        </ul>
+    </li>
+    <li><strong>Google (Texture Gen):</strong>
+        <ul>
+            <li><strong>Texture Generation:</strong> Gemini 3.1 Flash for PBR texture creation</li>
             <li>Base color, normal, roughness, metallic, and full PBR sets</li>
-            <li>Seamless/tileable texture support</li>
+            <li>Seamless/tileable texture support, reference image style transfer</li>
+            <li><strong>Reference Image Generation:</strong> Clean concept art from text, optimized for Image-to-3D</li>
         </ul>
     </li>
 </ul>
@@ -145,8 +174,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </ul>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">Documentation</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">Documentation</a>
 </div>
 
 </body>

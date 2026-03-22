@@ -21,7 +21,7 @@ plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title: "Muddy Terrain Games"
-description: "High fidelity worlds."
+description: "AI plugins for Unreal Engine. Integrate ChatGPT, Claude, Gemini, Llama, Mistral, DeepSeek, and 30+ LLMs into your game with GenAI for Unreal. Generate 3D models with AI. Run local AI with Ollama. Blueprint and C++ support."
 url: "https://muddyterrain.com"
 author: ""
 
@@ -32,6 +32,14 @@ collections:
   docs:
     output: true
     permalink: /docs/:path/
+
+# Exclude redirects from sitemap
+defaults:
+  - scope:
+      path: ""
+      type: "redirects"
+    values:
+      sitemap: false
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

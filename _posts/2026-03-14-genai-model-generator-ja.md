@@ -4,7 +4,7 @@ title: "GenAI Model Generator - AI 3D モデル生成 Unreal Engine プラグイ
 category: products
 permalink: /ja/genai-model-generator
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin]
+tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
 lang: ja
 hreflang_group: genai-model-generator
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
@@ -22,16 +22,16 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </figure>
 </div>
 
-<p><strong>AI を使用して Unreal Engine 内で直接 3D モデルと PBR テクスチャを生成。</strong> GenAI Model Generator は、Unreal プロジェクトを最も強力な AI 3D 生成サービス — Meshy、Hyper3D Rodin、Tripo AI、fal.ai、Google — に単一の統合インターフェースで接続するプロダクションレディなプラグインです。テキストから 3D、画像から 3D、リテクスチャリング、AI テクスチャ生成のすべてを Blueprint または C++ から利用できます。</p>
+<p><strong>AI を使用して Unreal Engine 内で直接 3D モデルと PBR テクスチャを生成。</strong> GenAI Model Generator は、Unreal プロジェクトを 4 つの API バックエンドにまたがる 7 つの AI プロバイダー — Meshy、Tripo AI、fal.ai（Hunyuan3D、TripoSR、Rodin Gen-2、Trellis 2）、Google — に単一の統合インターフェースで接続するプロダクションレディなプラグインです。テキストから 3D、画像から 3D、自動リギング、リメッシュ、リテクスチャリング、リファレンス画像生成、AI テクスチャ生成のすべてを Blueprint または C++ から利用できます。コードレス生成のためのカスタム Slate UI による深いエディター統合。</p>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">ドキュメント</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Discord に参加</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Fab.com で見る</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">ドキュメント</a>
 </div>
 
 <div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
-  <h2 style="margin-top: 0;">5 プロバイダー、1 つのプラグイン</h2>
-  <p>単一の API で最高の AI 3D 生成サービスにアクセス。ワークフローを変更することなく Meshy、Hyper3D Rodin、Tripo AI、fal.ai、Google を切り替えられます。各プロバイダーにはそれぞれの強みがあり、各タスクに最適なツールを使用できます。</p>
+  <h2 style="margin-top: 0;">7 プロバイダー、1 つのプラグイン</h2>
+  <p>単一の API で最高の AI 3D 生成サービスにアクセス。Meshy AI（Meshy-6）、Tripo AI（v3.1）、fal.ai の Hunyuan3D（v3.1 Pro / v2.1）、TripoSR、Rodin Gen-2、Trellis 2、そして Google Gemini — すべて 1 つの統合インターフェースで。各プロバイダーにはそれぞれの強みがあります。</p>
   <p>このプラグインは新しいプロバイダーやモデルが利用可能になり次第、<strong>無料アップデート</strong>を提供します。お役に立てましたら、Fab で<strong>5 つ星の評価</strong>をお願いします！</p>
 </div>
 
@@ -46,12 +46,28 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
         2D 画像やコンセプトアートを 3D モデルに変換。すべてのプロバイダー — Meshy、Hyper3D Rodin、Tripo AI、fal.ai（Hunyuan3D、TripoSR、Rodin、Trellis 2 バックエンド）でサポート。</p>
     </li>
     <li>
+        <p><strong>自動リギング（実験的）：</strong> 🦴<br>
+        Meshy AI を通じてヒューマノイドモデルにスケルトンと歩行/走行アニメーションを自動的に付与。正しいスケルトンプロポーションのための身長設定。モデルを生成してすぐにリグを適用するシームレスなワークフロー。</p>
+    </li>
+    <li>
+        <p><strong>リメッシュ：</strong> 🔧<br>
+        Meshy AI を通じてメッシュのリトポロジーとポリカウントの最適化。三角形またはクワッドトポロジー。ターゲットポリカウント、自動サイズ、リサイズ高さの制御。</p>
+    </li>
+    <li>
         <p><strong>AI リテクスチャリング：</strong> 🖌️<br>
         テキスト説明に基づいて既存の 3D モデルに AI 生成テクスチャを適用。Meshy を通じて、単一のプロンプトでプレースホルダーアセットをプロダクションレディなアートに変換。</p>
     </li>
     <li>
         <p><strong>PBR テクスチャ生成：</strong> 🧱<br>
         Google AI を使用して、個別または完全な PBR テクスチャセット — ベースカラー、ノーマル、ラフネス、メタリックマップ — を生成。シームレス/タイル可能テクスチャとリファレンス画像スタイル転送をサポート。</p>
+    </li>
+    <li>
+        <p><strong>リファレンス画像生成：</strong> 🎨<br>
+        Google Gemini を通じてテキストプロンプトからクリーンなコンセプトアートを生成。画像から 3D への入力に最適化。最高の結果を得るための推奨パイプライン。</p>
+    </li>
+    <li>
+        <p><strong>深いエディター統合：</strong> 🛠️<br>
+        プロバイダー選択、モードピッカー、画像プレビュー、プロンプト入力、進捗トラッキング、結果プレビュー、コンテンツブラウザへの直接インポートを備えたカスタム Slate UI タブ。各プロバイダーの価格、API キーステータス、ワークフローのヒントを含むコンテキストヘルプテキスト。</p>
     </li>
     <li>
         <p><strong>複数の出力フォーマット：</strong> 📦<br>
@@ -84,37 +100,50 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 <ul>
     <li><strong>Meshy AI：</strong>
         <ul>
-            <li><strong>テキストから 3D：</strong>モデル v4、v5、v6、カスタマイズ可能なアートスタイル</li>
+            <li><strong>テキストから 3D：</strong> Meshy-6、カスタマイズ可能なアートスタイル（リアリスティック、カートゥーン、スカルプチャー、PBR）</li>
             <li><strong>画像から 3D：</strong>リファレンス画像を 3D モデルに変換</li>
             <li><strong>リテクスチャリング：</strong>既存メッシュに AI テクスチャを適用</li>
             <li>対称モード（自動/オン/オフ）、設定可能なトポロジー</li>
+            <li><strong>自動リギング：</strong>スケルトン + 歩行/走行アニメーション（ヒューマノイドモデル用）</li>
+            <li><strong>リメッシュ：</strong>ターゲットポリカウントと三角形/クワッドトポロジーによるリトポロジー</li>
         </ul>
     </li>
-    <li><strong>Hyper3D Rodin：</strong>
+    <li><strong>fal.ai - Rodin：</strong>
         <ul>
-            <li><strong>画像から 3D ＆テキストから 3D：</strong>4 つの品質ティア（Regular、Sketch、Detail、Smooth）</li>
-            <li>4 つのメッシュ品質レベル（500 ～ 300K 三角形）</li>
-            <li>PBR と Shaded マテリアルオプション</li>
+            <li><strong>テキストから 3D & 画像から 3D：</strong> Hyper3D Rodin Gen-2（プロプライエタリ）</li>
+            <li>高品質 PBR 出力、$0.40/生成 — $120/月のサブスクリプション不要</li>
         </ul>
     </li>
     <li><strong>Tripo AI：</strong>
         <ul>
-            <li><strong>テキストから 3D ＆画像から 3D：</strong>モデルバージョン v2.0 と v2.5</li>
+            <li><strong>テキストから 3D & 画像から 3D：</strong> Tripo v3.1（プロプライエタリ）</li>
             <li>クリーンなトポロジーによる高速生成</li>
         </ul>
     </li>
-    <li><strong>fal.ai：</strong>
+    <li><strong>fal.ai - Hunyuan3D：</strong>
         <ul>
-            <li><strong>画像から 3D：</strong>複数の推論バックエンドを通じて</li>
-            <li>Hunyuan3D v2.1、TripoSR、Rodin、Trellis 2</li>
-            <li>設定可能な推論ステップとガイダンススケール</li>
+            <li><strong>テキストから 3D：</strong> Tencent Hunyuan3D v3.1 Pro（最高のオープンソーステキストから 3D）</li>
+            <li><strong>画像から 3D：</strong> Tencent Hunyuan3D v2.1</li>
+            <li>設定可能な推論ステップ、ガイダンススケール、フェイスカウント（40K-1.5M）</li>
         </ul>
     </li>
-    <li><strong>Google：</strong>
+    <li><strong>fal.ai - TripoSR：</strong>
         <ul>
-            <li><strong>テクスチャ生成：</strong>NanoBanana 2 / Gemini ベースの PBR テクスチャ作成</li>
+            <li><strong>画像から 3D：</strong> MIT オープンソース、超高速（1 秒未満）、$0.07/生成</li>
+        </ul>
+    </li>
+    <li><strong>fal.ai - Trellis 2：</strong>
+        <ul>
+            <li><strong>画像から 3D：</strong> Microsoft Trellis 2、完全な PBR マテリアル付き</li>
+            <li>設定可能な解像度、テクスチャサイズ、デシメーションターゲット</li>
+        </ul>
+    </li>
+    <li><strong>Google（テクスチャ生成）：</strong>
+        <ul>
+            <li><strong>テクスチャ生成：</strong> Gemini 3.1 Flash による PBR テクスチャ作成</li>
             <li>ベースカラー、ノーマル、ラフネス、メタリック、完全 PBR セット</li>
-            <li>シームレス/タイル可能テクスチャサポート</li>
+            <li>シームレス/タイル可能テクスチャサポート、リファレンス画像スタイル転送</li>
+            <li><strong>リファレンス画像生成：</strong>テキストからクリーンなコンセプトアート、画像から 3D に最適化</li>
         </ul>
     </li>
 </ul>
@@ -145,8 +174,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </ul>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">ドキュメント</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">Discord に参加</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">Fab.com で見る</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">ドキュメント</a>
 </div>
 
 </body>

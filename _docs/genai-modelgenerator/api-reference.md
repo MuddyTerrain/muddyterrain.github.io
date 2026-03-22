@@ -64,6 +64,7 @@ Every generation class extends `UCancellableAsyncAction` and exposes two usage p
 | **`UGenMeshyImageTo3D`** | Image-to-3D | `FGenMeshyImageTo3DSettings` |
 | **`UGenMeshyRetexture`** | Retexture existing models | `FGenMeshyRetextureSettings` |
 | **`UGenMeshyRigging`** | Auto-rig humanoid models | `FGenMeshyRiggingSettings` |
+| **`UGenMeshyRemesh`** | Retopologize and optimize mesh | `FGenMeshyRemeshSettings` |
 
 **Meshy-specific features:**
 - `UGenMeshyTextTo3D` automatically chains Preview → Refine when `bAutoRefine = true` (default). Progress is scaled: 0–50% = preview, 50–100% = refine.
@@ -76,7 +77,7 @@ Every generation class extends `UCancellableAsyncAction` and exposes two usage p
 | **`UGenTripoTextTo3D`** | Text-to-3D | `FGenTripoTextTo3DSettings` |
 | **`UGenTripoImageTo3D`** | Image-to-3D | `FGenTripoImageTo3DSettings` |
 
-Uses Tripo's proprietary v2.5 model. Separate API key from Fal.ai's TripoSR.
+Uses Tripo's proprietary v3.1 model. Separate API key from Fal.ai's TripoSR.
 
 ### Fal.ai (All Models)
 
@@ -165,6 +166,18 @@ Uses Google Gemini 3.1 Flash for AI image generation. Set `TextureMapType` to co
 | `ArtStyle` | `FString` | `"realistic"` | Art style |
 | `TextureResolution` | `int32` | `2048` | Texture resolution (1024–4096) |
 
+### FGenMeshyRemeshSettings
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `InputTaskId` | `FString` | — | Meshy task ID (from a previous generation) |
+| `ModelUrl` | `FString` | — | URL to model to remesh (if no task ID) |
+| `ModelBytes` | `TArray<uint8>` | — | Raw model bytes (alternative) |
+| `TargetPolycount` | `int32` | `30000` | Desired face count for output mesh |
+| `Topology` | `EGenModelTopology` | `Triangle` | Triangle or Quad output |
+| `bAutoSize` | `bool` | `true` | Automatically scale model to standard size |
+| `ResizeHeight` | `float` | `1.0` | Manual height override when auto-size disabled |
+
 ### FGenFalImageTo3DSettings
 
 | Field | Type | Default | Description |
@@ -213,7 +226,7 @@ Uses Google Gemini 3.1 Flash for AI image generation. Set `TextureMapType` to co
 | `EGenFalModel` | `Hunyuan3D`, `Hunyuan3D_V3`, `TripoSR`, `Rodin`, `Trellis2` | Fal.ai |
 | `EGenMeshyAIModel` | `Meshy6`, `Meshy5`, `Meshy4` | Meshy |
 | `EGenMeshySymmetry` | `Auto`, `On`, `Off` | Meshy |
-| `EGenTripoModelVersion` | `V2_5`, `V2_0` | Tripo AI |
+| `EGenTripoModelVersion` | `V3_1`, `V2_5`, `V2_0` | Tripo AI |
 | `EGenRodinConditionType` | `Image`, `Text` | Rodin (direct) |
 | `EGenRodinTier` | `Regular`, `Sketch`, `Detail`, `Smooth` | Rodin (direct) |
 | `EGenRodinMeshQuality` | `Low` (500 tri), `Medium` (10K), `High` (50K), `Ultra` (300K) | Rodin (direct) |
@@ -233,7 +246,7 @@ Access via **Project Settings > Plugins > GenAI Model Generator** or `GetDefault
 | **Fal.ai API Key** | `FString` | — | Shared key for Hunyuan3D, TripoSR, Rodin, Trellis 2 |
 | **Google API Key** | `FString` | — | API key for Google Gemini |
 | **Per-Organization Endpoints** | `TMap<EGenModelOrgs, FString>` | — | Override base API URLs (for proxies) |
-| **Poll Interval** | `float` | `3.0` | Task status check interval (1–30 seconds) |
+| **Poll Interval** | `float` | `6.0` | Task status check interval (1–30 seconds) |
 | **Extended Logging** | `bool` | `false` | Log full request/response JSON |
 | **Include Keys In Build (UNSAFE)** | `bool` | `false` | Include keys in packaged builds |
 

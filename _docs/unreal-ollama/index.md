@@ -1,276 +1,420 @@
 ---
 layout: documentation
-title: Unreal Ollama - Home
-permalink: /docs/unreal-ollama/
+title: GenAI Llama - Home
+permalink: /docs/genai-llama/
 nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="Unreal Ollama Plugin" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="GenAI Llama Plugin" style="width: 100%;">
 </figure>
 </div>
 
-**Welcome to the official documentation for Unreal Ollama, a free and open-source plugin that integrates [Ollama](https://ollama.com/) with Unreal Engine.** Run powerful, open-source large language models locally within your games and applications — no cloud APIs, no API keys, no per-request costs.
+**Welcome to the official documentation for GenAI Llama, an Unreal Engine plugin for running local AI models inside your games and applications.** No cloud API keys, no internet required, no per-token costs.
 
-The plugin provides asynchronous Blueprint nodes and C++ classes for chat completions, streaming chat, and multimodal interactions with models that support it.
+GenAI Llama supports two modes of operation:
+
+- **HTTP Providers** — Connect to any local inference server (Ollama, LM Studio, llama.cpp server, vLLM, LocalAI, Jan, or any OpenAI-compatible endpoint). Works out of the box.
+- **Embedded Inference (llama.cpp)** — Run GGUF models directly inside your game process with no server required. Works offline on PC and mobile. Optional — requires compiling llama.cpp libraries for your target platform.
 
 <div class="button-row">
-  <a href="https://github.com/MuddyTerrain/unreal-ollama" class="cta-button primary track-click" data-event-name="btn_clk_unreal_ollama_github" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="docs_top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="docs_top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </div>
 
 ---
 
-## Prerequisites
+## What Ships With This Plugin
 
-Before using the plugin, you need two things set up on your machine:
+| Component | Included | Notes |
+|---|---|---|
+| Plugin source code | Yes | Full C++ source for all features |
+| HTTP provider support | Yes | Works immediately with any local inference server |
+| llama.cpp headers | Yes | In `ThirdParty/LlamaCpp/include/` |
+| llama.cpp compiled libraries | No | User-compiled — see [Embedded Inference Setup](#embedded-inference-setup) |
+| Example project | Yes | Blueprint examples demonstrating all features |
 
-#### 1. Install Ollama
+**HTTP providers work out of the box.** Embedded inference is opt-in and requires compiling llama.cpp for your target platform and GPU backend.
 
-Download and install Ollama from the official website: [https://ollama.com/](https://ollama.com/). Ollama is available for **Windows**, **macOS**, and **Linux**.
+---
 
-#### 2. Pull a Model
+## Supported Providers
 
-Once Ollama is installed, open your terminal and pull a model. You only need to do this once per model.
+| Provider | API Format | Default Port | Notes |
+|---|---|---|---|
+| **Ollama** | Ollama Native | 11434 | Full-featured, easiest setup |
+| **LM Studio** | OpenAI Compatible | 1234 | GUI-based, great for prototyping |
+| **llama.cpp server** | OpenAI Compatible | 8080 | Lightweight HTTP server |
+| **vLLM** | OpenAI Compatible | 8000 | High-throughput production serving |
+| **LocalAI** | OpenAI Compatible | 8080 | Drop-in OpenAI replacement |
+| **Jan** | OpenAI Compatible | 1337 | Desktop app with model management |
+| **Embedded (llama.cpp)** | Direct / In-process | N/A | No server needed. Requires compiled libs. |
 
-```bash
-ollama pull llama3
-```
+---
 
-You can browse the full list of available models at the [Ollama Library](https://ollama.com/library). Some recommended models:
+## Compatibility
+
+- **Unreal Engine:** 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7
+- **Platforms (HTTP):** Windows, macOS, Linux, Android, iOS, PS4, Xbox One, Switch, HoloLens
+- **Platforms (Embedded):** Windows, macOS, Linux, Android, iOS
+
+---
+
+## Quick Start — HTTP Providers
+
+1. Enable the plugin in your project (**Edit > Plugins** > search "GenAI Llama").
+2. Install and start your inference server (e.g., [Ollama](https://ollama.com/)).
+3. Pull a model: `ollama pull llama3`
+4. In a Blueprint, right-click and search for **"Request Chat Completion"** or **"Request Chat Stream"**.
+5. Configure the node:
+   - **Connection > Provider** = `Ollama` or `OpenAI Compatible`
+   - **Connection > Base URL** = your server address (default: `http://localhost:11434`)
+   - **Model** = the model name (e.g., `llama3`)
+   - **Messages** = add at least one message with Role = `user` and your prompt as Content
+6. Connect the **On Complete** (or **On Event** for streaming) delegate to handle the response.
+
+### Recommended Models
 
 | Use Case | Model | Description |
 |----------|-------|-------------|
-| General Chat | `llama3` | Meta's latest Llama model |
-| General Chat | `mistral` | High-performance open model |
-| General Chat | `gemma` | Google's open model |
-| Multimodal (Text + Images) | `llava` | Popular vision-language model |
-| Coding | `codellama` | Specialized coding assistant |
+| General Chat | `llama3` | Meta's Llama 3 — strong general quality |
+| General Chat | `mistral` | High-performance, multilingual |
+| General Chat | `gemma3:1b` | Google's ultra-fast small model |
+| Small & Fast | `phi3:mini` | Microsoft's compact model |
+| Multimodal (Vision) | `llava` | Vision-language model |
+| Coding / Structured Output | `codellama` | Code-specialized |
 
 ---
 
-## Setup and Configuration
+## Quick Start — Embedded Inference
 
-1.  **Install the Plugin:** Add the `UnrealOllama` plugin to your project's `Plugins` folder and enable it in **Edit > Plugins**.
-2.  **Run Ollama:** The Ollama application **must be running in the background** on your machine. The plugin communicates with the local Ollama server at `http://localhost:11434`.
-3.  **Firewall:** The first time you run your project, your OS firewall may ask for permission for Unreal Engine to accept network connections. Allow it — this is required for the Ollama server to send responses back to the engine.
+1. Compile llama.cpp for your platform (see [Embedded Inference Setup](#embedded-inference-setup)).
+2. Place a GGUF model file in your project (e.g., `Content/Models/tinyllama-1.1b-q4_k_m.gguf`).
+3. In a Blueprint, use **"Load Embedded Model"**:
+   - **Model Alias** = a name you choose (e.g., `npc-brain`)
+   - **Model Path** = path to the `.gguf` file (absolute or relative to Content/)
+   - **GPU Layers** = `99` for full GPU, `0` for CPU only
+4. Use **"Request Chat Completion"** or **"Request Chat Stream"** with:
+   - **Connection > Provider** = `Embedded (llama.cpp)`
+   - **Model** = the alias you chose (e.g., `npc-brain`)
 
-> **Compatibility:** The plugin supports **Unreal Engine 5.1 through 5.6**. It is built with UE 5.1 for maximum compatibility, following Unreal's "Develop Low, Upgrade High" approach.
+### Recommended Models for Embedded
+
+| Model | Parameters | Q4_K_M Size | Best For |
+|---|---|---|---|
+| Qwen2.5-0.5B | 0.5B | ~400 MB | Ultra-lightweight, mobile devices |
+| TinyLlama | 1.1B | ~637 MB | Lightweight NPC dialogue |
+| Gemma-2B | 2B | ~1.4 GB | Balanced size and quality |
+| Phi-3-mini | 3.8B | ~2.2 GB | Smarter game AI, desktop/console |
+
+Download GGUF models from [Hugging Face](https://huggingface.co/models?search=gguf).
 
 ---
 
-## Chat Completion
+## Blueprint Nodes
 
-The standard chat completion sends a request and returns a single, complete response.
+### Request Chat Completion
 
-### Blueprint
+Sends a chat request and returns a single complete response. Works with all providers.
 
-Use the **"Request Ollama Chat Completion"** node. It is an asynchronous latent node built on `UCancellableAsyncAction`.
+**Inputs:**
+- `Chat Settings` — Model name, messages, connection settings, generation options.
 
-1.  **Chat Settings:** Use a **"Make Unreal Ollama Chat Settings"** node to configure:
-    -   **Model:** The name of the model (e.g., `llama3`, `llava`, `codellama`). Must be a model you have already pulled.
-    -   **Messages:** An array of `FUnrealOllamaChatMessage` structs forming the conversation history. Each message has a **Role** (`user` or `assistant`) and **Content** (the text).
-    -   **Format:** (Optional) Set to `json` to force JSON-formatted responses.
-2.  **OnComplete:** This event pin fires when the request finishes, providing the response `Message`, an `Error` string, and a `Success` boolean.
+**Output delegate — On Complete** fires with `FGenAILlamaChatResponse`:
+- `Message` — The assistant's response (Role + Content).
+- `Model` — The model name that generated the response.
+- `TokenUsage` — Prompt tokens, completion tokens, and total token count.
+- `ErrorMessage` — Error details if the request failed.
+- `bSuccess` — Whether the request succeeded.
 
-### C++
+### Request Chat Stream
 
-```cpp
-#include "Models/UnrealOllamaChat.h"
-#include "Data/UnrealOllamaChatStructs.h"
+Receives the response token-by-token for real-time display. Works with all providers.
 
-void AMyActor::SendChatRequest()
-{
-    // 1. Configure the request
-    FUnrealOllamaChatSettings ChatSettings;
-    ChatSettings.Model = TEXT("llama3");
+**Inputs:**
+- `Chat Settings` — Same as Request Chat Completion.
 
-    FUnrealOllamaChatMessage Message;
-    Message.Role = TEXT("user");
-    Message.Content = TEXT("Tell me a short story about a robot.");
-    ChatSettings.Messages.Add(Message);
+**Output delegate — On Event** fires for each token with `FGenAILlamaStreamEvent`:
+- `PartialMessage` — The token content (Role + Content).
+- `bIsFinished` — `true` when the stream is complete.
 
-    // 2. Create a weak pointer for safe async callbacks
-    TWeakObjectPtr<AMyActor> WeakThis(this);
+### Load Embedded Model
 
-    // 3. Send the request
-    UUnrealOllamaChat::SendChatRequest(ChatSettings,
-        FOnOllamaChatCompletionResponse::CreateLambda(
-            [WeakThis](const FUnrealOllamaChatMessage& ResponseMessage,
-                        const FString& Error, bool bSuccess)
-        {
-            if (!WeakThis.IsValid()) return;
+Asynchronously loads a GGUF model file for in-process inference. Only available when llama.cpp libraries are compiled and present.
 
-            if (bSuccess)
-            {
-                UE_LOG(LogTemp, Log, TEXT("Response: %s"), *ResponseMessage.Content);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Error, TEXT("Error: %s"), *Error);
-            }
-        })
-    );
-}
-```
+**Inputs:**
+- `Model Alias` — Name to reference this model in Chat Settings.
+- `Model Path` — Path to the `.gguf` file. Absolute path, or relative to the project's Content/ directory.
+- `GPU Layers` — Number of model layers to offload to GPU. `0` = CPU only, `99` = all layers (recommended).
+- `Context Size` — Maximum context window in tokens (default: 2048).
+- `Thread Count` — CPU threads for inference. `0` = auto-detect (recommended).
 
-#### C++ Module Setup
+**Output delegate — On Complete** fires with:
+- `bSuccess` — Whether the model loaded successfully.
+- `Error` — Error details if loading failed.
 
-To use the plugin in C++, add the module dependency to your project's `.Build.cs` file:
+### Unload Embedded Model / Unload All
+
+Unloads previously loaded models and frees their memory.
+
+### Is Embedded Inference Available
+
+Returns `true` if llama.cpp libraries were found at build time. Use this to check before offering embedded inference options to users.
+
+### Check Server Health
+
+Sends a GET request to verify an HTTP server is running and reachable.
+
+### List Available Models
+
+Queries an HTTP server for all available models. Returns an array of model names.
+
+---
+
+## Chat Settings
+
+| Field | Type | Description |
+|---|---|---|
+| **Model** | `FString` | Model name (for HTTP) or alias (for Embedded). |
+| **Messages** | `TArray<FGenAILlamaChatMessage>` | Conversation history. Each message has Role, Content, and optional Images. |
+| **Connection** | `FGenAILlamaConnectionSettings` | Provider, Base URL, API Key. |
+| **System Prompt** | `FString` | Optional. Automatically prepended as the first message with role `system`. |
+| **Options** | `FGenAILlamaGenerationOptions` | Temperature, Top P, Max Tokens, Seed, Stop sequences. |
+| **Format** | `FString` | Set to `json` to force JSON output from the model. |
+
+## Connection Settings
+
+| Field | Type | Description | Default |
+|---|---|---|---|
+| **Provider** | `EGenAILlamaProvider` | `Ollama`, `OpenAI Compatible`, or `Embedded (llama.cpp)` | `Ollama` |
+| **Base URL** | `FString` | Server address. Not used for Embedded provider. | `http://localhost:11434` |
+| **API Key** | `FString` | Optional Bearer token for authentication. Not used for Embedded. | Empty |
+
+## Generation Options
+
+All options default to `-1` (use the model's default value).
+
+| Option | Type | Description | Range |
+|---|---|---|---|
+| **Temperature** | `float` | Randomness. Higher = more creative. | 0.0 - 2.0 |
+| **Top P** | `float` | Nucleus sampling threshold. | 0.0 - 1.0 |
+| **Max Tokens** | `int32` | Maximum tokens to generate. `-1` = unlimited. | 1+ |
+| **Seed** | `int32` | Random seed for reproducible output. | 0+ |
+| **Stop** | `TArray<FString>` | Stop sequences. | -- |
+
+---
+
+## Multimodal Vision
+
+For models that support image input (e.g., `llava`, `llama3.2-vision`, `gpt-4o`):
+
+**Option 1 — Images As Textures (Recommended):**
+Add `UTexture2D` references to the `ImagesAsTextures` array on any chat message. The plugin converts them to PNG Base64 internally.
+
+**Option 2 — Images (Base64):**
+Add pre-encoded Base64 image strings to the `Images` array.
+
+Image format is handled automatically per provider:
+- **Ollama:** Base64 strings in the `images` array.
+- **OpenAI Compatible:** Content parts with `image_url` data URIs.
+- **Embedded:** Not yet supported for multimodal models.
+
+---
+
+## C++ API
+
+Add `"GenAILlama"` to your module's `Build.cs` dependencies:
 
 ```csharp
-PublicDependencyModuleNames.AddRange(new string[] { "UnrealOllama" });
+PrivateDependencyModuleNames.Add("GenAILlama");
 ```
 
----
-
-## Streaming Chat
-
-Streaming delivers the AI response in real-time chunks as it is generated, creating a typewriter effect ideal for chat interfaces.
-
-### Blueprint
-
-Use the **"Request Ollama Chat Stream"** node. It exposes a single **OnEvent** pin that fires for every chunk received.
-
-The event provides an `FUnrealOllamaStreamEvent` struct with:
--   **PartialMessage:** Contains the latest chunk of the response in its `Content` field. Append this to your UI text.
--   **bIsFinished:** `true` when the stream is complete.
-
-### C++
+### Chat Completion (C++)
 
 ```cpp
-#include "Models/UnrealOllamaChatStream.h"
-#include "Data/UnrealOllamaChatStructs.h"
+#include "Models/GenAILlamaChat.h"
 
-void AMyActor::SendStreamingRequest()
+FGenAILlamaChatSettings Settings;
+Settings.Model = TEXT("llama3");
+Settings.Connection.Provider = EGenAILlamaProvider::Ollama;
+Settings.Connection.BaseUrl = TEXT("http://localhost:11434");
+Settings.SystemPrompt = TEXT("You are a helpful NPC in a fantasy RPG.");
+
+FGenAILlamaChatMessage Msg;
+Msg.Role = TEXT("user");
+Msg.Content = TEXT("What quests do you have for me?");
+Settings.Messages.Add(Msg);
+
+FOnGenAILlamaChatCompletionResponse Callback;
+Callback.BindLambda([](const FGenAILlamaChatResponse& Response)
 {
-    FUnrealOllamaChatSettings ChatSettings;
-    ChatSettings.Model = TEXT("llama3");
+    if (Response.bSuccess)
+    {
+        UE_LOG(LogTemp, Log, TEXT("Response: %s"), *Response.Message.Content);
+    }
+});
 
-    FUnrealOllamaChatMessage Message;
-    Message.Role = TEXT("user");
-    Message.Content = TEXT("Write a haiku about game development.");
-    ChatSettings.Messages.Add(Message);
+UGenAILlamaChat::SendChatRequest(Settings, Callback);
+```
 
-    TWeakObjectPtr<AMyActor> WeakThis(this);
+### Streaming (C++)
 
-    UUnrealOllamaChatStream::SendStreamChatRequest(ChatSettings,
-        FOnUnrealOllamaChatStreamResponse::CreateLambda(
-            [WeakThis](const FUnrealOllamaStreamEvent& StreamEvent)
-        {
-            if (!WeakThis.IsValid()) return;
+```cpp
+#include "Models/GenAILlamaChatStream.h"
 
-            if (StreamEvent.bIsFinished)
-            {
-                UE_LOG(LogTemp, Log, TEXT("Stream Complete!"));
-            }
-            else
-            {
-                // Append partial content to your UI
-                UE_LOG(LogTemp, Log, TEXT("Chunk: %s"),
-                    *StreamEvent.PartialMessage.Content);
-            }
-        })
-    );
+FOnGenAILlamaChatStreamResponse StreamCallback;
+StreamCallback.BindLambda([](const FGenAILlamaStreamEvent& Event)
+{
+    UE_LOG(LogTemp, Log, TEXT("Token: %s (Done: %s)"),
+        *Event.PartialMessage.Content,
+        Event.bIsFinished ? TEXT("true") : TEXT("false"));
+});
+
+UGenAILlamaChatStream::SendStreamChatRequest(Settings, StreamCallback);
+```
+
+### Embedded Inference (C++)
+
+```cpp
+#include "Models/GenAILlamaModelManager.h"
+
+if (UGenAILlamaModelManager::IsEmbeddedInferenceAvailable())
+{
+    Settings.Connection.Provider = EGenAILlamaProvider::Embedded;
+    Settings.Model = TEXT("npc-brain"); // alias from LoadEmbeddedModel
+    UGenAILlamaChat::SendChatRequest(Settings, Callback);
 }
 ```
-
----
-
-## Multimodal (Sending Images)
-
-To send images alongside text, use a model that supports multimodal input such as `llava`. You have two options in the `FUnrealOllamaChatMessage` struct:
-
-#### Images As Textures (Recommended)
-
-An array of `UTexture2D*` objects. Pass texture assets directly from your project content or render targets. The plugin handles the Base64 PNG conversion automatically.
-
-```cpp
-FUnrealOllamaChatMessage Message;
-Message.Role = TEXT("user");
-Message.Content = TEXT("What do you see in this image?");
-Message.ImagesAsTextures.Add(MyTexture2D); // UTexture2D*
-```
-
-#### Images as Base64 Strings (Advanced)
-
-An array of `FString` values, each being a Base64-encoded image. Useful when you already have Base64 data from another source.
-
-```cpp
-FUnrealOllamaChatMessage Message;
-Message.Role = TEXT("user");
-Message.Content = TEXT("Describe this image.");
-Message.Images.Add(MyBase64String);
-```
-
-Both arrays can be used in the same message — the plugin will process and send all images.
 
 ---
 
 ## Building Conversations
 
-To create a multi-turn conversation, maintain an array of messages and append both the user's input and the assistant's responses after each exchange.
+Maintain an array of messages and append both user input and assistant responses:
 
 ```cpp
-// Member variable
-TArray<FUnrealOllamaChatMessage> ConversationHistory;
+TArray<FGenAILlamaChatMessage> ConversationHistory;
 
 void AMyActor::SendMessage(const FString& UserInput)
 {
-    // Add user message to history
-    FUnrealOllamaChatMessage UserMessage;
+    FGenAILlamaChatMessage UserMessage;
     UserMessage.Role = TEXT("user");
     UserMessage.Content = UserInput;
     ConversationHistory.Add(UserMessage);
 
-    FUnrealOllamaChatSettings ChatSettings;
-    ChatSettings.Model = TEXT("llama3");
-    ChatSettings.Messages = ConversationHistory;
+    FGenAILlamaChatSettings Settings;
+    Settings.Model = TEXT("llama3");
+    Settings.Messages = ConversationHistory;
 
     TWeakObjectPtr<AMyActor> WeakThis(this);
 
-    UUnrealOllamaChat::SendChatRequest(ChatSettings,
-        FOnOllamaChatCompletionResponse::CreateLambda(
-            [WeakThis](const FUnrealOllamaChatMessage& Response,
-                        const FString& Error, bool bSuccess)
+    UGenAILlamaChat::SendChatRequest(Settings,
+        FOnGenAILlamaChatCompletionResponse::CreateLambda(
+            [WeakThis](const FGenAILlamaChatResponse& Response)
         {
             if (!WeakThis.IsValid()) return;
-
-            if (bSuccess)
+            if (Response.bSuccess)
             {
-                // Add assistant response to history
-                WeakThis->ConversationHistory.Add(Response);
+                WeakThis->ConversationHistory.Add(Response.Message);
             }
         })
     );
 }
 ```
 
-In Blueprints, use an array variable of type `Unreal Ollama Chat Message` and use **Add** to append messages before each request.
+---
+
+## Embedded Inference Setup
+
+Embedded inference runs llama.cpp directly inside your game process. This is optional — the plugin ships without pre-compiled llama.cpp libraries because they are GPU-backend-specific, platform-specific, large, and frequently updated.
+
+### How It Works
+
+The plugin's `Build.cs` automatically detects llama.cpp libraries at compile time:
+
+- **Libraries found** in `ThirdParty/LlamaCpp/lib/<Platform>/` → `WITH_LLAMACPP=1`, embedded inference enabled
+- **Libraries not found** → `WITH_LLAMACPP=0`, embedded inference disabled, HTTP providers still work
+
+### Directory Structure
+
+```
+ThirdParty/LlamaCpp/
+    include/            <- Headers (already included, do not modify)
+    lib/
+        Win64/          <- Windows .lib files
+        Mac/            <- macOS .a files
+        Linux/          <- Linux .a files
+        Android/        <- Android .a files (ARM64)
+        IOS/            <- iOS .a files (ARM64)
+```
+
+### Quick Build (Windows, CUDA)
+
+```bash
+git clone https://github.com/ggml-org/llama.cpp.git
+cd llama.cpp
+cmake -B build -DBUILD_SHARED_LIBS=OFF -DGGML_CUDA=ON
+cmake --build build --config Release
+```
+
+Copy the resulting `.lib` files into `ThirdParty/LlamaCpp/lib/Win64/`. See `ThirdParty/LlamaCpp/BUILD_INSTRUCTIONS.md` for all platforms and GPU backends.
+
+### GPU Backend Notes
+
+| Platform | Recommended Backend | Notes |
+|---|---|---|
+| Windows (NVIDIA) | CUDA | Best performance on NVIDIA GPUs |
+| Windows (AMD/Intel) | Vulkan | Cross-vendor GPU support |
+| macOS / iOS | Metal | Hardware accelerated on Apple Silicon |
+| Linux (NVIDIA) | CUDA | Best performance |
+| Linux (AMD) | Vulkan | Cross-vendor |
+| Android | Vulkan | Supported on most modern devices |
+| Any | CPU | Always works, just slower |
 
 ---
 
 ## Platform Support
 
--   **Editor:** Works on any platform that can run both Unreal Engine and Ollama (Windows, macOS, Linux).
--   **Packaged Builds:** The plugin works in packaged builds. The game connects to `http://localhost:11434`, so the end user must have Ollama installed and running on their machine.
+| Platform | HTTP Providers | Embedded Inference |
+|---|---|---|
+| Windows (x64) | Yes | Yes (CUDA, Vulkan, CPU) |
+| macOS | Yes | Yes (Metal, CPU) |
+| Linux (x64) | Yes | Yes (CUDA, Vulkan, CPU) |
+| Android (ARM64) | Yes | Yes (Vulkan, CPU) |
+| iOS (ARM64) | Yes | Yes (Metal, CPU) |
+| PS4 | Yes | No |
+| Xbox One | Yes | No |
+| Switch | Yes | No |
+| HoloLens | Yes | No |
+
+---
+
+## Cancellation
+
+All async actions support cancellation via `Cancel()`:
+
+- **HTTP requests:** Cancelled immediately.
+- **Streaming:** Stream terminated, no further tokens delivered.
+- **Embedded inference:** Thread-safe cancel flag stops generation on the next token boundary.
 
 ---
 
 ## Troubleshooting
 
-#### Ollama Not Responding
--   Make sure the Ollama application is running. You should see it in your system tray or task manager.
--   Verify it is accessible by visiting `http://localhost:11434` in your browser — you should see "Ollama is running".
+#### Server Not Responding
+- Make sure your inference server is running. Use **Check Server Health** to verify.
+- Verify accessibility by visiting the server URL in your browser.
 
 #### Model Not Found
--   Ensure you have pulled the model first with `ollama pull <model-name>` in your terminal.
--   The model name in your settings must match exactly (e.g., `llama3`, not `Llama3`).
+- Ensure the model is pulled/downloaded for your server.
+- Model names are case-sensitive (e.g., `llama3`, not `Llama3`).
 
-#### Firewall Blocking Connections
--   Allow Unreal Engine through your OS firewall for local network connections.
+#### Embedded Inference Not Available
+- Check build log for `GenAILlama: llama.cpp libraries found` or `not found`.
+- Verify `.lib` / `.a` files are in the correct `ThirdParty/LlamaCpp/lib/<Platform>/` directory.
 
 #### Multimodal Not Working
--   Make sure you are using a vision-capable model like `llava`. Standard text models will ignore image inputs.
+- Use a vision-capable model (e.g., `llava`, `llama3.2-vision`).
+- Embedded inference does not yet support multimodal models.

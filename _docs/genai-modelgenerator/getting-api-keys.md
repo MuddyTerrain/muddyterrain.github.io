@@ -24,7 +24,7 @@ To generate 3D models and textures, you need an API key from at least one suppor
 
 ## Tripo AI
 
-**What it powers:** Text-to-3D and Image-to-3D using Tripo's proprietary v2.5 model. This is a separate, newer model from the open-source TripoSR available on Fal.ai.
+**What it powers:** Text-to-3D and Image-to-3D using Tripo's proprietary v3.1 model. This is a separate, newer model from the open-source TripoSR available on Fal.ai.
 
 **Free tier:** 300 credits/month (~24 generations). API credits are separate from web subscription credits.
 

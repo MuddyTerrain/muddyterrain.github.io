@@ -17,11 +17,13 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 
 - **Text-to-3D** — Describe a model in plain text and generate a production-ready 3D asset with textures
 - **Image-to-3D** — Convert concept art, photos, or AI-generated reference images into textured 3D models
-- **Auto-Rigging** — Automatically rig humanoid models with skeleton and walking/running animations (Meshy AI)
+- **Auto-Rigging (Experimental)** — Automatically rig humanoid models with skeleton and walking/running animations (Meshy AI) — configurable height in meters
+- **Remesh** — Retopologize and optimize mesh polycount with triangle or quad topology (Meshy AI)
 - **Retexturing** — Apply new AI-generated textures to existing 3D meshes (Meshy AI)
 - **PBR Texture Generation** — Create seamless base color, normal, roughness, metallic, and full PBR map sets (Google Gemini)
 - **Reference Image Generation** — Generate clean concept art from text prompts, optimized for feeding into Image-to-3D
 - **Multiple Formats** — Import as GLB, FBX, OBJ, USDZ, or STL directly into the Content Browser as UAssets
+- **Runtime + Editor** — Full feature parity — all generation features work both in the editor widget and at runtime via C++/Blueprint
 
 ---
 
@@ -29,8 +31,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 
 | Provider (in Plugin) | Underlying AI Model | Modes | Approx. Cost | API Key |
 |---|---|---|---|---|
-| **Meshy AI** | Meshy-6 (proprietary) | Text-to-3D, Image-to-3D, Retexture, Auto-Rig | ~$0.30–$0.60/gen | Meshy API key (Pro plan required) |
-| **Tripo AI** | Tripo v2.5 (proprietary) | Text-to-3D, Image-to-3D | ~$0.07–$0.17/gen | Tripo API key |
+| **Meshy AI** | Meshy-6 (proprietary) | Text-to-3D, Image-to-3D, Retexture, Auto-Rig (Experimental), Remesh | ~$0.30–$0.60/gen | Meshy API key (Pro plan required) |
+| **Tripo AI** | Tripo v3.1 (proprietary) | Text-to-3D, Image-to-3D | ~$0.07–$0.17/gen | Tripo API key |
 | **Fal.ai - Hunyuan3D** | Tencent Hunyuan3D v3.1 Pro / v2.1 (open-source) | Text-to-3D, Image-to-3D | ~$0.16–$0.48/gen | Fal.ai API key |
 | **Fal.ai - TripoSR** | TripoSR (MIT, open-source) | Image-to-3D | ~$0.07/gen | Same Fal.ai key |
 | **Fal.ai - Rodin** | Hyper3D Rodin Gen-2 (proprietary) | Text-to-3D, Image-to-3D | ~$0.40/gen | Same Fal.ai key |

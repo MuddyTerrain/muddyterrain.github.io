@@ -14,7 +14,7 @@ Pricing for each supported provider at a glance. All prices are in USD and were 
 | Provider | Underlying Model | Free Tier | Approx. Cost / Model | Best For |
 |---|---|---|---|---|
 | **Meshy AI** | Meshy-6 | 100 credits/mo (~5 models) | ~$0.30–$0.60 | All-in-one 3D pipeline + rigging |
-| **Tripo AI** | Tripo v2.5 | 300 credits/mo (~24 models) | ~$0.07–$0.17 | Best free tier, fast iteration |
+| **Tripo AI** | Tripo v3.1 | 300 credits/mo (~24 models) | ~$0.07–$0.17 | Best free tier, fast iteration |
 | **Fal.ai - Hunyuan3D** | Tencent Hunyuan3D v3.1/v2.1 | Small signup credit | $0.16–$0.48 | Highest quality open-source |
 | **Fal.ai - TripoSR** | TripoSR (MIT) | Small signup credit | $0.07 | Cheapest, instant results |
 | **Fal.ai - Rodin** | Hyper3D Rodin Gen-2 | Small signup credit | $0.40 | High quality, PBR, no subscription |
@@ -70,7 +70,7 @@ Pricing for each supported provider at a glance. All prices are in USD and were 
 
 **Website:** [tripo3d.ai](https://www.tripo3d.ai/pricing) &#124; **API Docs:** [platform.tripo3d.ai](https://platform.tripo3d.ai)
 
-**Underlying model:** Tripo v2.5 (proprietary). This is a different, newer model from the open-source TripoSR on Fal.ai.
+**Underlying model:** Tripo v3.1 (proprietary). This is a different, newer model from the open-source TripoSR on Fal.ai.
 
 ### Subscription Plans
 
@@ -97,7 +97,7 @@ Pricing for each supported provider at a glance. All prices are in USD and were 
 
 - Most generous free tier (300 credits/mo, ~24 generations).
 - Annual billing saves up to 40%.
-- Tripo v2.5 is proprietary — only available through Tripo's own API, not on Fal.ai.
+- Tripo v3.1 is proprietary — only available through Tripo's own API, not on Fal.ai.
 
 ---
 
@@ -178,7 +178,7 @@ The plugin uses Google Gemini for two modes:
 ### Best Quality-to-Price for Production
 
 1. **Fal.ai + Hunyuan3D v3.1 Pro** — $0.48/gen, best open-source text-to-3D
-2. **Tripo AI Professional** — $19.90/mo for 3,000 credits, proprietary v2.5 model
+2. **Tripo AI Professional** — $19.90/mo for 3,000 credits, proprietary v3.1 model
 3. **Fal.ai + Trellis 2** — $0.25–$0.35/gen, PBR materials included
 
 ### Highest Quality (Cost Secondary)
@@ -208,7 +208,7 @@ The plugin uses Google Gemini for two modes:
 |---|---|---|---|
 | Meshy-6 | Meshy API only | No | No |
 | Rodin Gen-2 | Hyper3D ($120/mo min) | Yes ($0.40/gen) | No |
-| Tripo v2.5 | Tripo API only | No | No |
+| Tripo v3.1 | Tripo API only | No | No |
 | TripoSR | Self-host | Yes ($0.07/gen) | Yes (MIT) |
 | Hunyuan3D v2.1/v3.1 | Self-host | Yes ($0.16–$0.48/gen) | Yes (Tencent) |
 | Trellis 2 | Self-host | Yes ($0.25–$0.35/gen) | Yes (Microsoft) |

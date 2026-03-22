@@ -4,7 +4,7 @@ title: "GenAI Model Generator - AI 3D 模型生成虚幻引擎插件"
 category: products
 permalink: /zh/genai-model-generator
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin]
+tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
 lang: zh
 hreflang_group: genai-model-generator
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
@@ -22,16 +22,16 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </figure>
 </div>
 
-<p><strong>使用 AI 直接在虚幻引擎中生成 3D 模型和 PBR 贴图。</strong> GenAI Model Generator 是一款生产就绪的插件，通过单一统一接口将您的虚幻项目连接到最强大的 AI 3D 生成服务 — Meshy、Hyper3D Rodin、Tripo AI、fal.ai 和 Google。文本转 3D、图像转 3D、重新贴图和 AI 贴图生成，全部支持 Blueprint 和 C++。</p>
+<p><strong>使用 AI 直接在虚幻引擎中生成 3D 模型和 PBR 贴图。</strong> GenAI Model Generator 是一款生产就绪的插件，通过单一统一接口将您的虚幻项目连接到横跨 4 个 API 后端的 7 个 AI 提供商 — Meshy、Tripo AI、fal.ai（Hunyuan3D、TripoSR、Rodin Gen-2、Trellis 2）和 Google。文本转 3D、图像转 3D、自动绑骨、重拓扑、重新贴图、参考图像生成和 AI 贴图生成，全部支持 Blueprint 和 C++。通过自定义 Slate UI 深度编辑器集成，实现无代码生成。</p>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">产品文档</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">加入 Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">在 Fab.com 上查看</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="top_cta">产品文档</a>
 </div>
 
 <div style="background-color: #f9f9f9; border-left: 4px solid #4a4a4a; padding: 25px; margin: 30px 0; border-radius: 4px;">
-  <h2 style="margin-top: 0;">5 个提供商，一个插件</h2>
-  <p>通过单一 API 访问最佳 AI 3D 生成服务。在 Meshy、Hyper3D Rodin、Tripo AI、fal.ai 和 Google 之间切换而无需更改工作流程。每个提供商都有独特优势 — 为每项任务使用最佳工具。</p>
+  <h2 style="margin-top: 0;">7 个提供商，一个插件</h2>
+  <p>通过单一 API 访问最佳 AI 3D 生成服务。Meshy AI（Meshy-6）、Tripo AI（v3.1）、fal.ai 上的 Hunyuan3D（v3.1 Pro / v2.1）、TripoSR、Rodin Gen-2、Trellis 2，以及 Google Gemini — 全部通过一个统一接口。每个提供商都有独特优势。</p>
   <p>本插件将持续提供<strong>免费更新</strong>，包含新提供商和模型。如果您觉得好用，请考虑在 Fab 上给我们一个<strong>五星好评</strong>以表支持！</p>
 </div>
 
@@ -46,12 +46,28 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
         将 2D 图像或概念艺术转换为 3D 模型。所有提供商均支持 — Meshy、Hyper3D Rodin、Tripo AI 和 fal.ai（支持 Hunyuan3D、TripoSR、Rodin 和 Trellis 2 后端）。</p>
     </li>
     <li>
+        <p><strong>自动绑骨（实验性）：</strong> 🦴<br>
+        通过 Meshy AI 自动为人形模型添加骨骼和行走/奔跑动画。可配置身高以确保正确的骨骼比例。生成模型后立即绑骨的无缝工作流。</p>
+    </li>
+    <li>
+        <p><strong>重拓扑：</strong> 🔧<br>
+        通过 Meshy AI 重新拓扑和优化网格面数。三角形或四边形拓扑。控制目标面数、自动尺寸和调整高度。</p>
+    </li>
+    <li>
         <p><strong>AI 重新贴图：</strong> 🖌️<br>
         基于文本描述为现有 3D 模型应用 AI 生成的贴图。通过 Meshy 用单个提示将占位资产转变为生产就绪的艺术品。</p>
     </li>
     <li>
         <p><strong>PBR 贴图生成：</strong> 🧱<br>
         使用 Google AI 生成单独或完整的 PBR 贴图集 — 基础颜色、法线、粗糙度和金属度贴图。支持无缝/可平铺贴图和参考图像风格迁移。</p>
+    </li>
+    <li>
+        <p><strong>参考图像生成：</strong> 🎨<br>
+        通过 Google Gemini 从文本提示生成干净的概念艺术。针对图像转 3D 输入进行了优化。推荐的最佳结果流程。</p>
+    </li>
+    <li>
+        <p><strong>深度编辑器集成：</strong> 🛠️<br>
+        自定义 Slate UI 标签页，包含提供商选择、模式选择器、图像预览、提示输入、进度跟踪、结果预览和直接导入内容浏览器。包含每个提供商的定价、API 密钥状态和工作流提示的上下文帮助文本。</p>
     </li>
     <li>
         <p><strong>多种输出格式：</strong> 📦<br>
@@ -84,37 +100,50 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 <ul>
     <li><strong>Meshy AI：</strong>
         <ul>
-            <li><strong>文本转 3D：</strong>模型 v4、v5、v6，支持可定制的艺术风格</li>
+            <li><strong>文本转 3D：</strong> Meshy-6，支持可定制的艺术风格（写实、卡通、雕塑、PBR）</li>
             <li><strong>图像转 3D：</strong>将参考图像转换为 3D 模型</li>
             <li><strong>重新贴图：</strong>为现有网格应用 AI 贴图</li>
             <li>对称模式（自动/开/关），可配置拓扑</li>
+            <li><strong>自动绑骨：</strong>骨骼 + 行走/奔跑动画（人形模型专用）</li>
+            <li><strong>重拓扑：</strong>指定目标面数和三角形/四边形拓扑进行重拓扑</li>
         </ul>
     </li>
-    <li><strong>Hyper3D Rodin：</strong>
+    <li><strong>fal.ai - Rodin：</strong>
         <ul>
-            <li><strong>图像转 3D 和文本转 3D：</strong>4 个质量等级（常规、草图、细节、平滑）</li>
-            <li>4 个网格质量级别（500 到 300K 三角形）</li>
-            <li>PBR 和 Shaded 材质选项</li>
+            <li><strong>文本转 3D 和图像转 3D：</strong> Hyper3D Rodin Gen-2（专有模型）</li>
+            <li>高质量 PBR 输出，$0.40/次生成 — 无需 $120/月订阅</li>
         </ul>
     </li>
     <li><strong>Tripo AI：</strong>
         <ul>
-            <li><strong>文本转 3D 和图像转 3D：</strong>模型版本 v2.0 和 v2.5</li>
+            <li><strong>文本转 3D 和图像转 3D：</strong> Tripo v3.1（专有模型）</li>
             <li>快速生成，拓扑整洁</li>
         </ul>
     </li>
-    <li><strong>fal.ai：</strong>
+    <li><strong>fal.ai - Hunyuan3D：</strong>
         <ul>
-            <li><strong>图像转 3D：</strong>通过多个推理后端</li>
-            <li>Hunyuan3D v2.1、TripoSR、Rodin、Trellis 2</li>
-            <li>可配置的推理步数和引导尺度</li>
+            <li><strong>文本转 3D：</strong> Tencent Hunyuan3D v3.1 Pro（最佳开源文本转 3D）</li>
+            <li><strong>图像转 3D：</strong> Tencent Hunyuan3D v2.1</li>
+            <li>可配置的推理步数、引导尺度、面数（40K-1.5M）</li>
         </ul>
     </li>
-    <li><strong>Google：</strong>
+    <li><strong>fal.ai - TripoSR：</strong>
         <ul>
-            <li><strong>贴图生成：</strong>NanoBanana 2 / Gemini 驱动的 PBR 贴图创建</li>
+            <li><strong>图像转 3D：</strong> MIT 开源，超快（不到 1 秒），$0.07/次生成</li>
+        </ul>
+    </li>
+    <li><strong>fal.ai - Trellis 2：</strong>
+        <ul>
+            <li><strong>图像转 3D：</strong> Microsoft Trellis 2，包含完整 PBR 材质</li>
+            <li>可配置的分辨率、贴图尺寸和减面目标</li>
+        </ul>
+    </li>
+    <li><strong>Google（贴图生成）：</strong>
+        <ul>
+            <li><strong>贴图生成：</strong> Gemini 3.1 Flash 驱动的 PBR 贴图创建</li>
             <li>基础颜色、法线、粗糙度、金属度和完整 PBR 集</li>
-            <li>无缝/可平铺贴图支持</li>
+            <li>无缝/可平铺贴图支持，参考图像风格迁移</li>
+            <li><strong>参考图像生成：</strong>从文本生成干净的概念艺术，针对图像转 3D 优化</li>
         </ul>
     </li>
 </ul>
@@ -145,8 +174,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 </ul>
 
 <div class="button-row">
-  <a href="/docs/genai-modelgenerator" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">产品文档</a>
-  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">加入 Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="btm_cta" target="_blank" rel="noopener noreferrer">在 Fab.com 上查看</a>
+  <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">产品文档</a>
 </div>
 
 </body>

@@ -14,7 +14,7 @@ Pricing for each supported provider at a glance. All prices are in USD and were 
 | Provider | Underlying Model | Free Tier | Approx. Cost / Model | Best For |
 |---|---|---|---|---|
 | **Meshy AI** | Meshy-6 | 100 credits/mo (~5 models) | ~$0.30–$0.60 | All-in-one 3D pipeline + rigging |
-| **Tripo AI** | Tripo v3.1 | 300 credits/mo (~24 models) | ~$0.07–$0.17 | Best free tier, fast iteration |
+| **Tripo AI** | Tripo v3.1 | 300 credits/mo (~24 models) | ~$0.07–$0.17 | Best free tier, creature rigging |
 | **Fal.ai - Hunyuan3D** | Tencent Hunyuan3D v3.1/v2.1 | Small signup credit | $0.16–$0.48 | Highest quality open-source |
 | **Fal.ai - TripoSR** | TripoSR (MIT) | Small signup credit | $0.07 | Cheapest, instant results |
 | **Fal.ai - Rodin** | Hyper3D Rodin Gen-2 | Small signup credit | $0.40 | High quality, PBR, no subscription |
@@ -189,7 +189,8 @@ The plugin uses Google Gemini for two modes:
 
 ### Best for Rigging & Animation
 
-1. **Meshy AI Auto-Rig** — Only provider with auto-rigging, 5 credits (~$0.10)
+1. **Meshy AI Auto-Rig** — Humanoid rigging with skeleton + walking/running animations, 5 credits (~$0.10)
+2. **Tripo AI Auto-Rig** — Multi-creature rigging (biped, quadruped, avian, serpentine, etc.) with 11 animation presets
 
 ### Best for Texture Generation
 

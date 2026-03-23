@@ -39,6 +39,18 @@ Returned by Meshy auto-rigging tasks.
 | `RunningGlbUrl` | `FString` | Running animation GLB URL |
 | `Progress` | `int32` | Progress (0–100) |
 
+### FGenTripoAutoRigResult
+
+Returned by Tripo auto-rigging tasks.
+
+| Field | Type | Description |
+|---|---|---|
+| `TaskId` | `FString` | Rigging task identifier |
+| `ModelBytes` | `TArray<uint8>` | Downloaded rigged model file data |
+| `Format` | `EGenModel3DFormat` | Output format |
+| `ModelUrl` | `FString` | Download URL for the rigged model |
+| `Progress` | `int32` | Progress (0–100) |
+
 ### FGenTextureResult
 
 Returned by Google texture generation tasks.
@@ -76,8 +88,16 @@ Every generation class extends `UCancellableAsyncAction` and exposes two usage p
 |---|---|---|
 | **`UGenTripoTextTo3D`** | Text-to-3D | `FGenTripoTextTo3DSettings` |
 | **`UGenTripoImageTo3D`** | Image-to-3D | `FGenTripoImageTo3DSettings` |
+| **`UGenTripoRetexture`** | Retexture existing models | `FGenTripoRetextureSettings` |
+| **`UGenTripoAutoRig`** | Auto-rig with creature types | `FGenTripoAutoRigSettings` |
+| **`UGenTripoLowPoly`** | Smart LowPoly conversion | `FGenTripoLowPolySettings` |
 
 Uses Tripo's proprietary v3.1 model. Separate API key from Fal.ai's TripoSR.
+
+**Tripo-specific features:**
+- `UGenTripoAutoRig` runs a 3-step chained pipeline (pre-rig check -> rig -> retarget) with scaled progress reporting. Supports 7 creature rig types and 11 animation presets.
+- `UGenTripoRetexture` chains from the last Tripo generation task ID — no file upload needed.
+- `UGenTripoLowPoly` converts high-poly models to game-ready low-poly with configurable face limits and baked textures.
 
 ### Fal.ai (All Models)
 
@@ -203,6 +223,33 @@ Uses Google Gemini 3.1 Flash for AI image generation. Set `TextureMapType` to co
 | `ImageBytes` | `TArray<uint8>` | — | Raw image bytes (Image-to-3D only) |
 | `OutputFormat` | `EGenModel3DFormat` | `GLB` | Output format |
 
+### FGenTripoRetextureSettings
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `InputTaskId` | `FString` | — | Tripo task ID from a previous generation (auto-populated) |
+| `Prompt` | `FString` | — | Texture description prompt |
+| `OutputFormat` | `EGenModel3DFormat` | `GLB` | Output format |
+
+### FGenTripoAutoRigSettings
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `InputTaskId` | `FString` | — | Tripo task ID from a previous generation (auto-populated) |
+| `RigType` | `EGenTripoRigType` | `Biped` | Creature rig type |
+| `AnimationPreset` | `EGenTripoAnimationPreset` | `Idle` | Animation to apply after rigging |
+| `OutputFormat` | `EGenModel3DFormat` | `GLB` | Output format |
+
+### FGenTripoLowPolySettings
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `InputTaskId` | `FString` | — | Tripo task ID from a previous generation (auto-populated) |
+| `FaceLimit` | `int32` | `5000` | Target face count (1,000–20,000) |
+| `bQuadFaces` | `bool` | `false` | Output quad topology instead of triangles |
+| `bBakeTextures` | `bool` | `true` | Bake high-poly textures onto the low-poly mesh |
+| `OutputFormat` | `EGenModel3DFormat` | `GLB` | Output format |
+
 ### FGenGoogleTextureSettings
 
 | Field | Type | Default | Description |
@@ -227,6 +274,8 @@ Uses Google Gemini 3.1 Flash for AI image generation. Set `TextureMapType` to co
 | `EGenMeshyAIModel` | `Meshy6`, `Meshy5`, `Meshy4` | Meshy |
 | `EGenMeshySymmetry` | `Auto`, `On`, `Off` | Meshy |
 | `EGenTripoModelVersion` | `V3_1`, `V2_5`, `V2_0` | Tripo AI |
+| `EGenTripoRigType` | `Biped`, `Quadruped`, `Hexapod`, `Octopod`, `Avian`, `Serpentine`, `Aquatic` | Tripo AI Auto-Rig |
+| `EGenTripoAnimationPreset` | `Idle`, `Walk`, `Run`, `Jump`, `Slash`, `Shoot`, `Dive`, `Climb`, `Hurt`, `Fall`, `Turn` | Tripo AI Auto-Rig |
 | `EGenRodinConditionType` | `Image`, `Text` | Rodin (direct) |
 | `EGenRodinTier` | `Regular`, `Sketch`, `Detail`, `Smooth` | Rodin (direct) |
 | `EGenRodinMeshQuality` | `Low` (500 tri), `Medium` (10K), `High` (50K), `Ultra` (300K) | Rodin (direct) |

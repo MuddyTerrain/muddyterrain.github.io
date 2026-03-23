@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(xargs grep:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:www.meshy.ai)",
+      "WebFetch(domain:www.tripo3d.ai)",
+      "WebFetch(domain:fal.ai)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebFetch(domain:hyper3d.ai)",
+      "WebFetch(domain:docs.meshy.ai)",
+      "WebFetch(domain:platform.tripo3d.ai)"
     ]
   }
 }

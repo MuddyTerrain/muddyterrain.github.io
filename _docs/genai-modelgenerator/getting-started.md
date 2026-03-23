@@ -53,6 +53,8 @@ The plugin includes a full Slate editor widget for generating models without wri
    - **Meshy AI (3D Gen):** Art style (realistic, cartoon, sculpture, pbr), target polycount (100–300K), enable PBR
    - **Meshy AI (Auto-Rig):** Height in meters (0.1–10.0m, default 1.7m) for correct skeleton scale
    - **Meshy AI (Remesh):** Target polycount, topology (triangle/quad), auto-size toggle, resize height
+   - **Tripo AI (Auto-Rig):** Rig type (biped, quadruped, hexapod, octopod, avian, serpentine, aquatic), animation preset (idle, walk, run, jump, slash, shoot, dive, climb, hurt, fall, turn)
+   - **Tripo AI (Smart LowPoly):** Face limit (1,000–20,000), quad faces toggle, bake textures toggle
    - **Fal.ai - Hunyuan3D:** Inference steps (1–100), guidance scale (1–20), face count (40K–1.5M), geometry-only mode, enable PBR
    - **Fal.ai - Trellis 2:** Resolution (256–2048), texture size (512–4096), decimation target
    - **Rodin:** Quality mesh option, material mode (PBR/Shaded)
@@ -104,23 +106,72 @@ For the best results, generate a clean reference image first:
 5. Attach the generated reference image.
 6. Generate the 3D model.
 
-### Auto-Rigging (Meshy AI Only)
+### Auto-Rigging (Meshy AI)
 
-Automatically rigs textured humanoid models with a skeleton and generates walking + running animations.
+Automatically rigs textured humanoid models with a skeleton and generates walking + running animations. Marked as experimental — skeleton scale may need manual adjustment.
 
 **Seamless workflow (recommended):**
 1. Generate a humanoid model with **Meshy AI** > **Text-to-3D** or **Image-to-3D**.
-2. Switch to **Auto-Rig** mode — the plugin automatically uses the last generated Meshy task ID.
-3. Click **Generate** — the rigged model is downloaded and imported with skeleton.
+2. Switch to **Auto-Rig (Experimental)** mode — the plugin automatically uses the last generated Meshy task ID.
+3. Adjust **Height** in Advanced Settings if needed (0.1–10.0m, default 1.7m).
+4. Click **Generate** — the rigged model is downloaded and imported as a SkeletalMesh.
 
 **Manual workflow:**
-1. Select **Meshy AI** > **Auto-Rig**.
+1. Select **Meshy AI** > **Auto-Rig (Experimental)**.
 2. Attach a textured humanoid GLB model via the mesh picker.
 3. Click **Generate**.
 
-**Constraints:** Humanoid models only, must be textured, max 300K faces when using a Meshy task ID. Output includes rigged GLB/FBX with skeleton, plus walking and running animation URLs.
+**Constraints:** Humanoid models only, must be textured, max 300K faces when using a Meshy task ID. Walking and running animation URLs are logged and available in the result struct for manual download.
 
-### Remesh (Meshy AI Only)
+### Auto-Rigging (Tripo AI)
+
+Tripo's auto-rig supports a much wider range of creature types and runs as a 3-step chained pipeline:
+
+1. **Pre-Rig Check** — detects if the model is riggable and identifies the rig type
+2. **Rig** — applies the skeleton based on the detected or selected rig type
+3. **Retarget** — applies the selected animation preset to the rigged model
+
+Progress is scaled across the chain: 0–30% pre-rig check, 30–60% rigging, 60–100% retarget + download.
+
+**Supported rig types:** Biped, Quadruped, Hexapod, Octopod, Avian, Serpentine, Aquatic
+
+**Animation presets:** Idle, Walk, Run, Jump, Slash, Shoot, Dive, Climb, Hurt, Fall, Turn
+
+**Workflow:**
+1. Generate a model with **Tripo AI** > **Text-to-3D** or **Image-to-3D**.
+2. Switch to **Auto-Rig** mode.
+3. Select rig type and animation in **Advanced Settings**.
+4. Click **Generate** — the 3-step chain runs automatically.
+
+### Retexture (Meshy AI / Tripo AI)
+
+Apply new AI-generated textures to an existing 3D model.
+
+**Meshy AI:**
+1. Select **Meshy AI** > **Retexture** mode.
+2. Attach an existing 3D model (GLB/FBX/OBJ) via the mesh picker.
+3. Describe the desired texture style in the prompt. Supports negative prompts.
+4. Click **Generate**.
+
+**Tripo AI:**
+1. Generate a model with **Tripo AI** first.
+2. Switch to **Retexture** mode — the plugin chains from the last Tripo generation task ID automatically.
+3. Enter a texture prompt describing the desired look.
+4. Click **Generate**.
+
+### Smart LowPoly (Tripo AI)
+
+Convert a high-poly model to a hand-crafted low-poly version with baked textures — ideal for game-ready assets.
+
+1. Generate a model with **Tripo AI** first.
+2. Switch to **Smart LowPoly** mode.
+3. Configure in **Advanced Settings**:
+   - **Face Limit**: Target face count (1,000–20,000, default 5,000)
+   - **Quad Faces**: Output quad topology instead of triangles
+   - **Bake Textures**: Bake high-poly textures onto the low-poly mesh
+4. Click **Generate** — outputs a game-ready low-poly mesh.
+
+### Remesh (Meshy AI)
 
 Retopologize and optimize an existing mesh with control over target polycount and topology type.
 
@@ -129,15 +180,6 @@ Retopologize and optimize an existing mesh with control over target polycount an
 3. In **Advanced Settings**, configure target polycount (default 30,000) and topology (Triangle or Quad).
 4. Optionally enable **Auto Size** to automatically scale the model, or set a manual **Resize Height**.
 5. Click **Generate** — outputs an optimized mesh.
-
-### Retexture (Meshy AI Only)
-
-Apply new AI-generated textures to an existing 3D model:
-
-1. Select **Meshy AI** > **Retexture** mode.
-2. Attach an existing 3D model via the mesh picker.
-3. Describe the desired texture style in the prompt.
-4. Generate.
 
 ### Texture Generation (Google Only)
 
@@ -161,7 +203,9 @@ Generate seamless PBR texture maps:
 | **Highest quality open-source** | Fal.ai - Hunyuan3D v3.1 Pro | Tencent's best text-to-3D, $0.48/gen |
 | **Best PBR materials** | Fal.ai - Trellis 2 | Microsoft model, full PBR set included |
 | **High quality, no subscription** | Fal.ai - Rodin Gen-2 | Hyper3D's Gen-2 model, PBR, $0.40/gen |
-| **Rigging & animation** | Meshy AI (Auto-Rig) | Only provider with auto-rigging |
+| **Humanoid rigging** | Meshy AI (Auto-Rig) | Automatic skeleton + walking/running animations |
+| **Creature rigging** | Tripo AI (Auto-Rig) | Biped, quadruped, avian, serpentine, and more |
+| **Game-ready optimization** | Tripo AI (Smart LowPoly) | Hand-crafted low-poly with baked textures |
 | **Texture maps** | Google (Texture Gen) | ~$0.04/image, all PBR map types |
 
 ---
@@ -244,3 +288,58 @@ Generated 3D models can be imported in the following formats:
 | **STL** | Stereolithography — geometry only | 3D printing |
 
 All 3D models are imported into the Content Browser as `UStaticMesh` assets via Unreal's Interchange system, and automatically opened in the static mesh editor for preview.
+
+---
+
+## Blueprint Helper Nodes
+
+The plugin includes utility Blueprint nodes for working with generation results:
+
+### Runtime Nodes (available in all Blueprints)
+
+| Node | Description |
+|------|-------------|
+| **Save Model To File** | Saves a `FGenModel3DResult` to disk with the correct extension (.glb, .fbx, etc). Auto-generates a timestamped filename if none provided. |
+| **Save Bytes To File** | Saves any byte array to a file on disk (PNG textures, GLB models, etc). |
+| **Create Texture From Bytes** | Creates a transient `UTexture2D` from raw image bytes (PNG, JPEG). Use this to display generated textures on materials or UI widgets at runtime. |
+
+### Editor-Only Nodes (available in Editor Utility Blueprints)
+
+| Node | Description |
+|------|-------------|
+| **Import Model To Content Browser** | Imports a 3D model file (GLB, FBX, OBJ) into the Content Browser as a StaticMesh or SkeletalMesh asset. |
+
+### Example Blueprint Workflow
+
+```
+[Meshy Image to 3D] -> (Result) -> [Save Model To File] -> (FilePath) -> [Import Model To Content Browser] -> (AssetPath)
+```
+
+```
+[Google Texture Gen] -> (TextureBytes) -> [Create Texture From Bytes] -> (UTexture2D) -> [Set Texture Parameter Value]
+```
+
+> **Runtime mesh loading:** For loading GLB models at runtime in packaged builds, use `Save Model To File` to write the file to disk, then load it with a third-party runtime GLB plugin (e.g. glTFRuntime). UE's built-in Interchange importer is editor-only.
+
+---
+
+## Task History & Chained Operations
+
+The plugin persists task IDs to disk (`Saved/Config/GenAIModelGen/task_history.json`), enabling chained operations across editor sessions. When switching to a chained mode (Retexture, Auto-Rig, Remesh, Smart LowPoly), the widget shows which model will be used — displaying the asset name or prompt alongside the truncated task ID.
+
+This means you can:
+- Generate a model, close the editor, reopen it the next day, and still retexture or auto-rig that model
+- Chain multiple operations: Text-to-3D -> Auto-Rig -> Retexture without re-uploading anything
+- The last 50 task entries are retained automatically
+
+Each task entry stores the task ID, provider, imported asset path, original prompt, and timestamp.
+
+---
+
+## Version-Specific Notes
+
+| Feature | UE 5.1-5.3 | UE 5.4-5.7 |
+|---------|-------------|-------------|
+| **Trellis 2 texture support** | Mesh imports without textures (WebP not supported) | Full texture conversion (WebP -> JPEG) |
+
+**Trellis 2 (WebP textures):** Microsoft Trellis 2 outputs GLB files with WebP-encoded textures. UE's `IImageWrapper` only supports WebP decoding from 5.4 onwards. On UE 5.1-5.3, the mesh imports successfully but textures will be missing. On UE 5.4+, textures are automatically converted. All other providers work identically across all engine versions.

@@ -11,21 +11,29 @@ The plugin ships with an example project containing Blueprint examples for chat 
 
 ## Download
 
-The example project is built for **Unreal Engine 5.1** and can be upgraded to any newer version (up to 5.7) through Unreal's built-in project upgrade process.
+<p>A Blueprint-only project is available for each supported Unreal Engine version. Please download the one that matches your engine. All links point to Google Drive.</p>
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Requirements</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">The GenAI Llama plugin must be installed in your project. For HTTP provider examples, you need a local inference server running (e.g., <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a>, LM Studio, or any OpenAI-compatible server).</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">The GenAI Llama plugin must be installed in your project from the Fab store before opening these projects. For HTTP provider examples, you need a local inference server running (e.g., <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a>, LM Studio, or any OpenAI-compatible server).</p>
 </div>
 
----
-
-## How to Upgrade to a Newer Engine Version
-
-1.  Download the project (built for UE 5.1).
-2.  Open it with your target version of Unreal Engine.
-3.  Unreal will prompt you to upgrade the project — click **Yes**.
-4.  The project and plugin will be converted to your engine version automatically.
+<table class="download-table">
+  <thead>
+    <tr>
+      <th>Engine Version</th>
+      <th>Blueprint-Only Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in site.data.settings.example_projects_llama %}
+    <tr>
+      <td>Unreal Engine {{ project.version }}</td>
+      <td><a href="{{ project.bp_link }}" target="_blank" rel="noopener noreferrer">GenAILlamaExample_UE{{ project.version }}_BP.zip</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 ---
 

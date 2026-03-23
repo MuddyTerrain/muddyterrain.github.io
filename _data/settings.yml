@@ -71,3 +71,37 @@ example_projects_china:
     bp_link: "https://drive.google.com/file/d/1yiVoCGHDjvA8fkR_HsVUJc1_U3lrkGzI/view?usp=drive_link"
   - version: "5.1"
     bp_link: "https://drive.google.com/file/d/1K8oe_Z1feN7IpvVNaP6RiRn2y-h1OCUG/view?usp=drive_link"
+
+# GenAI Llama Example Project Downloads
+example_projects_llama:
+  - version: "5.7"
+    bp_link: "#"
+  - version: "5.6"
+    bp_link: "#"
+  - version: "5.5"
+    bp_link: "#"
+  - version: "5.4"
+    bp_link: "#"
+  - version: "5.3"
+    bp_link: "#"
+  - version: "5.2"
+    bp_link: "#"
+  - version: "5.1"
+    bp_link: "#"
+
+# GenAI Model Generator Example Project Downloads
+example_projects_modelgenerator:
+  - version: "5.7"
+    bp_link: "#"
+  - version: "5.6"
+    bp_link: "#"
+  - version: "5.5"
+    bp_link: "#"
+  - version: "5.4"
+    bp_link: "#"
+  - version: "5.3"
+    bp_link: "#"
+  - version: "5.2"
+    bp_link: "#"
+  - version: "5.1"
+    bp_link: "#"

@@ -12,9 +12,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBa
 
 
 
-<html lang="ko">
 
-<body>
 
 <div class="image-wrapper">
 <figure>
@@ -178,5 +176,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBa
   <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">문서</a>
 </div>
 
-</body>
-</html>

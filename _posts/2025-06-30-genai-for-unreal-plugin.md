@@ -10,9 +10,7 @@ hreflang_group: genai-unreal
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187345-e044-4862-9acd-0c078ade41ab.webp
 ---
 
-<html lang="en">
 
-<body>
 
 <div class="image-wrapper">
 <figure>
@@ -303,5 +301,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1751299301/86187
   <a href="/docs/genai-unreal" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_documentation"  data-event-location="btm_cta">Product Documentation</a>
 </div>
 
-</body>
-</html>

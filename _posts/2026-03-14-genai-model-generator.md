@@ -12,10 +12,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBa
 
 
 
-<html lang="en">
-
-<body>
-
 <div class="image-wrapper">
 <figure>
     <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp" alt="GenAI Model Generator - AI 3D Model Generation in Unreal Engine" style="width: 100%;">
@@ -185,5 +181,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBa
   <a href="/docs/genai-modelgenerator" class="cta-button secondary track-click" data-event-name="btn_clk_modelgen_docs" data-event-location="btm_cta">Documentation</a>
 </div>
 
-</body>
-</html>

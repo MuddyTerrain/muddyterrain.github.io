@@ -8,8 +8,6 @@ tags: [tools, open-source, unreal, gamedev, ci-cd, automation]
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce772-033b-4e99-970a-8362b32ef3cb.webp
 ---
 
-<html lang="en">
-<body>
 
 <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce772-033b-4e99-970a-8362b32ef3cb.webp" alt="Local CI/CD for Unreal Tool Banner">
 
@@ -91,5 +89,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce7
   <a href="/docs/ci-cd-unreal/" class="cta-button secondary track-click" data-event-name="btn_clk_cicd_documentation" data-event-location="btm_cta">Read The Docs</a>
 </div>
 
-</body>
-</html>

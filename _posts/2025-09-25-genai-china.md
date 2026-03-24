@@ -12,9 +12,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
 
 
 
-<html lang="en">
 
-<body>
 
 <div class="image-wrapper">
 <figure>
@@ -149,5 +147,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1
   <a href="/docs/genai-china" class="cta-button secondary track-click" data-event-name="btn_clk_gen_ai_china_documentation"  data-event-location="btm_cta">Product Documentation</a>
 </div>
 
-</body>
-</html>

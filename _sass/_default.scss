@@ -4,8 +4,10 @@
 
 .container {
   width: $container-width;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 }
 .container a {
   text-decoration: underline;

@@ -3,11 +3,10 @@ pre {
   font-family: $code-font-family
 }
 code {
-  padding: .2em .45em;
+  padding: .25em .5em;
   font-size: .8rem;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+  border-radius: 3px;
 }
 pre {
   display: block;
@@ -15,15 +14,12 @@ pre {
   margin-bottom: 1rem;
   padding: 1rem;
   font-size: .8rem;
-  line-height: 1.5;
+  line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-  border-radius: 8px;
-  border: 1px solid #313244;
+  background-color: #f5f5f5;
 }
 pre code {
   padding: 0;

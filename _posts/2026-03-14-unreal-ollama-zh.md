@@ -12,9 +12,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 
 
 
-<html lang="zh">
 
-<body>
 
 <div class="image-wrapper">
 <figure>
@@ -119,5 +117,3 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
   <a href="/docs/genai-llama" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_docs" data-event-location="btm_cta">产品文档</a>
 </div>
 
-</body>
-</html>

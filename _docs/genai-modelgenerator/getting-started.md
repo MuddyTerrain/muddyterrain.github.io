@@ -16,7 +16,7 @@ This guide walks you through installing the plugin, configuring it, and generati
 3.  Search for **GenAI Model Generator** and enable it.
 4.  Restart the editor if prompted.
 
-#### C++ Projects
+#### (Optional) For C++ Projects
 
 Add the module dependency to your project's `.Build.cs` file:
 
@@ -30,8 +30,17 @@ PublicDependencyModuleNames.AddRange(new string[] { "GenAIModelGen" });
 
 1.  Go to **Project Settings > Plugins > GenAI Model Generator**.
 2.  Enter your API key(s) for the providers you want to use (see [Getting API Keys](/docs/genai-modelgenerator/getting-api-keys/)).
-3.  Optionally adjust the **Poll Interval** (default: 6 seconds) — this controls how frequently the plugin checks for generation task completion.
-4.  Enable **Extended Logging** if you want to see full request/response JSON in the output log (large fields like base64 images are automatically truncated).
+   
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774390418/a32a2c17-f24e-4992-91e0-f47c41a586cf.webp" alt="Advanced Make Node with Dropdown" style="width: 80%;">
+        <figcaption class="image-caption">
+            Adding API keys
+        </figcaption>
+    </figure>
+</div> 
+1.  Optionally adjust the **Poll Interval** (default: 6 seconds) — this controls how frequently the plugin checks for generation task completion.
+2.  Enable **Extended Logging** if you want to see full request/response JSON in the output log (large fields like base64 images are automatically truncated).
 
 > **Compatibility:** Supports **Unreal Engine 5.1 through 5.7** on Windows, macOS, and Linux.
 
@@ -39,7 +48,16 @@ PublicDependencyModuleNames.AddRange(new string[] { "GenAIModelGen" });
 
 ## Editor Widget — Your Main Tool
 
-The plugin includes a full Slate editor widget for generating models without writing code. Open it from the toolbar button or **Window > AI Model Generator**.
+The plugin includes a full Slate editor widget for generating models without writing code. Open it from the toolbar button or **Window > AI Model Generator** or by simply pressing the 🔥 icon on the top tab.
+
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774390538/Screenshot_2026-03-23_215342_hccduq.webp" alt="Advanced Make Node with Dropdown" style="width: 60%;">
+        <figcaption class="image-caption">
+            Main editor UI
+        </figcaption>
+    </figure>
+</div> 
 
 ### Widget Layout
 
@@ -334,12 +352,3 @@ This means you can:
 
 Each task entry stores the task ID, provider, imported asset path, original prompt, and timestamp.
 
----
-
-## Version-Specific Notes
-
-| Feature | UE 5.1-5.3 | UE 5.4-5.7 |
-|---------|-------------|-------------|
-| **Trellis 2 texture support** | Mesh imports without textures (WebP not supported) | Full texture conversion (WebP -> JPEG) |
-
-**Trellis 2 (WebP textures):** Microsoft Trellis 2 outputs GLB files with WebP-encoded textures. UE's `IImageWrapper` only supports WebP decoding from 5.4 onwards. On UE 5.1-5.3, the mesh imports successfully but textures will be missing. On UE 5.4+, textures are automatically converted. All other providers work identically across all engine versions.

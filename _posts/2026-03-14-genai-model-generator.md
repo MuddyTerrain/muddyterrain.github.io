@@ -7,7 +7,7 @@ author: "Muddy Terrain"
 tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
 lang: en
 hreflang_group: genai-model-generator
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp
 ---
 
 
@@ -18,7 +18,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp" alt="GenAI Model Generator - AI 3D Model Generation in Unreal Engine" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp" alt="GenAI Model Generator - AI 3D Model Generation in Unreal Engine" style="width: 100%;">
 </figure>
 </div>
 
@@ -90,6 +90,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
         Generate 3D models directly from a Slate-based editor widget without writing any code. Preview results and import generated assets into your content browser.</p>
     </li>
 </ul>
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387253/3_yneil8.webp" alt="">
+
 
 <h2>Supported Providers & Capabilities</h2>
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
@@ -148,6 +150,9 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
     </li>
 </ul>
 
+
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387253/4_vdtjrt.webp" alt="GenAI for Unreal Plugin Tests">
+
 <h2>Use Cases:</h2>
 <ul>
     <li><strong>Rapid Prototyping:</strong> Generate placeholder and production-quality 3D assets from text descriptions during development, dramatically reducing iteration time.</li>
@@ -156,6 +161,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
     <li><strong>Texture Authoring:</strong> Generate PBR texture sets for environments, props, and materials without leaving the engine.</li>
     <li><strong>Asset Refresh:</strong> Retexture existing models with AI-generated materials to quickly explore different visual directions.</li>
 </ul>
+
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387253/2_ec07xb.webp" alt="GenAI for Unreal Plugin Tests">
 
 <h2>Why Choose This Plugin?</h2>
 <ul>

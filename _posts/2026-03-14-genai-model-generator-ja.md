@@ -7,7 +7,7 @@ author: "Muddy Terrain"
 tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
 lang: ja
 hreflang_group: genai-model-generator
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp
 ---
 
 
@@ -18,7 +18,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp" alt="GenAI Model Generator - Unreal Engine での AI 3D モデル生成" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp" alt="GenAI Model Generator - Unreal Engine での AI 3D モデル生成" style="width: 100%;">
 </figure>
 </div>
 

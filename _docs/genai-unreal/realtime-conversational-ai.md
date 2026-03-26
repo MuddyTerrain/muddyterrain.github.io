@@ -19,6 +19,8 @@ The Realtime Conversational AI system is the plugin's most advanced feature, ena
   <p style="margin: 5px 0 0 0; color: #856404;">Please note Semantic and Server VAD features only work on plugin versions above <strong>v1.5.1</strong>.</p>
 </div>
 
+<p><strong>Mac Shipping Note:</strong> For packaged Mac builds, if you run into mic input not being picked up or realtime/API connection failures (for example, connection status 0), copy <code>cacert.pem</code> from <code>&lt;UE_ENGINE_PATH&gt;/Engine/Content/Certificates/ThirdParty</code> into <code>&lt;Project&gt;/Content/Certificates</code>, then add that Certificates folder to both <em>Additional Non-Asset Directories To Package</em> and <em>Additional Non-Asset Directories To Copy</em> in Packaging settings.</p>
+
 ---
 
 ## Core Concept: A Managed Conversation

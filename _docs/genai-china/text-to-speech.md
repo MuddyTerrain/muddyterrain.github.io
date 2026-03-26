@@ -11,6 +11,8 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 
 -   **Alibaba:** Offers a range of high-quality, natural-sounding voices via the Qwen-TTS models.
 
+<p><strong>Mac Shipping Note:</strong> For packaged Mac builds, if you run into mic input not being picked up or realtime/API connection failures (for example, connection status 0), copy <code>cacert.pem</code> from <code>&lt;UE_ENGINE_PATH&gt;/Engine/Content/Certificates/ThirdParty</code> into <code>&lt;Project&gt;/Content/Certificates</code>, then add that Certificates folder to both <em>Additional Non-Asset Directories To Package</em> and <em>Additional Non-Asset Directories To Copy</em> in Packaging settings.</p>
+
 ---
 
 ## Text-to-Speech (TTS)

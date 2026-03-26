@@ -36,6 +36,24 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
     <li><strong>Image-to-3D focus.</strong> Convert concept art, photos, or rendered images into 3D models.</li>
 </ul>
 
+<h3>Which Backend Should You Pick?</h3>
+
+<ul>
+    <li>Need best open-source quality: start with Hunyuan3D.</li>
+    <li>Need very fast iteration: use TripoSR for rough ideation first.</li>
+    <li>Need richer PBR output: test Rodin and Trellis 2 on the same reference image.</li>
+    <li>Need production consistency: lock one backend per asset category (characters, props, environment) to avoid style drift.</li>
+</ul>
+
+<h3>Input Tips That Improve Results</h3>
+
+<ul>
+    <li>Use front-facing, centered references with clear silhouette separation.</li>
+    <li>Avoid heavy shadows and busy backgrounds in source images.</li>
+    <li>For hard-surface assets, include material intent in the prompt: "brushed metal", "painted aluminum", "worn edges".</li>
+    <li>For characters, run a cleanup/remesh pass before animation tests.</li>
+</ul>
+
 <h2>Integration</h2>
 
 <p><a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="track-click" data-event-name="lnk_clk_modelgen_fab" data-event-location="post_guide_hunyuan" target="_blank" rel="noopener noreferrer">GenAI Model Generator</a> integrates fal.ai alongside Meshy, Tripo AI, Hyper3D Rodin, and Google through a unified Unreal Engine API. Switch between backends with a single parameter change.</p>

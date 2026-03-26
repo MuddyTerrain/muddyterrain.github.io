@@ -40,6 +40,23 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li>OpenAI-compatible API format</li>
 </ul>
 
+<h3>When to Use Groq vs OpenRouter</h3>
+
+<ul>
+    <li>Groq: best when your priority is very low latency for live gameplay interactions.</li>
+    <li>OpenRouter: best when you need broad model choice and quick provider switching.</li>
+    <li>Hybrid: route live NPC chat to Groq and long-form generation to higher-capability models via OpenRouter.</li>
+</ul>
+
+<h3>Reliability Checklist</h3>
+
+<ul>
+    <li>Implement timeout + retry with backoff on provider calls.</li>
+    <li>Keep at least one fallback model configured for peak traffic windows.</li>
+    <li>Log first-token latency and completion latency separately to spot bottlenecks.</li>
+    <li>Guard against rate limits with queueing for non-critical requests.</li>
+</ul>
+
 <h2>How to Use Them in Unreal Engine</h2>
 
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_groq" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports both Groq and OpenRouter through its OpenAI Compatible Mode. Set the base URL and API key, and you're streaming responses from any compatible provider.</p>

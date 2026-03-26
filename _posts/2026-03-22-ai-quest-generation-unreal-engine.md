@@ -53,11 +53,29 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li><strong>Gemini 3.1</strong> — massive context window for remembering entire quest histories</li>
 </ul>
 
+  <h3>Make Generated Quests Feel Handmade</h3>
+
+  <ul>
+    <li>Add constraints, not just prompts: enforce allowed locations, item pools, and faction relationships.</li>
+    <li>Track quest fingerprints: store objective patterns and reject repeats too similar to recent quests.</li>
+    <li>Separate writing from validation: first generate narrative draft, then run a second pass that checks logic and rewards.</li>
+    <li>Respect pacing: cap high-stakes quests per hour and inject short utility quests between them.</li>
+  </ul>
+
+  <h3>Runtime Safety Checks</h3>
+
+  <ul>
+    <li>Verify every generated target (NPC, location, item) exists before publishing the quest.</li>
+    <li>Clamp rewards to economy rules to avoid inflation exploits.</li>
+    <li>Provide a fallback template quest if validation fails.</li>
+    <li>Log rejected generations to refine your prompts and schema over time.</li>
+  </ul>
+
 <h2>Tools</h2>
 
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_quests" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> provides structured JSON output, function calling, and streaming across all major providers. For offline quest generation, <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="track-click" data-event-name="lnk_clk_genai_llama_fab" data-event-location="post_guide_quests" target="_blank" rel="noopener noreferrer">GenAI Llama</a> runs open-source models locally.</p>
 
 <div class="button-row">
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_quests_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_quests_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_quests_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
 </div>

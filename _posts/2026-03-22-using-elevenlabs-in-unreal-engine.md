@@ -43,6 +43,23 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <p>With streaming, all steps overlap — the character starts speaking while the AI is still generating text.</p>
 
+<h3>Voice Direction Tips That Matter In-Game</h3>
+
+<ul>
+    <li>Assign one voice profile per major character and keep it stable for identity consistency.</li>
+    <li>Use short sentence chunks for combat or high-tempo scenes to avoid late playback starts.</li>
+    <li>Normalize output loudness before spatialization so dialogue sits well in the mix.</li>
+    <li>Maintain a small local cache of recently generated lines to hide transient API latency.</li>
+</ul>
+
+<h3>Common Mistakes</h3>
+
+<ul>
+    <li>Overlong lines: long paragraphs sound unnatural. Split dialogue into intentional beats.</li>
+    <li>No fallback path: always provide subtitle/text fallback if audio generation fails.</li>
+    <li>Uniform delivery: vary style prompts by emotional state (calm, urgent, sarcastic).</li>
+</ul>
+
 <h2>Integration</h2>
 
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_elevenlabs" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> integrates ElevenLabs TTS and Scribe alongside all major LLM providers. Chain them in Blueprints or C++ — LLM response flows directly into ElevenLabs for voice synthesis.</p>

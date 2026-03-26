@@ -11,7 +11,7 @@ This guide walks you through installing the plugin, configuring it, and generati
 
 ## Installation
 
-1.  Install the plugin from the Fab marketplace to your engine version.
+1.  Install the plugin from the <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="track-click" data-event-name="lnk_clk_modelgen_fab" data-event-location="docs_modelgen_getting_started" target="_blank" rel="noopener noreferrer">Fab marketplace</a> to your engine version.
 2.  Open your Unreal project and go to **Edit > Plugins**.
 3.  Search for **GenAI Model Generator** and enable it.
 4.  Restart the editor if prompted.

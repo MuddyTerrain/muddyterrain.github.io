@@ -39,6 +39,23 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li><strong>Google ecosystem.</strong> Integrates naturally with Google Cloud TTS, Imagen, and other Google services.</li>
 </ul>
 
+<h3>Practical Model Routing</h3>
+
+<ul>
+    <li>Use Gemini 3.1 Pro for long-context tasks (quest recaps, lore-heavy NPCs).</li>
+    <li>Use Gemini Live only when voice interactivity matters; otherwise text + TTS is cheaper.</li>
+    <li>Use Imagen for visual asset generation and keep text models focused on logic/dialogue.</li>
+</ul>
+
+<h3>Latency and Cost Controls</h3>
+
+<ul>
+    <li>Trim injected context to only the current mission + nearby world state.</li>
+    <li>Cache repeated system prompts and static lore snippets on your side.</li>
+    <li>Set token caps for ambient NPC chatter to prevent runaway costs.</li>
+    <li>Fallback to a cheaper model for non-critical interactions.</li>
+</ul>
+
 <h2>Integration</h2>
 
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_gemini_pro" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports the full Google Gemini API — chat, streaming, vision, function calling, Gemini Live, Imagen, and TTS. Works alongside OpenAI, Anthropic, and other providers in the same project.</p>

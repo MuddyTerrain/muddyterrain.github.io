@@ -13,7 +13,8 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 The plugin connects to 7 AI providers across 4 API backends through a single, unified interface with a fully integrated editor widget featuring provider selection, contextual guidance, progress tracking, and direct Content Browser import.
 
 <div class="button-row">
-  <a href="/t/discord" class="cta-button primary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="cta-button primary track-click" data-event-name="btn_clk_modelgen_fab" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
+  <a href="/t/discord" class="cta-button secondary track-click" data-event-name="btn_clk_join_discord" data-event-location="top_cta" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </div>
 ---
 

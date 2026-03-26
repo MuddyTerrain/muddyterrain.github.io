@@ -7,7 +7,7 @@ author: "Muddy Terrain"
 tags: [tools, unreal, gamedev, ai, china]
 lang: zh
 hreflang_group: genai-china
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload//q_60/v1756928672/b7ea1f55-b9f3-4e3c-90b0-8367bcec72a0.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp
 ---
 
 

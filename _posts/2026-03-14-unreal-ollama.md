@@ -7,7 +7,7 @@ author: "Muddy Terrain"
 tags: [tools, unreal, gamedev, ai, ollama, local-ai, llama, genai-llama, mistral, phi, gemma, llama-cpp, embedded-inference, lm-studio, vllm]
 lang: en
 hreflang_group: unreal-ollama
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
 
 
@@ -16,7 +16,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="GenAI Llama - Local AI Models in Unreal Engine" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp" alt="GenAI Llama - Local AI Models in Unreal Engine" style="width: 100%;">
 </figure>
 </div>
 

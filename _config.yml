@@ -21,7 +21,7 @@ plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title: "Muddy Terrain Games"
-description: "AI plugins for Unreal Engine. Integrate ChatGPT, Qwen, Meshy, Claude, Gemini, Llama, Mistral, DeepSeek, and 30+ LLMs into your game with GenAI for Unreal. Generate 3D models with AI. Run local AI with Ollama. Blueprint and C++ support."
+description: "AI plugins for Unreal Engine. Integrate ChatGPT, Qwen, Meshy, Claude, Gemini, Llama, Mistral, Tripo, DeepSeek, and 30+ LLMs into your game with GenAI for Unreal."
 url: "https://muddyterrain.com"
 author: ""
 

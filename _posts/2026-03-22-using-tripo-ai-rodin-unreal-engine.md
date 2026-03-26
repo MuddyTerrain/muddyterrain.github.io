@@ -37,6 +37,23 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
     <li><strong>Fine-grained control</strong> — more parameters than any other provider for precise results</li>
 </ul>
 
+<h3>When to Choose Tripo vs Rodin</h3>
+
+<ul>
+    <li>Choose Tripo for rapid prototyping, gameplay blockouts, and fast iteration loops.</li>
+    <li>Choose Rodin when art direction is locked and you need higher-fidelity final assets.</li>
+    <li>Use both in sequence: Tripo for ideation, Rodin for final pass.</li>
+</ul>
+
+<h3>Production Tips</h3>
+
+<ul>
+    <li>Export two versions per asset: high detail for cinematics, optimized mesh for gameplay.</li>
+    <li>Keep prompt templates per asset family (weapons, creatures, props) for style consistency.</li>
+    <li>Run quick collision and scale checks immediately after import to catch pipeline issues early.</li>
+    <li>If topology is acceptable but texture style is off, retexture instead of full regenerate.</li>
+</ul>
+
 <h2>Integration</h2>
 
 <p>Both are available through <a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="track-click" data-event-name="lnk_clk_modelgen_fab" data-event-location="post_guide_tripo_rodin" target="_blank" rel="noopener noreferrer">GenAI Model Generator</a> alongside Meshy, fal.ai, and Google. One plugin, 7 providers, unified Blueprint and C++ API.</p>

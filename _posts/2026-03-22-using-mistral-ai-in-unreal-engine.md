@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/using-mistral-ai-in-unreal-engine
 author: "Muddy Terrain"
 tags: [unreal-engine, mistral, mixtral, mistral-ai, open-source-ai, local-ai, game-development, ollama]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="Using Mistral AI in Unreal Engine" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp" alt="Using Mistral AI in Unreal Engine" style="width: 100%;">
 </figure>
 </div>
 
@@ -40,7 +40,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 
 <h2>Running Mistral in Unreal Engine</h2>
 
-<h3>Local with GenAI Llama (Free)</h3>
+<h3>Local with GenAI Llama</h3>
 
 <p><a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="track-click" data-event-name="lnk_clk_genai_llama_fab" data-event-location="post_guide_mistral" target="_blank" rel="noopener noreferrer">GenAI Llama</a> works with any Ollama model, including Mistral. Install Ollama, run <code>ollama pull mistral</code>, and start chatting with Mistral in Unreal Engine — no API keys, no internet required.</p>
 
@@ -52,12 +52,12 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 
 <ol>
     <li>Install <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a> and pull Mistral: <code>ollama pull mistral</code></li>
-    <li>Install GenAI Llama (free) or GenAI for Unreal</li>
+    <li>Install GenAI Llama or GenAI for Unreal</li>
     <li>Connect to <code>http://localhost:11434</code></li>
     <li>Start using Mistral AI in your Blueprints or C++ code</li>
 </ol>
 
 <div class="button-row">
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_mistral_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_mistral_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_mistral_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
 </div>

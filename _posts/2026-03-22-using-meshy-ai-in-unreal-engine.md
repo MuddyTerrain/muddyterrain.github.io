@@ -29,6 +29,26 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBa
 <h3>AI Retexturing</h3>
 <p>Take an existing 3D model and apply new AI-generated textures based on a text description. Transform a gray-box placeholder into a polished asset, or explore different visual directions for the same geometry.</p>
 
+<h3>Practical Workflow That Saves Time</h3>
+
+<ol>
+  <li>Start with <strong>Text-to-3D</strong> for shape exploration (3-5 prompt variants).</li>
+  <li>Pick the best silhouette and run <strong>Retexture</strong> instead of regenerating from scratch.</li>
+  <li>Use <strong>Remesh</strong> before gameplay testing to control triangle count early.</li>
+  <li>Only then do final material polish and LOD setup in Unreal.</li>
+</ol>
+
+<p>This sequence avoids the common trap of perfecting materials on geometry you will throw away later.</p>
+
+<h3>Common Pitfalls (and Fixes)</h3>
+
+<ul>
+  <li>Noisy topology on complex prompts: simplify the prompt first, then add detail during retexture.</li>
+  <li>Weak silhouettes: include shape language words like "broad shoulders", "thin legs", "chunky base".</li>
+  <li>Bad image-to-3D results: use single-subject reference images with neutral backgrounds.</li>
+  <li>Too heavy for runtime: cap polycount early and test imported meshes in your target platform profile.</li>
+</ul>
+
 <h2>Using Meshy in Unreal Engine</h2>
 
 <p><a href="/t/genai-model-generator-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=modelgen-plugin" class="track-click" data-event-name="lnk_clk_modelgen_fab" data-event-location="post_guide_meshy" target="_blank" rel="noopener noreferrer">GenAI Model Generator</a> integrates Meshy (along with Tripo AI, Hyper3D Rodin, fal.ai, and Google) through a unified API. Blueprint async nodes with real-time progress tracking, task cancellation, and multiple export formats (GLB, FBX, OBJ, USDZ, STL).</p>

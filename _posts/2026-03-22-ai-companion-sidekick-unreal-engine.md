@@ -39,6 +39,25 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li><strong>Voice</strong> — use TTS to give them a unique voice (ElevenLabs, OpenAI TTS)</li>
 </ol>
 
+<h3>Implementation Loop (What Actually Works)</h3>
+
+<ol>
+    <li>Keep a short memory buffer for live dialogue (last 10-20 turns).</li>
+    <li>Store long-term memory as compact facts ("player saved companion in chapter 2").</li>
+    <li>Inject only relevant world state each turn (location, nearby actors, active objective).</li>
+    <li>Use function calling for actions, not free-form text parsing.</li>
+    <li>Stream responses and interrupt cleanly if combat or cutscenes begin.</li>
+</ol>
+
+<h3>Companion Guardrails</h3>
+
+<ul>
+    <li>Lore drift: add hard constraints in system prompt (factions, timeline, forbidden knowledge).</li>
+    <li>Over-talking: enforce max token length and cooldown timers between unsolicited lines.</li>
+    <li>Gameplay conflicts: prioritize gameplay events over dialogue generation callbacks.</li>
+    <li>Cost spikes: route ambient chatter to smaller/local models and reserve premium models for story beats.</li>
+</ul>
+
 <h2>Choosing a Model</h2>
 
 <ul>
@@ -55,5 +74,5 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <div class="button-row">
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_companion_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_companion_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_companion_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
 </div>

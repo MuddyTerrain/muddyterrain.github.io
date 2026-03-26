@@ -50,5 +50,5 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
 
 <div class="button-row">
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_multimodal_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_multimodal_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_multimodal_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
 </div>

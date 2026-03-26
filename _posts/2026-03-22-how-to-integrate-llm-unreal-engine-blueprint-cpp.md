@@ -50,7 +50,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBa
     <li><strong>Advanced:</strong> Function calling, structured JSON output, streaming, vision, conversation history</li>
 </ul>
 
-<h3>Local AI — GenAI Llama (Free)</h3>
+<h3>Local AI — GenAI Llama</h3>
 <p><a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="track-click" data-event-name="lnk_clk_genai_llama_fab" data-event-location="post_guide_integrate_llm" target="_blank" rel="noopener noreferrer">GenAI Llama</a> connects to Ollama for local model inference:</p>
 
 <ul>

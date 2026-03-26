@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/local-ai-models-unreal-engine-ollama
 author: "Muddy Terrain"
 tags: [unreal-engine, ollama, local-ai, privacy, ai, game-development]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="Unreal Ollama - Local AI Models in Unreal Engine" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp" alt="Unreal Ollama - Local AI Models in Unreal Engine" style="width: 100%;">
 </figure>
 </div>
 
@@ -61,6 +61,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 </ol>
 
 <div class="button-row">
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_ollama_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal (Full Plugin)</a>
 </div>

@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/using-llama-3-in-unreal-engine
 author: "Muddy Terrain"
 tags: [unreal-engine, llama, meta-ai, llama-3, open-source-ai, local-ai, game-development, ollama]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="Using Llama 3 in Unreal Engine - Meta AI Integration" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp" alt="Using Llama 3 in Unreal Engine - Meta AI Integration" style="width: 100%;">
 </figure>
 </div>
 
@@ -60,7 +60,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 <ol>
     <li>Install <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a></li>
     <li>Pull a Llama model: <code>ollama pull llama3.2</code></li>
-    <li>Install GenAI Llama (free) or GenAI for Unreal</li>
+    <li>Install GenAI Llama or GenAI for Unreal</li>
     <li>Point the plugin at <code>http://localhost:11434</code></li>
     <li>Start chatting with Llama from Blueprints or C++</li>
 </ol>
@@ -76,6 +76,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 </ul>
 
 <div class="button-row">
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_llama3_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_llama3_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_llama3_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
 </div>

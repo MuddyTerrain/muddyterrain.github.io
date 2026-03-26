@@ -5,12 +5,12 @@ category: guides
 permalink: /blog/offline-ai-for-games-unreal-engine
 author: "Muddy Terrain"
 tags: [unreal-engine, offline-ai, local-ai, privacy, no-internet, single-player, edge-ai, game-development, ollama]
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
 
 <div class="image-wrapper">
 <figure>
-    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screenshot_2025-09-28_133409_e7uag9.webp" alt="Offline AI for Games - No Internet Required" style="width: 100%;">
+    <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp" alt="Offline AI for Games - No Internet Required" style="width: 100%;">
 </figure>
 </div>
 
@@ -63,6 +63,6 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1759079669/Screen
 <p><a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="track-click" data-event-name="lnk_clk_genai_fab" data-event-location="post_guide_offline" target="_blank" rel="noopener noreferrer">GenAI for Unreal</a> supports Ollama through OpenAI Compatible Mode, so you can run local and cloud models through the same codebase and switch at runtime based on connectivity.</p>
 
 <div class="button-row">
-  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_offline_cta" target="_blank" rel="noopener noreferrer">GenAI Llama (Free)</a>
+  <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="post_guide_offline_cta" target="_blank" rel="noopener noreferrer">GenAI Llama</a>
   <a href="/t/genai-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-plugin" class="cta-button secondary track-click" data-event-name="btn_clk_genai_fab" data-event-location="post_guide_offline_cta" target="_blank" rel="noopener noreferrer">GenAI for Unreal on Fab</a>
 </div>

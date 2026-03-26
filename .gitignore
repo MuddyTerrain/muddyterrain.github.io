@@ -11,6 +11,7 @@ vendor
 
 # Editor files
 .vscode/
+.claude/
 *.swp
 *.swo
 *~

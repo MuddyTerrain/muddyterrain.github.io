@@ -4,10 +4,10 @@ title: Documentation
 permalink: /docs/
 ---
 
-<div class="product-section-header">
+<!-- <div class="product-section-header">
   <h2>Documentation Center</h2>
   <p>Welcome! Here you'll find comprehensive guides and references for all our products.</p>
-</div>
+</div> -->
 
 <div class="doc-grid-container">
   {% for doc in site.documents %}

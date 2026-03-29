@@ -3,6 +3,8 @@ layout: documentation
 title: Building Long Conversations
 permalink: /docs/genai-china/building-long-conversations/
 nav_order: 8
+description: "Manage conversation history and implement stateful AI dialogue with context retention in Unreal Engine."
+tags: [genai-china, conversations, npc-dialogue, chat-history, context-management, game-ai]
 ---
 
 Creating believable, stateful conversations is a cornerstone of compelling AI characters. This guide covers the principles and techniques for managing conversation history, ensuring your NPCs can remember past interactions and respond intelligently.

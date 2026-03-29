@@ -3,6 +3,8 @@ layout: documentation
 title: Features
 permalink: /docs/ci-cd-unreal/features/
 nav_order: 5
+description: "Overview of Unreal CI/CD pipeline features including multi-version packaging, example project generation, cloud uploads, and caching."
+tags: [features, unreal-ci-cd, plugin-packaging, automation, multi-platform]
 ---
 
 This page provides a high-level overview of the core features of the CI/CD pipeline.

@@ -3,6 +3,8 @@ layout: documentation
 title: Text-to-Speech
 permalink: /docs/genai-china/text-to-speech/
 nav_order: 11
+description: "Convert text to natural-sounding speech with Alibaba TTS models for NPC dialogue and audio generation."
+tags: [genai-china, text-to-speech, tts, audio-generation, voice-synthesis, alibaba, game-audio]
 ---
 
 Bring your characters and worlds to life with voice. The plugin provides a seamless pipeline to convert text into natural-sounding speech (TTS) using powerful AI models.
@@ -151,5 +153,5 @@ void AMyActor::StreamTTS(const FString& TextToSpeak)
 
 ## Audio Format Notes
 
--   **TTS Output:** The plugin receives audio from providers in raw **PCM format**. The `ConvertPCMAudioToSoundWave` utility is essential for making this data playable.
--   **Streaming TTS Output:** Supports **PCM**, **WAV**, and **MP3** formats. The format can be configured in the TTS settings.
+-   **TTS Output (Non-Streaming):** The non-streaming TTS node returns raw **WAV audio bytes** (includes header). Use `ConvertPCMAudioToSoundWave` to convert it into a playable `USoundWave`.
+-   **Streaming TTS Output:** Supports **PCM**, **WAV**, **MP3**, and **Opus** formats, configurable in the TTS Streaming Settings. When using **PCM** format, each `AudioDataChunk` contains raw PCM 16-bit signed little-endian, mono audio at your configured `SampleRate` (default 24000). Set your Procedural Sound Wave's `SampleRate` and `NumChannels=1` accordingly.

@@ -3,6 +3,8 @@ layout: documentation
 title: OpenAI Compatible Mode
 permalink: /docs/genai-unreal/openai-compatible-mode/
 nav_order: 16
+description: Route OpenAI API calls to compatible providers like Ollama, Mistral, Groq, and local LLMs for flexibility and cost savings.
+tags: [unreal-engine, genai, openai-compatible, local-llm, ollama, mistral, groq, provider-switching]
 ---
 
 OpenAI Compatible Mode allows you to seamlessly switch all OpenAI-related API calls (chat completions, real-time conversations, text-to-speech, image generation, and more) to use a different API key and endpoint. This feature is particularly useful for routing requests to local LLMs, self-hosted models, or other OpenAI-compatible providers without modifying your game code.
@@ -26,7 +28,7 @@ Before enabling the mode, you need to configure the API key for the compatible p
    </div>
 
 3.  Locate the **OpenAI Compatible** section and enter your API key in the corresponding field.
-4.  Configure the custom endpoint if your provider uses a different base URL than the standard OpenAI API. In the example above we have picked Alibaba's Qwen. 
+4.  Configure the custom endpoint if your provider uses a different base URL than the standard OpenAI API. In the example above we have picked Alibaba's Qwen.
 
    > **Note:** The OpenAI Compatible key is stored securely using the same encryption as other API keys in `YourProject/Saved/Config/GenAI/secureconfig.bin`.
 
@@ -39,7 +41,7 @@ Use the provided Blueprint nodes to control when OpenAI Compatible Mode is activ
 ### Blueprint Usage
 
 <div class="image-wrapper">
-    <figure> 
+    <figure>
         <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1767465741/8d337c6c-6a63-4d76-a31e-da6fb64f7958.webp" alt="Set OpenAI Compatible Mode Blueprint Node" style="width: 100%;">
         <figcaption class="image-caption">
         The "Set OpenAI Compatible Mode" Blueprint node.
@@ -194,11 +196,11 @@ Implement fallback logic where you can switch to a compatible provider if the pr
 
 ## Troubleshooting
 
-**Q: My requests are still using the standard OpenAI key even when the mode is enabled.**  
+**Q: My requests are still using the standard OpenAI key even when the mode is enabled.**
 A: Ensure you've entered a valid API key in the "OpenAI Compatible" field in settings. Also, verify that the mode is actually enabled by checking `Is OpenAI Compatible Mode Enabled`.
 
-**Q: The custom endpoint isn't working.**  
+**Q: The custom endpoint isn't working.**
 A: Check that the endpoint URL is correct and accessible. Some providers may require specific URL formats or additional headers.
 
-**Q: Can I use this for non-OpenAI compatible providers?**  
+**Q: Can I use this for non-OpenAI compatible providers?**
 A: This mode is specifically for OpenAI-compatible APIs. For other providers, use their dedicated settings and nodes.

@@ -3,6 +3,8 @@ layout: documentation
 title: Troubleshooting & Known Issues
 permalink: /docs/ci-cd-unreal/troubleshooting/
 nav_order: 7
+description: "Solutions for common Unreal CI/CD pipeline errors including compiler issues, build failures, and configuration validation problems."
+tags: [troubleshooting, debugging, error-handling, unreal-ci-cd, known-issues]
 ---
 
 This page covers common problems and known issues you may encounter while using the pipeline.

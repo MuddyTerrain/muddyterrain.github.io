@@ -4,6 +4,8 @@ title: GenAI Model Generator - Home
 permalink: /docs/genai-modelgenerator/
 nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp
+description: "Generate 3D models and PBR textures from text or images directly in Unreal Engine using Meshy AI, Tripo AI, Fal.ai, and more."
+tags: [unreal-engine, 3d-generation, ai-assets, text-to-3d, game-development]
 ---
 
 <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874365/MainBanners_7_nxt9fw.webp" alt="GenAI Model Generator Plugin Banner">

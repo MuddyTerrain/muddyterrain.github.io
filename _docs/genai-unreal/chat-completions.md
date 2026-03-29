@@ -3,6 +3,8 @@ layout: documentation
 title: Chat Completions
 permalink: /docs/genai-unreal/chat-completions/
 nav_order: 8
+description: Send text and multimodal chat messages to OpenAI, Google, and Anthropic models with complete code examples and best practices.
+tags: [unreal-engine, genai, chat-completions, multimodal, vision, openai, google-gemini, anthropic]
 ---
 
 Chat completions are the core of conversational AI in the GenAI for Unreal plugin. This page covers how to send text-based and multimodal chat requests to AI models, including best practices for structuring messages and handling responses.
@@ -137,7 +139,104 @@ The plugin provides a dedicated class, `UGenOAIResponses`, that handles the Resp
 | `MaxOutputTokens` | `int32` | Maximum tokens to generate (default: 4096). |
 | `ReasoningEffort` | `EGenAIResponsesReasoningEffort` | Controls reasoning depth: `Low`, `Medium`, `High`, or `Default`. |
 | `Tools` | `TArray<FGenAIToolDefinition>` | Optional function/tool definitions the model can call. |
-| `AdditionalToolsJson` | `FString` | Raw JSON for built-in tools like `web_search` or `code_interpreter`. |
+| `AdditionalToolsJson` | `FString` | Raw JSON for built-in tools like `web_search` or `image_generation`. |
+
+#### Built-in Tools (`AdditionalToolsJson`)
+
+The Responses API supports OpenAI's built-in tools alongside custom function tools. To enable them, pass a JSON array string to the `AdditionalToolsJson` field. These are appended to any function tools you define in the `Tools` array.
+
+In Blueprints, the `Additional Tools Json` field on the **Make Gen OpenAI Responses Settings** node accepts the same JSON strings shown below.
+
+---
+
+##### Image Generation Tool
+
+Allows the model to generate images inline during a conversation. See the [Image Generation](/docs/genai-unreal/image-generation/) page for full details and C++ examples.
+
+| Parameter | Values | Default |
+|---|---|---|
+| `quality` | `low`, `medium`, `high`, `auto` | `auto` |
+| `size` | `1024x1024`, `1024x1536`, `1536x1024`, `auto` | `auto` |
+| `output_format` | `png`, `webp`, `jpeg` | `png` |
+| `output_compression` | `0` - `100` (lower = smaller file) | `100` |
+| `background` | `transparent`, `opaque`, `auto` | `auto` |
+| `partial_images` | `0` - `3` (progressive previews) | `0` |
+
+**Examples:**
+
+```cpp
+// Quick draft — low quality, small size, JPEG for speed
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "low", "size": "1024x1024", "output_format": "jpeg", "output_compression": 60}])");
+
+// High-res portrait (e.g., character art, vertical posters)
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "high", "size": "1024x1536", "output_format": "png"}])");
+
+// Wide landscape (e.g., environment concept art, loading screens)
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "high", "size": "1536x1024"}])");
+
+// Transparent background (e.g., UI icons, item sprites)
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "medium", "size": "1024x1024", "background": "transparent", "output_format": "png"}])");
+```
+
+---
+
+##### Web Search Tool
+
+Allows the model to search the web for up-to-date information. Useful for grounding responses in real-world data.
+
+| Parameter | Values | Default |
+|---|---|---|
+| `search_context_size` | `low`, `medium`, `high` | `medium` |
+| `user_location` | Object with `type`, `city`, `country`, `region`, `timezone` | none |
+
+`search_context_size` controls how much search result content is fed to the model — `low` is cheaper/faster, `high` gives the model more context to work with.
+
+**Examples:**
+
+```cpp
+// Basic web search — default settings
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "web_search"}])");
+
+// Thorough search — more context for complex research questions
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "web_search", "search_context_size": "high"}])");
+
+// Lightweight search — cheaper, faster, for simple fact lookups
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "web_search", "search_context_size": "low"}])");
+
+// Location-aware search — results biased toward a specific region
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "web_search", "search_context_size": "medium", "user_location": {"type": "approximate", "country": "JP", "city": "Tokyo"}}])");
+```
+
+---
+
+##### Code Interpreter Tool (Experimental)
+
+Allows the model to write and execute Python code in a sandboxed environment. Requires a container configuration.
+
+```cpp
+// Auto-create a container (simplest setup)
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "code_interpreter", "container": {"type": "auto"}}])");
+```
+
+##### File Search Tool
+
+Allows the model to search through files you've uploaded to an OpenAI vector store. Requires a vector store ID.
+
+```cpp
+// Search a specific vector store
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "file_search", "vector_store_ids": ["vs_abc123"]}])");
+```
+
+---
+
+##### Combining Multiple Tools
+
+You can enable any combination of tools in a single request:
+
+```cpp
+// Web search + high-quality image generation
+Settings.AdditionalToolsJson = TEXT(R"([{"type": "web_search", "search_context_size": "high"}, {"type": "image_generation", "quality": "high", "size": "1536x1024"}])");
+```
 
 #### C++ Example
 
@@ -153,17 +252,20 @@ void AMyActor::RequestFromResponsesAPI()
     Settings.Temperature = 0.7f;
     Settings.ReasoningEffort = EGenAIResponsesReasoningEffort::High;
 
+    // Optional: Enable built-in tools (web search, image generation, etc.)
+    Settings.AdditionalToolsJson = TEXT("[{\"type\": \"web_search\"}]");
+
     FGenChatMessage UserMsg;
     UserMsg.Role = TEXT("user");
     UserMsg.TextContent = TEXT("Design a boss encounter for a dark fantasy RPG.");
     Settings.Messages.Add(UserMsg);
 
     UGenOAIResponses::SendResponsesRequest(Settings,
-        FOnResponsesCompletionResponse::CreateLambda([](const FString& Response, const FString& Error, bool bSuccess)
+        FOnResponsesCompletionResponse::CreateLambda([](const FGenOAIResponsesResult& Result, const FString& Error, bool bSuccess)
         {
             if (bSuccess)
             {
-                UE_LOG(LogTemp, Log, TEXT("Responses API result: %s"), *Response);
+                UE_LOG(LogTemp, Log, TEXT("Responses API result: %s"), *Result.ResponseText);
             }
             else
             {

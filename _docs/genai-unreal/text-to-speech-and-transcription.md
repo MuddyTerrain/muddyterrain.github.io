@@ -3,6 +3,8 @@ layout: documentation
 title: Text-to-Speech and Transcription
 permalink: /docs/genai-unreal/text-to-speech-and-transcription/
 nav_order: 12
+description: Convert text to natural voice and transcribe audio using OpenAI Whisper, Google TTS, ElevenLabs, and Inworld AI.
+tags: [unreal-engine, genai, text-to-speech, tts, speech-to-text, transcription, voice, openai, google, elevenlabs, inworld]
 ---
 
 Bring your characters and worlds to life with voice. The plugin provides a seamless two-way audio pipeline, allowing you to convert text into natural-sounding speech (TTS) and transcribe spoken audio back into text (STT) using powerful AI models.
@@ -13,10 +15,10 @@ Bring your characters and worlds to life with voice. The plugin provides a seaml
 -   **Google Text-to-Speech:** Provides a wide variety of voices and language options.
 -   **ElevenLabs:** Offers industry-leading, emotionally expressive voices for TTS and transcription. The plugin also supports their new sound effect generation feature (see the [Sound Effects](/docs/genai-unreal/sound-effects/) page for more). (Supports Streaming)
 -   **Inworld AI:** Purpose-built for game characters, Inworld provides high-quality TTS with both standard and real-time streaming endpoints. Models include `inworld-tts-1.5-max`, `inworld-tts-1.5-mini`, and `inworld-tts-1`. (Supports Streaming)
-  
+
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
-  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Available ElevenLabs Voices</p>
-  <p style="margin: 5px 0 0 0; color: #1f6a9c;">To get a list of all available voices and their corresponding IDs from ElevenLabs, use the <code>Get Voices</code> node. For instructions, please refer to the documentation: <a href="/docs/genai-unreal/models-and-voices/#2-dynamically-fetching-all-eleven-labs-voices">Dynamically Fetching All ElevenLabs Voices</a>.</p>
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Available ElevenLabs Voices</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">To get a list of all available voices and their corresponding IDs from ElevenLabs, use the <code>Get Voices</code> node. For instructions, please refer to the documentation: <a href="/docs/genai-unreal/models-and-voices/#2-dynamically-fetching-all-eleven-labs-voices">Dynamically Fetching All ElevenLabs Voices</a>.</p>
 </div>
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
@@ -107,7 +109,7 @@ The collapsed graph above that says `Setup Procedural Sound Wave` looks somethin
 </div>
 
 
-Please refer to the example project for more details, the documentation will be updated here soon. 
+Please refer to the example project for more details, the documentation will be updated here soon.
 
 ---
 
@@ -166,7 +168,7 @@ void AMyActor::TranscribeAudio(const TArray<uint8>& AudioData)
 
 To simplify audio handling, the plugin includes a powerful set of helper functions available in both C++ and Blueprints. This class, `UGenAIAudioUtils`, handles the necessary data conversions to get audio into and out of the formats required by AI services.
 
-Here’s a brief overview of the most important functions and when to use them:
+Here's a brief overview of the most important functions and when to use them:
 
 -   **Convert PCM Audio To SoundWave:**
     * **What it does:** This is the most essential function for TTS. It takes the raw PCM audio data returned by the AI provider and converts it into a standard, playable `USoundWave` asset.
@@ -184,7 +186,16 @@ Here’s a brief overview of the most important functions and when to use them:
     * **What it does:** Extracts the raw audio data from an existing `USoundWave` asset.
     * **When to use it:** Useful if you have pre-existing audio assets in your project that you want to send to a transcription service.
 
-## Audio Format Notes 
+-   **Convert Float Array To PCM16 Bytes:**
+    * **What it does:** Converts a raw float audio buffer (from a capture component) into 16-bit PCM bytes, resampled to 24kHz mono — the format required by realtime AI services.
+    * **When to use it:** Use this when converting mic input from the **Realtime Audio Capture Component** before sending it to the Realtime API or ElevenLabs Agents. Pass the component's `CaptureNumChannels` and `ComponentSampleRate` properties to ensure correct mono/stereo handling.
+
+<div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">Important: Capture Device Channels</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">Microphone devices vary — some are mono (1 channel), some are stereo (2 channels). The <strong>Realtime Audio Capture Component</strong> now exposes a <code>CaptureNumChannels</code> property (BlueprintReadOnly) that reports the actual channel count detected from the input device. Always pass this value to <code>ConvertFloatArrayToPCM16Bytes</code> instead of hardcoding a channel count, otherwise the audio conversion will produce garbled results.</p>
+</div>
+
+## Audio Format Notes
 
 -   **TTS Output:** The plugin currently receives audio from providers in raw **PCM format**. The `ConvertPCMAudioToSoundWave` utility is essential for making this data playable.
 -   **Transcription Input:** The transcription nodes accept raw audio data, which should be in a format supported by the provider (e.g., WAV, MP3, M4A). You are responsible for recording or loading audio into a byte array first.

@@ -4,6 +4,8 @@ title: GenAI Llama - Home
 permalink: /docs/genai-llama/
 nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
+description: "Run local LLMs in Unreal Engine with Ollama, LM Studio, or embedded llama.cpp inference. Fully offline AI for games on PC, mobile, and console."
+tags: [unreal-engine, ollama, llama-cpp, local-llm, offline-ai, game-development]
 ---
 
 <div class="image-wrapper">
@@ -17,7 +19,7 @@ image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBa
 GenAI Llama supports two modes of operation:
 
 - **HTTP Providers** — Connect to any local inference server (Ollama, LM Studio, llama.cpp server, vLLM, LocalAI, Jan, or any OpenAI-compatible endpoint). Works out of the box.
-- **Embedded Inference (llama.cpp)** — Run GGUF models directly inside your game process with no server required. Works offline on PC and mobile. Optional — requires compiling llama.cpp libraries for your target platform.
+- **Embedded Inference (llama.cpp)** — Run GGUF models directly inside your game process with no server required. Works offline on PC and mobile. Optional — requires downloading prebuilt libraries or compiling llama.cpp for your target platform.
 
 <div class="button-row">
   <a href="/t/genai-llama-fab?utm_source=muddysite&utm_medium=main-site&utm_campaign=genai-llama-plugin" class="cta-button primary track-click" data-event-name="btn_clk_genai_llama_fab" data-event-location="docs_top_cta" target="_blank" rel="noopener noreferrer">View on Fab.com</a>
@@ -33,10 +35,10 @@ GenAI Llama supports two modes of operation:
 | Plugin source code | Yes | Full C++ source for all features |
 | HTTP provider support | Yes | Works immediately with any local inference server |
 | llama.cpp headers | Yes | In `ThirdParty/LlamaCpp/include/` |
-| llama.cpp compiled libraries | No | User-compiled — see [Embedded Inference Setup](#embedded-inference-setup) |
+| llama.cpp compiled libraries | No | Download prebuilt or compile — see [Embedded Inference Setup](#embedded-inference-setup) |
 | Example project | Yes | Blueprint examples demonstrating all features |
 
-**HTTP providers work out of the box.** Embedded inference is opt-in and requires compiling llama.cpp for your target platform and GPU backend.
+**HTTP providers work out of the box.** Embedded inference is opt-in — download prebuilt libraries from [llama.cpp GitHub releases](https://github.com/ggml-org/llama.cpp/releases) or compile from source.
 
 ---
 
@@ -90,7 +92,7 @@ GenAI Llama supports two modes of operation:
 
 ## Quick Start — Embedded Inference
 
-1. Compile llama.cpp for your platform (see [Embedded Inference Setup](#embedded-inference-setup)).
+1. Download prebuilt libraries or compile llama.cpp for your platform (see [Embedded Inference Setup](#embedded-inference-setup)).
 2. Place a GGUF model file in your project (e.g., `Content/Models/tinyllama-1.1b-q4_k_m.gguf`).
 3. In a Blueprint, use **"Load Embedded Model"**:
    - **Model Alias** = a name you choose (e.g., `npc-brain`)
@@ -328,29 +330,24 @@ void AMyActor::SendMessage(const FString& UserInput)
 
 ## Embedded Inference Setup
 
-Embedded inference runs llama.cpp directly inside your game process. This is optional — the plugin ships without pre-compiled llama.cpp libraries because they are GPU-backend-specific, platform-specific, large, and frequently updated.
+Embedded inference runs llama.cpp directly inside your game process. This is optional — HTTP providers work out of the box.
 
-### How It Works
+### Option A: Download Prebuilt Libraries (Easiest)
 
-The plugin's `Build.cs` automatically detects llama.cpp libraries at compile time:
+Download prebuilt shared libraries from [llama.cpp GitHub Releases](https://github.com/ggml-org/llama.cpp/releases) and place them in `ThirdParty/LlamaCpp/lib/<Platform>/`. Available for **Windows, macOS, and Linux**.
 
-- **Libraries found** in `ThirdParty/LlamaCpp/lib/<Platform>/` → `WITH_LLAMACPP=1`, embedded inference enabled
-- **Libraries not found** → `WITH_LLAMACPP=0`, embedded inference disabled, HTTP providers still work
+| Platform | Archive Pattern |
+|---|---|
+| Windows (NVIDIA) | `llama-b*-bin-win-cuda-cu*.*.zip` |
+| Windows (AMD/Intel) | `llama-b*-bin-win-vulkan-*.zip` |
+| macOS (Apple Silicon) | `llama-b*-bin-macos-arm64.zip` |
+| Linux (NVIDIA) | `llama-b*-bin-ubuntu-x64-cuda-cu*.*.tar.gz` |
 
-### Directory Structure
+Copy the `.dll` / `.dylib` / `.so` files into the platform directory, rebuild your project, and you're done.
 
-```
-ThirdParty/LlamaCpp/
-    include/            <- Headers (already included, do not modify)
-    lib/
-        Win64/          <- Windows .lib files
-        Mac/            <- macOS .a files
-        Linux/          <- Linux .a files
-        Android/        <- Android .a files (ARM64)
-        IOS/            <- iOS .a files (ARM64)
-```
+### Option B: Compile From Source (Advanced)
 
-### Quick Build (Windows, CUDA)
+Build llama.cpp yourself for custom GPU backends, optimizations, or mobile platforms (Android/iOS).
 
 ```bash
 git clone https://github.com/ggml-org/llama.cpp.git
@@ -359,7 +356,30 @@ cmake -B build -DBUILD_SHARED_LIBS=OFF -DGGML_CUDA=ON
 cmake --build build --config Release
 ```
 
-Copy the resulting `.lib` files into `ThirdParty/LlamaCpp/lib/Win64/`. See `ThirdParty/LlamaCpp/BUILD_INSTRUCTIONS.md` for all platforms and GPU backends.
+Copy the `.lib` / `.a` files into `ThirdParty/LlamaCpp/lib/<Platform>/`.
+
+### How Auto-Detection Works
+
+The plugin automatically detects libraries at compile time:
+
+- **Static libraries** (`.lib`/`.a`) found → linked at compile time
+- **Shared libraries** (`.dll`/`.dylib`/`.so`) found → loaded at runtime
+- **No libraries found** → embedded inference disabled, HTTP providers still work
+
+### Directory Structure
+
+```
+ThirdParty/LlamaCpp/
+    include/            <- Headers (already included, do not modify)
+    lib/
+        Win64/          <- .lib or .dll files
+        Mac/            <- .a or .dylib files
+        Linux/          <- .a or .so files
+        Android/        <- .a files (ARM64, compile only)
+        IOS/            <- .a files (ARM64, compile only)
+```
+
+For full per-platform instructions, see the [Embedded Inference Setup Guide](/docs/genai-llama/embedded-setup/).
 
 ### GPU Backend Notes
 
@@ -413,7 +433,8 @@ All async actions support cancellation via `Cancel()`:
 
 #### Embedded Inference Not Available
 - Check build log for `GenAILlama: llama.cpp libraries found` or `not found`.
-- Verify `.lib` / `.a` files are in the correct `ThirdParty/LlamaCpp/lib/<Platform>/` directory.
+- Verify library files (`.lib`/`.a`/`.dll`/`.dylib`/`.so`) are in the correct `ThirdParty/LlamaCpp/lib/<Platform>/` directory.
+- See the [Embedded Inference Setup Guide](/docs/genai-llama/embedded-setup/) for detailed troubleshooting.
 
 #### Multimodal Not Working
 - Use a vision-capable model (e.g., `llava`, `llama3.2-vision`).

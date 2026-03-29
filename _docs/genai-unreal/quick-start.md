@@ -3,6 +3,8 @@ layout: documentation
 title: Quick Start
 permalink: /docs/genai-unreal/quick-start/
 nav_order: 2
+description: Get your first AI-powered chat response in 5 minutes with GenAI for Unreal using simple Blueprint setup steps.
+tags: [unreal-engine, genai, quick-start, blueprint, chat-completions, openai, tutorial]
 ---
 
 This guide walks you through the absolute minimum setup required to get a response from an AI model in your Unreal Engine project. In about five minutes, you'll have a working example that confirms your installation is successful and demonstrates the plugin's core functionality.

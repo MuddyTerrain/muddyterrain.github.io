@@ -3,6 +3,8 @@ layout: documentation
 title: Authentication and Security
 permalink: /docs/genai-unreal/authentication-and-security/
 nav_order: 5
+description: "Secure API key storage, access control, and best practices for protecting credentials in GenAI for Unreal deployments."
+tags: [unreal-engine, genai, security, authentication, api-keys, encryption, production-deployment]
 ---
 
 Security is paramount when integrating AI services. Mismanaged API keys can lead to unauthorized usage, unexpected costs, or data leaks. This guide walks through secure storage, access control, and best practices to keep your game and infrastructure safe.

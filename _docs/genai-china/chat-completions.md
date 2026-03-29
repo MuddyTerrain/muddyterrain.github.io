@@ -3,6 +3,8 @@ layout: documentation
 title: Chat Completions
 permalink: /docs/genai-china/chat-completions/
 nav_order: 7
+description: "Send text-based and multimodal chat requests to Chinese AI providers with the GenAI China plugin."
+tags: [genai-china, chat-completions, llm, multimodal, vision, alibaba, bytedance, moonshot, zhipuai, baidu]
 ---
 
 Chat completions are the core of conversational AI in the Gen AI China plugin. This page covers how to send text-based and multimodal chat requests to the supported Chinese AI providers.
@@ -89,12 +91,7 @@ Use the `UGenZhContentFactory` to construct messages with both text and image co
 
 ## 3. Bytedance VolcEngine (China Region): Model ID Prefix
 
-<div style="padding: 15px 20px; background-color: #fff3cd; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 4px;">
-  <p style="margin: 0; font-weight: bold; color: #856404;">Attention: Mainland China Users</p>
-  <p style="margin: 10px 0 0 0; color: #856404;">If you are accessing Bytedance models from <strong>Mainland China (Volcanic Engine)</strong>, the model IDs require a <code>doubao-</code> prefix. This does <strong>not</strong> apply to users on the international BytePlus platform.</p>
-</div>
-
-When using the **Mainland China (Volcanic Engine)** region for Bytedance, the API expects model names with a `doubao-` prefix. Our catalog uses the base model name, so you need to enter the full prefixed ID in the **Model ID** field. Here is a reference:
+When using the **Mainland China (Volcanic Engine)** region for Bytedance, the API expects model names with a `doubao-` prefix. Our catalog auto applies these model names and send something like this below. 
 
 | Our Catalog Name | Bytedance's Actual API ID (China) |
 |---|---|
@@ -105,28 +102,7 @@ When using the **Mainland China (Volcanic Engine)** region for Bytedance, the AP
 | `seedream-4-0-250828` | `doubao-seedream-4-0-250828` |
 | ...etc | ...etc |
 
-To do this in Blueprints, use the **`Make GenZhBytedanceChatSettings`** node and type the full `doubao-` prefixed model ID into the **Model ID** string field.
-
-> **Note:** This will be automatically handled in a future plugin update. Until then, please manually add the `doubao-` prefix for Mainland China region models.
-
-<div class="image-wrapper">
-    <figure>
-        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773995925/image_1_v0aftu.webp" alt="Selecting the Make GenZhBytedanceChatSettings node" style="width: 100%;">
-        <figcaption class="image-caption">
-            Step 1: Search for and select the "Make GenZhBytedanceChatSettings" node from the context menu.
-        </figcaption>
-    </figure>
-</div>
-
-<div class="image-wrapper">
-    <figure>
-        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773995927/image_iifler.webp" alt="Entering the doubao-prefixed model ID" style="width: 100%;">
-        <figcaption class="image-caption">
-            Step 2: Enter the full "doubao-" prefixed model ID in the Model ID field when using the Mainland China (Volcanic Engine) region.
-        </figcaption>
-    </figure>
-</div>
-
+Contact our support if you run into any issues
 ---
 
 ## 4. Streaming Chat Responses

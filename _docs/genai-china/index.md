@@ -4,6 +4,8 @@ title: Gen AI China - Home
 permalink: /docs/genai-china/
 nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp
+description: "Official documentation for GenAI China, a comprehensive Unreal Engine plugin for Chinese AI integration."
+tags: [genai-china, unreal-engine, ai-integration, game-development, npc-ai, voice-ai, image-generation]
 ---
 
 <div class="image-wrapper">

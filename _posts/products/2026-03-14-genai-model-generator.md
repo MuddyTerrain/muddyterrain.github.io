@@ -1,10 +1,11 @@
 ---
 layout: wide
-title: "GenAI Model Generator"
+title: "GenAI Model Generator - AI 3D Model and Texture Generator for Unreal"
 category: products
 permalink: /genai-model-generator
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, 3d-models, textures, meshy, tripo, rodin, text-to-3d, image-to-3d, fal-ai, hunyuan3d, ai-texture-generation, pbr]
+description: "Generate 3D models and PBR textures in Unreal Engine using AI. Text-to-3D, image-to-3D, retexturing, and auto-rigging with Meshy, Tripo, Rodin, and more."
+tags: [unreal-engine, ai-plugin, 3d-generation, text-to-3d, image-to-3d, pbr-textures, meshy-ai, tripo-ai, rodin-gen2, procedural-content, asset-generation]
 lang: en
 hreflang_group: genai-model-generator
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774387242/MainBanners_9_vdxmdm.webp

@@ -3,6 +3,8 @@ layout: documentation
 title: Configuration
 permalink: /docs/ci-cd-unreal/configuration/
 nav_order: 4
+description: "Complete reference for all config.json settings in the Unreal CI/CD pipeline for plugin packaging and example project generation."
+tags: [configuration, config-json, unreal-engine, plugin-packaging, build-settings]
 ---
 
 The entire pipeline is controlled by a single `config.json` file. This guide provides a detailed explanation of each setting.

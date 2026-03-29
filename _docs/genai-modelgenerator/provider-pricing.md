@@ -3,6 +3,8 @@ layout: documentation
 title: Provider Pricing Guide
 permalink: /docs/genai-modelgenerator/provider-pricing/
 nav_order: 5
+description: "Detailed pricing comparison for all supported 3D generation providers including free tiers, cost per model, and recommendations by use case."
+tags: [pricing, cost-analysis, provider-comparison, free-tier, credit-based]
 ---
 
 Pricing for each supported provider at a glance. All prices are in USD and were last verified in March 2026 — always confirm on the provider's website before committing.

@@ -3,6 +3,8 @@ layout: documentation
 title: Quick Links & API Reference
 permalink: /docs/genai-unreal/quick-links-and-api-reference/
 nav_order: 19
+description: API documentation links, C++ class references, enums, and provider documentation for GenAI for Unreal development.
+tags: [unreal-engine, genai, api-reference, c++, documentation, provider-docs, quick-links]
 ---
 
 This page serves as a central hub for essential links, provider documentation, and a high-level overview of the core C++ classes and enums used in the GenAI for Unreal plugin.

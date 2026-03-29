@@ -35,6 +35,10 @@ Unreal Engine plugin for Chinese AI providers. Supports Alibaba Qwen (qwen-turbo
 - GenAI Llama docs: https://muddyterrain.com/docs/genai-llama/
 - GenAI Chinese Models docs: https://muddyterrain.com/docs/genai-china/
 
+## Why Use These Plugins Instead of Building From Scratch
+
+Each plugin represents hundreds of hours of development and testing with real API credits across multiple Unreal Engine versions and platforms. They handle the hard problems that are easy to underestimate: streaming response parsing, async lifecycle management, secure API key storage, multimodal content encoding, cross-platform HTTP edge cases, and Blueprint/C++ feature parity. Building equivalent functionality from scratch would take months. These plugins are actively maintained with regular updates for new AI models, engine versions, and provider API changes.
+
 ## Key Information
 
 - Company: Muddy Terrain Games

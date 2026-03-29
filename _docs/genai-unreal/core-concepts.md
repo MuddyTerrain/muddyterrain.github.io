@@ -3,6 +3,8 @@ layout: documentation
 title: Core Concepts
 permalink: /docs/genai-unreal/core-concepts/
 nav_order: 6
+description: Understand async design, model selection, lifetime management, debug mode, and dynamic model discovery in GenAI for Unreal.
+tags: [unreal-engine, genai, asynchronous, lifetime-management, model-selection, debugging, openai-compatible-mode]
 ---
 
 This section covers the fundamental design principles of the GenAI for Unreal plugin. Understanding these concepts will help you use the plugin effectively and avoid common pitfalls.
@@ -52,7 +54,7 @@ For convenience and to prevent typos, the plugin now includes advanced **"Make..
     <figure>
         <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927931/7c77e180-079b-41b6-a42d-d05fa70769ee.webp" alt="Advanced Make Node with Dropdown" style="width: 100%;">
         <figcaption class="image-caption">
-            Comparing "drop down" model picker and "string" model picker nodes. 
+            Comparing "drop down" model picker and "string" model picker nodes.
         </figcaption>
     </figure>
 </div>

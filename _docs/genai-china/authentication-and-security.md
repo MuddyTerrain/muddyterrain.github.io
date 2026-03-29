@@ -3,6 +3,8 @@ layout: documentation
 title: Authentication and Security
 permalink: /docs/genai-china/authentication-and-security/
 nav_order: 4
+description: "Learn secure API key storage and best practices for protecting credentials in GenAI China plugin deployments."
+tags: [genai-china, security, authentication, api-keys, encryption, production-deployment]
 ---
 
 Security is paramount when integrating AI services. Mismanaged API keys can lead to unauthorized usage and unexpected costs. This guide walks through the secure storage method provided by the plugin and discusses best practices for production environments.

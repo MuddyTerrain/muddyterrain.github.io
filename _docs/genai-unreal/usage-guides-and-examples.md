@@ -3,6 +3,8 @@ layout: documentation
 title: Example Projects and Guides
 permalink: /docs/genai-unreal/usage-guides-and-examples/
 nav_order: 7
+description: Download complete Blueprint and C++ example projects demonstrating all GenAI features with interactive UMG widgets and walkthroughs.
+tags: [unreal-engine, genai, example-projects, blueprint, c++, tutorials, sample-code, umg-widgets]
 ---
 
 This section provides access to our comprehensive example projects, which are the best resources for learning how to use the GenAI for Unreal plugin effectively.
@@ -21,7 +23,7 @@ To provide the best learning experience, we have moved away from small, in-plugi
 
 ## 📥 Download Example Projects
 <p>Projects are available for each supported Unreal Engine version. Please download the one that matches your engine. All links point to Google Drive.</p>
- 
+
 <table class="download-table">
   <thead>
     <tr>
@@ -59,7 +61,7 @@ The new example projects are packed with features and are designed to be a pract
 </div>
 
 
-#### 2. Interactive UMG Widgets: 
+#### 2. Interactive UMG Widgets:
 
 <div class="image-wrapper">
     <figure>
@@ -76,7 +78,7 @@ Explore pre-built UI for:
   -   **Model Listing:** A demonstration of the new "Get All Models" feature to dynamically populate a dropdown of available models.
 
 
-#### 3. C++ Best Practices:** 
+#### 3. C++ Best Practices:
 The C++ project demonstrates essential patterns for safety and efficiency, such as using weak pointers in asynchronous callbacks.
 <div class="image-wrapper">
     <figure>
@@ -135,21 +137,21 @@ void AMyActor::SendSimpleChatRequest()
     FGenOAIChatSettings ChatSettings;
     ChatSettings.Model = EOpenAIChatModel::GPT_4o; // Select model from the enum
     ChatSettings.MaxTokens = 150;
-    
+
     // 2. Create the message payload
     TArray<FGenChatMessage> Messages;
     Messages.Add(FGenChatMessage{EGenChatRole::User, TEXT("Tell me a short story about a robot who discovers music.")});
-    
+
     // 3. Create a weak pointer for a safe callback
     TWeakObjectPtr<AMyActor> WeakThis(this);
-    
+
     // 4. Send the request with a lambda for the callback
     UGenOAIChat::SendChatRequest(ChatSettings, Messages,
         FOnChatCompletionResponse::CreateLambda([WeakThis](const FString& Response, const FString& Error, bool bSuccess)
         {
             // Always check if the calling object is still valid
             if (!WeakThis.IsValid()) return;
-            
+
             if (bSuccess)
             {
                 // Process the successful response

@@ -1,10 +1,11 @@
 ---
 layout: wide
-title:
+title: "GenAI for Unreal - AI Plugin with ChatGPT, Claude, Gemini"
 category: products
 permalink: /genai-unreal
 author: "Muddy Terrain"
-tags: [documentation,sample]
+description: "Production-ready Unreal Engine plugin integrating ChatGPT, Claude, Gemini, and local models. Build AI NPCs, streaming dialogue, and game content generation."
+tags: [unreal-engine, ai-plugin, genai, chatgpt, claude, gemini, npc-dialogue, procedural-generation, game-development, blueprint, text-to-speech, image-generation]
 lang: en
 hreflang_group: genai-unreal
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1772931701/MainBanners_4_d9nmqo.webp

@@ -3,6 +3,8 @@ layout: documentation
 title: Streaming
 permalink: /docs/genai-china/streaming/
 nav_order: 9
+description: "Implement real-time streaming responses for chat and TTS using the GenAI China plugin."
+tags: [genai-china, streaming, real-time, chat-streaming, text-to-speech, websocket, low-latency]
 ---
 
 Streaming is a powerful feature that allows you to receive AI responses in real-time, word-by-word, as they are generated. This creates a much more interactive and engaging user experience, similar to the typewriter effect seen in modern chat applications.

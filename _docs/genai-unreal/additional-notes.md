@@ -3,6 +3,8 @@ layout: documentation
 title: Additional Notes
 permalink: /docs/genai-unreal/additional-notes/
 nav_order: 20
+description: "Compatibility details, troubleshooting tips, and best practices for the GenAI for Unreal plugin integration."
+tags: [unreal-engine, genai, compatibility, troubleshooting, best-practices, game-development]
 ---
 
 This final section contains important supplementary information, including compatibility details, troubleshooting tips, and best practices to ensure a smooth and successful integration of the GenAI for Unreal plugin.

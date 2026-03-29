@@ -3,6 +3,8 @@ layout: documentation
 title: Cloud Uploads with rclone
 permalink: /docs/ci-cd-unreal/cloud-uploads/
 nav_order: 6
+description: "Set up automatic cloud uploads for packaged Unreal Engine builds using rclone to Google Drive, S3, and other cloud storage providers."
+tags: [rclone, cloud-storage, automation, unreal-engine, ci-cd]
 ---
 
 The pipeline includes an optional feature to automatically upload your packaged builds to a cloud storage provider using the powerful command-line tool, <a href="https://rclone.org/" class="track-click" data-event-name="lnk_clk_rclone_org" data-event-location="docs_cloud_uploads" target="_blank" rel="noopener noreferrer">rclone</a>.

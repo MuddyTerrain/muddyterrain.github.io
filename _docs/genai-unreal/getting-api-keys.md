@@ -3,6 +3,8 @@ layout: documentation
 title: Getting API Keys
 permalink: /docs/genai-unreal/getting-api-keys/
 nav_order: 4
+description: Obtain API keys from OpenAI, Anthropic, Google Gemini, ElevenLabs, and other AI providers for your Unreal Engine project.
+tags: [unreal-engine, genai, api-keys, openai, anthropic, google-gemini, elevenlabs, deepseek, xai]
 ---
 
 To connect your Unreal project to powerful AI models, you first need to obtain API keys from the respective service providers. This guide provides direct links and best practices to get you started securely and efficiently.

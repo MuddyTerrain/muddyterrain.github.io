@@ -3,6 +3,8 @@ layout: documentation
 title: Core Concepts
 permalink: /docs/genai-china/core-concepts/
 nav_order: 6
+description: "Learn fundamental design principles, async patterns, and debugging features of the GenAI China plugin."
+tags: [genai-china, core-concepts, architecture, async-design, blueprints, c-plus-plus, debugging]
 ---
 
 This section covers the fundamental design principles of the Gen AI China plugin. Understanding these concepts will help you use the plugin effectively and avoid common pitfalls.

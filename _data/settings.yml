@@ -60,19 +60,19 @@ example_projects:
 # Gen AI China Example Project Downloads
 example_projects_china:
   - version: "5.7"
-    bp_link: "https://drive.google.com/file/d/1cUTHZP-sozGySMJ-PZzOACNR3rfLGEGz/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1kZ8UkNs888aW5sYdbcT5zymEPkGX_F7u/view?usp=drive_link"
   - version: "5.6"
-    bp_link: "https://drive.google.com/file/d/1RR9E_eYyQArkkNRtI8_pTKIsSh1NEeWO/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1qR-2pa1SX5J3e-J80PicSyt_aST0ZPC4/view?usp=drive_link"
   - version: "5.5"
-    bp_link: "https://drive.google.com/file/d/1hK-0XiVtM-sePHO_JhiDpYCuvy1BJQjU/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1dlEKCz9DZ3mphZcm2Mx-gWY02UpgLLiZ/view?usp=drive_link"
   - version: "5.4"
-    bp_link: "https://drive.google.com/file/d/10lzoeFmei6pUBsLZ4OLlFgHOKabyb-tj/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1PF7yTsSmwTkMsUXHpJEJKVKOrzKoykyQ/view?usp=drive_link"
   - version: "5.3"
-    bp_link: "https://drive.google.com/file/d/1NH1pXu9xXwZF4MGoNZBYNLKQxOsZDJ7c/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1ubr4d6JK-jOD0lPYG6H7DaHbTKPPojge/view?usp=drive_link"
   - version: "5.2"
-    bp_link: "https://drive.google.com/file/d/1mPh4CaB7KJJnxoHFxZWN2PtpsNk1h9j0/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1d9Dy2hFZL-k9OeEj2lx2xCYNJ92_r5Xp/view?usp=drive_link"
   - version: "5.1"
-    bp_link: "https://drive.google.com/file/d/1SqmfW4etkQfDbXxQSRIc0tMjVBu_t2TV/view?usp=drive_link"
+    bp_link: "https://drive.google.com/file/d/1DR5tSq79T3OJgnPTX12oV-Jx1O5BqsvT/view?usp=drive_link"
 
 # GenAI Llama Example Project Downloads
 example_projects_llama:

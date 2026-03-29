@@ -3,6 +3,8 @@ layout: documentation
 title: Getting Started
 permalink: /docs/genai-modelgenerator/getting-started/
 nav_order: 3
+description: "Install the GenAI Model Generator plugin, configure API keys, and generate your first AI-powered 3D model in minutes."
+tags: [getting-started, installation, setup, configuration, first-generation]
 ---
 
 This guide walks you through installing the plugin, configuring it, and generating your first 3D model.

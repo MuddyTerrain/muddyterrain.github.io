@@ -3,6 +3,8 @@ layout: documentation
 title: API Reference
 permalink: /docs/genai-modelgenerator/api-reference/
 nav_order: 4
+description: "Complete API reference for GenAI Model Generator including all C++ classes, structs, enums, settings, and Blueprint helper nodes."
+tags: [api-reference, c++-api, blueprint-api, model-generation, ai-3d-generation]
 ---
 
 Complete reference for the GenAI Model Generator plugin's C++ classes, structs, and enums. All classes support both C++ `TFunction` callbacks and Blueprint `DYNAMIC_MULTICAST_DELEGATE` for full Blueprint compatibility.

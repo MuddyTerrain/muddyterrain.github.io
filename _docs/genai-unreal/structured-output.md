@@ -3,6 +3,8 @@ layout: documentation
 title: Structured Output
 permalink: /docs/genai-unreal/structured-output/
 nav_order: 11
+description: Force AI responses into strict JSON formats using schemas for reliable game data generation and procedural content.
+tags: [unreal-engine, genai, structured-output, json-schema, openai, game-data, character-generation]
 ---
 
 Structured Output is a critical feature for game development that forces the AI to respond in a strict, predictable JSON format. This eliminates the need to parse unreliable free-form text and allows you to directly integrate AI-generated data into your game systems.
@@ -92,12 +94,12 @@ void AMyDataManager::RequestCharacterData()
     FGenOAIChatSettings ChatSettings;
     ChatSettings.Model = EOpenAIChatModel::GPT_4o;
     ChatSettings.ResponseFormat.JsonObject = JSONSchema; // Set the schema
-    
+
     TArray<FGenChatMessage> Messages;
     Messages.Add(FGenChatMessage{EGenChatRole::User, TEXT("Generate a unique fantasy RPG character with a name, level, health, and three skills.")});
-    
+
     TWeakObjectPtr<AMyDataManager> WeakThis(this);
-    
+
     // 3. Send the request.
     UGenOAIChat::SendChatRequest(ChatSettings, Messages,
         FOnChatCompletionResponse::CreateLambda([WeakThis](const FString& JSONResponse, const FString& Error, bool bSuccess)
@@ -120,7 +122,7 @@ void AMyDataManager::ParseCharacterData(const FString& JSONResponse)
         NewCharacter.Name = JsonObject->GetStringField("name");
         NewCharacter.Level = JsonObject->GetIntegerField("level");
         NewCharacter.Health = JsonObject->GetIntegerField("health");
-        
+
         const TArray<TSharedPtr<FJsonValue>>* SkillsJsonArray;
         if (JsonObject->TryGetArrayField("skills", SkillsJsonArray))
         {
@@ -129,7 +131,7 @@ void AMyDataManager::ParseCharacterData(const FString& JSONResponse)
                 NewCharacter.Skills.Add(SkillValue->AsString());
             }
         }
-        
+
         // Now you have a populated FCharacterStats struct to use in your game!
         UE_LOG(LogTemp, Log, TEXT("Successfully parsed character: %s, Level %d"), *NewCharacter.Name, NewCharacter.Level);
     }

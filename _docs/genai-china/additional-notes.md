@@ -3,6 +3,8 @@ layout: documentation
 title: Additional Notes
 permalink: /docs/genai-china/additional-notes/
 nav_order: 12
+description: "Compatibility details, troubleshooting tips, and best practices for GenAI China plugin integration."
+tags: [genai-china, unreal-engine, compatibility, troubleshooting, api-keys, security, performance]
 ---
 
 This final section contains important supplementary information, including compatibility details, troubleshooting tips, and best practices to ensure a smooth and successful integration of the Gen AI China plugin.

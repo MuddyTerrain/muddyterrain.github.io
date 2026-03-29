@@ -3,6 +3,8 @@ layout: documentation
 title: Quick Start
 permalink: /docs/ci-cd-unreal/quick-start/
 nav_order: 3
+description: "Get started with the Unreal CI/CD pipeline in minutes by configuring your project and running the master script."
+tags: [quick-start, setup, getting-started, unreal-ci-cd, plugin-packaging]
 ---
 
 This guide will walk you through the essential steps to get the CI/CD pipeline running.

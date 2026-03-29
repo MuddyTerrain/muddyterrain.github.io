@@ -3,6 +3,8 @@ layout: documentation
 title: Building Long Conversations
 permalink: /docs/genai-unreal/building-long-conversations/
 nav_order: 9
+description: Master conversation history management and context strategies for creating stateful AI characters with memory in Unreal Engine.
+tags: [unreal-engine, genai, conversations, chat-completions, conversation-history, npc-dialogue, multimodal]
 ---
 
 Creating believable, stateful conversations is a cornerstone of compelling AI characters. This guide covers the principles and techniques for managing conversation history, ensuring your NPCs can remember past interactions and respond intelligently.
@@ -11,7 +13,7 @@ Creating believable, stateful conversations is a cornerstone of compelling AI ch
     <figure>
         <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1752498478/968eee3c-9dc3-46e8-8508-f1aebe4ce8cb.webp" alt="Conversation Example" style="width: 100%;">
         <figcaption class="image-caption">
-           
+
         </figcaption>
     </figure>
 </div>
@@ -50,7 +52,7 @@ The `Gen Chat Message` struct also supports multimodal inputs. For providers lik
     <figure>
         <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756928672/b7ea1f55-b9f3-4e3c-90b0-8367bcec72a0.webp" alt="Conversation Example" style="width: 100%;">
         <figcaption class="image-caption">
-           
+
         </figcaption>
     </figure>
 </div>
@@ -121,9 +123,9 @@ void AConversationalNpc::SendChatRequest()
 {
     FGenOAIChatSettings ChatSettings;
     ChatSettings.Model = EOpenAIChatModel::GPT_4o; // Choose your model
-    
+
     TWeakObjectPtr<AConversationalNpc> WeakThis(this);
-    
+
     // Send the entire conversation history with the request
     UGenOAIChat::SendChatRequest(ChatSettings, ConversationHistory,
         FOnChatCompletionResponse::CreateLambda(
@@ -142,7 +144,7 @@ void AConversationalNpc::OnAIResponseReceived(
     {
         // Add the AI's response to our history to maintain context for the next turn
         ConversationHistory.Add(FGenChatMessage{EGenChatRole::Assistant, Response});
-        
+
         // Now, display the message to the player, play audio, etc.
         // ...
     }

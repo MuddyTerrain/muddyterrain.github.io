@@ -4,6 +4,8 @@ title: CI/CD for Unreal - Home
 permalink: /docs/ci-cd-unreal/
 nav_order: 1
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce772-033b-4e99-970a-8362b32ef3cb.webp
+description: "Local CI/CD pipeline for building, packaging, and distributing Unreal Engine plugins across multiple engine versions with one command."
+tags: [ci-cd, unreal-engine, plugin-packaging, automation, build-pipeline]
 ---
 
 A powerful, modular local CI/CD pipeline for building, packaging, and distributing Unreal Engine code plugins and their example projects across multiple engine versions with a single command.

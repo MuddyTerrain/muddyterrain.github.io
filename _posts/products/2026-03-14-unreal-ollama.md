@@ -1,15 +1,15 @@
 ---
 layout: wide
-title: "GenAI Llama - Local AI for Unreal Engine (Formerly Unreal Ollama)"
+title: "GenAI Llama - Local AI Models in Unreal Engine (Offline AI)"
 category: products
 permalink: /unreal-ollama
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, ollama, local-ai, llama, genai-llama, mistral, phi, gemma, llama-cpp, embedded-inference, lm-studio, vllm]
+description: "Run local AI models offline in Unreal Engine. Ollama, LM Studio, llama.cpp support with embedded inference. No API costs, no internet required."
+tags: [unreal-engine, local-ai, offline-ai, ollama, llama-cpp, lm-studio, embedded-inference, privacy, no-api-costs, chat-completions, vision-models]
 lang: en
 hreflang_group: unreal-ollama
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774520082/MainBanners_10_gniskq.webp
 ---
-
 
 
 

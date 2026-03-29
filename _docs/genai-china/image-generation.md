@@ -3,6 +3,8 @@ layout: documentation
 title: Image Generation
 permalink: /docs/genai-china/image-generation/
 nav_order: 10
+description: "Generate AI-powered images from text prompts using Alibaba and Bytedance seedream models in Unreal Engine."
+tags: [genai-china, image-generation, text-to-image, ai-art, alibaba, bytedance, procedural-content]
 ---
 
 Integrate powerful AI image generation directly into your Unreal Engine projects. This feature allows you to create high-quality visual assets from simple text prompts, opening up incredible possibilities for procedural content, rapid prototyping, and dynamic in-game experiences.

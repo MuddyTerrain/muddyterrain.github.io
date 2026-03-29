@@ -3,6 +3,8 @@ layout: documentation
 title: Initial Project Setup
 permalink: /docs/genai-china/initial-project-setup/
 nav_order: 2
+description: "Install and configure the GenAI China plugin for Unreal Engine with Blueprint and C++ setup steps."
+tags: [genai-china, setup, installation, unreal-engine, blueprints, c-plus-plus, configuration]
 ---
 
 This guide covers the essential steps to install and configure the **Gen AI China 🇨🇳 🔥** plugin in your project.

@@ -3,6 +3,8 @@ layout: documentation
 title: Streaming (Text and Audio)
 permalink: /docs/genai-unreal/streaming/
 nav_order: 10
+description: Receive AI responses in real-time with text and audio streaming for interactive typewriter effects and responsive conversations.
+tags: [unreal-engine, genai, streaming, text-streaming, audio-streaming, real-time, openai, google, elevenlabs]
 ---
 
 Streaming is a powerful feature that allows you to receive AI responses in real-time, word-by-word, as they are generated. This creates a much more interactive and engaging user experience, similar to the typewriter effect seen in ChatGPT.
@@ -12,7 +14,7 @@ Streaming is a powerful feature that allows you to receive AI responses in real-
 - Google
 - XAI
 - DeepSeek
-  
+
 **Audio Streaming:**
 - OpenAI
 - ElevenLabs
@@ -35,7 +37,7 @@ With streaming, the connection to the AI provider remains open. The server sends
 
 ## Blueprint Implementation
 
-The Blueprint implementation is handled by dedicated latent nodes that manage the streaming connection for you. Following is a text streaming implmentation, for audio streaming examples please refer to the example project. 
+The Blueprint implementation is handled by dedicated latent nodes that manage the streaming connection for you. Following is a text streaming implmentation, for audio streaming examples please refer to the example project.
 
 1.  Find the **"Request... Stream"** node for your chosen provider (e.g., `Request OpenAI Chat Stream`).
 2.  Provide the necessary `Settings` and `Messages`, just like a standard request.

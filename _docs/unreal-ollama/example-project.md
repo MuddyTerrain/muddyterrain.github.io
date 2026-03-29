@@ -3,6 +3,8 @@ layout: documentation
 title: Example Project
 permalink: /docs/genai-llama/example-project/
 nav_order: 2
+description: "Download and explore Blueprint examples demonstrating HTTP providers, embedded inference, streaming, multimodal vision, and AI model management."
+tags: [example-project, blueprint, chat-completion, streaming, vision-ai]
 ---
 
 The plugin ships with an example project containing Blueprint examples for chat completion, streaming, multimodal vision, and server management.

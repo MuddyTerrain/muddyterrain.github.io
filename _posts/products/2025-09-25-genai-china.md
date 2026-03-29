@@ -1,15 +1,15 @@
 ---
 layout: wide
-title: "Gen AI China 🇨🇳 🔥"
+title: "Gen AI China - Unreal Engine Plugin for Chinese AI Models"
 category: products
 permalink: /genai-china
 author: "Muddy Terrain"
-tags: [tools, unreal, gamedev, ai, china]
+description: "Unreal Engine plugin for Chinese AI models. Support for Alibaba Qwen, Moonshot Kimi, Bytedance, ZhipuAI, Baidu ERNIE with dual-region integration."
+tags: [unreal-engine, ai-plugin, genai-china, alibaba-qwen, moonshot-kimi, bytedance, zhipuai, chinese-ai, chat-completions, tts]
 lang: en
 hreflang_group: genai-china
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1773874915/MainBanners_6_tw1xai.webp
 ---
-
 
 
 

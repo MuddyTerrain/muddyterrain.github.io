@@ -3,6 +3,8 @@ layout: documentation
 title: Getting API Keys
 permalink: /docs/genai-modelgenerator/getting-api-keys/
 nav_order: 2
+description: "Obtain API keys for Meshy AI, Tripo AI, Fal.ai, and Google to generate 3D models and PBR textures in Unreal Engine."
+tags: [api-keys, authentication, setup, meshy-ai, tripo-ai, fal-ai]
 ---
 
 To generate 3D models and textures, you need an API key from at least one supported provider. Each provider has its own strengths — you can use one or all of them. All keys are configured in **Project Settings > Plugins > GenAI Model Generator**.

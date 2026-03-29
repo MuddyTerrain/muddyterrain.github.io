@@ -3,6 +3,8 @@ layout: documentation
 title: API Reference & Models
 permalink: /docs/genai-china/api-reference/
 nav_order: 13
+description: "Complete API reference for GenAI China plugin classes and 90+ supported AI models from Chinese providers."
+tags: [genai-china, api-reference, models, alibaba, bytedance, moonshot, zhipuai, baidu, c-plus-plus, blueprint]
 ---
 
 This page serves as a central hub for essential links, provider documentation, and a high-level overview of the core C++ classes and enums used in the Gen AI China plugin.

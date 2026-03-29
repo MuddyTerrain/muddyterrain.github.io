@@ -3,6 +3,8 @@ layout: documentation
 title: Prerequisites
 permalink: /docs/ci-cd-unreal/prerequisites/
 nav_order: 2
+description: "System requirements for the Unreal CI/CD pipeline including Windows, PowerShell, Visual Studio, Unreal Engine versions, and MSVC toolchains."
+tags: [prerequisites, system-requirements, visual-studio, unreal-engine, windows]
 ---
 
 Before using the pipeline, you must ensure your system is correctly configured with the required software and dependencies.

@@ -4,7 +4,8 @@ title: "Local CI/CD for Unreal Engine"
 category: products
 permalink: /local-ci-cd-for-unreal
 author: "Muddy Terrain"
-tags: [tools, open-source, unreal, gamedev, ci-cd, automation]
+tags: [tools, open-source, unreal, gamedev, ci-cd, automation, plugin-packaging, build-automation]
+description: "Free, lightweight CI/CD automation for Unreal Engine plugins. Automate packaging across multiple engine versions with one command."
 image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1754263099/ba9ce772-033b-4e99-970a-8362b32ef3cb.webp
 ---
 

@@ -3,6 +3,8 @@ layout: documentation
 title: Example Project
 permalink: /docs/genai-modelgenerator/example-project/
 nav_order: 6
+description: "Download Blueprint examples demonstrating text-to-3D, image-to-3D, texture generation, auto-rigging, and provider switching workflows."
+tags: [example-project, blueprint, 3d-generation, texture-generation, ai-assets]
 ---
 
 The plugin ships with an example project containing Blueprint examples for 3D model generation, texture creation, and provider configuration.

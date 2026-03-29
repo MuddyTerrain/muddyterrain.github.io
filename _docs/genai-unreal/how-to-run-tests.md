@@ -3,6 +3,8 @@ layout: documentation
 title: Debugging and Running Tests
 permalink: /docs/genai-unreal/debugging-and-running-tests/
 nav_order: 18
+description: Debug AI integrations using extended logging mode and run automation tests to verify GenAI for Unreal plugin functionality.
+tags: [unreal-engine, genai, debugging, testing, automation-tests, logging, troubleshooting]
 ---
 
 This section covers tools and procedures for debugging your AI integrations and verifying the plugin's functionality through its built-in automation tests.

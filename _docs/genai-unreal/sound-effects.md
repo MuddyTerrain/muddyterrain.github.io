@@ -3,6 +3,8 @@ layout: documentation
 title: Sound Effect Generation
 permalink: /docs/genai-unreal/sound-effects/
 nav_order: 14
+description: Generate custom sound effects from text prompts using ElevenLabs audio generation for dynamic, procedural audio content.
+tags: [unreal-engine, genai, sound-effects, audio-generation, elevenlabs, game-audio, procedural-content]
 ---
 
 Leverage the power of generative AI to create custom sound effects on the fly using text prompts. This feature, powered by ElevenLabs, allows for rapid prototyping and the creation of dynamic audio environments without needing a pre-existing sound library.
@@ -22,7 +24,7 @@ The Blueprint workflow is straightforward: specify a text prompt and duration, a
 
 <div>
     <figure>
-        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1756927016/495af904-bfdb-47fe-9292-c7b306628526.webp" alt="Blueprint Sound Effect Example" style="width: 100%;">
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774733884/775eae3b-908c-496d-bbe0-ca12e7de3f35.webp" alt="Blueprint Sound Effect Example" style="width: 100%;">
         <figcaption class="image-caption">
         An example of generating a sound effect from a text description.
         </figcaption>

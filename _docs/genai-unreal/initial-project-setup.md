@@ -3,6 +3,8 @@ layout: documentation
 title: Initial Project Setup
 permalink: /docs/genai-unreal/initial-project-setup/
 nav_order: 3
+description: Install the GenAI for Unreal plugin and configure it for Blueprint and C++ projects with complete step-by-step instructions.
+tags: [unreal-engine, genai, installation, setup, blueprint, c++, configuration]
 ---
 
 This guide covers the essential steps to install and configure the **GenAI for Unreal** plugin in your project. Whether you are working with C++, Blueprints, or both, these instructions will ensure the plugin is properly integrated.

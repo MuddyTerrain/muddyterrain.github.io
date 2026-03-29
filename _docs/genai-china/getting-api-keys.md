@@ -3,6 +3,8 @@ layout: documentation
 title: Getting API Keys
 permalink: /docs/genai-china/getting-api-keys/
 nav_order: 3
+description: "Obtain and configure API keys from Alibaba, Bytedance, Moonshot AI, ZhipuAI, and Baidu providers."
+tags: [genai-china, api-keys, authentication, alibaba, bytedance, moonshot, zhipuai, baidu, setup]
 ---
 
 To connect your Unreal project to Chinese AI models, you need to obtain API keys from the respective service providers.

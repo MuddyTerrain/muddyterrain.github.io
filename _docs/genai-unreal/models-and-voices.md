@@ -3,6 +3,8 @@ layout: documentation
 title: Models and Voices
 permalink: /docs/genai-unreal/models-and-voices/
 nav_order: 17
+description: Dynamically fetch available models and voices from OpenAI, Google, and ElevenLabs for runtime model and voice selection.
+tags: [unreal-engine, genai, models, voices, openai, google, elevenlabs, dynamic-discovery]
 ---
 
 This section covers how to dynamically fetch available models and voices from the AI providers.

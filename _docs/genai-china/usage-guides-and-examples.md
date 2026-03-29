@@ -3,6 +3,8 @@ layout: documentation
 title: Usage Guides & Examples
 permalink: /docs/genai-china/usage-guides-and-examples/
 nav_order: 5
+description: "Practical walkthroughs and example projects for implementing GenAI China features in Unreal Engine."
+tags: [genai-china, examples, tutorials, blueprints, c-plus-plus, game-development, sample-project]
 ---
 
 This section provides access to our comprehensive example project, which is the best resource for learning how to use the GenAI China plugin effectively.

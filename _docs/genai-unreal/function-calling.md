@@ -3,6 +3,8 @@ layout: documentation
 title: Function Calling (Tool Use)
 permalink: /docs/genai-unreal/function-calling/
 nav_order: 11
+description: Enable AI models to call game functions for dynamic NPC actions, inventory management, and world interactions using tool definitions.
+tags: [unreal-engine, genai, function-calling, tool-use, openai, anthropic, claude, game-logic]
 ---
 
 Function Calling (also known as Tool Use) allows AI models to request the execution of functions you define. Instead of just generating text, the model can decide to call a specific function with structured arguments, enabling AI-driven gameplay actions, data lookups, inventory management, and dynamic world interactions.

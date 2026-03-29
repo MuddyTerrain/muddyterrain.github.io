@@ -66,11 +66,19 @@ ElevenLabs is a leader in realistic, expressive text-to-speech and generative au
 </div>
 
 ### Other Providers
-
+Follow the instructions on each provider's platform to generate and manage your keys.
 -   **DeepSeek:** <a href="https://platform.deepseek.com/" class="track-click" data-event-name="lnk_clk_deepseek_platform" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">platform.deepseek.com</a>
 -   **XAI (Grok):** <a href="https://x.ai/" class="track-click" data-event-name="lnk_clk_xai" data-event-location="docs_getting_api_keys" target="_blank" rel="noopener noreferrer">x.ai</a>
+-   **OpenAI Compatible Mode:** The plugin also supports providers like:
+    - Groq, 
+    - Mistral, 
+    - Qwen 
+    - etc.
+   
+    Refer to **[OpenAI Compatible Mode](/docs/genai-unreal/openai-compatible-mode/)** on how to use them.
 
-Follow the instructions on each provider's platform to generate and manage your keys.
+
+
 
 ---
 

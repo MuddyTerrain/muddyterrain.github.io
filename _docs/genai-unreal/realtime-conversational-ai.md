@@ -9,7 +9,7 @@ tags: [unreal-engine, genai, realtime-conversational-ai, voice, openai-realtime,
 
 The Realtime Conversational AI system is the plugin's most advanced feature, enabling natural, fluid, and fully interruptible ("barge-in") conversations with an AI. This system is designed to replicate the natural turn-taking of human conversation, creating deeply immersive and believable character interactions.
 
-<div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+<div style="padding: 10px 25px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Provider Support</p>
   <p style="margin: 5px 0 0 0; color: #1f6a9c;">This feature is available for <strong>OpenAI</strong> and <strong>ElevenLabs</strong>.</p>
   <ul style="margin: 5px 0 0 0; color: #1f6a9c;">
@@ -20,7 +20,8 @@ The Realtime Conversational AI system is the plugin's most advanced feature, ena
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">Version support:</p>
-  <p style="margin: 5px 0 0 0; color: #856404;">Please note Semantic and Server VAD features only work on plugin versions above <strong>v1.5.1</strong>.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">OpenaAI Semantic and Server VAD features only work on plugin versions above <strong>v1.5.1</strong>.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;">ElevenLabs realtime features only work on plugin versions above <strong>v2.1.0</strong>.</p>
 </div>
 
 <p><strong>Mac Shipping Note:</strong> For packaged Mac builds, if you run into mic input not being picked up or realtime/API connection failures (for example, connection status 0), copy <code>cacert.pem</code> from <code>&lt;UE_ENGINE_PATH&gt;/Engine/Content/Certificates/ThirdParty</code> into <code>&lt;Project&gt;/Content/Certificates</code>, then add that Certificates folder to both <em>Additional Non-Asset Directories To Package</em> and <em>Additional Non-Asset Directories To Copy</em> in Packaging settings.</p>
@@ -139,8 +140,8 @@ The `RealtimeService` provides events that fire when the AI responds. You'll use
     </figure>
 </div>
 
--   **On Response Created:** Create a new `SoundWaveProcedural` to hold the incoming audio.
--   **On Audio Received:** Use the `QueueAudioToProceduralWave` helper to feed the incoming audio chunks into your procedural sound wave.
+-   **On Response Created:** Create a new `SoundWaveProcedural` using `CreateEmptyProceduralWave` to hold the incoming audio. **The sample rate must match the provider:** use `24000` for OpenAI Realtime, `16000` for ElevenLabs. A mismatch will cause chipmunk (too fast) or slowed-down audio.
+-   **On Audio Received:** Use the `QueueAudioToProceduralWave` helper to feed the incoming PCM16 audio chunks into your procedural sound wave.
 -   **Play Audio:** Make sure your AI's audio component is playing the procedural sound wave.
 
 ---
@@ -155,7 +156,7 @@ The `RealtimeService` provides events that fire when the AI responds. You'll use
 
 ## ElevenLabs Conversational AI
 
-The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirectional voice conversations with ElevenLabs agents. This system connects via WebSocket and streams PCM16 mono 16 kHz audio in both directions.
+The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirectional voice conversations with ElevenLabs agents. This system connects via WebSocket and streams PCM16 mono 16 kHz audio in both directions. Available on plugin version 2.1.0 or above. 
 
 ### Key Features
 
@@ -173,16 +174,65 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
 1. Create an agent on the [ElevenLabs dashboard](https://elevenlabs.io/app/agents/new) or if from template [here](https://elevenlabs.io/app/agents/templates) and copy the **Agent ID**. You can find the agent id either in the url itself, it will be something similar to https://elevenlabs.io/app/agents/agents/agent_	&lt;agent-id&gt;?&lt;somethingelse&gt;. Or in the widget tab of the agent, you can find it in the embed code section as &lt;elevenlabs-convai agent-id="agent-id"&gt;&lt;/elevenlabs-convai&gt;
 2. Set your ElevenLabs API key in the plugin settings (Project Settings > GenAI).
 
+<div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Important: API Permissions & Publishing</p>
+  <p style="margin: 5px 0 0 0; color: #856404;"><strong>1. Enable Conversational AI permission:</strong> Your ElevenLabs API key must have the <code>convai_write</code> permission enabled. Without it, you will get a <code>HTTP 401: missing_permissions</code> error when trying to connect. You can enable this in your ElevenLabs API key settings.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;"><strong>2. Publish your agent:</strong> After creating or editing your agent, you <strong>must click the "Publish" button</strong> in the top-right corner of the ElevenLabs dashboard. Unpublished agents will not accept connections.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;"><strong>3. Override permissions:</strong> If you use override fields like <code>FirstMessageOverride</code>, <code>LanguageOverride</code>, or <code>PromptOverride</code>, the agent's configuration must explicitly allow these overrides. Otherwise, the WebSocket will close with an error like <em>"Override for field 'first_message' is not allowed by config."</em> You can enable overrides in the agent's security settings on the ElevenLabs dashboard.</p>
+</div>
+
+<div style="padding: 10px 25px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Dashboard Advanced Settings</p>
+  <p style="margin: 5px 0 0 0; color: #1f6a9c;">Your agent's <strong>Advanced</strong> tab on the <a href="https://elevenlabs.io/app/agents/agents/<id>?tab=advanced" style="color: #1f6a9c;">ElevenLabs dashboard</a> has several settings that affect conversational behavior:</p>
+  <ul style="margin: 5px 0 0 0; color: #1f6a9c;">
+    <li><strong>Eagerness:</strong> Controls how quickly the agent responds. Higher eagerness means faster replies; lower means the agent waits longer to confirm the user has finished speaking. Useful for tuning turn-taking feel.</li>
+    <li><strong>Max conversation duration:</strong> Caps how long a session can last (default 600s). Increase this for longer gameplay conversations.</li>
+    <li><strong>Client events:</strong> Controls which events the server sends. Ensure <code>audio</code>, <code>interruption</code>, <code>agent_response</code>, and <code>user_transcript</code> are enabled for the plugin to work correctly.</li>
+  </ul>
+</div>
+
 ### Blueprint Usage
 
-```
+
 1. Create ElevenLabs Agents Service  →  stores a reference
 2. Bind delegates (OnConnectedBP, OnAudioResponseBP, OnUserTranscriptBP, etc.)
-3. Call Connect() with your Agent ID (and optional overrides)
+    <div>
+        <figure>
+            <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802027/bce3a55d-1ad1-412b-b99a-59b5b6a29229.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+            <figcaption class="image-caption">
+            Binding to events. 
+            </figcaption>
+        </figure>
+    </div>
+3. Call Connect() with your Agent ID (and optional overrides) 
+    <div>
+        <figure>
+            <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802136/6ca24962-4418-4e11-ab44-6eb78aa94698.webp" alt="Multimodal Chat Setup" style="width: 65%;">
+            <figcaption class="image-caption">
+            Start Connection. 
+            </figcaption>
+        </figure>
+    </div>
 4. On each frame/tick, call SendAudioToServer() with mic PCM16 data
-5. Handle OnAudioResponseBP to play incoming agent audio
+    <div>
+        <figure>
+            <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802334/d10b41ba-222e-4318-8032-8a6dbc29ca2b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+            <figcaption class="image-caption">
+            Send Audio packs to server
+            </figcaption>
+        </figure>
+    </div>
+5. Handle OnAudioResponseBP to play incoming agent audio 
+    <div>
+        <figure>
+            <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802334/d10b41ba-222e-4318-8032-8a6dbc29ca2b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+            <figcaption class="image-caption">
+            Send Audio packs to server
+            </figcaption>
+        </figure>
+    </div>
 6. Call Disconnect() when done
-```
+
 
 ### Available Delegates
 
@@ -210,6 +260,14 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
 | `SendTextToServer(Text)` | Send a text message instead of voice |
 | `SendContextualUpdate(Text)` | Send a non-interrupting contextual update |
 | `SendToolResult(ToolCallId, Result, bIsError)` | Return the result of a client-side tool call |
+
+### Audio Format
+
+ElevenLabs Conversational AI streams audio as **raw PCM 16-bit signed little-endian, mono, at 16 kHz** in both directions.
+
+- **Playback:** Use `CreateEmptyProceduralWave` with `SampleRate = 16000`, then feed `OnAudioResponseBP` data into it via `QueueAudioToProceduralWave`. Using the default 24000 will cause chipmunk-sounding audio.
+- **Mic Input:** Use `ConvertFloatArrayToPCM16Bytes` with `OutSampleRate = 16000` to convert your microphone audio before sending it with `SendAudioToServer`.
+- **Click Prevention:** By default, `bSmoothAudioPlayback` is enabled. This applies an initial audio buffer per response and a micro-fade (0.25ms) at audio chunk boundaries, so playback fades to silence instead of clicking when the buffer momentarily drains between WebSocket messages. The buffer duration is controlled by `AudioBufferDurationMs` (default 300ms). Increase this if you still hear clicks; decrease it to reduce initial latency. If you are building a custom audio pipeline and want raw, unprocessed chunks, set `bSmoothAudioPlayback = false` in the settings.
 
 ### C++ Implementation
 
@@ -276,3 +334,5 @@ void AMyActor::SendMicAudio(const TArray<uint8>& PCM16Data)
 | `LanguageOverride` | `FString` | Override language (e.g. "en", "es", "fr") |
 | `TTSOverrides` | `FGenElevenAgentsTTSOverrides` | Voice, speed, stability, and similarity boost overrides |
 | `DynamicVariables` | `TMap<FString, FString>` | Key-value pairs injected into the agent's prompt template |
+| `bSmoothAudioPlayback` | `bool` | When `true` (default), applies an initial buffer and micro-fade at chunk boundaries to prevent click/tick artifacts. Set to `false` for raw, unprocessed audio chunks. |
+| `AudioBufferDurationMs` | `int32` | Initial audio buffer duration in milliseconds before playback starts per response (default 300, range 50–1000). Higher values reduce clicks but add latency. Only used when `bSmoothAudioPlayback` is `true`. |

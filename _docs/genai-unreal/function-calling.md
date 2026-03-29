@@ -25,6 +25,16 @@ The function calling flow is a multi-step conversation:
 4. **Return Results:** You send the function's result back to the model in a follow-up request.
 5. **Final Response:** The model incorporates the tool result into its final text response to the user.
 
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774801333/09b725cd-d451-473f-b3fa-43701baa3de5.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        Blueprint example
+        </figcaption>
+    </figure>
+</div>
+
+
 ---
 
 ## Key Structs
@@ -100,6 +110,8 @@ void AMyActor::AskAIWithTools()
         },
         "required": ["location"]
     })");
+
+    "
 
     // 2. Configure chat settings with tools
     FGenOpenAIChatSettings ChatSettings;

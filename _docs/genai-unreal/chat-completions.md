@@ -64,7 +64,7 @@ To include images in your chat messages, You can either import texture as a file
 <div style="padding: 10px 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ Texture Compression Warning</p>
   <p style="margin: 5px 0 0 0; color: #856404;"><strong>Plugin Version 1.6.0 and Below:</strong> The <code>FromTexture2D</code> and <code>Make Image Content from Texture</code> nodes only support uncompressed textures (UserInterface2D/RGBA format). Compressed textures (DXT1/DXT5) will either fail to convert or in rare cases crash the editor!</p>
-  <p style="margin: 5px 0 0 0; color: #856404;"><strong>Plugin Version 1.7.0+ (Upcoming):</strong> <code>FromTexture2D</code> now supports ALL texture formats including compressed ones in EDITOR, and only uncompressed one's in Game Builds. So, we recommend using UserInterface2D (RGBA) compression on textures you plan to send to AI models.</p>
+  <p style="margin: 5px 0 0 0; color: #856404;"><strong>Plugin Version 1.7.0+:</strong> <code>FromTexture2D</code> now supports ALL texture formats including compressed ones in EDITOR, and only uncompressed one's in Game Builds. So, we recommend using UserInterface2D (RGBA) compression on textures you plan to send to AI models.</p>
   <p style="margin: 5px 0 0 0; color: #856404;">Compressed textures in packaged builds will return an error - use RGBA format for production.</p>
 </div>
 
@@ -126,7 +126,26 @@ The plugin provides a dedicated class, `UGenOAIResponses`, that handles the Resp
 #### When to Use
 
 - Use **`UGenOAIChat`** (Chat Completions) for standard models like `gpt-5-mini`, `gpt-5.1`, `gpt-4o`, etc.
-- Use **`UGenOAIResponses`** (Responses API) for Pro and Codex models like `gpt-5.4-pro`, `gpt-5.3-codex`, `gpt-5.2-pro`, etc.
+- Use **`UGenOAIResponses`** (Responses API) for Pro and Codex models like `gpt-5.4-pro`, `gpt-5.3-codex`, `gpt-5.2-pro`, etc or for advanced features like web search or inchat image generation etc. 
+
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774800700/b69f9091-1ee9-44ee-b97a-0a9442e06afd.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        Sending a responses API request.
+        </figcaption>
+    </figure>
+</div>
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774800936/3670b6bd-86f2-4824-a508-9f5e00bb9e1b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        Processing a responses API response.
+        </figcaption>
+    </figure>
+</div>
 
 #### Key Settings (`FGenOpenAIResponsesSettings`)
 
@@ -177,6 +196,15 @@ Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": 
 // Transparent background (e.g., UI icons, item sprites)
 Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "medium", "size": "1024x1024", "background": "transparent", "output_format": "png"}])");
 ```
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774801066/5c6320e4-77f5-47de-b7a3-7a00e7e45727.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        AdditionalToolsJson Blueprint examples
+        </figcaption>
+    </figure>
+</div>
 
 ---
 

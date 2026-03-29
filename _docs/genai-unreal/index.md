@@ -3,12 +3,12 @@ layout: documentation
 title: GenAI for Unreal - Home
 permalink: /docs/genai-unreal/
 nav_order: 1
-image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/c_fill,g_south,h_350,w_1000/v1751279949/Banner3-GenAIForUnreal_f0xklz.webp
+image: https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60,c_fill/v1772931701/MainBanners_4_d9nmqo.webp
 description: Complete documentation for integrating OpenAI, Anthropic, Google, and ElevenLabs AI into your Unreal Engine games and projects.
 tags: [unreal-engine, genai, ai-integration, openai, anthropic, google-gemini, elevenlabs, game-development]
 ---
 
-<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60,c_fill,g_south,h_440,w_1000/v1772931701/MainBanners_4_d9nmqo.webp" alt="GenAI for Unreal Plugin Banner">
+<img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60,c_fill,g_south,h_460,w_1000/v1772931701/MainBanners_4_d9nmqo.webp" alt="GenAI for Unreal Plugin Banner">
 
 
 

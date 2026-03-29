@@ -70,6 +70,7 @@ The OpenAI Responses API now supports generating images inline during a conversa
 
 When you use the Responses API with a model that supports image generation, the AI may choose to generate an image as part of its response. The plugin automatically detects `image_generation_call` output items, decodes the Base64 image data, and packages everything into a single `FGenOAIResponsesResult` struct.
 
+
 ### The Result Struct
 
 The `FGenOAIResponsesResult` struct provides all output from a Responses API call:
@@ -81,6 +82,26 @@ The `FGenOAIResponsesResult` struct provides all output from a Responses API cal
 | `ToolCallsJson` | `FString` | Raw JSON of any tool calls the model made |
 | `bHasImages` | `bool` | `true` if the response contains generated images |
 | `bHasToolCalls` | `bool` | `true` if the response contains tool calls |
+
+### Blueprints Example
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774800700/b69f9091-1ee9-44ee-b97a-0a9442e06afd.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        Sending a responses API request.
+        </figcaption>
+    </figure>
+</div>
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774800936/3670b6bd-86f2-4824-a508-9f5e00bb9e1b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        Processing a responses API response.
+        </figcaption>
+    </figure>
+</div>
 
 ### C++ Example
 
@@ -163,6 +184,15 @@ Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": 
 // WebP for smaller file sizes — good for thumbnails or web display
 Settings.AdditionalToolsJson = TEXT(R"([{"type": "image_generation", "quality": "medium", "output_format": "webp", "output_compression": 80}])");
 ```
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774801066/5c6320e4-77f5-47de-b7a3-7a00e7e45727.webp" alt="Multimodal Chat Setup" style="width: 100%;">
+        <figcaption class="image-caption">
+        AdditionalToolsJson Blueprint examples
+        </figcaption>
+    </figure>
+</div>
 
 In Blueprints, enter the same JSON string in the `Additional Tools Json` field on the **Make Gen OpenAI Responses Settings** node.
 

@@ -2,7 +2,7 @@
 layout: documentation
 title: Embedded Inference Setup
 permalink: /docs/genai-llama/embedded-setup/
-nav_order: 3
+nav_order: 6
 description: "Complete guide for setting up embedded GGUF model inference using llama.cpp for offline AI in Unreal Engine on any platform."
 tags: [embedded-inference, llama-cpp, gguf, offline-ai, model-loading]
 ---
@@ -109,14 +109,20 @@ Place compiled libraries in the corresponding platform directory:
 
 ---
 
-## Minimum Version
+## Pinned llama.cpp Release
 
-Target **llama.cpp b3600 or later** (late 2024+). The plugin uses the sampler chain API and `llama_chat_apply_template`, which were introduced in this version.
+**This plugin is pinned to llama.cpp release [b8802](https://github.com/ggml-org/llama.cpp/releases/tag/b8802) (April 2026).**
+
+llama.cpp renames and removes exported symbols between releases (for example, `llama_kv_cache_clear` was replaced by `llama_memory_clear` around build ~b5100). The dynamic loader resolves a fixed list of symbols at startup — if any are missing, embedded inference is disabled with a `[LogGenAILlama] Failed to resolve symbol:` line in the Output Log.
+
+**Use the exact pinned release.** Downloading the "latest" llama.cpp binaries will often break the loader until the next plugin update. The **Project Settings > Plugins > GenAI Llama** panel has a one-click button that opens the pinned release page.
+
+If you're compiling from source instead of using prebuilt binaries:
 
 ```bash
 git clone https://github.com/ggml-org/llama.cpp.git
 cd llama.cpp
-git checkout b3600  # or any later release tag
+git checkout b8802
 ```
 
 ---
@@ -146,6 +152,22 @@ For Option B (compile from source), choose your target platform for step-by-step
 | Linux (AMD) | Vulkan | Cross-vendor |
 | Android | Vulkan | Supported on most modern devices |
 | Any | CPU | Always works, just slower. Good for testing. |
+
+---
+
+## Will My Game Ship the Libraries Automatically?
+
+Yes. Drop the libraries into the folder once and the plugin takes care of the rest — both in the Editor and in any packaged build of your game. You don't need to edit `.uproject`, your project's Build.cs, `DefaultGame.ini`, or the packaging settings.
+
+The easiest way to find the right folder is the **Open Folder** button next to each platform row in **Project Settings &rarr; Plugins &rarr; GenAI Llama**. It opens the exact folder you should drop binaries into, regardless of whether you installed the plugin into your project or into the engine through Fab.
+
+If you want to navigate manually, the path is:
+
+```
+<Plugin>/ThirdParty/LlamaCpp/lib/<Platform>/
+```
+
+…where `<Plugin>` is wherever GenAI Llama lives on your machine — your project's `Plugins/GenAILlama/` folder if you installed it locally, or your engine's `Engine/Plugins/Marketplace/GenAILlama/` folder if you installed it from Fab. Either works; the plugin finds itself at runtime.
 
 ---
 
@@ -191,14 +213,31 @@ Download GGUF models from [Hugging Face](https://huggingface.co/models?search=gg
 - Clean and rebuild your Unreal project.
 
 #### Dynamic loading fails at runtime (prebuilt libraries)
-- Check the Output Log for `FGenAILlamaDynLib` messages — they report which libraries loaded and which symbols failed.
-- Ensure all shared libraries from the release archive are present (ggml-base, ggml, ggml-cpu, llama, and any backend-specific libs).
+- Check the Output Log for `LogGenAILlama` entries — they report which libraries loaded and which symbols failed, one per line.
+- **Most common cause: a version mismatch.** The plugin is pinned to [b8802](https://github.com/ggml-org/llama.cpp/releases/tag/b8802). Using any other release will usually fail symbol resolution because llama.cpp renames exported APIs between builds. Use the pinned release.
+- Ensure all shared libraries from the release archive are present (`ggml-base`, `ggml`, `ggml-cpu`, `llama`, and any backend-specific libs like `ggml-cuda` or `ggml-metal`).
 - On Windows, missing CUDA/Vulkan runtime DLLs on the system can prevent backend-specific libraries from loading. The core CPU inference will still work.
 
+#### macOS: dylibs downloaded via browser are blocked by Gatekeeper
+Shared libraries downloaded through a browser are flagged with `com.apple.quarantine` and silently refuse to load on first launch. Remove the quarantine attribute after copying them in:
+
+```bash
+xattr -cr <YourProject>/Plugins/GenAILlama/ThirdParty/LlamaCpp/lib/Mac
+```
+
+If you see a `dlopen` error in the Output Log mentioning "not permitted" or "cannot be opened because the developer cannot be verified", this is the cause.
+
 #### Model fails to load
-- Ensure the `.gguf` file path is correct (absolute, or relative to your project's `Content/` directory).
-- Check that the model format is GGUF (not GGML or other legacy formats).
-- Verify the model was quantized with a compatible version of llama.cpp.
+- Ensure the `.gguf` file path is correct (absolute, or relative to your project's `Content/` directory — relative paths are resolved against the project root, not the engine binary).
+- Check that the model format is GGUF (not the legacy GGML format).
+- Verify the model was quantized with a llama.cpp release compatible with b8802. GGUFs produced by very recent forks may use metadata fields our pinned build doesn't understand yet.
+- Enable **Project Settings > Plugins > GenAI Llama > Debug > Enable Extended Logging** and retry. The log now includes llama.cpp's own diagnostic output under `[llama.cpp]` — that usually pinpoints the exact reason (unsupported architecture, insufficient memory, GPU backend missing, etc.).
+
+#### "no backends are loaded" at model-load time
+The plugin auto-loads ggml backend plugins (`ggml-cpu.*`, `ggml-cuda.*`, etc.) from the same directory as `llama.*`. If you see this error, the backend DLLs weren't discovered — make sure they're in the same `ThirdParty/LlamaCpp/lib/<Platform>/` folder as `llama.dll` / `libllama.dylib` / `libllama.so`, not split into a subfolder.
+
+#### GPU Layers when you don't have an NVIDIA GPU
+Set **GPU Layers = 0** on the Load Embedded Model node when running on CPU only, or on systems without CUDA/Vulkan drivers installed. Non-zero values will fail to allocate VRAM on the wrong backend and the model load will error out.
 
 #### Low performance
 - Increase `GPU Layers` (set to `99` for maximum GPU offload).

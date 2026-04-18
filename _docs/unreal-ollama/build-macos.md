@@ -2,7 +2,7 @@
 layout: documentation
 title: Build for macOS
 permalink: /docs/genai-llama/build-macos/
-nav_order: 5
+nav_order: 10
 description: "Set up embedded LLM inference on macOS using prebuilt llama.cpp libraries or Metal-accelerated compilation for Apple Silicon."
 tags: [macos, embedded-inference, llama-cpp, metal, apple-silicon, gpu-acceleration]
 ---

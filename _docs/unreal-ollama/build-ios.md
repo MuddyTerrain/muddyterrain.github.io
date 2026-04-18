@@ -1,8 +1,8 @@
 ---
 layout: documentation
-title: Build for iOS
+title: Build for iOS (Experimental)
 permalink: /docs/genai-llama/build-ios/
-nav_order: 8
+nav_order: 13
 description: "Build llama.cpp for iOS with Metal acceleration to run GGUF models directly inside Unreal Engine games on Apple devices."
 tags: [ios, embedded-inference, llama-cpp, metal, apple-silicon, gguf]
 ---

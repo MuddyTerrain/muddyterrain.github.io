@@ -231,7 +231,8 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
             </figcaption>
         </figure>
     </div>
-6. Call Disconnect() when done
+6. Handle `OnInterruptionBP` — **this is critical for barge-in to work correctly.** When the user interrupts the agent, audio chunks that were already queued in your procedural sound wave will continue playing unless you flush them. On this event, call `ResetProceduralWave` on your procedural wave variable to instantly clear all buffered audio. Without this, the agent will appear to keep talking about the old topic even though the server has already moved on to the new response.
+7. Call Disconnect() when done
 
 
 ### Available Delegates
@@ -267,7 +268,7 @@ ElevenLabs Conversational AI streams audio as **raw PCM 16-bit signed little-end
 
 - **Playback:** Use `CreateEmptyProceduralWave` with `SampleRate = 16000`, then feed `OnAudioResponseBP` data into it via `QueueAudioToProceduralWave`. Using the default 24000 will cause chipmunk-sounding audio.
 - **Mic Input:** Use `ConvertFloatArrayToPCM16Bytes` with `OutSampleRate = 16000` to convert your microphone audio before sending it with `SendAudioToServer`.
-- **Click Prevention:** By default, `bSmoothAudioPlayback` is enabled. This applies an initial audio buffer per response and a micro-fade (0.25ms) at audio chunk boundaries, so playback fades to silence instead of clicking when the buffer momentarily drains between WebSocket messages. The buffer duration is controlled by `AudioBufferDurationMs` (default 300ms). Increase this if you still hear clicks; decrease it to reduce initial latency. If you are building a custom audio pipeline and want raw, unprocessed chunks, set `bSmoothAudioPlayback = false` in the settings.
+- **Click Prevention:** By default, `bSmoothAudioPlayback` is enabled. This applies an initial audio buffer at the start of each agent response and coalesces small ongoing chunks (minimum 50ms per broadcast) to prevent underrun clicks between WebSocket messages. The initial buffer duration is controlled by `AudioBufferDurationMs` (default 300ms). Increase this if you still hear clicks at the start of responses; decrease it to reduce initial latency. If you are building a custom audio pipeline and want raw, unprocessed chunks, set `bSmoothAudioPlayback = false` in the settings.
 
 ### C++ Implementation
 
@@ -300,6 +301,10 @@ void AMyActor::StartElevenLabsConversation()
     {
         UE_LOG(LogTemp, Log, TEXT("Agent said: %s"), *Response);
     });
+
+    // Handle interruption — flush queued audio so the old response stops immediately
+    AgentsService->OnInterruptionBP.AddDynamic(this, &AMyActor::OnInterruption);
+    // In OnInterruption(): Stop audio component, recreate procedural wave, restart playback
 
     // 3. Configure and connect
     FGenElevenAgentsSettings Settings;

@@ -2,7 +2,7 @@
 layout: documentation
 title: Example Project
 permalink: /docs/genai-llama/example-project/
-nav_order: 2
+nav_order: 8
 description: "Download and explore Blueprint examples demonstrating HTTP providers, embedded inference, streaming, multimodal vision, and AI model management."
 tags: [example-project, blueprint, chat-completion, streaming, vision-ai]
 ---
@@ -73,4 +73,10 @@ An example demonstrating switching between Ollama and OpenAI Compatible provider
 3.  **Open the example project** in Unreal Engine.
 4.  **Press Play** — the example actors will send requests and display responses.
 
-> **Tip:** Check the **Output Log** (Window > Developer Tools > Output Log) to see full request and response details. Set `LogGenAILlama=Verbose` for detailed streaming output.
+### For the Embedded example specifically
+
+1.  Follow the [Embedded Inference Setup Guide](/docs/genai-llama/embedded-setup/) to drop the pinned **b8802** shared libraries into `Plugins/GenAILlama/ThirdParty/LlamaCpp/lib/<Platform>/`.
+2.  Download a tiny GGUF (e.g. [Qwen2.5-0.5B-Instruct Q2_K](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF), ~280 MB) into the example project's `Content/Models/` folder.
+3.  On the Load Embedded Model node, set **GPU Layers = 0** unless you have a CUDA/Vulkan/Metal backend DLL in place. Non-zero values on CPU-only setups will fail the load with a backend error.
+
+> **Tip:** Check the **Output Log** (Window > Developer Tools > Output Log) to see full request and response details. Set `LogGenAILlama=Verbose` for detailed streaming output. Enable **Project Settings > Plugins > GenAI Llama > Debug > Enable Extended Logging** to see llama.cpp's own startup diagnostics and model-load output under `[llama.cpp]`.

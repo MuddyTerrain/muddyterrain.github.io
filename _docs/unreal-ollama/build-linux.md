@@ -2,7 +2,7 @@
 layout: documentation
 title: Build for Linux
 permalink: /docs/genai-llama/build-linux/
-nav_order: 6
+nav_order: 11
 description: "Enable embedded LLM inference on Linux by downloading prebuilt llama.cpp libraries or compiling from source with CUDA or Vulkan."
 tags: [linux, embedded-inference, llama-cpp, cuda, vulkan, gpu-acceleration]
 ---

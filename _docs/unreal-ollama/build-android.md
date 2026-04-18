@@ -1,8 +1,8 @@
 ---
 layout: documentation
-title: Build for Android
+title: Build for Android (Experimental)
 permalink: /docs/genai-llama/build-android/
-nav_order: 7
+nav_order: 12
 description: "Cross-compile llama.cpp for Android ARM64 with Vulkan or CPU support for embedded LLM inference in Unreal Engine games."
 tags: [android, embedded-inference, llama-cpp, gguf, cross-compilation, vulkan]
 ---

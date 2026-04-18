@@ -2,7 +2,7 @@
 layout: documentation
 title: Build for Windows
 permalink: /docs/genai-llama/build-windows/
-nav_order: 4
+nav_order: 9
 description: "Enable embedded LLM inference on Windows by downloading NVIDIA CUDA or AMD Vulkan-enabled llama.cpp libraries."
 tags: [windows, embedded-inference, llama-cpp, cuda, vulkan, gpu-acceleration]
 ---
@@ -124,7 +124,7 @@ Typical files include:
 
 <div style="padding: 10px 15px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold;">Shared Builds (Optional)</p>
-  <p style="margin: 5px 0 0 0;">If you built with <code>BUILD_SHARED_LIBS=ON</code>, also copy the <code>.dll</code> files into the same <code>lib/Win64/</code> directory. The plugin's Build.cs will automatically deploy them alongside your game executable.</p>
+  <p style="margin: 5px 0 0 0;">If you built with <code>BUILD_SHARED_LIBS=ON</code>, also copy the <code>.dll</code> files into the same <code>lib/Win64/</code> folder. The plugin will pick them up at runtime in the Editor and ship them with your game when you package — no extra setup needed.</p>
 </div>
 
 ### 4. Rebuild Your Unreal Project

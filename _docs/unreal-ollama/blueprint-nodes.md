@@ -83,9 +83,9 @@ Asynchronously loads a `.gguf` model file into memory for in-process inference. 
 | Pin | Type | Default | Description |
 |---|---|---|---|
 | `Model Alias` | `FString` | — | A short name you choose to reference this model later (e.g. `npc-brain`). Used as the `Model` field in Chat Settings when provider is `Embedded`. |
-| `Model Path` | `FString` | — | Path to the `.gguf` file. Absolute, or relative to the project root (not `Content/` — `Content/Models/foo.gguf` becomes `Content/Models/foo.gguf`). |
-| `GPU Layers` | `int32` | `0` | Layers to offload to GPU. `0` = CPU only, `99` = all layers. Use `0` unless you have a compatible GPU backend DLL installed. |
-| `Context Size` | `int32` | `2048` | Max context window in tokens. Affects memory usage. |
+| `Model Path` | `FString` | — | Path to the `.gguf` file. Absolute, or relative to the project root (`Content/Models/foo.gguf` is the typical shape). Windows only: the path must be ASCII-only — llama.cpp cannot open paths containing Cyrillic / CJK / emoji characters. |
+| `GPU Layers` | `int32` | `99` | Layers to offload to GPU. `0` = CPU only, `99` = all layers. If your GPU has less VRAM than the model file, full offload can abort the process — drop this to a partial value or `0` to fall back to CPU. |
+| `Context Size` | `int32` | `2048` | Max context window in tokens. Larger values use more RAM/VRAM (KV cache grows linearly). 131072 is the hard cap but rarely usable on consumer hardware — pair high values with a small model. |
 | `Thread Count` | `int32` | `0` | CPU threads. `0` = auto-detect (recommended). |
 
 **Output delegate — `On Complete`:**
@@ -95,11 +95,18 @@ Asynchronously loads a `.gguf` model file into memory for in-process inference. 
 | `bSuccess` | `bool` | Whether the model loaded. |
 | `Error` | `FString` | Error detail if `bSuccess` is `false`. |
 
+**Pre-flight checks.** Before calling into llama.cpp, the node validates the load and returns an actionable error rather than letting the inference engine crash the process:
+
+- **File missing** — `Model file not found: <path>`.
+- **Non-ASCII path on Windows** — `Model path contains non-ASCII characters, which llama.cpp cannot open on Windows: <path>`. Move the `.gguf` to an ASCII-only path (e.g. `C:\Models\`).
+- **CPU-only load larger than RAM** — `Model file is X.XX GiB but only Y.YY GiB of system RAM is available, and GpuLayers=0 (CPU only).` Raise `GPU Layers`, use a smaller quantization, or close other apps.
+- **Full GPU offload on a very large file** — a log warning is emitted (`Loading a X.XX GiB model with GpuLayers=99...`) when the file exceeds 8 GiB and full offload is requested. If VRAM is insufficient, llama.cpp may abort the process; lower `GPU Layers` to do a partial offload.
+
 **Common gotchas:**
 
-- **GPU Layers > 0 on CPU-only systems** — fails with a backend allocation error. Keep at `0` unless you've verified the GPU backend (e.g. `ggml-cuda.dll`) loaded successfully.
+- **GPU Layers > 0 on a machine without a GPU backend** — fails with a backend allocation error. The pre-flight catches the obvious OOM case, but not a missing `ggml-cuda.dll` / `ggml-vulkan.dll` — check the Output Log for `[llama.cpp]` lines.
 - **Path resolution** — relative paths are resolved from the project root, not the editor binary. `Content/Models/foo.gguf` is the typical shape.
-- **Loading twice with the same alias** — unloads the previous model first, then loads the new one.
+- **Loading twice with the same alias** — the second call returns immediately with `bSuccess=true` without reloading. Call `Unload Embedded Model` first if you want fresh parameters.
 
 ### Unload Embedded Model
 
@@ -114,6 +121,45 @@ Unloads a previously loaded model by alias and frees its memory.
 ### Unload All Embedded Models
 
 Unloads every loaded model and frees all embedded-inference memory. Call this on level teardown if you don't want the models to persist.
+
+### Get Loaded Embedded Models
+
+Returns the aliases of every currently loaded embedded model. Useful for populating a dropdown of already-loaded models before starting a chat.
+
+**Category:** `GenAI Llama > Embedded`
+
+**Output:** `TArray<FString>` — aliases.
+
+### Get Loaded Embedded Models Info
+
+Returns full metadata for every currently loaded embedded model — use this when you want to show load state in a debug panel, compute total memory in use, or persist the load configuration across sessions.
+
+**Category:** `GenAI Llama > Embedded`
+
+**Output:** `TArray<FGenAILlamaLoadedModelInfo>` with per-model fields:
+
+| Field | Type | Description |
+|---|---|---|
+| `Model Alias` | `FString` | Alias used to reference this model. |
+| `Model Path` | `FString` | Path that was passed to `Load Embedded Model`. |
+| `GPU Layers` | `int32` | Layers offloaded to GPU at load time. |
+| `Context Size` | `int32` | Context window size the model was loaded with (tokens). |
+| `Thread Count` | `int32` | CPU threads requested at load time. `0` = auto-detect. |
+| `File Size Bytes` | `int64` | Size of the GGUF file on disk, or `-1` if it could not be stat-ed. |
+| `Loaded At Utc` | `FDateTime` | UTC timestamp captured when the model finished loading. |
+
+### Get Embedded Model Info
+
+Looks up detailed info for a single loaded embedded model by alias.
+
+**Inputs:** `Model Alias` (`FString`).
+
+**Outputs:**
+
+| Pin | Type | Description |
+|---|---|---|
+| `Return Value` | `bool` | `true` if a model with that alias is currently loaded. |
+| `Out Info` | `FGenAILlamaLoadedModelInfo` | Populated only when `Return Value` is `true`; zeroed otherwise. |
 
 ### Is Embedded Inference Available
 
@@ -228,7 +274,8 @@ All async action nodes (`Request Chat Completion`, `Request Chat Stream`, `Load 
 
 - **HTTP requests** — cancelled immediately.
 - **Streaming** — stream terminated, no further tokens delivered.
-- **Embedded inference** — thread-safe flag stops generation on the next token boundary (a few ms latency).
+- **Embedded inference (generation)** — thread-safe flag stops generation on the next token boundary (a few ms latency).
+- **Embedded model loading** — cancellation is plumbed into llama.cpp's load-progress callback. `Load Embedded Model` aborts at the next progress tick and no handle is registered. Useful when the player cancels a loading screen or navigates away mid-load.
 
 Common pattern: cancel the pending request when the player closes the chat UI or moves to a new scene.
 

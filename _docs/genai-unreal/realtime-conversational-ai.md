@@ -9,13 +9,19 @@ tags: [unreal-engine, genai, realtime-conversational-ai, voice, openai-realtime,
 
 The Realtime Conversational AI system is the plugin's most advanced feature, enabling natural, fluid, and fully interruptible ("barge-in") conversations with an AI. This system is designed to replicate the natural turn-taking of human conversation, creating deeply immersive and believable character interactions.
 
+
 <div style="padding: 10px 25px; background-color: #e6f7ff; border-left: 4px solid #07a2ff; margin: 20px 0;">
   <p style="margin: 0; font-weight: bold; color: #1f6a9c;">Provider Support</p>
   <p style="margin: 5px 0 0 0; color: #1f6a9c;">This feature is available for <strong>OpenAI</strong> and <strong>ElevenLabs</strong>.</p>
   <ul style="margin: 5px 0 0 0; color: #1f6a9c;">
     <li><strong>OpenAI Realtime:</strong> Full support for the OpenAI realtime API including <strong>Server-side VAD, Semantic VAD</strong>, push-to-talk, and multimodal input. Examples in the <code>QuickExamples</code> directory.</li>
-    <li><strong>ElevenLabs Conversational AI:</strong> Live bidirectional voice conversations with ElevenLabs agents via WebSocket. Supports barge-in, VAD, text input, contextual updates, client-side tool calls, and TTS voice overrides.</li>
+    <li><strong>ElevenLabs Conversational AI (Experimental):</strong> Live bidirectional voice conversations with ElevenLabs agents via WebSocket. Supports barge-in, VAD, text input, contextual updates, client-side tool calls, and TTS voice overrides.</li>
   </ul>
+</div>
+
+<div style="padding: 10px 25px; background-color: #fff3cd; border-left: 4px solid #ff8c00; margin: 20px 0;">
+  <p style="margin: 0; font-weight: bold; color: #8a4b00;">⚠️ Experimental Feature</p>
+  <p style="margin: 5px 0 0 0; color: #8a4b00;">The <strong>ElevenLabs Conversational AI</strong> integration and the <strong>Realtime Buffered Audio Player</strong> component are currently <strong>experimental</strong>. API surface, defaults, and behavior may change in future releases. Multi-second pauses mid-response can occur due to LLM latency on the agent side and are not always controllable from the client. Production use is at your own discretion — please report issues so we can stabilize the feature.</p>
 </div>
 
 <div style="padding: 10px 15px; background-color: #fffbe6; border-left: 4px solid #ffc107; margin: 20px 0;">
@@ -154,9 +160,11 @@ The `RealtimeService` provides events that fire when the AI responds. You'll use
 
 ---
 
-## ElevenLabs Conversational AI
+## ElevenLabs Conversational AI (Experimental)
 
-The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirectional voice conversations with ElevenLabs agents. This system connects via WebSocket and streams PCM16 mono 16 kHz audio in both directions. Available on plugin version 2.1.0 or above. 
+> **⚠️ Experimental:** This integration is experimental. API and behavior may change. Some long pauses mid-conversation are caused by the agent's LLM latency on ElevenLabs' side and are not controllable from the client.
+
+The plugin supports **ElevenLabs Conversational AI**, enabling live, bidirectional voice conversations with ElevenLabs agents. This system connects via WebSocket and streams PCM16 mono audio in both directions. Available on plugin version 2.1.0 or above. 
 
 ### Key Features
 
@@ -191,6 +199,29 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
   </ul>
 </div>
 
+<strong>Remember to hit publish in the end. </strong>
+
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1777126049/be8d4bf7-0e2f-4cac-968a-a7d013effdaa.webp" alt="AI Response Blueprint" style="width: 80%;">
+        <figcaption class="image-caption"></figcaption>
+    </figure>
+</div>
+<div class="image-wrapper">
+    <figure>
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1777126126/c1359e50-2246-45c5-bd9f-140a0e398dd4.webp" alt="AI Response Blueprint" style="width: 80%;">
+        <figcaption class="image-caption">Change output format to 24000khz</figcaption>
+    </figure>
+</div>
+
+
+<div class="image-wrapper">
+    <figure> 
+        <img src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1777125974/db3a0fcc-7cf1-4696-9d94-b1258784fa45.webp" alt="AI Response Blueprint" style="width: 80%;">
+        <figcaption class="image-caption"></figcaption>
+    </figure>
+</div>
+
 ### Blueprint Usage
 
 
@@ -213,7 +244,7 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
             </figcaption>
         </figure>
     </div>
-4. On each frame/tick, call SendAudioToServer() with mic PCM16 data
+4. On each frame/tick, call SendAudioToServer() with mic PCM16 data. K
     <div>
         <figure>
             <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802334/d10b41ba-222e-4318-8032-8a6dbc29ca2b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
@@ -227,7 +258,6 @@ The plugin now supports **ElevenLabs Conversational AI**, enabling live, bidirec
         <figure>
             <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1774802334/d10b41ba-222e-4318-8032-8a6dbc29ca2b.webp" alt="Multimodal Chat Setup" style="width: 100%;">
             <figcaption class="image-caption">
-            Send Audio packs to server
             </figcaption>
         </figure>
     </div>

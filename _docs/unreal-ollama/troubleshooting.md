@@ -20,7 +20,7 @@ The two most useful diagnostic tools are:
 
 Lines from the embedded backend appear under `LogGenAILlama` and are tagged `[llama.cpp]` when they come from llama.cpp itself.
 
-**By default (Extended Logging off):** only warnings and errors are shown. A successful model load looks almost silent — that is intentional, because llama.cpp normally emits hundreds of lines per load (per-tensor names, per-layer device assignments, KV cache layout, etc.) and they are not useful unless you are debugging.
+**By default (Extended Logging off):** only warnings and errors are shown, plus a single-line summary per successful load of the form `Loaded embedded model: <path> (file=X.XX GiB, ctx=N, gpu_layers=N, threads=N, ram_available_after=Y.YY GiB)`. That summary line is the first thing to paste into a support ticket — it tells us file size, load configuration, and the RAM footprint right after the load finished. llama.cpp normally emits hundreds of lines per load (per-tensor names, per-layer device assignments, KV cache layout, etc.) and they are suppressed unless you enable Extended Logging.
 
 **With Extended Logging on:** you also see informational lines from llama.cpp — model architecture, quantization, backend selection, the load-progress dots, and so on. A few extreme firehose patterns (`create_tensor:`, `load_tensors: layer N`, `llama_kv_cache: layer N`, per-token control-token dumps) are still suppressed even in this mode because they add no diagnostic value; the aggregate summary lines around them still appear.
 
@@ -68,14 +68,16 @@ The plugin auto-loads ggml backend plugins (`ggml-cpu.*`, `ggml-cuda.*`, etc.) f
 
 **Fix:** make sure the backend DLLs are in the **same folder** as `llama.dll` / `libllama.dylib` / `libllama.so` — not split into a subfolder. The b8802 release zip typically contains all of them at the top level; copy them all in.
 
-### "unable to allocate X MiB on device"
+### "unable to allocate X MiB on device" / "Failed to create inference context (ContextSize=N, GpuLayers=N)"
 
-The model + context would need more memory than you have. Options:
+The model + context would need more memory than you have. The error from the plugin now includes your exact `ContextSize` and `GpuLayers` values so you can see which lever to pull.
 
-- Reduce `Context Size` on the `Load Embedded Model` node (try `1024` or `512`).
-- Use a smaller quantization (e.g. `Q4_K_M` → `Q2_K`).
-- Pick a smaller model — see [GGUF Models](/docs/genai-llama/gguf-models/).
-- If you set `GPU Layers > 0`, try `0` (CPU) instead — you may be hitting VRAM limits.
+Fixes, in order of impact:
+
+- **Reduce `Context Size`** on the `Load Embedded Model` node (try `2048` or `1024`). KV cache grows linearly with context size and is usually the actual allocator that failed.
+- **Lower `GPU Layers`** to push allocations into system RAM — slower inference, but system RAM is usually a much larger pool than VRAM.
+- **Use a smaller quantization** (e.g. `Q4_K_M` → `Q2_K`).
+- **Pick a smaller model** — see [GGUF Models](/docs/genai-llama/gguf-models/).
 
 ### "unknown model architecture"
 
@@ -91,6 +93,44 @@ Path resolution issue.
 - `Model Path` is resolved from the **project root**, not the editor binary. Use `Content/Models/foo.gguf` or `Models/foo.gguf` depending on your layout.
 - Absolute paths also work and are sometimes easier for debugging: `D:/Models/foo.gguf`.
 - Verify the file actually exists at the path you gave by opening it in Explorer / Finder.
+
+### "Model path contains non-ASCII characters, which llama.cpp cannot open on Windows"
+
+llama.cpp's loader uses the C `fopen()` call, which on Windows interprets the path in the system's ANSI code page. A path with Cyrillic / CJK / emoji / accented characters will fail even when the file exists.
+
+**Fix:** move the `.gguf` file to a path made up entirely of ASCII characters — e.g. `C:\Models\` or `D:/Games/models/`. The rest of the project can stay where it is; only the model file's path matters.
+
+### "Model file is X.XX GiB but only Y.YY GiB of system RAM is available, and GpuLayers=0"
+
+The plugin pre-flighted the load and determined that a CPU-only load would almost certainly OOM or cause heavy disk-thrashing. The headroom the check reserves scales with the machine size (`min(1 GiB, Available/4)`) so it's appropriate on both 4 GiB laptops and 128 GiB workstations.
+
+**Fix:**
+- Set `GPU Layers` to a non-zero value to offload part (or all) of the model to VRAM.
+- Use a smaller quantization — `Q4_K_M` and below are much more forgiving than `Q8_0` or `F16`.
+- Close other memory-heavy apps (browsers, the packaged game, other editor sessions).
+
+### "Loading a X.XX GiB model with only Y.YY GiB of system RAM available"
+
+Warning (not an error) emitted when a partial-offload load (`GpuLayers > 0`) requests a model larger than free RAM. The load proceeds because part of the weights will live in VRAM, but the CPU-resident layers + KV cache + compute buffers still need RAM. If the load then fails, raise `GPU Layers` further or switch to a smaller quantization.
+
+### "Failed to process prompt tokens (chunk A..B of N)"
+
+Thrown by `Request Chat Completion` / `Request Chat Stream` when the KV cache can't accept the prompt. The chunk range tells you how far into the prompt it got before running out.
+
+**Fix:** reduce prompt length (trim multi-turn history, shorten the system prompt, drop large pasted documents) or raise `Context Size` on the next `Load Embedded Model` call. Note that raising `Context Size` also raises the KV cache memory footprint — it may fail at load time on low-memory machines.
+
+### "Model load cancelled."
+
+The async action node's `Cancel()` was called while the load was in progress. llama.cpp's progress callback aborted the load; no handle was registered. This is the expected behaviour when your UI cancels a loading screen or the player navigates away during load. Re-call `Load Embedded Model` to start fresh.
+
+### Editor hard-crashes / disappears during `Load Embedded Model`
+
+If you set `GPU Layers = 99` and the weights exceed available VRAM, llama.cpp may call `GGML_ABORT` on the failing allocation rather than returning an error. The plugin can't intercept this — the process is already terminating.
+
+**Prevention:**
+- Watch the Output Log for the `Loading a X.XX GiB model with GpuLayers=99...` warning before the crash and take it seriously.
+- Lower `GPU Layers` to do a partial offload (start with `20`, tune up until just under VRAM fills).
+- For shipped titles, gate large models behind a settings toggle so users with smaller GPUs never hit this path. See [GGUF Models → When the model is bigger than your VRAM](/docs/genai-llama/gguf-models/#when-the-model-is-bigger-than-your-vram).
 
 ---
 

@@ -64,6 +64,22 @@ RAM usage roughly equals the model file size + the KV cache (depends on context 
 
 For GPU offload with `GPU Layers > 0`, the relevant limit is **VRAM**, not RAM. Most consumer GPUs have 8–16 GB VRAM — that's the working budget for anything running on-device.
 
+### When the model is bigger than your VRAM
+
+`GPU Layers` defaults to `99` (full offload). If the weights you ask to offload don't fit in VRAM, llama.cpp aborts the process — it does **not** return a friendly error. This is a real risk for anyone shipping a game whose players have varying GPU sizes.
+
+**What the plugin does for you:**
+
+- For CPU-only loads (`GPU Layers = 0`), `Load Embedded Model` pre-flights the file size against available system RAM and returns a clear error before calling into llama.cpp.
+- For full-offload loads on large files (> 8 GiB), a warning is emitted to `LogGenAILlama` telling the user this might abort if VRAM is insufficient.
+- VRAM itself cannot be queried portably across Windows / macOS / Linux / consoles, so the plugin does not hard-block on it — the warning is advisory.
+
+**What you should do in your game code:**
+
+- Let the player pick a model size, or gate the large model behind a settings toggle.
+- Start with `GPU Layers = 99` — if loading fails, fall back to a partial offload (e.g. `GPU Layers = 20`) or CPU-only.
+- For shipped titles, prefer **smaller quantizations** (Q4_K_M at 8B is safer than Q8_0 at 13B) over chasing quality, because you're deploying to hardware you can't inspect.
+
 ---
 
 ## Recommended Starter Models
@@ -96,7 +112,31 @@ By convention, drop your `.gguf` files under `<YourProject>/Content/Models/`. Th
 - **Relative path** — resolved from the project root (e.g. `Models/qwen2.5-0.5b-instruct-q2_k.gguf`).
 - **Absolute path** — any full path on disk (useful for shared model libraries across projects).
 
-**Packaging note:** `.gguf` files inside `Content/` are packaged with the game by default. For larger models, consider shipping them as optional downloadable content instead of bloating the game install.
+### Packaging `.gguf` files into a shipped build
+
+**Important:** `.gguf` files are **not** packaged by default. Unreal's cooker only stages `.uasset` files automatically — raw binary files like GGUF models are skipped, so a build that loads fine in the editor will fail with `Model file not found` at runtime in a packaged game.
+
+To ship them with your game, tell the cooker to copy the folder as raw (non-UFS) files. Two equivalent ways:
+
+**Option A — Project Settings (GUI):**
+
+1. Open **Edit → Project Settings → Packaging**
+2. Click **Show Advanced**
+3. Find **Additional Non-Asset Directories To Copy**
+4. Add an entry with the path relative to `Content/`, e.g. `Models` or `BlueprintExamplesOllama/Models`
+
+**Option B — `Config/DefaultGame.ini`:**
+
+```ini
+[/Script/UnrealEd.ProjectPackagingSettings]
++DirectoriesToAlwaysStageAsNonUFS=(Path="Models")
+```
+
+The path is relative to your project's `Content/` directory. After repackaging, the `.gguf` files will land in `<Build>/<Project>/Content/Models/` and `Load Embedded Model` will find them.
+
+**Why non-UFS?** llama.cpp reads model files via native `fopen`, not Unreal's asset/package system. Non-UFS staging copies the files to disk as-is rather than bundling them into a `.pak`.
+
+**Tip for large models:** Rather than bloating your install size, ship the game without the model and download it on first launch into `FPaths::ProjectPersistentDownloadDir()`, then pass that absolute path to `Load Embedded Model`.
 
 ---
 

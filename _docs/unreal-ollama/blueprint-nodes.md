@@ -11,6 +11,24 @@ This is the reference for every Blueprint node the plugin adds. All nodes work w
 
 If you're just getting started, the [Quick Start](/docs/genai-llama/quick-start/) walks through the minimum wiring end-to-end. This page is for reference once you're past that.
 
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1777155128/Screenshot_2026-04-25_224056_zmaxsu.webp" alt="Blueprint Sound Effect Example" style="width: 100%;">
+        <figcaption class="image-caption">
+        Embeded chat example
+        </figcaption>
+    </figure>
+</div>
+
+<div>
+    <figure>
+        <img class="full-bleed" src="https://res.cloudinary.com/dqq9t4hyy/image/upload/q_60/v1777155248/4287083a-175e-40fc-9a41-58b85e0f2e54.webp" alt="Blueprint Sound Effect Example" style="width: 100%;">
+        <figcaption class="image-caption">
+        Ollama Multimodal chat example
+        </figcaption>
+    </figure>
+</div>
+
 ---
 
 ## Chat Nodes

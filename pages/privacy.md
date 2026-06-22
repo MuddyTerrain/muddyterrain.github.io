@@ -135,8 +135,9 @@ You can reach us by email at mail@muddyterrain.com or through our website contac
 You can also contact us by mail at:
 
 MUDDY TERRAIN GAMES PRIVATE LIMITED  
-WeWork Galaxy, 43 Residency Rd  
-Bangalore, Karnataka 560025  
+INNOV8 PRESTIGE TECH PLATINA, 11TH FLOOR, NO, 32/2, 34/1
+KADABISANAHALLI, Bangalore South 
+Bangalore, Karnataka 560087
 India
 
 For inquiries related to the General Data Protection Regulation (GDPR), you may contact our Data Protection Officer by sending an email to the address above with "Data Protection Officer" in the subject line.

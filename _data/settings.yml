@@ -22,6 +22,10 @@ social:
 - {icon: 'discord', link: '/t/discord'}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
 
+# Nande Kano Bengaluru: paste the Epic Games Store link here and /bengaluru shows the wishlist button
+bengaluru:
+  epic_url: ""
+
 # Customize site text
 # pagination:
 #   next_page: 'Newer'

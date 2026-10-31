@@ -1,0 +1,179 @@
+---
+layout: wide
+title: Nande Kano Bengaluru
+permalink: /bengaluru
+description: "An open-world story game set on the real streets of Bengaluru. Drive an auto, take on the city, climb from the meter to the top. In development for PC."
+image: /assets/img/bengaluru/hero.webp
+shots:
+  - {src: s1.webp, alt: "Traffic queue under jacaranda trees on Ambedkar Veedhi"}
+  - {src: s2.webp, alt: "Shutters and signboards on a Commercial Street lane"}
+  - {src: s3.webp, alt: "A corner near Church Street with Kannada signboards"}
+  - {src: s4.webp, alt: "MG Road after sunset with a black and yellow taxi"}
+  - {src: s5.webp, alt: "Brigade Road footpath at night"}
+  - {src: s6.webp, alt: "A busy junction in Shivajinagar"}
+cars:
+  - {src: car1.webp, name: "Gubbi 800", price: "₹85,000"}
+  - {src: car2.webp, name: "Padma Taxi", price: "₹1.5 L"}
+  - {src: car3.webp, name: "Chirate", price: "₹7.5 L"}
+  - {src: car4.webp, name: "Vayu Sedan", price: "₹38 L"}
+  - {src: car5.webp, name: "Sahyadri Ambari", price: "₹3.6 Cr"}
+  - {src: car6.webp, name: "Garuda Rosso", price: "₹6.5 Cr"}
+  - {src: car7.webp, name: "Mysore Rani", price: "₹27 Cr"}
+  - {src: car8.webp, name: "Mysore Raja", price: "₹108 Cr"}
+---
+{% assign epic_url = site.data.settings.bengaluru.epic_url %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Tamma+2:wght@800&family=Oswald:wght@400;500;600&display=swap">
+<style>
+  /* this page only: the site column is 1100px with overflow hidden, the game page runs edge to edge */
+  .container { width:100%; max-width:none; overflow-x:visible; }
+  .content-wrapper { width:100%; padding-top:56px; }
+  .wide-content { max-width:none; padding:0; margin:0; }
+  .site-header { width:100%; left:0; padding:0 max(10px, calc(50% - 550px)); box-sizing:border-box; }
+  .nkb .header-link-icon { display:none; }
+  .footer { max-width:1100px; margin-left:auto; margin-right:auto; }
+  .nkb { --y:#ffc700; --g:#2ea355; --c:#f5f0e6; --m:#a9adb8; --p:#171a20; --l:#2a2e37;
+    width:100%; background:#0e1014; color:var(--c); font-family:Roboto,sans-serif; font-size:18px; line-height:1.6; }
+  .nkb *, .nkb *:before { box-sizing:border-box; }
+  .nkb img { display:block; width:100%; max-width:none; margin:0; border-radius:0; box-shadow:none; }
+  .nkb-hero { position:relative; min-height:min(56.25vw, calc(100vh - 56px)); display:flex; align-items:flex-end; overflow:hidden; }
+  .nkb-hero > img { position:absolute; inset:0; height:100%; object-fit:cover; object-position:50% 30%; }
+  .nkb-hero:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(14,16,20,.7) 0%,rgba(14,16,20,0) 42%),linear-gradient(180deg,rgba(14,16,20,0) 62%,#0e1014 100%); }
+  .nkb-hero-text { position:relative; z-index:1; width:100%; padding:0 24px 34px clamp(24px,5vw,110px); }
+  .nkb-kn { font-family:'Baloo Tamma 2',sans-serif; font-weight:800; color:var(--y); font-size:clamp(26px,4vw,44px); line-height:1.25; text-shadow:0 2px 12px rgba(0,0,0,.6); }
+  .nkb .nkb-hero h1 { font-family:Anton,sans-serif; font-weight:400; color:var(--c); font-size:clamp(50px,6.6vw,98px); line-height:1.08; letter-spacing:.5px; margin:0; text-shadow:0 3px 18px rgba(0,0,0,.55); }
+  .nkb-bars { margin:14px 0 18px; } .nkb-bars i, .nkb-bars b { display:block; height:6px; width:190px; } .nkb-bars i { background:var(--y); } .nkb-bars b { background:var(--g); margin-top:3px; }
+  .nkb-tag { font-family:Oswald,sans-serif; font-size:clamp(20px,2.2vw,25px); line-height:1.3; margin:0 0 22px; max-width:440px; color:var(--c); }
+  .nkb-cta { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+  .container .nkb-btn { text-decoration:none; }
+  .nkb-btn { display:inline-flex; align-items:center; gap:10px; font-family:Oswald,sans-serif; font-weight:600; font-size:20px; letter-spacing:.3px; padding:13px 26px; border-radius:8px; text-decoration:none; border:2px solid var(--y); }
+  .nkb-btn.main { background:var(--y); color:#0e1014; }
+  .nkb-btn.main:hover { background:#ffd84a; color:#0e1014; }
+  .nkb-btn.alt { background:rgba(14,16,20,.55); color:var(--c); border-color:#555b68; }
+  .nkb-btn.alt:hover { border-color:var(--y); color:var(--y); }
+  .nkb-btn.off { background:rgba(14,16,20,.7); color:var(--y); cursor:default; }
+  .nkb-wrap { max-width:1180px; margin:0 auto; padding:0 24px; }
+  .nkb-sec { padding:58px 0 0; }
+  .nkb h2 { font-family:Anton,sans-serif; font-weight:400; color:var(--y); font-size:clamp(32px,4.4vw,48px); line-height:1.15; letter-spacing:.4px; margin:0 0 14px; }
+  .nkb-sub { font-family:'Baloo Tamma 2',sans-serif; font-weight:800; font-size:24px; color:var(--c); line-height:1.3; margin-bottom:6px; }
+  .nkb p { color:#d3d0c8; margin:0 0 14px; }
+  .nkb-lead { max-width:820px; font-size:20px; }
+  .nkb-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:12px; }
+  .nkb-card { background:var(--p); border:1px solid var(--l); border-radius:10px; padding:22px; }
+  .nkb-card h3 { font-family:Oswald,sans-serif; font-weight:600; font-size:23px; color:var(--c); line-height:1.25; margin:0 0 8px; }
+  .nkb-card p { font-size:16.5px; margin:0; }
+  .nkb-shots { display:grid; grid-template-columns:repeat(12,1fr); gap:12px; margin-top:14px; }
+  .nkb-shots a { grid-column:span 3; display:block; overflow:hidden; border-radius:8px; background:#000; }
+  .nkb-shots a.big { grid-column:span 6; }
+  .nkb-shots img { aspect-ratio:16/9; height:100%; object-fit:cover; transition:transform .25s; }
+  .nkb-shots a:hover img { transform:scale(1.03); }
+  .nkb-cars { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:6px; }
+  .nkb-car { background:#000; border:1px solid var(--l); border-radius:8px; overflow:hidden; }
+  .nkb-car img { aspect-ratio:3/2; object-fit:cover; }
+  .nkb-car-t { display:flex; justify-content:space-between; align-items:baseline; gap:8px; padding:8px 12px 10px; font-family:Oswald,sans-serif; background:var(--p); }
+  .nkb-car-t span { font-size:18px; color:var(--c); font-weight:500; }
+  .nkb-car-t b { font-size:17px; color:var(--y); font-weight:600; white-space:nowrap; }
+  .nkb-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .nkb-facts dt { font-family:Oswald,sans-serif; font-weight:600; color:var(--y); font-size:16px; letter-spacing:.5px; }
+  .nkb-facts dd { margin:0; color:var(--c); font-size:17px; }
+  .nkb-end { text-align:left; padding:58px 0 54px; }
+  .nkb-fine { color:#7f8390; font-size:14px; line-height:1.5; padding:0 0 34px; margin:0; }
+  .nkb-fine a { color:#a9adb8; }
+  @media (max-width:820px) {
+    .nkb-grid, .nkb-facts { grid-template-columns:1fr 1fr; }
+    .nkb-shots a, .nkb-shots a.big { grid-column:span 6; }
+    .nkb-cars { grid-template-columns:1fr 1fr; }
+    .nkb-hero { display:block; min-height:0; }
+    .nkb-hero > img { position:relative; height:auto; aspect-ratio:16/10; object-position:62% 70%; }
+    .nkb-hero:after { display:none; }
+    .nkb-hero-text { padding:22px 24px 6px; }
+    .nkb-tag { max-width:none; }
+  }
+  @media (max-width:520px) {
+    .nkb-grid { grid-template-columns:1fr; }
+    .nkb-shots a.big { grid-column:span 12; }
+    .nkb-btn { width:100%; justify-content:center; }
+  }
+</style>
+
+<div class="nkb">
+  <section class="nkb-hero">
+    <img src="{{ '/assets/img/bengaluru/hero.webp' | relative_url }}" alt="A street in Nande Kano Bengaluru">
+    <div class="nkb-hero-text">
+      <div class="nkb-kn">ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು</div>
+      <h1>NANDE KANO<br>BENGALURU</h1>
+      <div class="nkb-bars"><i></i><b></b></div>
+      <p class="nkb-tag">An open-world story game set on the real streets of Bengaluru.</p>
+      <div class="nkb-cta">
+        {% if epic_url and epic_url != "" %}
+        <a href="{{ epic_url }}" class="nkb-btn main track-click" data-event-name="btn_clk_bengaluru_wishlist" data-event-location="bengaluru_hero" target="_blank" rel="noopener">Wishlist on Epic Games Store <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        {% else %}
+        <span class="nkb-btn off">Epic Games Store wishlist coming soon</span>
+        {% endif %}
+        <a href="{{ '/t/discord' | relative_url }}" class="nkb-btn alt track-click" data-event-name="btn_clk_bengaluru_discord" data-event-location="bengaluru_hero" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="nkb-wrap">
+    <section class="nkb-sec">
+      <div class="nkb-sub">ಮೀಟರ್ ಹಾಕಿ</div>
+      <h2>THE METER NEVER PAYS.</h2>
+      <p class="nkb-lead">Twelve hours a day in Bengaluru traffic. There has to be a faster way up.</p>
+    </section>
+
+    <section class="nkb-sec">
+      <div class="nkb-shots">
+        {% for s in page.shots %}
+        <a class="{% if forloop.index <= 2 %}big{% endif %}" href="{{ s.src | prepend: '/assets/img/bengaluru/' | relative_url }}" target="_blank"><img src="{{ s.src | prepend: '/assets/img/bengaluru/' | relative_url }}" alt="{{ s.alt }}" loading="lazy"></a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="nkb-sec">
+      <div class="nkb-sub">ಮಂಜನ ಗ್ಯಾರೇಜ್</div>
+      <h2>MANJA'S GARAGE</h2>
+      <p class="nkb-lead">Thirty cars. ₹85,000 to ₹108 Cr.</p>
+      <div class="nkb-cars">
+        {% for c in page.cars %}
+        <div class="nkb-car"><img src="{{ c.src | prepend: '/assets/img/bengaluru/' | relative_url }}" alt="{{ c.name }}" loading="lazy"><div class="nkb-car-t"><span>{{ c.name }}</span><b>{{ c.price }}</b></div></div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="nkb-sec">
+      <div class="nkb-grid">
+        <div class="nkb-card"><h3>Real streets</h3><p>MG Road to Vidhana Soudha, built from real map data.</p></div>
+        <div class="nkb-card"><h3>Drive anything</h3><p>Autos, scooters, cars, even the odd police jeep.</p></div>
+        <div class="nkb-card"><h3>Loud and alive</h3><p>BMTC buses, street dogs, cows that own the lane.</p></div>
+        <div class="nkb-card"><h3>Trouble</h3><p>Cricket bat, machete, local revolver. Then lose the police.</p></div>
+        <div class="nkb-card"><h3>Day and night</h3><p>Morning rush to empty midnight roads.</p></div>
+        <div class="nkb-card"><h3>Your radio</h3><p>Drop your own songs in. They play in the car.</p></div>
+      </div>
+    </section>
+
+    <section class="nkb-sec">
+      <dl class="nkb-facts">
+        <div><dt>STATUS</dt><dd>In development</dd></div>
+        <div><dt>PLATFORM</dt><dd>PC (Windows)</dd></div>
+        <div><dt>DEVELOPER</dt><dd>Muddy Terrain Games</dd></div>
+        <div><dt>BUILT WITH</dt><dd>Unreal Engine 5</dd></div>
+      </dl>
+    </section>
+
+    <section class="nkb-end">
+      <h2>NANDE KANO. IT'S MINE, MAN.</h2>
+      <div class="nkb-cta">
+        {% if epic_url and epic_url != "" %}
+        <a href="{{ epic_url }}" class="nkb-btn main track-click" data-event-name="btn_clk_bengaluru_wishlist" data-event-location="bengaluru_end" target="_blank" rel="noopener">Wishlist on Epic Games Store <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        {% else %}
+        <span class="nkb-btn off">Epic Games Store wishlist coming soon</span>
+        {% endif %}
+        <a href="https://x.com/muddyterrain" class="nkb-btn alt track-click" data-event-name="btn_clk_bengaluru_x" data-event-location="bengaluru_end" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> Follow on X</a>
+        <a href="https://instagram.com/muddyterrain" class="nkb-btn alt track-click" data-event-name="btn_clk_bengaluru_instagram" data-event-location="bengaluru_end" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </section>
+
+    <p class="nkb-fine">Screenshots are from the game in development. All brands, businesses and characters are fictional parody. Street layout based on <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> data, &copy; OpenStreetMap contributors.</p>
+  </div>
+</div>

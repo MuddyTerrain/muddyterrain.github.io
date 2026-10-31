@@ -2,6 +2,12 @@
 
 > Muddy Terrain builds AI plugins for Unreal Engine. Our plugins let game developers integrate large language models, AI 3D model generation, and local AI inference into Unreal Engine games and applications using Blueprint and C++.
 
+## Games
+
+### Nande Kano Bengaluru
+A GTA-style, single-player open-world story game set on the real streets of Bengaluru (Bangalore), India, by Muddy Terrain Games. Built with Unreal Engine 5, in development for PC (Windows), coming to the Epic Games Store. Not affiliated with Rockstar Games.
+- Game page: https://muddyterrain.com/bengaluru
+
 ## Products
 
 ### GenAI for Unreal

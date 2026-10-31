@@ -1,6 +1,8 @@
 <head>
   <title>
-    {% if page.title == "Home" %}
+    {% if page.seo_title %}
+      {{ page.seo_title }}
+    {% elsif page.title == "Home" %}
       {{ site.title }} | {{ site.description }}
     {% else %}
       {{ page.title }} | {{ site.title }}
@@ -8,7 +10,7 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <meta name="theme-color" content="#eaf6ff">
+  <meta name="theme-color" content="{{ page.theme_color | default: '#eaf6ff' }}">
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
   <link rel="stylesheet" href="{{ site.github.url }}/assets/css/syntax.css">
@@ -20,14 +22,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {% unless page.no_mathjax %}
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
+  {% endunless %}
   <!-- Google Analytics -->
   {% include google-analytics.html %}
   <script src="{{ site.github.url }}/assets/js/internal-traffic.js"></script>
   <!-- Use Jekyll SEO plugin -->
-  {% seo %}
+  {% if page.seo_title %}{% seo title=false %}{% else %}{% seo %}{% endif %}
   <!-- Organization structured data for AI/LLM discoverability -->
   {% if page.url == "/" %}
   <script type="application/ld+json">

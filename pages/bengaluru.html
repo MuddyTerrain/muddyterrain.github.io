@@ -1,9 +1,16 @@
 ---
 layout: wide
 title: Nande Kano Bengaluru
+seo_title: "Nande Kano Bengaluru: GTA-Style Open-World Bengaluru Game for PC"
 permalink: /bengaluru
-description: "An open-world story game set on the real streets of Bengaluru. Drive an auto, take on the city, climb from the meter to the top. In development for PC."
-image: /assets/img/bengaluru/hero.webp
+description: "A GTA-style open-world game set on the real streets of Bengaluru (Bangalore). Drive autos and cars, take jobs, outrun the police. Coming to PC."
+image:
+  path: /assets/img/bengaluru/og.jpg
+  width: 1200
+  height: 630
+  alt: "Nande Kano Bengaluru, an open-world game set in Bengaluru"
+theme_color: "#0e1014"
+no_mathjax: true
 shots:
   - {src: s1.webp, alt: "Traffic queue under jacaranda trees on Ambedkar Veedhi"}
   - {src: s2.webp, alt: "Shutters and signboards on a Commercial Street lane"}
@@ -20,6 +27,19 @@ cars:
   - {src: car6.webp, name: "Garuda Rosso", price: "₹6.5 Cr"}
   - {src: car7.webp, name: "Mysore Rani", price: "₹27 Cr"}
   - {src: car8.webp, name: "Mysore Raja", price: "₹108 Cr"}
+faq:
+  - q: "Is there a GTA game set in Bengaluru?"
+    a: "There is no official one. Nande Kano Bengaluru is an independent GTA-style open-world game set in Bengaluru (Bangalore), made by Muddy Terrain Games. It is a new game, not a mod of Grand Theft Auto."
+  - q: "What kind of game is it?"
+    a: "A single-player open-world story game. You start behind the wheel of an auto rickshaw and work your way up: fares, missions, fast cars, fights and police chases, all across one city."
+  - q: "Which parts of Bengaluru are in the game?"
+    a: "Central Bengaluru, laid out from real map data: MG Road, Brigade Road, Church Street, Commercial Street, Cubbon Park, Vidhana Soudha and the streets around them."
+  - q: "Is it in Kannada?"
+    a: "Street signs are in Kannada and English, and people on the street talk the way Bengaluru talks: Kanglish."
+  - q: "When does it come out, and can I download it?"
+    a: "Not yet. The game is in development for PC (Windows) with no release date so far. It is coming to the Epic Games Store, so follow along here for the wishlist."
+  - q: "Is it on Android or mobile?"
+    a: "No. It is a PC game built with Unreal Engine 5."
 ---
 {% assign epic_url = site.data.settings.bengaluru.epic_url %}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +51,13 @@ cars:
   .wide-content { max-width:none; padding:0; margin:0; }
   .site-header { width:100%; left:0; padding:0 max(10px, calc(50% - 550px)); box-sizing:border-box; }
   .nkb .header-link-icon { display:none; }
+  .site-header { background-color:rgba(14,16,20,.88); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); box-shadow:none; border-bottom:1px solid rgba(255,255,255,.08); }
+  .site-header .site-title a, .site-header .menu-link { color:#f5f0e6; }
+  .site-header .menu-link:hover { color:#ffc700; }
+  .site-header .dropbtn, .site-header .dropdown:hover .dropbtn { background-color:transparent; color:#f5f0e6; }
+  .site-header .dropdown-content { background-color:#171a20; box-shadow:0 8px 24px rgba(0,0,0,.5); }
+  .site-header .dropdown-content a { color:#f5f0e6; }
+  .site-header .dropdown-content a:hover { background-color:#2a2e37; color:#ffc700; }
   .footer { max-width:1100px; margin-left:auto; margin-right:auto; }
   .nkb { --y:#ffc700; --g:#2ea355; --c:#f5f0e6; --m:#a9adb8; --p:#171a20; --l:#2a2e37;
     width:100%; background:#0e1014; color:var(--c); font-family:Roboto,sans-serif; font-size:18px; line-height:1.6; }
@@ -77,6 +104,11 @@ cars:
   .nkb-facts dt { font-family:Oswald,sans-serif; font-weight:600; color:var(--y); font-size:16px; letter-spacing:.5px; }
   .nkb-facts dd { margin:0; color:var(--c); font-size:17px; }
   .nkb-end { text-align:left; padding:58px 0 54px; }
+  .nkb-faq { max-width:900px; margin-top:6px; }
+  .nkb-faq details { border-bottom:1px solid var(--l); padding:13px 0; }
+  .nkb-faq summary { font-family:Oswald,sans-serif; font-weight:500; font-size:21px; color:var(--c); cursor:pointer; }
+  .nkb-faq summary:hover { color:var(--y); }
+  .nkb-faq p { margin:9px 0 3px; }
   .nkb-fine { color:#7f8390; font-size:14px; line-height:1.5; padding:0 0 34px; margin:0; }
   .nkb-fine a { color:#a9adb8; }
   @media (max-width:820px) {
@@ -98,9 +130,9 @@ cars:
 
 <div class="nkb">
   <section class="nkb-hero">
-    <img src="{{ '/assets/img/bengaluru/hero.webp' | relative_url }}" alt="A street in Nande Kano Bengaluru">
+    <img src="{{ '/assets/img/bengaluru/hero.webp' | relative_url }}" width="1920" height="1080" fetchpriority="high" alt="Gameplay screenshot of a Bengaluru street in Nande Kano Bengaluru">
     <div class="nkb-hero-text">
-      <div class="nkb-kn">ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು</div>
+      <div class="nkb-kn" lang="kn">ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು</div>
       <h1>NANDE KANO<br>BENGALURU</h1>
       <div class="nkb-bars"><i></i><b></b></div>
       <p class="nkb-tag">An open-world story game set on the real streets of Bengaluru.</p>
@@ -117,7 +149,7 @@ cars:
 
   <div class="nkb-wrap">
     <section class="nkb-sec">
-      <div class="nkb-sub">ಮೀಟರ್ ಹಾಕಿ</div>
+      <div class="nkb-sub" lang="kn">ಮೀಟರ್ ಹಾಕಿ</div>
       <h2>THE METER NEVER PAYS.</h2>
       <p class="nkb-lead">Twelve hours a day in Bengaluru traffic. There has to be a faster way up.</p>
     </section>
@@ -131,7 +163,7 @@ cars:
     </section>
 
     <section class="nkb-sec">
-      <div class="nkb-sub">ಮಂಜನ ಗ್ಯಾರೇಜ್</div>
+      <div class="nkb-sub" lang="kn">ಮಂಜನ ಗ್ಯಾರೇಜ್</div>
       <h2>MANJA'S GARAGE</h2>
       <p class="nkb-lead">Thirty cars. ₹85,000 to ₹108 Cr.</p>
       <div class="nkb-cars">
@@ -153,12 +185,27 @@ cars:
     </section>
 
     <section class="nkb-sec">
+      <div class="nkb-sub" lang="kn">ನಮ್ಮ ಬೆಂಗಳೂರು</div>
+      <h2>A GTA-STYLE GAME SET IN BENGALURU</h2>
+      <p class="nkb-lead">Think open-world crime games like GTA, but the city is Bengaluru. A new game built on the real map of Bangalore, from MG Road and Brigade Road to Church Street, Cubbon Park and Vidhana Soudha.</p>
+    </section>
+
+    <section class="nkb-sec">
       <dl class="nkb-facts">
         <div><dt>STATUS</dt><dd>In development</dd></div>
         <div><dt>PLATFORM</dt><dd>PC (Windows)</dd></div>
         <div><dt>DEVELOPER</dt><dd>Muddy Terrain Games</dd></div>
         <div><dt>BUILT WITH</dt><dd>Unreal Engine 5</dd></div>
       </dl>
+    </section>
+
+    <section class="nkb-sec">
+      <h2>QUESTIONS</h2>
+      <div class="nkb-faq">
+        {% for f in page.faq %}
+        <details{% if forloop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+        {% endfor %}
+      </div>
     </section>
 
     <section class="nkb-end">
@@ -174,6 +221,34 @@ cars:
       </div>
     </section>
 
-    <p class="nkb-fine">Screenshots are from the game in development. All brands, businesses and characters are fictional parody. Street layout based on <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> data, &copy; OpenStreetMap contributors.</p>
+    <p class="nkb-fine">Screenshots are from the game in development. All brands, businesses and characters are fictional parody. Street layout based on <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> data, &copy; OpenStreetMap contributors. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are their trademarks.</p>
   </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "name": "Nande Kano Bengaluru",
+      "alternateName": ["NKN Bengaluru", "ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು"],
+      "url": {{ page.url | absolute_url | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "image": [{{ page.image.path | absolute_url | jsonify }}{% for s in page.shots %}, {{ s.src | prepend: '/assets/img/bengaluru/' | absolute_url | jsonify }}{% endfor %}],
+      "genre": ["Open world", "Action-adventure"],
+      "gamePlatform": "PC",
+      "operatingSystem": "Windows",
+      "applicationCategory": "Game",
+      "playMode": "https://schema.org/SinglePlayer",
+      "gameLocation": {"@type": "Place", "name": "Bengaluru, Karnataka, India"},
+      "author": {"@type": "Organization", "name": "Muddy Terrain Games", "url": {{ site.url | jsonify }}},
+      "publisher": {"@type": "Organization", "name": "Muddy Terrain Games", "url": {{ site.url | jsonify }}}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [{% for f in page.faq %}{"@type": "Question", "name": {{ f.q | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ f.a | jsonify }}}}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    }
+  ]
+}
+</script>

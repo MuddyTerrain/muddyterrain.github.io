@@ -14,7 +14,7 @@ By using our website or services, you agree to the collection and use of informa
 
 We collect information from you in several ways when you interact with our website and services.
 
-**Information you provide directly to us:** When you contact us through our website contact form or send us an email, we collect your name, email address, and any message content you provide. We also keep records of our correspondence with you for customer support purposes.
+**Information you provide directly to us:** When you contact us through our website contact form or send us an email, we collect your name, email address, and any message content you provide. We also keep records of our correspondence with you for customer support purposes. When you sign up for email updates on our website, we collect your email address and which sign-up form you used.
 
 **Information collected automatically:** When you visit our website, we automatically collect certain technical information about your visit. This includes your IP address, browser type and version, operating system, the pages you visit on our site, how long you spend on each page, the website that referred you to us, and your general geographic location (country or region level). We collect this information through cookies and similar tracking technologies.
 
@@ -66,7 +66,7 @@ You can control cookies through your browser settings and choose to block or del
 
 We retain your personal information only as long as necessary to fulfill the purposes outlined in this privacy policy or as required by law.
 
-Contact form submissions and email communications are kept until your inquiry is resolved and for a reasonable period thereafter to maintain our customer support records. Website analytics data is retained according to our Google Analytics settings, typically for 26 months. We may retain certain information longer when required by applicable laws, such as tax and accounting regulations.
+Contact form submissions and email communications are kept until your inquiry is resolved and for a reasonable period thereafter to maintain our customer support records. Email sign-ups are kept until you unsubscribe or ask us to delete them. Website analytics data is retained according to our Google Analytics settings, typically for 26 months. We may retain certain information longer when required by applicable laws, such as tax and accounting regulations.
 
 When we no longer need your personal information, we securely delete or anonymize it to protect your privacy.
 

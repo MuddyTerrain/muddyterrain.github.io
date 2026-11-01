@@ -1,0 +1,14 @@
+{% comment %}
+  Email signup posted to api.muddyterrain.com by assets/js/main.js. Safe to use more than once on a page.
+  Params: list (must exist in the backend's routes/signups.py), location, label, success.
+{% endcomment %}
+<form class="email-signup" action="https://api.muddyterrain.com/api/signup" method="post" data-list="{{ include.list | default: 'general' }}" data-source="{{ include.location | default: 'home_subscribe' }}" data-success="{{ include.success | default: "You're subscribed. Thanks!" }}">
+  {% if include.label %}<p class="email-signup-label">{{ include.label }}</p>{% endif %}
+  <div class="email-signup-row">
+    <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" autocomplete="email" required>
+    <input class="email-signup-extra" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="cta-button primary track-click" data-event-name="btn_clk_email_signup" data-event-location="{{ include.location | default: 'home_subscribe' }}" type="submit">Subscribe</button>
+  </div>
+  <p class="email-signup-note">Only Muddy Terrain news. Unsubscribe anytime. <a href="{{ '/privacy/' | relative_url }}">Privacy policy</a></p>
+  <p class="email-signup-message" role="status"></p>
+</form>

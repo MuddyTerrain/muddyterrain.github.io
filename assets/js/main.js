@@ -43,3 +43,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Email signup forms (_includes/email-signup.html)
+document.addEventListener('submit', async (e) => {
+  const form = e.target;
+  if (!form.classList.contains('email-signup')) return;
+  e.preventDefault();
+
+  const button = form.querySelector('button');
+  const message = form.querySelector('.email-signup-message');
+  const show = (text, isError) => {
+    message.textContent = text;
+    message.classList.toggle('is-error', isError);
+  };
+
+  button.disabled = true;
+  show('', false);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: form.elements.email.value,
+        website: form.elements.website.value,
+        list: form.dataset.list,
+        source: form.dataset.source,
+      }),
+    });
+    if (response.ok) {
+      form.classList.add('is-done');
+      show(form.dataset.success, false);
+      return;
+    }
+    const body = await response.json().catch(() => ({}));
+    show(typeof body.detail === 'string' ? body.detail : 'Something went wrong. Please try again.', true);
+  } catch (error) {
+    show('Could not reach the server. Please try again.', true);
+  }
+  button.disabled = false;
+});

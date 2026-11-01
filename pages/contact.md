@@ -46,4 +46,4 @@ permalink: /contact
 <h3>Subscribe for Updates</h3>
 <p>Be the first to know about our latest products, updates, and exclusive offers. Sign up below to get notifications delivered right to your inbox.</p>
 
-{% include follow-gumroad.html %}
+{% include email-signup.html location="contact_subscribe" %}

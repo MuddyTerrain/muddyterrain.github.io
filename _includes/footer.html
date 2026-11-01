@@ -52,12 +52,26 @@
 
     trackableLinks.forEach(link => {
       link.addEventListener('click', function(e) {
+        const eventName = this.getAttribute('data-event-name');
+        const eventLocation = this.getAttribute('data-event-location') || 'not-set';
+
+        // Only links navigate from here. Buttons have no href and must keep their
+        // default action, or a form's submit button would never submit it.
+        if (this.tagName !== 'A') {
+          if (eventName && typeof gtag === 'function') {
+            gtag('event', 'navigation_click', {
+              'link_text': eventName,
+              'link_location': eventLocation,
+              'link_url': this.form ? this.form.action : ''
+            });
+          }
+          return;
+        }
+
         e.preventDefault();
 
         const url = this.href;
         const target = this.target;
-        const eventName = this.getAttribute('data-event-name');
-        const eventLocation = this.getAttribute('data-event-location') || 'not-set';
 
         const navigate = function() {
           if (target === '_blank') {

@@ -30,6 +30,8 @@ cars:
 faq:
   - q: "Is there a GTA game set in Bengaluru?"
     a: "There is no official one. Nande Kano Bengaluru is an independent GTA-style open-world game set in Bengaluru (Bangalore), made by Muddy Terrain Games. It is a new game, not a mod of Grand Theft Auto."
+  - q: "What does Nande Kano Bengaluru mean?"
+    a: "It's Kannada street talk for \"Bengaluru is mine, man.\" NKB for short."
   - q: "What kind of game is it?"
     a: "A single-player open-world story game. You start behind the wheel of an auto rickshaw and work your way up: fares, missions, fast cars, fights and police chases, all across one city."
   - q: "Which parts of Bengaluru are in the game?"
@@ -146,7 +148,7 @@ faq:
       <div class="nkb-kn" lang="kn">ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು</div>
       <h1>NANDE KANO<br>BENGALURU</h1>
       <div class="nkb-bars"><i></i><b></b></div>
-      <p class="nkb-tag">An open-world story game set on the real streets of Bengaluru.</p>
+      <p class="nkb-tag"><span style="color:var(--y)">From the meter to the top.</span><br>An open-world story game set on the real streets of Bengaluru. Coming soon to PC.</p>
       {% include email-signup.html list="bengaluru" location="bengaluru_hero" label="Get the game link by email when it's ready." success="You're on the list. We'll email you the game link." %}
       <div class="nkb-cta">
         {% if epic_url and epic_url != "" %}
@@ -204,8 +206,8 @@ faq:
 
     <section class="nkb-sec">
       <dl class="nkb-facts">
-        <div><dt>STATUS</dt><dd>In development</dd></div>
-        <div><dt>PLATFORM</dt><dd>PC (Windows)</dd></div>
+        <div><dt>STATUS</dt><dd>Coming soon</dd></div>
+        <div><dt>PLATFORM</dt><dd>PC, Epic Games Store</dd></div>
         <div><dt>DEVELOPER</dt><dd>Muddy Terrain Games</dd></div>
         <div><dt>BUILT WITH</dt><dd>Unreal Engine 5</dd></div>
       </dl>
@@ -245,7 +247,7 @@ faq:
     {
       "@type": "VideoGame",
       "name": "Nande Kano Bengaluru",
-      "alternateName": ["NKN Bengaluru", "ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು"],
+      "alternateName": ["NKB", "ನಂದೆ ಕಣೋ ಬೆಂಗಳೂರು"],
       "url": {{ page.url | absolute_url | jsonify }},
       "description": {{ page.description | jsonify }},
       "image": [{{ page.image.path | absolute_url | jsonify }}{% for s in page.shots %}, {{ s.src | prepend: '/assets/img/bengaluru/' | absolute_url | jsonify }}{% endfor %}],
